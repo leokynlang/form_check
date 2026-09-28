@@ -1,0 +1,12 @@
+C:\Users\16910\AppData\Local\Temp\srsd-benchmark\datasets\feynman.py:2133: RuntimeWarning: invalid value encountered in sqrt
+  return np.sqrt(x[0] ** 2 / SPEED_OF_LIGHT ** 2 - np.pi ** 2 / x[1] ** 2)
+C:\Users\16910\AppData\Local\Temp\srsd-benchmark\datasets\feynman.py:3171: RuntimeWarning: invalid value encountered in sqrt
+  return np.sqrt(1 + 2 * x[0] * x[1] * x[2] ** 2 / (x[3] * (x[4] * x[5] * x[6] ** 2) ** 2))
+S3 2000/11760 5s
+S3 4000/11760 10s
+S3 6000/11760 15s
+S3 8000/11760 20s
+S3 10000/11760 25s
+S3 哨兵: 0/11760 不一致
+  -> D:\form_check\runs\cd_svd\s3_cd_svd.csv  (11760 rows)
+TOTAL 30s

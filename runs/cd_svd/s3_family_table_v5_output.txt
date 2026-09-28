@@ -1,0 +1,13 @@
+=== Table 6(v5):S3 校准后功效按族(@FPR 5%,C/D 用 SVD) ===
+(A/B 沿用存档 p;阈值各自从 S3 H0 池取 5% 分位)
+exponential      A 0.091  B 0.058  C(SVD) 0.066  D(SVD) 0.059
+rational         A 0.648  B 0.158  C(SVD) 0.132  D(SVD) 0.669
+trigonometric    A 0.659  B 0.686  C(SVD) 0.581  D(SVD) 0.860
+
+=== S3 H0 尺寸(官方域格) ===
+A       : 0.036  (n=1680)
+B       : 0.050  (n=1680)
+C old   : 0.457  (n=1680)
+C svd   : 0.046  (n=1680)
+D old   : 0.450  (n=1680)
+D svd   : 0.044  (n=1680)

@@ -1,0 +1,41 @@
+{
+  "system": "tube_side_heat_transfer",
+  "target": "h",
+  "variables": [
+    {
+      "name": "rho",
+      "unit": "kg/m**3",
+      "role": "material_property"
+    },
+    {
+      "name": "mu",
+      "unit": "Pa*s",
+      "role": "material_property"
+    },
+    {
+      "name": "cp",
+      "unit": "J/(kg*K)",
+      "role": "material_property"
+    },
+    {
+      "name": "k",
+      "unit": "W/(m*K)",
+      "role": "material_property"
+    },
+    {
+      "name": "D",
+      "unit": "m",
+      "role": "geometry"
+    },
+    {
+      "name": "v",
+      "unit": "m/s",
+      "role": "state"
+    },
+    {
+      "name": "h",
+      "unit": "W/(m**2*K)",
+      "role": "target"
+    }
+  ]
+}

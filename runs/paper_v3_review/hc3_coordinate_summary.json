@@ -1,0 +1,19 @@
+{
+  "exog": {
+    "n": 650,
+    "original_failures": 0,
+    "original_rejection_rate": 0.5861538461538461,
+    "qr_hc3_rejection_rate": 0.08923076923076922,
+    "qr_classical_rejection_rate": 0.06923076923076923,
+    "verdict_changes": 323
+  },
+  "fitted": {
+    "n": 650,
+    "original_failures": 0,
+    "original_rejection_rate": 0.44153846153846155,
+    "qr_hc3_rejection_rate": 0.09846153846153846,
+    "qr_classical_rejection_rate": 0.07846153846153846,
+    "verdict_changes": 223
+  },
+  "scope": "13 H0 SRSD tasks, 50 new seeds, n=200, log noise=.03; numerical probe only"
+}

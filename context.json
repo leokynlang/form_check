@@ -1,0 +1,32 @@
+{
+  "split_date": "2026-09-05",
+  "source_repo": "D:\\dimreflex",
+  "source_head": "554f861 (工作区含未提交改动,dirty_at_split=true)",
+  "purpose": "拟合优度与函数正确性:必然因果不成立的证据仓(2026-09-20 目标切换,见 SPLIT_README.md/RESUME.md「整体目标切换」节)",
+  "layout": "自包含:根目录脚本 + vendored dimreflex 包(./dimreflex/),无跨文件夹引用",
+  "vendored_dimreflex_sha256": {
+    "__init__.py": "8b489068c67b8ad9322151097b35a119acf003c9b85c463185e3de8184a2bde8",
+    "_ols.py": "082609bf0481525d95c665ca3617cf315466a01ef98e484069c8fbdbcaacda7c",
+    "anomaly.py": "721f4c058ffc6bb3dfd1e04e650e71d7b2de660115bb37244c338eb363386a9d",
+    "autodiscovery.py": "7997e082fb048fb8ff7629db786863b2d785117a2ac5c1ed7d63f61e175e26ee",
+    "cli.py": "28b6f9c45392fe723e747ebd517bb93fcdf55dcf2769fe19529173ed4705e253",
+    "core.py": "ca52c0f728b12b6cc1473fbc2c30cdff724b55939b13d29f4c1b840b64833d14",
+    "discover.py": "bdf7b06978f2e1d39b81698974a56f0a6fccf9acb929edaa9a2c46bf6735e281",
+    "families.py": "3241005375a7e038af1d9c9f91023dbeeda439ecde75803441adaffd5ddf719f",
+    "launcher.py": "ee76ab5da526bb7a60c0a89fe5b8812cc4a33279aa2ad1b7d75315749cc35fe8",
+    "monitoring.py": "acfb8c3ffe3fc5ebd74eef5d8144a8ae8d82262f04fd1644b7dab971b51ba73c",
+    "scenarios.py": "7eab29f123c05d556828eddc2424085be03eba28646b22980efaea8ee783e661",
+    "templates.py": "3deda74ebd2b26dcd0025afb805da1cc4c255a88081d99823e3a3a89e9f49c28",
+    "uncertainty.py": "186bc89fd6b43b857de8b5a03ef3828a0a9fb2a983ce39d0e9574c9ec5ef9354"
+  },
+  "notes": [
+    "core_file_sha256 审计基准:discover.py=bdf7b06978f2e1d39b81698974a56f0a6fccf9acb929edaa9a2c46bf6735e281",
+    "capture_env 中 git_head 记空串(本文件夹非 git 仓库),属预期",
+    "历史文档构建器(build_dimreflex_line_guide.py 等,若存在)保留原 Desktop/D:\\ 路径,属生成时快照,不影响本文件夹任何运行路径"
+  ],
+  "purpose_history": [
+    "form_check vs RESET 公平比较基准 + form_check 电池(3-2-1)",
+    "拟合优度与函数正确性:必然因果不成立的证据仓(2026-09-20 目标切换,见 SPLIT_README.md/RESUME.md「整体目标切换」节)"
+  ],
+  "purpose_updated": "2026-09-20"
+}

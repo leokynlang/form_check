@@ -1,0 +1,249 @@
+diff --git a/discover.py b/discover.py
+index a67e75b..4d423bc 100644
+--- a/discover.py
++++ b/discover.py
+@@ -19,6 +19,8 @@ from ._ols import ols as _ols
+ from .autodiscovery import assess_family as _assess_family
+ from .autodiscovery import discover_auto as _discover_auto
+ from .families import discover_multi
++# form_check_battery(补丁):形式合格性电池,报警时路由到可行函数族
++# 本模块内容为 patches/0001 临时内嵌,若主线采纳将拆分为独立文件
+ 
+ 
+ def compute_groups(data: pd.DataFrame, groups: list[dict[str, float]]) -> pd.DataFrame:
+@@ -204,6 +206,11 @@ def _prepare_pi(data: pd.DataFrame, system, target: str) -> dict:
+     out['form_check'] = form_check(pi_data, out['y_col'], out['x_cols'])
+     _apply_form_check(report, out['form_check'])
+ 
++    # -- 形式合格性电池(补丁):报警时路由到可行函数族 --------------------
++    out['form_check_battery'] = _battery_check(
++        pi_data, out['y_col'], out['x_cols'], out['form_check'])
++    _apply_battery_check(report, out['form_check_battery'])
++
+     return out
+ 
+ 
+@@ -340,6 +347,185 @@ def form_check(data: pd.DataFrame, target: str, features: list[str],
+     return out
+ 
+ 
++# ==================== form_check_battery(补丁内嵌) ====================
++
++B_WILD = 999
++BATTERY_ALPHA = 0.05
++
++# 族注册:u 作用在每个特征列上(逐列),v 作用在 y 上。
++FAMILIES = {
++    "power":       (np.log,   np.log),
++    "exponential": (lambda x: x, np.log),
++    "logarithmic": (np.log,   lambda y: y),
++    "rational":    (lambda x: 1.0 / x, lambda y: 1.0 / y),
++}
++FAM_NAMES = list(FAMILIES)
++
++
++def _standardize_cols(U):
++    mu = U.mean(axis=0)
++    sd = U.std(axis=0)
++    sd = np.where(sd > 0, sd, 1.0)
++    return (U - mu) / sd
++
++
++def _spec_test_wild(X, y, uf, vf, seed, b_wild=B_WILD):
++    """单族形式合格性检验(多特征):u=uf(X) 逐列,quad=标准化 u 列平方的行均值。
++
++    设计 [1, U_std, quad];统计量=二次列系数;wild 零分布 =
++    pred + resid*Rademacher,经 pinv 末行向量化(c2 是 v 的线性泛函)。
++    失败显式登记,不抛异常,不出垃圾 p 值。
++    """
++    out = {"p": np.nan, "t": np.nan, "fail": None}
++    X = np.asarray(X, dtype=float)
++    y = np.asarray(y, dtype=float)
++    if (not np.isfinite(X).all()) or (not np.isfinite(y).all()):
++        out["fail"] = "nonfinite"
++        return out
++    if (X <= 0).any() or (y <= 0).any():
++        out["fail"] = "nonpositive"
++        return out
++    try:
++        U_raw = uf(X)                          # 逐列变换(n×p)
++        v = vf(y)
++    except (ValueError, FloatingPointError, OverflowError):
++        out["fail"] = "transform_failed"
++        return out
++    if (not np.isfinite(U_raw).all()) or (not np.isfinite(v).all()):
++        out["fail"] = "transform_nonfinite"
++        return out
++    U = _standardize_cols(U_raw)
++    n = len(v)
++    base = np.column_stack([np.ones(n), U])
++    quad = (U ** 2).mean(axis=1)
++    design = np.column_stack([base, quad])
++    coef, _, _, _ = np.linalg.lstsq(design, v, rcond=None)
++    t_obs = float(coef[-1])
++    b, _, _, _ = np.linalg.lstsq(base, v, rcond=None)
++    pred = base @ b
++    resid = v - pred
++    if float(resid @ resid) <= 1e-12 * float(v @ v):
++        out["fail"] = "degenerate_zero_residual"
++        return out
++    rng = np.random.default_rng(seed)
++    pinv_row = np.linalg.pinv(design)[-1, :]
++    c2_base = float(pinv_row @ pred)
++    signs = rng.choice((-1.0, 1.0), size=(b_wild, n))
++    null = c2_base + (resid[None, :] * signs) @ pinv_row
++    mu, sd = float(null.mean()), float(null.std())
++    if not np.isfinite(sd) or sd <= 0:
++        out["fail"] = "degenerate_null"
++        return out
++    p = (1.0 + float(np.sum(np.abs(null - mu) >= abs(t_obs - mu)))) / (b_wild + 1.0)
++    out.update({"p": float(p), "t": float((t_obs - mu) / sd)})
++    return out
++
++
++def _battery_run(df, target, features, seed, b_wild=B_WILD):
++    """对一个数据集跑全部四族,返回宽行(p/rej/fail_族 + viable 字符串)。"""
++    X = df[list(features)].values.astype(float)
++    y = df[target].values.astype(float)
++    row = {}
++    viable = []
++    for i, fam in enumerate(FAM_NAMES):
++        uf, vf = FAMILIES[fam]
++        bs = int(seed) * 1_000_003 + i * 7919 + 17
++        r = spec_test_wild(X, y, uf, vf, bs, b_wild=b_wild)
++        row[f"p_{fam}"] = r["p"]
++        row[f"rej_{fam}"] = bool(np.isfinite(r["p"]) and r["p"] < BATTERY_ALPHA)
++        row[f"fail_{fam}"] = r["fail"]
++        if (not r["fail"]) and r["p"] >= ALPHA:
++            viable.append(fam)
++    row["viable"] = ",".join(viable)
++    row["n_viable"] = len(viable)
++    return row
++
++
++def _battery_check(data, target, features, power_payload=None,
++                   b_wild=B_WILD):
++    """形式合格性电池:报警时回答"那什么才合适"(v0.5.1 补丁,未入主线)。
++
++    form_check 报警只说"幂律可能不适";本检查对每个可线性化函数族
++    各跑一次同构检验(该族线性化坐标下的二次曲率,wild bootstrap 零
++    分布),viable = 未被拒绝的族(候选列表语义,不是单一赢家)。
++
++    [为什么零分布用 wild 而非排列] log 变换同方差化乘性噪声(log-log
++    与半 log 坐标),但 (x, log y)/(1/x, 1/y) 坐标下乘性噪声残差是
++    异方差的,排列可交换性破裂(实验实测 rational 假升级 30%,换
++    wild 降到 <10%;experiments/form_check_vs_reset/battery*.py)。
++    零分布合法性依赖坐标——这不是实现细节,是本模块存在的理由。
++
++    [错误语义] viable 漏真族=假排除(代价:升级贵路径);错族留
++    viable=假包含(代价:下游选型分歧)。两者分开报告,不合并;
++    每族各自 alpha,非拒绝语义下不做族间多重校正。
++
++    [小样本尺寸] wild 在 n≲60 轻微膨胀(实测 200 种子:size=6.5%
++    @n=60 → 5.0% @n=120 → 4.5% @n=200),与 form_check 的宁保守
++    勿误报取向一致。
++
++    [幂律门] form_check 报警才产出行动建议;power 族自己被拒时从
++    viable 中移除(同源统计量,不自我背书)。不报警时电池照常运行,
++    结果留痕但 alarm=False(不破坏既有干净输出)。
++
++    返回(结构化,绝不抛异常):
++        {'checked': bool, 'alarm': bool, 'viable': list[str],
++         'p_power': float, ..., 'power_alarm': bool, ..., 
++         'n_samples': int, 'b_wild': int, 'reason': str}
++    checked=False 时携带原因,与 form_check 同构纪律。
++    """
++    out = {'checked': False, 'alarm': False, 'viable': [],
++           'n_samples': 0, 'b_wild': int(b_wild), 'reason': ''}
++    if power_payload is not None and not power_payload.get('checked', False):
++        out['reason'] = ('form_check 未运行('
++                         + str(power_payload.get('reason', '')) + '),电池跳过')
++        return out
++    y = data[target].values
++    X = data[features].values
++    if (not np.isfinite(y).all()) or (not np.isfinite(X).all()):
++        out['reason'] = '存在非有限值,电池不适用(数据层失败已另行报告)'
++        return out
++    if (y <= 0).any() or (X <= 0).any():
++        out['reason'] = '存在非正值,电池不适用(线性化坐标不可达)'
++        return out
++    n = len(y)
++    if n < 12:
++        out['reason'] = f'样本量 n={n} 过少,电池各族检验无功效'
++        return out
++    out['n_samples'] = int(n)
++    viable = []
++    for i, fam in enumerate(FAM_NAMES):
++        uf, vf = FAMILIES[fam]
++        bs = 90210 * 1_000_003 + i * 7919 + 17          # 固定种子:逐位可复现
++        r = _spec_test_wild(X, y, uf, vf, bs, b_wild=b_wild)
++        out[f'p_{fam}'] = r['p']
++        alarm_f = ((not r['fail']) and np.isfinite(r['p'])
++                   and r['p'] < BATTERY_ALPHA)
++        out[f'{fam}_alarm'] = bool(alarm_f)
++        if r['fail']:
++            out[f'{fam}_fail'] = r['fail']
++        if (not r['fail']) and not alarm_f:
++            viable.append(fam)
++    power_alarm = bool(power_payload.get('alarm', False)) if power_payload else False
++    if power_alarm and 'power' in viable:
++        viable.remove('power')                          # 同源统计量不自我背书
++    out['checked'] = True
++    out['viable'] = viable
++    if power_alarm and not viable:
++        out['alarm'] = True
++        out['reason'] = (
++            "幂律被形式检查拒绝,且四族电池无可行族(全部被拒):"
++            "单一线性化形式可能都不适,建议运行 method='auto'/分段"
++            "或符号路径比较更一般的形式。")
++    elif power_alarm:
++        out['reason'] = (
++            f"幂律被形式检查拒绝,电池可行族={viable}:该数据的形式更"
++            f"适合这些族的线性化坐标,幂律拟合结果仅供参考。")
++    else:
++        out['reason'] = (
++            f"电池可行族={viable}(含幂律):未发现反对幂律形式的证据。")
++    return out
++
++
+ def _apply_form_check(report: dict, payload: dict) -> None:
+     """把形式检查结果挂到 report.warnings(报警才写,留痕不噪)。"""
+     if payload.get('checked') and payload.get('alarm'):
+@@ -347,6 +533,13 @@ def _apply_form_check(report: dict, payload: dict) -> None:
+             "形式失配警告(log-log 线性检查): " + payload['reason'])
+ 
+ 
++def _apply_battery_check(report: dict, payload: dict) -> None:
++    """电池级报警(无可行族)才写 warnings;可行族信息在 battery 键内。"""
++    if payload.get('checked') and payload.get('alarm'):
++        report['warnings'].append(
++            "形式合格性电池(四族线性化检查): " + payload['reason'])
++
++
+ 
+ def discover(data: pd.DataFrame,
+              system,
+@@ -391,6 +584,7 @@ def discover(data: pd.DataFrame,
+ 
+     # 形式检查已在 _prepare_pi 完成,这里透传给调用方
+     fc = result['form_check'] = prep.get('form_check')
++    result['form_check_battery'] = prep.get('form_check_battery')
+ 
+     if method == 'power_law':
+         fit_result = fit_power_law(prep['pi_data'], prep['y_col'], prep['x_cols'])
+@@ -450,6 +644,7 @@ def discover_auto_pi(data: pd.DataFrame,
+         'dropped_features': prep['dropped_features'],
+         'shared_vars': prep['shared_vars'],
+         'form_check': prep.get('form_check'),
++        'form_check_battery': prep.get('form_check_battery'),
+         'autonomous': None,
+         'fit': None,
+     }
+@@ -497,6 +692,7 @@ def discover_multi_pi(data: pd.DataFrame,
+               'dropped_features': prep['dropped_features'],
+               'shared_vars': prep['shared_vars'],
+               'form_check': prep.get('form_check'),
++              'form_check_battery': prep.get('form_check_battery'),
+               'candidates': [], 'best': None}
+ 
+     if prep['note']:

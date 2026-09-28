@@ -1,0 +1,10 @@
+rows: 34928 G range: 101.75 119.84
+train: 31437 holdout: 3491 cut G: 114.76
+
+n fits: 50  evaluable: 50
+joint silence: 0 = 0.0
+median far err | silent: n/a
+median far err | flagged: 1.1611
+P(med_far>10% | silent): n/a
+P(med_far>10% | flagged): 1.0
+written: D:/form_check/real_data/usgs_case_study_rows.csv

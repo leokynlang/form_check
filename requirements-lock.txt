@@ -1,0 +1,7 @@
+# 实测锁定版本 — 2026-09-04,Windows / Python 3.13.15
+# 用途:可复现部署(pip install -r requirements-lock.txt)
+# 开发安装用 `pip install -e .`(范围见 requirements.txt / pyproject.toml)
+numpy==2.5.2
+pandas==3.0.5
+scipy==1.18.1
+pint==0.25.3

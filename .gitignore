@@ -1,0 +1,84 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+*.egg
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.zcode/
+
+# Tool caches
+.ruff_cache/
+.pytest_cache/
+.pytest-tmp/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+venv/
+.venv/
+
+# Word/Office lock files
+~$*
+
+# Scratch files
+_tmp_*
+
+# PyInstaller auto-generated spec
+dimreflex_app.spec
+
+# ---------------------------------------------------------------------------
+# 2026-09-05 拆分后本仓库路径布局(注意:旧的 experiments/** 规则已失效,
+# 真实产物在根目录的 runs/ 与 real_data/)。下面按"可再生"与"结论件"分开。
+# ---------------------------------------------------------------------------
+
+# [可再生·不进版本库] 跑批原始数据。runner 可完全重建:
+#   raw.csv / raw_*.csv   逐数据集的逐门统计(S1/S2 合并台架,单文件 20-53MB)
+#   *.parquet             SRSD 与拟合优度的宽表缓存
+#   s?_cd_svd*.csv        S1/S2 的 SVD 路径逐门统计(单文件 24-43MB)
+#   runs/full_r?/ 等分片 raw —— 由 analyze.py --shards 合并为 runs/full/
+runs/**/raw.csv
+runs/**/raw_*.csv
+runs/**/*.parquet
+runs/**/s1_cd_svd*.csv
+runs/**/s2_cd_svd*.csv
+runs/**/*.log
+# 分片目录的原始层(报告/汇总仍保留,见下)
+runs/full_r[0-9]/
+runs/srsd_full_r[0-9]/
+runs/srsd_p[0-9]/
+
+# [可再生] 真实数据下载与清洗产物(fetch_data.py / prepare_data.py 可重建)
+real_data/raw/
+real_data/clean/
+real_data/**/__pycache__/
+
+# [可再生] 中间目录:一次性补丁脚本、渲染中间件
+tmp/
+
+# [可再生] 论文构建器的 QA 渲染输出(20MB,build_pdf.py 可重生成)
+paper/qa_render*/
+artifacts/**/.preview/
+
+# ---------------------------------------------------------------------------
+# 结论件**必须**入库(它们是论文数字的证据面,不可再生):
+#   runs/**/report.md, summary*.json, config.json, env.json
+#   cell_stats.csv, win_matrix*.csv, h1_power_per_task.csv, task_registry.csv
+#   results.csv, selection_table.csv, blindspot.csv, gate_actual_fpr.csv
+#   paper/draft_*.md 与交付 PDF
+# 上面的忽略规则不针对这些名字,故无需 ! 反选;若将来新增重原始层,
+# 请在此显式加规则而不是靠通配。
+# ---------------------------------------------------------------------------
+
+# 注:form_check 曾在 2026-09-20 之前以 git init 建仓但**零 commit**,
+# 四轮审稿与全部 run 产物一度无版本保护。首个 commit 见 git log。

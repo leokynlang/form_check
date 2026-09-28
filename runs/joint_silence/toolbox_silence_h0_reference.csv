@@ -1,0 +1,9 @@
+bench,n,threshold,toolbox_silence_H0
+srsd,50,alpha_naive,0.7984615384615384
+srsd,50,calibrated,0.9046153846153846
+srsd,200,alpha_naive,0.7984615384615384
+srsd,200,calibrated,0.9142307692307692
+synth,50,alpha_naive,0.7416666666666667
+synth,50,calibrated,0.8933333333333333
+synth,200,alpha_naive,0.7833333333333333
+synth,200,calibrated,0.9233333333333333

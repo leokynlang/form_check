@@ -1,0 +1,6 @@
+train pool: 749 holdout: 190 holdout ages: [np.int64(90), np.int64(91), np.int64(100), np.int64(120), np.int64(180), np.int64(270), np.int64(360), np.int64(365)]
+n fits: 300 evaluable: 300 declines: 0
+JOINT SILENCE: 259 = 0.863
+silent med_far: median 0.279 | P(med_far>10%): 1.0 | median signed bias: 0.245
+flagged med_far median: 0.314 | P(med_far>10%): 1.0
+written: D:/form_check/real_data/concrete_case_study_rows.csv

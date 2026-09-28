@@ -1,0 +1,89 @@
+{
+ "table2_svd": {
+  "A_n50": 0.0489,
+  "A_n200": 0.0535,
+  "A_n1000": 0.0517,
+  "B_n50": 0.0499,
+  "B_n200": 0.0497,
+  "B_n1000": 0.0527,
+  "C_n50": 0.0565,
+  "C_n200": 0.0531,
+  "C_n1000": 0.0549,
+  "D_n50": 0.0604,
+  "D_n200": 0.0564,
+  "D_n1000": 0.0583
+ },
+ "table3_svd": {
+  "A (permutation)": {
+   "50": 0.386,
+   "200": 0.486,
+   "1000": 0.57
+  },
+  "B (RESET fitted F)": {
+   "50": 0.187,
+   "200": 0.254,
+   "1000": 0.389
+  },
+  "C (HC3 fitted, SVD)": {
+   "50": 0.129,
+   "200": 0.24,
+   "1000": 0.422
+  },
+  "D (HC3 exog, SVD)": {
+   "50": 0.494,
+   "200": 0.675,
+   "1000": 0.733
+  }
+ },
+ "joint_event": {
+  "n50": {
+   "screened": 24060,
+   "dangerous": 2655,
+   "dangerous_silent": 350,
+   "p_danger_given_screen": 0.1103,
+   "p_certified_wrong": 0.0145,
+   "p_silent_given_dangerous": 0.1318,
+   "danger_total": 12369,
+   "released_of_dangerous": 966,
+   "released_and_screened": 350
+  },
+  "n200": {
+   "screened": 23932,
+   "dangerous": 2296,
+   "dangerous_silent": 106,
+   "p_danger_given_screen": 0.0959,
+   "p_certified_wrong": 0.0044,
+   "p_silent_given_dangerous": 0.0462,
+   "danger_total": 12348,
+   "released_of_dangerous": 106,
+   "released_and_screened": 106
+  },
+  "n1000": {
+   "screened": 24000,
+   "dangerous": 2046,
+   "dangerous_silent": 25,
+   "p_danger_given_screen": 0.0853,
+   "p_certified_wrong": 0.001,
+   "p_silent_given_dangerous": 0.0122,
+   "danger_total": 12046,
+   "released_of_dangerous": 25,
+   "released_and_screened": 25
+  },
+  "pooled": {
+   "screened": 71992,
+   "dangerous": 6997,
+   "dangerous_silent": 481,
+   "p_danger_given_screen": 0.0972,
+   "p_certified_wrong": 0.0067,
+   "p_silent_given_dangerous": 0.0687
+  }
+ },
+ "certificate": {
+  "p_cert_true_h0": 0.8453,
+  "p_cert_dangerous_h1": 0.0131,
+  "LR": 0.015,
+  "posterior_p_danger_given_cert_mixture": 0.0221,
+  "mixture_prior_h1": 0.59375
+ },
+ "anchors_ok": 11
+}

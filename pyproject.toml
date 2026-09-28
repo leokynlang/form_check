@@ -1,0 +1,66 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dimreflex"
+version = "0.5.0"
+description = "量纲感知的工程模型发现框架 (Dimensional-aware engineering model discovery framework)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+    "numpy>=1.21,<3",
+    "pandas>=1.3,<4",
+    "scipy>=1.7,<2",
+    "pint>=0.19,<1",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[project.scripts]
+dimreflex = "dimreflex.cli:main"
+
+# 扁平布局:项目目录本身即包(根目录的 __init__.py 即 dimreflex/__init__.py)。
+# package-dir 把包 dimreflex 映射到仓库根,避免把代码再套一层子目录
+# (2026-05 的包布局重构曾被 git 回退,本方案不移动任何文件)。
+[tool.setuptools]
+package-dir = { "dimreflex" = "." }
+packages = ["dimreflex"]
+
+[tool.ruff]
+target-version = "py313"
+
+[tool.ruff.lint]
+# 在 2026-09 人工审计口径(371 项)基础上补全同族规则,并显式豁免
+# 与本项目惯例冲突的规则(豁免理由逐条注明,不用全局静默)
+select = [
+    "F",            # pyflakes
+    "W",            # pycodestyle warnings
+    "I",            # isort
+    "UP",           # pyupgrade
+    "B",            # flake8-bugbear
+    "SIM",          # flake8-simplify
+    "C4",           # flake8-comprehensions
+    "BLE",          # flake8-blind-except
+    "RUF",          # ruff 特有规则
+    "S",            # flake8-bandit
+    "PLC", "PLW",   # pylint convention/warning(子集)
+    "PIE",          # flake8-pie
+    "ISC",          # flake8-implicit-str-concat
+    "FURB",         # refurb
+]
+ignore = [
+    "RUF001", "RUF002", "RUF003",  # 字符串/文档/注释中的中文标点(。·≥—)是项目语言,非歧义字符
+    "PLC0415",  # 函数内延迟导入是刻意设计:pysr 可选依赖、CLI 门面隔离重型导入
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S101"]        # pytest 断言是测试惯用法
+"validation/**" = ["S101"]   # 预注册判据用 assert 承载结论,与退出码联动
+"experiments/**" = ["S101", "S603", "S607"]  # 实验脚本从 PATH 调 git 克隆/审计,URL 硬编码非不可信输入
+
+[tool.pytest.ini_options]
+# 单元测试统一放在 tests/,避免把实验归档中的历史样例误当成正式测试。
+testpaths = ["tests"]

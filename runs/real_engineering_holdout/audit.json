@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "source_rss_chwirut1": 2384.4771393093497,
+  "source_rss_nelson": 3.7976833176451477,
+  "splits_verified": 84,
+  "model_rows": 546,
+  "prediction_partitions_recomputed": 1090,
+  "failed_model_rows": 1,
+  "nonfinite_relative_error_rows": 1,
+  "baseline_matches_product": true,
+  "product_hashes_unchanged": true
+}

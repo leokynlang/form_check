@@ -1,0 +1,140 @@
+{
+ "tag": "pilot",
+ "seeds": 50,
+ "n_grid": [
+  50,
+  200,
+  1000
+ ],
+ "rel_grid": [
+  0.0,
+  0.005,
+  0.01,
+  0.03,
+  0.05
+ ],
+ "scenarios": [
+  "QUAD_LIN",
+  "CUBIC_LIN",
+  "INTERACT",
+  "THRESHOLD",
+  "EXP_MODEL",
+  "LOG_MODEL",
+  "RATIONAL",
+  "OMITTED_M",
+  "DILUTION",
+  "OPPOSING",
+  "H1_HEAVYTAIL",
+  "H1_VAR_GROWING",
+  "H1_AUTOCORR",
+  "H1_OUTLIER",
+  "H1_OUTLIER_GRP",
+  "COLLINEAR_CURV",
+  "H0_BASELINE",
+  "H0_MULTIVAR",
+  "H0_CORR"
+ ],
+ "alpha": 0.05,
+ "seed_rule": "100_000 + s*97 + n_idx*13 + rel_idx*5_000_000",
+ "preregistration": "H0/H1 分类由 scenarios.py::SCENARIO_META 在代码写入时固定,不依据检验结果调整;方法 A=dimreflex.form_check 本体+包装层排列经验 p 值;B/C/D=RESET fitted-F/fitted-HC3/exog-HC3;全部在 alpha=0.05 上比较。",
+ "scenario_meta": {
+  "H0_BASELINE": {
+   "klass": "H0",
+   "family": "monomial",
+   "desc": "y=1.5 x1^0.7 高斯"
+  },
+  "H0_MULTIVAR": {
+   "klass": "H0",
+   "family": "monomial",
+   "desc": "y=1.2 x1^.5 x2^.9 高斯"
+  },
+  "H0_CORR": {
+   "klass": "H0",
+   "family": "monomial",
+   "desc": "同上,rho=0.9 相关设计"
+  },
+  "H1_HEAVYTAIL": {
+   "klass": "H1",
+   "family": "noise-heavy",
+   "desc": "结构幂律,t(3) 噪声"
+  },
+  "H1_VAR_GROWING": {
+   "klass": "H1",
+   "family": "noise-hetero",
+   "desc": "结构幂律,SD 随预测增长"
+  },
+  "H1_AUTOCORR": {
+   "klass": "H1",
+   "family": "noise-autocorr",
+   "desc": "结构幂律,AR(1) ρ=0.6 噪声"
+  },
+  "H1_OUTLIER": {
+   "klass": "H1",
+   "family": "noise-outlier",
+   "desc": "结构幂律,2% 单点 8σ"
+  },
+  "H1_OUTLIER_GRP": {
+   "klass": "H1",
+   "family": "noise-outlier",
+   "desc": "结构幂律,6% 成组 +5σ"
+  },
+  "QUAD_LIN": {
+   "klass": "H1",
+   "family": "quadratic",
+   "desc": "log 空间二次 c=+0.10"
+  },
+  "CUBIC_LIN": {
+   "klass": "H1",
+   "family": "cubic",
+   "desc": "log 空间三次(标准化)0.05"
+  },
+  "INTERACT": {
+   "klass": "H1",
+   "family": "interaction",
+   "desc": "lx1*lx2 交叉项 0.30sd"
+  },
+  "THRESHOLD": {
+   "klass": "H1",
+   "family": "piecewise",
+   "desc": "指数 0.4→1.0 阈值"
+  },
+  "EXP_MODEL": {
+   "klass": "H1",
+   "family": "exponential",
+   "desc": "y=exp(0.5 x1)"
+  },
+  "LOG_MODEL": {
+   "klass": "H1",
+   "family": "logarithmic",
+   "desc": "y=0.8+1.1 ln x1"
+  },
+  "RATIONAL": {
+   "klass": "H1",
+   "family": "rational",
+   "desc": "y=x1/(0.2+0.1x1) 饱和"
+  },
+  "OMITTED_M": {
+   "klass": "H1",
+   "family": "omitted-var",
+   "desc": "x2 相关且二次进入,被遗漏"
+  },
+  "DILUTION": {
+   "klass": "H1",
+   "family": "dilution",
+   "desc": "x1 曲率 0.10,x2 无(平均稀释)"
+  },
+  "OPPOSING": {
+   "klass": "H1",
+   "family": "opposing",
+   "desc": "+0.12 与 -0.12 反向曲率"
+  },
+  "COLLINEAR_CURV": {
+   "klass": "H1",
+   "family": "collinear-quad",
+   "desc": "rho≈0.95 + x1 曲率 0.10"
+  }
+ },
+ "started": "2026-09-04 12:22:47",
+ "finished": "2026-09-04 12:22:47",
+ "wall_seconds": 0.14622009999584407
+}

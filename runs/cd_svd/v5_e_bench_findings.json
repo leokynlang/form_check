@@ -1,0 +1,15 @@
+{
+ "comment": "v5 重跑新增的机制发现(2026-09-07):Gram 伪影的 E 台架痕迹具有可识别指纹",
+ "fingerprint": {
+  "what": "E 台架 147 格中 31 格在 Gram 路径下 p 值出现 <1e-20 的下溢(21 格 C, 10 格 D),SVD 路径下同格 p 回到 [0.07, 1.0] 的正常范围",
+  "list_C": ["nist_thurber", "rdataset_housing", "uci_ccpp(PE~AT 一格)", "webbook_dvaph×12", "webbook_dfush/dfuss×2", "其余见 e_smoke_results_svd_bak.csv"],
+  "list_D": ["rdataset_petrol", "rdataset_whiteside", "uci_energy_efficiency", "usgs_14105700_rating", "webbook_heptane×3"],
+  "interpretation": "p<1e-20 的『全域拒绝』不是证据强,是 Wald 统计量被截断伪逆平方放大后的数值垃圾。原 E 台架的『全三 HC3 失效模式 live』叙述按此重写",
+  "action": "E 表的 C/D 列按 svd_bak 版本更新;正文引用 housings/CCPP/webbook 的格按新 p 值重述"
+ },
+ "smoke_results_overwrite_incident": {
+  "what": "replay 脚本曾把 smoke_test 的输出写回 real_data/smoke_results.csv(硬编码路径),覆盖了 Gram 原版",
+  "fix": "已用未打补丁实现重跑恢复(缓存数据+seed 确定性,拒绝率 .660/.755/.735/.639 与 v4 附录逐字一致);原版另存 e_smoke_results_GRAM_original.csv",
+  "lesson": "回写路径应参数化;论文仓库修复时一并改 smoke_test.py 的 OUT 路径"
+ }
+}

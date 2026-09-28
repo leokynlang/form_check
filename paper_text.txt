@@ -1,0 +1,740 @@
+
+===== PAGE 1 =====
+The Certified Wrong Function: Measuring Joint Silence in
+Form-Specification Gates for Physical Model Discovery
+Anonymous — double-blind review copy
+Abstract
+Symbolic regression and physical model discovery pipelines certify candidate equations with goodness-of-fit metrics
+— R², cross-validation error, information criteria, coefficient standard errors — that measure how well a model fits,
+never whether the form itself is right. Specification tests exist to catch wrong forms, and a growing literature
+benchmarks them one gate at a time: which detector has the highest power, the best calibration, the cheapest reference
+budget. This paper measures a different quantity, the one a deployed pipeline actually consumes: when the fitted
+functional form is wrong, how often does every check stay quiet at once? We call this event joint silence — a fitted
+model receives a certificate from the entire falsification panel: no specification gate rejects it, and no gate declines
+evaluation. Across 171,000 simulated datasets built from physical laws — 19 controlled synthetic scenarios and 18
+ground-truth equations from the SRSD-Feynman registry, at n  {50, 200, 1000} and relative noise from 0.5% to 5%,
+evaluated by a four-gate panel (permutation curvature, RESET fitted-F, and two heteroskedasticity-robust RESET
+variants on singular-value-safe paths) — the results separate sharply by provenance. On the synthetic gallery, where
+scenarios were constructed around the gates' known sensitivity, joint silence on wrong forms is 0.2% at n = 50 and zero
+at n ≥ 200: the panel is nearly closed by construction. On real physics equations, it is 37.8% at n = 50 and still 23.2% at
+n = 1000 (noise-present strata). The baseline that makes these numbers interpretable has never been reported alongside
+gate power tables: on true power laws the same panel stays jointly silent 87–88% of the time, so a silent certificate
+carries a likelihood ratio of only 2.3–3.8, and P(form is wrong | all clear) remains above 0.20 at every sample size.
+Silence concentrates exactly where single-gate maps predict: tasks whose misfit direction is near-orthogonal to every
+tested column set reach 85% silence with no individual gate looking broken. And silence has a tail cost: 7.1% of silent
+certificates at n = 50 carry far-field extrapolation error above 10%, a rate alarms would have flagged 7.6× more often.
+Adding the strongest single-gate alternative from recent benchmarking — an AICc-adjudicated nested quadratic —
+does not seal the leaks: on the physics bench the augmented panel still certifies 42% of wrong forms silent at n = 50.
+The contribution is a measured semantics for falsification-side certification: passing the current toolbox is evidence of
+consistency with the tested directions, not evidence of correctness, and panel-level coverage — not single-gate ranking
+— is the quantity benchmark design should optimize.
+1 Introduction
+A regression model can be simultaneously excellent on every certification metric a discovery pipeline computes and
+wrong in its functional form. A power law fitted to Prandtl–Karman friction data reaches R² = 0.99, passes k-fold
+cross-validation, and reports small standard errors, while extrapolating with −20% error one decade outside the training
+domain. The falsification-side response is well developed: Ramsey's RESET and its variants test whether powers of
+fitted values or regressors carry residual signal; heteroskedasticity-robust covariance estimation hardens the inference;
+and the workflow alternative — fit a nested rival family and let cross-validation or an information criterion arbitrate —
+predates all of them. Recent work has benchmarked these gates seriously: matched decision bases, power compared at
+calibrated false-positive rates, task pools drawn from real physical laws, failure registration. That literature is the
+starting point of this paper, and its per-gate tables are what we re-read jointly.
+That benchmarking tradition measures gates one at a time. Its output is a leaderboard: gate X beats gate Y by 8 points
+of calibrated power on the physics bench; gate Y is the better default where a reference pool exists. The numbers are
+real and the comparisons are fair. But they answer a question a pipeline does not face. A deployed discovery system
+does not ship a model when its best gate objects; it ships a model when nothing objects. The quantity that governs
+deployment is the joint event across the whole panel — and a joint event has no obligation to track the marginals. Four
+gates each with 80% power can, if their failures correlate, leave half the wrong forms unobjected; the marginal tables
+contain no row that reveals this.
+This paper measures the joint event directly and gives it a name. Define joint silence on a dataset as: no specification
+gate rejects at its threshold, and no gate declines evaluation — a registered refusal is an honest refusal, not a certificate,
+and counting it as silence would flatter the panel. Joint silence on wrong-form data is the rate at which a falsification
+
+
+===== PAGE 2 =====
+panel certifies a wrong function as clean. It is, to our knowledge, unmeasured: every per-gate table in the benchmarking
+literature answers "how often does this gate catch it," never "how often does anything catch it."
+Two baselines give the quantity meaning, and both are absent from current practice. First, the wrong-form silence rate
+itself, per bench. Second, the H0 silence rate — how often the same panel stays jointly quiet on true laws. The two
+together convert silence into evidence: the ratio is a likelihood ratio, and its reciprocal structure gives P(form is wrong |
+all clear) under a class mix. A panel that flags 30% of true laws but 25% of wrong ones certifies nothing; a panel quiet
+on 88% of true laws and 38% of wrong ones certifies only weakly. Neither statement follows from any marginal power
+table, however carefully calibrated.
+We evaluate a four-gate panel — the permutation curvature gate (form_check), RESET fitted-F, and fitted/exog
+HC3-Wald variants on singular value decomposition paths immune to the recently documented pinv(X′X) conditioning
+hazard — on 19 synthetic scenarios and 18 SRSD-Feynman ground-truth equations, 171,000 wrong-form fits with
+noise present in total, plus their 78,000+ true-law counterparts as the calibration baseline, with extrapolation ground
+truth for every physics-bench fit. Three questions structure the paper:
+ •  Q1. How often does the panel certify a wrong function, and does the
+answer depend on where the wrong functions come from?
+ •  Q2. What is a silent certificate worth — what likelihood ratio does
+it carry, and how does that compare with what a reader of the single-gate literature would assume?
+ •  Q3. Where silence concentrates, and what does it cost downstream?
+The answers are uncomfortable and clean. The same panel, same thresholds, same noise: silence is a rounding error on
+constructed scenarios (0.2% at n = 50, zero above) and better than one in three on real physics equations (37.8% at n =
+50, 23.2% at n = 1000). Silent certificates carry likelihood ratios of 2.3–3.8 — weak evidence by the standards of
+anything else we call a certificate. The silence sits exactly on the blind directions the single-gate literature has mapped:
+odd-order curvature, cross-terms absent from every tested column set, tasks where all four marginal powers read
+.04–.18 and nothing looks broken. And the tail is not safe: 7.1% of silent certificates at n = 50 hide far-field
+extrapolation errors above 10%.
+We also test the obvious repair — add the strongest single gates the recent benchmarking literature proposes (CV- and
+AICc-adjudicated quadratic rivals, the documented winners among default detectors). They close the synthetic bench to
+6% and leave the physics bench at 42% wrong-form silence in their own coordinates: the leaks live in directions no
+tested column set spans, so panels do not become complete by becoming longer. What follows is not a ranking but a
+semantics: a pass through the current falsification toolbox is evidence of consistency with the tested directions, nothing
+stronger. Section 5 argues the consequence — that panel-level direction coverage, not single-gate superiority, is the
+quantity benchmark design should optimize — and Section 6 states what we did not measure.
+2 Related Work
+Specification testing. RESET [1] augments a regression with powers of the fitted values and tests their joint
+significance; built-regressor variants use powers of the regressors. Heteroskedasticity-consistent covariance estimation
+[2] and its HC3 refinement [3, 4] are standard small-sample corrections, with a documented numerical hazard when the
+HC3 sandwich is formed through pinv(X′X) on ill-conditioned designs — a failure of implementation, not of the
+estimator. Our panel uses SVD-path HC3 throughout; the hazard is the reason, and the released paths register
+conditioning per call.
+The falsification-side benchmark. Symbolic regression benchmarks (SRBench [5], SRSD [6]) measure the discovery
+side: whether a method finds the right expression. Neither measures whether an attached falsification layer would reject
+a wrong form. The falsification-side benchmark literature supplies this: task pools from real physical laws, matched
+decision bases, power at calibrated false-positive rates, failure registration, and — in its most recent revision — a
+head-to-head against the nested-rival gates a reviewer would name, where an AICc-adjudicated quadratic expansion
+won every cell as the default detector. That literature is this paper's direct predecessor, and its per-gate tables are what
+this paper re-reads jointly. We inherit its protocol wholesale: one decision basis per comparison, H0-pool calibration,
+preregistered labels, typed failure registration, seed rules that make any cell bit-reproducible.
+
+
+===== PAGE 3 =====
+Model selection as a gate. Comparing against a nested rival by AICc [12] or cross-validation [13] is the oldest
+workflow-level specification check and the canonical objection to any new test. As a member of a panel it has different
+geometry than as a soloist: the rival family defines directions the panel can see, and a wrong form orthogonal to those
+directions is invisible to the member exactly as it is to the test statistics. Our augmented-panel experiment (§4.5)
+measures this directly.
+Resampling nulls. The permutation curvature gate's null is a residual permutation — an approximation under linear
+models, empirically calibrated in log-log coordinates on every pool measured. We treat calibration as a measured
+property, quote per-gate empirical sizes alongside every silence number, and claim no exactness.
+What is missing. No prior falsification-side work reports a joint statistic: every published table is a per-gate marginal.
+The omission is understandable — joint events need per-row agreement across gates on identical datasets, which
+requires the seeded, per-cell release discipline only recently adopted in this area. It is also consequential: the joint
+numbers reverse no marginal conclusion while adding the one quantity deployment actually consumes.
+3 Design
+3.1 The event, fixed before the run
+The unit of analysis is a fitted dataset: one dataset, all four gates evaluated on it. The event of interest is fixed in the
+analysis script before its first run:
+> Joint silence = no gate rejects at its decision threshold AND no gate > declined evaluation. A declined evaluation —
+degenerate residuals, rank > deficiency, insufficient degrees of freedom — is registered with a typed > reason by the
+harness and counts as an honest refusal, not a certificate. > Counting refusals as silence would flatter the panel;
+counting them as > detections would flatter it differently; we report refusal counts > separately and exclude them from
+both numerator and denominator of the > silence rate. (In the runs below, refusals are rare: the four-gate > panels'
+declined evaluations are 0 at all headline cells on both benches.)
+Two threshold regimes are carried through every table: nominal (α = .05 for every gate, the deployed default) and
+calibrated (each gate's threshold set to the 5th percentile of its H0 p-value distribution within the same bench and
+sample-size stratum, giving each gate a 5% empirical false-positive rate). Levels differ by about one point everywhere;
+conclusions are identical. The paper quotes nominal and flags the check.
+3.2 Gates
+The panel is the four-gate configuration current falsification-side practice deploys:
+ •  A — permutation curvature. The form_check gate: residual-permutation
+empirical p-value (B = 999) for curvature in log-log space beyond a linear power law. Self-calibrating in the sense that
+statistic and null share one fit.
+ •  B — RESET fitted-F. Ramsey's test with powers of fitted values,
+classical F reference.
+ •  C — RESET fitted-HC3 (SVD path). The same augmentation with
+heteroskedasticity-robust Wald inference, covariance formed through the singular value decomposition of the design
+— not pinv(X′X), whose squared condition number silently destroys the statistic on few-decade physical designs.
+ •  D — RESET exog-HC3 (SVD path). The built-regressor augmentation
+(powers of each regressor), same robust SVD inference.
+The A/B paths are unchanged from the audited archive (A's permutation is row-self-consistent; B uses RSS and never
+touched the broken path); C/D use the corrected paths throughout. Per-gate empirical sizes on the H0 pools are quoted
+in §7 and run .049–.060 on the physics bench and .046–.068 on the synthetic bench across strata.
+3.3 Suites
+S1 — synthetic gallery. Ground-truth mean functions are prespecified: three strict power laws (H0) and eleven
+structural alternatives entering the wrong-form pool — quadratic, cubic, interaction, omitted correlated variable,
+dilution, opposing curvature, rational saturation, exponential, logarithmic, threshold, and a collinear-quadratic stress
+
+
+===== PAGE 4 =====
+case — plus four noise-model variants carried for semantics but excluded here (they are wrong-error-model, not
+wrong-form). Designs span log-uniform domains of ~4.6 decades; noise is multiplicative Gaussian at relative scale rel
+ {0.5%, 1%, 3%, 5%} (plus a zero-noise stratum that exercises failure registration: exact fits emit no certificates, and
+zero-noise cells are excluded from silence rates by construction). n  {50, 200, 1000}; 500 seeds per cell; 66,000
+wrong-form datasets with noise present.
+S2 — SRSD-Feynman equations (18 tasks). From the 120-equation registry, tasks passing the positivity screen under
+official sampling configurations: 13 strict-monomial H0 and 19 non-monomial H1 candidates, one of which is
+excluded here (a reproduction sentinel flagged its archived p-values as non-reproducible under regeneration, leaving 18
+wrong-form equations). Each fit (n  {50, 200, 1000} × rel grid × 500 seeds) carries a 2,000-sample same-distribution
+test set and a far-field probe: the first regressor extrapolated ×3 beyond both training domain edges, scored against the
+closed-form truth in a numerically stable log-difference form. This gives every wrong-form fit an extrapolation ground
+truth — the ingredient that makes silence's downstream cost measurable rather than rhetorical.
+S5 — the nested-rival augmentation. To test the obvious repair we reuse the gate-comparison suite: the same seeds
+evaluated additionally by CV-quad (5-fold, calibrated threshold δ) and AICc-quad (calibrated m), the documented
+strongest default detectors, with AICc-quad as the representative winner. Its grid is rel = 3%, n  {50, 200}, 200 seeds;
+silence levels on this grid are internally comparable but not cross-comparable to the S2 pool levels at other noise scales,
+and we flag every such comparison.
+3.4 Why these two suites are the right pair
+The synthetic gallery was constructed around known gate sensitivities — its alternatives are curves, interactions, and
+thresholds chosen because panels were expected to see them. The Feynman equations were constructed by physicists,
+for physics, with no gate in mind. Any gap between the two benches' joint-silence rates is therefore itself a finding: it
+measures how much of a panel's apparent competence is an artifact of who chose the alternatives. This is the same logic
+that separates a validation set from a test set, applied to falsification-side benchmarking.
+3.5 What we did not measure
+Observational data (macroeconomic relations, engineering bench cells) is excluded: joint silence is defined against
+ground truth, and observational cells have none — their rejection counts are compatibility statistics, not rates. The
+battery and family-routing machinery is excluded: it answers a different question (what to escalate to), and its null is
+rebuilt per coordinate family. Other panel configurations (wild-bootstrap nulls, leverage-adjusted variants) are future
+work; the released harness is gate-agnostic and the joint statistic is one reduction over per-cell rows.
+4 Results
+4.1 The headline: provenance decides silence
+Table 1 — Joint silence of the four-gate panel, wrong-form pool vs true power laws (nominal α = .05;
+noise-present strata; "any" = at least one gate rejects).
+n = 50
+n = 200
+n = 1000
+S1 synthetic: wrong-form silence
+.002
+.000
+.000
+S1 synthetic: any gate rejects
+.998
+1.000
+1.000
+S2 physics: wrong-form silence
+.378
+.298
+.232
+S2 physics: any gate rejects
+.622
+.702
+.768
+S2 H0: joint silence (true power laws)
+.870
+.881
+.881
+S2 per-task silence range
+.00–.85
+.00–.88
+.00–.85
+Read the table twice.
+First as a pass: on the synthetic gallery the panel is essentially closed — two silent certificates in a thousand
+wrong-form fits at n = 50, none at all above. This is real detection power and we report it as such.
+Then as an exposure: on real physics equations the same panel, same thresholds, same noise strata, certifies 37.8% of
+wrong forms fully silent at n = 50. Sample size helps and does not close it: 23.2% at n = 1000. The gap between the
+
+
+===== PAGE 5 =====
+rows is not a gate defect — it is a statement about who chose the alternatives. Every wrong function in S1 was picked
+from directions the panel was built to see; every wrong function in S2 was picked by nature. Benchmarks that validate
+only on the first kind of wrongness measure the panel with the answer key.
+Per-task silence spans 0 to .85 within the same pool: silence is not a property of the panel but of the pairing between a
+wrong form and the directions the panel tests. Six physics tasks sit above .73 silence at n = 50 — and their per-gate
+marginal powers read .04–.18 each. No single gate looks broken on any of them. That is precisely why the marginal
+tables never surfaced this: a leaderboard ranks gates, and every gate here ranks badly in aggregate on these tasks, but
+nothing in a marginal table says that all four fail together.
+Silence also grows with noise on the physics bench (.287 at rel = 0.5% to .480 at rel = 5%, n = 50) while the synthetic
+gallery shows no comparable drift — a second provenance signature. More noise makes a wrong form harder to
+distinguish from a misfit power law at fixed n, and the real equations' residual structure is subtle enough that added
+noise swamps exactly the directions the panel tests. The zero-noise stratum behaves as designed (silence .086/.041/.041
+at n = 50/200/1000 — with no noise there is almost nothing to detect, most fits degenerate gracefully toward the truth,
+and the fail-registration path carries the rest). Noise-present strata are quoted everywhere else.
+4.2 What a silent certificate is worth
+The denominator the marginal literature never prints is the panel's silence rate on true power laws: .870 / .881 / .881
+across n (four 5% false-positive budgets, positively dependent, do not union to 19% — they union to 12–13%). With
+wrong-form silence at .378/.298/.232, the silent certificate's likelihood ratio is:
+Table 2 — Evidence value of a silent certificate (S2, nominal; class mix 50/50).
+n
+LR(silence) = P(silent
+H0)/P(silent
+H1)
+P(wrong form \
+all clear)
+50
+2.30
+.303
+200
+2.96
+.253
+1000
+3.79
+.209
+A clean bill of health from the entire panel multiplies the odds that the form is right by 2.3–3.8×. For comparison, a
+single R² = .99 multiplies them by a number too large to estimate honestly from fit quality alone — which is the whole
+reason falsification layers exist. A certificate that multiplies odds by three is weak evidence by the standards of
+anything else we call a certificate, and nothing in the per-gate literature signals this: the same panel's best marginal
+power reads .51 (gate D at n = 50) and its calibrated Table-3 story is respectable. Readers conflate "the best gate has
+51% power" with "a pass means something"; the joint table corrects that. Under a 50/50 class mix, P(wrong | all clear)
+is .30 at n = 50 and still .21 at n = 1000. The mix is a benchmark choice, not a claim about the world; the likelihood
+ratio is the mix-free quantity and is the number to carry.
+The calibrated-threshold variant moves these numbers by less than a point in every cell (wrong-form silence
+.378→.372 at n = 50; H0 .870→.874), so the evidence-value conclusion is not a threshold artifact. This is worth
+dwelling on: even with each gate's operating point individually tuned to exactly 5% false positives, the panel's joint
+behavior is unchanged, because the binding constraint is not calibration but direction coverage.
+4.3 Where silence lives
+Table 3 — The most silent physics tasks at n = 50 (noise-present strata; per-gate marginal powers shown to
+display the "nothing looks broken" pattern).
+Task
+Silence
+A power
+B power
+C power
+D power
+Far-field err (silent fits, median)
+iii.4.33
+.848
+.06
+.06
+.06
+.07
+.004
+ii.11.28
+.829
+.06
+.06
+.06
+.07
+.004
+iii.4.32
+.827
+.06
+.05
+.06
+.07
+.004
+ii.11.27
+.813
+.06
+.06
+.07
+.07
+.004
+i.41.16
+.798
+.13
+.04
+.04
+.05
+.005
+bonus.15
+.734
+.09
+.05
+.05
+.18
+.080
+
+
+===== PAGE 6 =====
+Task
+Silence
+A power
+B power
+C power
+D power
+Far-field err (silent fits, median)
+i.10.7
+.384
+.53
+.06
+.05
+.51
+.010
+i.48.2
+.372
+.50
+.06
+.05
+.57
+.011
+ii.13.23
+.372
+.50
+.06
+.05
+.57
+.011
+ii.13.34
+.355
+.50
+.19
+.16
+.57
+.011
+bonus.5
+.164
+.80
+.04
+.05
+.48
+.131
+i.27.6
+.162
+.79
+.07
+.10
+.26
+.740
+i.37.4
+.090
+.59
+.28
+.15
+.80
+.503
+i.39.11
+.030
+.07
+.16
+.05
+.96
+.987
+i.43.43
+.030
+.07
+.14
+.04
+.96
+.987
+bonus.20
+.000
+.78
+1.00
+1.00
+.49
+—
+i.26.2
+.000
+.36
+.91
+.38
+1.00
+—
+ii.38.14
+.000
+1.00
+.06
+.06
+1.00
+—
+The table is the paper in miniature. Three regimes, no gate-level story: above .73 silence, no gate exceeds .18 power —
+individually unremarkable numbers that stack into a three-quarters silence rate. In the middle band (.09–.38) detection
+exists but is gate-specific, and the silent minority can carry the heaviest cargo (i.27.6's silent fits: .74 median far-field
+error). At the bottom, near-total detection — but note i.39.11/i.43.43, where the rarely-silent fits carry .99 far-field
+error: the few wrong functions that slip through the best-covered tasks are the most dangerous ones. Silence rate and
+silence cost are inversely related across this table; neither predicts the other.
+The pattern in the marginal columns of the top block is the finding: powers of .04–.13 mean each gate fires on one
+dataset in ten or fewer — individually unremarkable, collectively devastating, and invisible to any table that scores
+gates one at a time. The misfit directions here are near-orthogonal to every tested column set: trigonometric families
+(iii.4.x) whose curvature oscillates, cross-term structures (ii.11.x) absent from every augmentation, and
+near-linear-in-log regimes where curvature is second-order. This is the same geometry the single-gate literature
+mapped as blind spots; the joint table's contribution is showing that the blind spots stack — the gates fail on the same
+datasets, not on different ones.
+At the other end: bonus.20 is detected at power 1.00 by every gate — its misspecification (a first-order kinetics form
+with huge in-domain curvature) is the most panel-visible structure in the pool. The .00-to-.85 spread is the
+single-number summary of §4.1's thesis.
+4.4 What silence costs downstream
+Every S2 fit carries far-field extrapolation truth (×3 beyond the training domain — half a decade — scored against the
+closed form). Conditioning on the panel's verdict:
+Table 4 — Far-field extrapolation error conditional on panel verdict (S2, noise-present; "flagged" = at least one
+gate objects).
+n
+median err (silent)
+p90 (silent)
+P(err > 10% \
+silent)
+P(err > 10% \
+flagged)
+enrichment
+50
+.008
+.086
+.071
+.438
+7.6×
+200
+.003
+.021
+.010
+.402
+52×
+1000
+.001
+.007
+.003
+.351
+157×
+The typical silent fit is fine — median far-field error under 1% at every n. That is exactly why it is silent, and it is why
+"silence is safe" feels true. The tail is the story: 7.1% of silent certificates at n = 50 carry far-field errors above
+10%, on functions the panel vouched for. Silence is not conservative; it is uninformative about the tail, and the tail is
+where extrapolation lives. Per-task, the sharpest edge is i.27.6 (a three-variable exponential-type law): 16.2% of its fits
+are silently certified, and those silent fits' median far-field error is .74 — a wrong function with 74% extrapolation
+error, certified clean, one fit in six (98% of its silent fits exceed 10% error; its flagged fits carry the same .68 median —
+the alarm was available, the panel just declined to fire on the ones it missed. i.39.11 and i.43.43 — the
+near-linear-in-domain tasks the single-gate literature already flags as extrapolation-blind — show the same structure at
+
+
+===== PAGE 7 =====
+silence .03: rare certificates, catastrophic cargo (.99 far-field error when silent).
+The enrichment column carries the constructive reading: alarms are informative about the tail (7.6–157× enrichment of
+severe error), a joint restatement of the single-gate asymmetry the benchmarking literature already established — alarm
+means evidence, silence means nothing.
+4.5 The obvious repair does not repair
+The natural response: add the gates that won the single-gate benchmarking. We augment the panel with CV-quad and
+AICc-quad — nested-quadratic model-comparison gates with thresholds calibrated on the same H0 pools, AICc-quad
+being the documented winner among default detectors — evaluated on the same seeds (suite S5: rel = 3%, n  {50,
+200}).
+Table 5 — Toolbox silence: four spec gates  two model-comparison gates.
+bench
+n
+wrong-form silence
+H0 silence
+worst task (silence)
+S1 synthetic
+50
+.063
+.893
+CUBIC_LIN (.67)
+S1 synthetic
+200
+.059
+.923
+CUBIC_LIN (.65)
+S2 physics
+50
+.422
+.905
+ii.11.27 (.89)
+S2 physics
+200
+.305
+.914
+ii.11.27 (.93)
+On the synthetic gallery the augmented panel drives wrong-form silence from .2% to… 6%. The five gates'
+false-positive budgets now consume 8–11% of true laws (H0 silence .89–.92, below the nominal 95%), and the residual
+wrong-form silence concentrates entirely on CUBIC_LIN — odd curvature is near-orthogonal to every even column
+set, a property of the direction geometry, not of any gate's implementation. On the physics bench the cleanest
+same-coordinate comparison is at rel = 3%: the four-gate panel alone certifies .446 (n = 50) / .304 (n = 200) of wrong
+forms silent, against an H0 silence of .860/.878; adding the two model-comparison gates moves wrong-form silence to
+.422/.305 — coverage gains of .024 and .000 — while raising the panel's flag rate on true laws from 14.0% to 9.5% at n
+= 50 and from 12.2% to 8.6% at n = 200. The trade is one-directional: each added gate spends false-positive budget on
+directions the panel already covers (or on true laws) far faster than it covers new ones, and the worst task's silence rises
+(.89 at n = 50): ii.11.27's cross-term structure is invisible to ŷ-powers, regressor powers, and the quadratic rival's own
+cross-terms at this noise — three column sets, one blind direction.
+The repair fails for a structural reason: panels do not become complete by becoming longer. Coverage is a property of
+the union of direction sets, and the gates available off-the-shelf — RESET variants, robust Wald, quadratic rivals —
+draw their columns from the same second-order vocabulary. What a pass certifies is consistency with that vocabulary;
+§4.2's likelihood ratios are the honest exchange rate.
+5 Analysis
+Q1. Does the panel certify wrong functions? Yes — at a rate that depends on who chose the wrong functions.
+Constructed alternatives: 0.2% and below. Physicists' alternatives: 38% at n = 50, 23% at n = 1000. The distribution is
+not a tail phenomenon; it is the bulk of the physics-bench mass, concentrated in six of eighteen tasks. Any deployment
+that reads "no gate objected" as evidence of correctness is importing an assumption the panel's own numbers do not
+support.
+Q2. Is a silent certificate worth anything? Yes, and quantifying the "yes" is the point. LR 2.3–3.8 is real evidence —
+better than nothing, monotone in n, stable under calibrated thresholds. But it is three-fold odds on a decision (deploy or
+not) where the losses are asymmetric and the alternatives include collecting more data. The certificate's information
+content is better understood as a floor on uncertainty than a license: P(wrong | clear) ≥ .21 at every n we measured,
+under the friendliest class mix. Nothing in the marginal tables would have led a reader to expect weakness of this
+magnitude — the best marginal power (.48 for gate D at n = 50, .72 at n = 1000) is respectable, and marginal power is
+what the literature reports.
+Q3. Where should silence be expected? Where the misfit direction is orthogonal to the tested column vocabulary:
+oscillating curvature (trigonometric laws), interaction structures absent from every augmentation, near-linear-in-log
+regimes whose curvature is second-order in-domain but first-order far-field. The per-gate literature mapped these as its
+blind spots; the joint analysis shows they compound — same tasks, same datasets, all gates together. A practitioner can
+
+
+===== PAGE 8 =====
+therefore predict silence from structure before running anything: if the residual story of a candidate form is "curvature
+that oscillates" or "a cross-term," a four- or five-gate panel will not save it.
+Q4. What follows for benchmark design? Single-gate leaderboards optimize a quantity no pipeline consumes. The
+design target is panel-level: maximize the likelihood ratio of silence (drive wrong-form silence down against the H0
+silence budget), which means adding direction sets, not gates — the augmented-panel experiment shows
+same-vocabulary additions spend false-positive budget far faster than they add coverage. Concretely: a benchmark's
+next axis is not "which test wins" but "what direction vocabulary closes the physics-bench leaks" — candidates include
+the smooth-test and conditional-moment literature (Neyman-style data-driven directions [21, 22], integrated
+conditional moments [23]), oscillation-sensitive bases for trigonometric laws, and interaction-aware rival families.
+Each is one statistic-plus-decision function over the released per-cell rows; the harness is gate-agnostic and the joint
+statistic is one reduction.
+6 Limitations
+Provenance of the event definition. The joint event was fixed in the analysis script before its first run, but the decision
+to compute it followed the per-gate analyses; it is a post hoc reduction over released per-cell rows, not a prespecified
+analysis of a prespecified panel. We regard the event definition as forced (any definition counting refusals as silence, or
+flagging any single gate as the certificate, answers a different question), but the reporting-only degree of freedom is
+real and deserves the same scrutiny rigorous benchmarking elsewhere applies. The calibrated-threshold variant is
+released alongside every nominal number as the check.
+Panel and threshold dependence. Results are for one four-gate panel at one significance level (with one calibrated
+variant); other panels, other α, and per-gate operating points tuned for recall will shift the rates. The likelihood-ratio
+reading is internal to the bench's class mix; we quote LR as the mix-free quantity and P(wrong | clear) only under the
+stated 50/50 mix.
+Positive dependence is the mechanism, not a confound. The gates share training data and overlapping null
+constructions; their errors are positively dependent, which is exactly why H0 silence (87–88%) exceeds what
+independent 5% budgets would give (~81% under independence) and why adding same-vocabulary gates fails. We do
+not "correct" for the dependence; it is the finding.
+Extrapolation metric. The far-field probe is ×3 beyond the training log-range (half a decade) along the first regressor,
+scored log-difference-stable. It is one metric of downstream wrongness; design- and control-relevant harms will track
+different tails. The silent-fit tail we measure (7.1% above 10% at n = 50) is a floor on the deployment cost of silence,
+not a ceiling.
+Withdrawn task. One SRSD equation is excluded under a reproduction-sentinel protocol (its archived p-values do not
+regenerate under bit-identical conditions; the other 31 tasks reproduce to ≥ 6 digits). Its exclusion changes pool
+membership, not method; the released per-task table allows any reader to recompute silence on any task subset.
+Post hoc pool. S5's grid (rel = 3%, n  {50, 200}, 200 seeds) was designed for single-gate comparison; we reuse it for
+the augmented panel rather than re-running a dedicated grid. Levels on that grid are not comparable to the S2 pool
+levels at other noise scales, and every such comparison is flagged in place.
+What is not claimed. No claim that the four gates are the right panel — only that it is the panel current practice
+deploys. No claim that silence causes extrapolation harm — the conditional table is a measured association on
+simulated ground truth, in the direction the mechanism predicts. No transfer claim to observational data.
+7 Reproducibility
+Every number in this paper reduces over released per-cell rows under fixed seed rules: dataset generation is seeded
+from a documented rule embedding the grid position, gate evaluation is deterministic given the dataset (A's
+permutation seed is the dataset seed), and the joint statistic is a pure function of the released p-value columns. The
+analysis script fixes the event definition (§3.1), both threshold regimes, the task pool (18 equations after the
+documented withdrawal), and the refusal-exclusion rule, before any reduction; it writes per-task and per-scenario
+silence tables, the H0 baselines, the conditional-extrapolation tables, and the augmented-panel tables, with both
+threshold variants side by side. Wilson intervals for headline silence rates are ±.004 or smaller; the honest uncertainty is
+task-level — leave-one-task-out on the physics bench moves pooled n = 50 silence across [.351, .400] — and per-task
+
+
+===== PAGE 9 =====
+ranges are quoted wherever a pooled number would flatter. Per-gate empirical sizes on the H0 pools (the panel's
+calibration reference) run .049–.060 on the physics bench and .046–.068 on the synthetic bench, every bench × n
+stratum, on the paths used here. The zero-noise stratum is reported where it appears (§4.1) and excluded where
+certificates do not exist by construction. The full per-cell release (parquet and CSV, both benches, all gates,
+extrapolation columns, failure registrations with typed reasons) and the analysis script are the paper's artifact.
+References
+[1] Ramsey, J. B. (1969). Tests for specification errors in classical linear least-squares regression analysis. JRSS-B,
+31(2), 539–551.
+[2] White, H. (1980). A heteroskedasticity-consistent covariance matrix estimator and a direct test for
+heteroskedasticity. Econometrica, 48, 817–838.
+[3] MacKinnon, J. G., & White, H. (1985). Some heteroskedasticity-consistent covariance matrix estimators with
+improved finite sample properties. Journal of Econometrics, 29, 305–325.
+[4] Long, J. S., & Ervin, L. H. (2000). Using heteroskedasticity consistent standard errors in the linear regression
+model. The American Statistician, 54, 217–224.
+[5] La Cava, W., et al. (2021). Contemporary symbolic regression methods and their relative performance. NeurIPS
+Datasets and Benchmarks Track.
+[6] Mundhenk, T. N., et al. (2022). Rethinking symbolic regression datasets and benchmarks for scientific discovery.
+arXiv:2206.10540.
+[12] Burnham, K. P., & Anderson, D. R. (2002). Model Selection and Multimodel Inference (2nd ed.). Springer.
+[13] Arlot, S., & Celisse, A. (2010). A survey of cross-validation procedures for model selection. Statistics Surveys, 4,
+40–79.
+[21] Neyman, J. (1937). "Smooth test" for goodness of fit. Skandinavisk Aktuarietidskrift, 20, 149–199.
+[22] Kallenberg, W. C. M., & Ledwina, T. (1997). Data-driven smooth tests when the hypothesis is composite. JASA,
+92, 1094–1104.
+[23] Bierens, H. J., & Ploberger, W. (1997). Asymptotic theory of integrated conditional moment tests. Econometrica,
+65, 1129–1151.
+Appendix A — Suite composition
+Suite
+Wrong-form datasets (noise present)
+H0 datasets (noise
+present)
+Gates
+Extrapolation truth
+S1 synthetic
+gallery
+66,000 (11 structural scenarios × 4 rel × 3 n ×
+500 seeds)
+18,000
+A, B, C, D
+closed-form
+(scenario)
+S2 physics
+equations
+108,000 (18 tasks × 4 rel × 3 n × 500 seeds)
+78,000
+A, B, C, D
+closed-form far-field
+probe
+S5 augmentation
+grid
+12,000 (11 synthetic + 19 physics tasks × 2 n ×
+200 seeds, rel = 3%)
+6,400
+A, B, C, D + CV-quad,
+AICc-quad
+—
+Zero-noise strata (S1: 16,500 wrong-form; S2: 27,000) exercise failure registration and are excluded from silence rates:
+an exact fit emits no certificate. The synthetic gallery's H0 side comprises 3 scenarios × 4 rel × 3 n × 500 seeds; four
+further noise-model scenarios are carried for semantics and excluded from wrong-form pools (wrong error model, not
+wrong form). One SRSD task is withdrawn by a reproduction sentinel (its archived p-values do not regenerate under
+bit-identical conditions; all other tasks reproduce to ≥ 6 significant digits); the per-task silence table is released so any
+subset can be recomputed.
+Appendix B — Per-task joint silence, physics bench (n = 50, noise-present, nominal)
+
+
+===== PAGE 10 =====
+Task
+Silence
+A
+B
+C
+D
+Far-field err (silent fits, median)
+iii.4.33
+.849
+.06
+.06
+.06
+.07
+.006
+ii.11.28
+.829
+.06
+.06
+.06
+.07
+.004
+iii.4.32
+.827
+.06
+.05
+.06
+.07
+.006
+ii.11.27
+.813
+.06
+.06
+.07
+.07
+.002
+i.41.16
+.798
+.13
+.04
+.04
+.05
+.002
+bonus.15
+.734
+.09
+.05
+.05
+.18
+.088
+i.10.7
+.385
+.53
+.06
+.05
+.51
+.010
+i.48.2
+.373
+.50
+.06
+.05
+.57
+.011
+… 10 further tasks
+.00–.30
+—
+—
+—
+—
+—
+bonus.20
+.000
+1.00
+1.00
+1.00
+1.00
+—
+The two regimes are visible in the marginal columns: tasks above .73 silence have no gate above .18 power; tasks
+below .30 have at least one gate above .50. The panel's silence is the gate's blindness, stacked.
+Appendix C — Threshold-variant check
+Every headline number quoted at nominal α = .05 is reproduced at H0-pool-calibrated thresholds (each gate at 5%
+empirical FPR) in the released tables. Maximum displacement across all cells: .006. The evidence-value conclusions
+(§4.2) move by less than a point in every cell; the direction-coverage conclusion is untouched by construction, as
+calibration changes operating points, not column sets.

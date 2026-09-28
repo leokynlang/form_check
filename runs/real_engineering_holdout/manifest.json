@@ -1,0 +1,60 @@
+{
+  "python": "3.13.15 (tags/v3.13.15:4061bc4, Aug  5 2026, 13:05:39) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26340-SP0",
+  "numpy": "2.5.2",
+  "pandas": "3.0.5",
+  "scipy": "1.18.1",
+  "seeds": [
+    20260905,
+    20260906,
+    20260907,
+    20260908,
+    20260909,
+    20260910,
+    20260911,
+    20260912,
+    20260913,
+    20260914,
+    20260915,
+    20260916,
+    20260917,
+    20260918,
+    20260919,
+    20260920,
+    20260921,
+    20260922,
+    20260923,
+    20260924
+  ],
+  "script_sha256": "5d0014df9186d3fe124ce44b4ec13e405bd65e824309d81b4d4254f6e4a4c557",
+  "protocol_sha256": "5875993a58b4eedcaa8536ae5e03da00f5be0354710a8dd1036e2a683ec0fb1e",
+  "product_sha256": {
+    "dimreflex\\__init__.py": "8b489068c67b8ad9322151097b35a119acf003c9b85c463185e3de8184a2bde8",
+    "dimreflex\\_ols.py": "082609bf0481525d95c665ca3617cf315466a01ef98e484069c8fbdbcaacda7c",
+    "dimreflex\\anomaly.py": "721f4c058ffc6bb3dfd1e04e650e71d7b2de660115bb37244c338eb363386a9d",
+    "dimreflex\\autodiscovery.py": "7997e082fb048fb8ff7629db786863b2d785117a2ac5c1ed7d63f61e175e26ee",
+    "dimreflex\\cli.py": "28b6f9c45392fe723e747ebd517bb93fcdf55dcf2769fe19529173ed4705e253",
+    "dimreflex\\core.py": "ca52c0f728b12b6cc1473fbc2c30cdff724b55939b13d29f4c1b840b64833d14",
+    "dimreflex\\discover.py": "bdf7b06978f2e1d39b81698974a56f0a6fccf9acb929edaa9a2c46bf6735e281",
+    "dimreflex\\families.py": "3241005375a7e038af1d9c9f91023dbeeda439ecde75803441adaffd5ddf719f",
+    "dimreflex\\launcher.py": "ee76ab5da526bb7a60c0a89fe5b8812cc4a33279aa2ad1b7d75315749cc35fe8",
+    "dimreflex\\monitoring.py": "acfb8c3ffe3fc5ebd74eef5d8144a8ae8d82262f04fd1644b7dab971b51ba73c",
+    "dimreflex\\scenarios.py": "7eab29f123c05d556828eddc2424085be03eba28646b22980efaea8ee783e661",
+    "dimreflex\\templates.py": "3deda74ebd2b26dcd0025afb805da1cc4c255a88081d99823e3a3a89e9f49c28",
+    "dimreflex\\uncertainty.py": "186bc89fd6b43b857de8b5a03ef3828a0a9fb2a983ce39d0e9574c9ec5ef9354",
+    "common.py": "fe1bb57af6d8fc38012c54dff150c7962f80420fedef66edc3b9b8b83fbc43b7"
+  },
+  "data": {
+    "Chwirut1": {
+      "url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Chwirut1.dat",
+      "sha256": "d9a055dfe5af71a8754c00f073ef00f8fed2e3fd1c6fd20cea8fd62d7cc3ed84"
+    },
+    "Nelson": {
+      "url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Nelson.dat",
+      "sha256": "82fe77ef1a79a4441e7af5083680fc5046f9eb29b33bc2f2b76c478ecbe976d7"
+    }
+  },
+  "wall_seconds": 103.93429800000013,
+  "product_unchanged": true,
+  "complete": true
+}

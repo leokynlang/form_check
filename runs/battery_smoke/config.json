@@ -1,0 +1,41 @@
+{
+ "frozen": {
+  "n_train": 200,
+  "n_seeds": 500,
+  "rel_grid": [
+   0.005,
+   0.01,
+   0.03,
+   0.05
+  ],
+  "alpha": 0.05,
+  "b_wild": 999
+ },
+ "n_cells": 76,
+ "seed_rule": "900_000_000 + cell_idx*10_000_000 + seed*97",
+ "truth_registry_synth": {
+  "H0_BASELINE": "power",
+  "H0_MULTIVAR": "power",
+  "H0_CORR": "power",
+  "H1_HEAVYTAIL": "power",
+  "H1_VAR_GROWING": "power",
+  "H1_AUTOCORR": "power",
+  "H1_OUTLIER": "power",
+  "H1_OUTLIER_GRP": "power",
+  "EXP_MODEL": "exponential",
+  "LOG_MODEL": "logarithmic",
+  "RATIONAL": "rational",
+  "QUAD_LIN": "none",
+  "CUBIC_LIN": "none",
+  "DILUTION": "none",
+  "COLLINEAR_CURV": "none",
+  "OMITTED_M": "none",
+  "THRESHOLD": "none",
+  "INTERACT": "none",
+  "OPPOSING": "none"
+ },
+ "started": "2026-09-04 22:09:29",
+ "finished": "2026-09-04 22:10:53",
+ "cells_run": 76,
+ "wall_seconds": 84.49229299998842
+}

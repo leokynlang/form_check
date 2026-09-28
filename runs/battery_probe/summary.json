@@ -1,0 +1,172 @@
+{
+ "summary": {
+  "H0_BASELINE@rel=0.01": {
+   "rej_rates": {
+    "power": 0.07,
+    "exponential": 1.0,
+    "logarithmic": 1.0,
+    "rational": 1.0
+   },
+   "median_n_viable": 1.0,
+   "containment": 0.93,
+   "escalation": 0.07
+  },
+  "H0_BASELINE@rel=0.03": {
+   "rej_rates": {
+    "power": 0.075,
+    "exponential": 1.0,
+    "logarithmic": 1.0,
+    "rational": 1.0
+   },
+   "median_n_viable": 1.0,
+   "containment": 0.925,
+   "escalation": 0.075
+  },
+  "EXP_MODEL@rel=0.01": {
+   "rej_rates": {
+    "power": 1.0,
+    "exponential": 0.065,
+    "logarithmic": 1.0,
+    "rational": 1.0
+   },
+   "median_n_viable": 1.0,
+   "containment": 0.935,
+   "escalation": 0.065
+  },
+  "EXP_MODEL@rel=0.03": {
+   "rej_rates": {
+    "power": 1.0,
+    "exponential": 0.055,
+    "logarithmic": 1.0,
+    "rational": 1.0
+   },
+   "median_n_viable": 1.0,
+   "containment": 0.945,
+   "escalation": 0.055
+  },
+  "LOG_MODEL@rel=0.01": {
+   "rej_rates": {
+    "power": 1.0,
+    "exponential": 1.0,
+    "logarithmic": 0.13,
+    "rational": 0.23
+   },
+   "median_n_viable": 2.0,
+   "containment": 0.87,
+   "escalation": 0.06
+  },
+  "LOG_MODEL@rel=0.03": {
+   "rej_rates": {
+    "power": 1.0,
+    "exponential": 1.0,
+    "logarithmic": 0.075,
+    "rational": 0.155
+   },
+   "median_n_viable": 2.0,
+   "containment": 0.925,
+   "escalation": 0.02
+  },
+  "RATIONAL@rel=0.01": {
+   "rej_rates": {
+    "power": 1.0,
+    "exponential": 1.0,
+    "logarithmic": 1.0,
+    "rational": 0.34
+   },
+   "median_n_viable": 1.0,
+   "containment": 0.66,
+   "escalation": 0.34
+  },
+  "RATIONAL@rel=0.03": {
+   "rej_rates": {
+    "power": 1.0,
+    "exponential": 1.0,
+    "logarithmic": 1.0,
+    "rational": 0.305
+   },
+   "median_n_viable": 1.0,
+   "containment": 0.695,
+   "escalation": 0.305
+  },
+  "THRESHOLD@rel=0.01": {
+   "rej_rates": {
+    "power": 1.0,
+    "exponential": 1.0,
+    "logarithmic": 1.0,
+    "rational": 1.0
+   },
+   "median_n_viable": 0.0,
+   "containment": null,
+   "escalation": 1.0
+  },
+  "THRESHOLD@rel=0.03": {
+   "rej_rates": {
+    "power": 1.0,
+    "exponential": 1.0,
+    "logarithmic": 1.0,
+    "rational": 1.0
+   },
+   "median_n_viable": 0.0,
+   "containment": null,
+   "escalation": 1.0
+  },
+  "fc_sanity": {
+   "native_t": -0.4731541213973774,
+   "probe_t": -0.5234239876393976
+  }
+ },
+ "combos": {
+  "H0_BASELINE@0.01": {
+   "power": 0.93,
+   "": 0.07
+  },
+  "H0_BASELINE@0.03": {
+   "power": 0.925,
+   "": 0.075
+  },
+  "EXP_MODEL@0.01": {
+   "exponential": 0.935,
+   "": 0.065
+  },
+  "EXP_MODEL@0.03": {
+   "exponential": 0.945,
+   "": 0.055
+  },
+  "LOG_MODEL@0.01": {
+   "logarithmic,rational": 0.7,
+   "logarithmic": 0.17,
+   "rational": 0.07,
+   "": 0.06
+  },
+  "LOG_MODEL@0.03": {
+   "logarithmic,rational": 0.79,
+   "logarithmic": 0.135,
+   "rational": 0.055,
+   "": 0.02
+  },
+  "RATIONAL@0.01": {
+   "rational": 0.66,
+   "": 0.34
+  },
+  "RATIONAL@0.03": {
+   "rational": 0.695,
+   "": 0.305
+  },
+  "THRESHOLD@0.01": {
+   "": 1.0
+  },
+  "THRESHOLD@0.03": {
+   "": 1.0
+  }
+ },
+ "config": {
+  "B_PERM": 999,
+  "ALPHA": 0.05,
+  "N": 200,
+  "SEEDS": 200,
+  "RELS": [
+   0.01,
+   0.03
+  ]
+ }
+}

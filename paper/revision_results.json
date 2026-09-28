@@ -1,0 +1,293 @@
+{
+ "A_or": {
+  "or": {
+   "srsd_n50": {
+    "size_A": 0.0508,
+    "size_E": 0.05,
+    "size_F": 0.05,
+    "size_OR": 0.0842,
+    "tpr_A": 0.348,
+    "tpr_E": 0.462,
+    "tpr_F": 0.525,
+    "tpr_OR": 0.547
+   },
+   "srsd_n200": {
+    "size_A": 0.0385,
+    "size_E": 0.05,
+    "size_F": 0.05,
+    "size_OR": 0.0723,
+    "tpr_A": 0.493,
+    "tpr_E": 0.628,
+    "tpr_F": 0.669,
+    "tpr_OR": 0.675
+   },
+   "synth_n50": {
+    "size_A": 0.08,
+    "size_E": 0.05,
+    "size_F": 0.05,
+    "size_OR": 0.1017,
+    "tpr_A": 0.774,
+    "tpr_E": 0.929,
+    "tpr_F": 0.93,
+    "tpr_OR": 0.937
+   },
+   "synth_n200": {
+    "size_A": 0.04,
+    "size_E": 0.05,
+    "size_F": 0.05,
+    "size_OR": 0.065,
+    "tpr_A": 0.782,
+    "tpr_E": 0.934,
+    "tpr_F": 0.94,
+    "tpr_OR": 0.941
+   }
+  },
+  "or_recal": {
+   "srsd_n50": {
+    "size_OR_recal": 0.0508,
+    "tpr_OR_recal": 0.348,
+    "t_new": Infinity,
+    "d_star": 0.00095
+   },
+   "srsd_n200": {
+    "size_OR_recal": 0.05,
+    "tpr_OR_recal": 0.664,
+    "t_new": 0.00025,
+    "d_star": 0.00016
+   },
+   "synth_n50": {
+    "size_OR_recal": 0.08,
+    "tpr_OR_recal": 0.774,
+    "t_new": Infinity,
+    "d_star": 0.00083
+   },
+   "synth_n200": {
+    "size_OR_recal": 0.05,
+    "tpr_OR_recal": 0.94,
+    "t_new": 0.00035,
+    "d_star": 0.00022
+   }
+  }
+ },
+ "B_tasklevel": {
+  "n_tasks": 13,
+  "n_fits": 26000,
+  "per_task": {
+   "A_fc": {
+    "feynman-i.12.1": 0.0495,
+    "feynman-i.29.4": 0.0575,
+    "feynman-i.34.27": 0.0575,
+    "feynman-i.38.12": 0.0495,
+    "feynman-i.39.10": 0.0495,
+    "feynman-i.39.22": 0.056,
+    "feynman-i.43.31": 0.0495,
+    "feynman-i.47.23": 0.0565,
+    "feynman-ii.27.16": 0.0575,
+    "feynman-ii.27.18": 0.0575,
+    "feynman-ii.8.31": 0.0575,
+    "feynman-iii.12.43": 0.048,
+    "feynman-iii.15.14": 0.0495
+   },
+   "B_resetF": {
+    "feynman-i.12.1": 0.0485,
+    "feynman-i.29.4": 0.049,
+    "feynman-i.34.27": 0.049,
+    "feynman-i.38.12": 0.046,
+    "feynman-i.39.10": 0.0485,
+    "feynman-i.39.22": 0.049,
+    "feynman-i.43.31": 0.0485,
+    "feynman-i.47.23": 0.0525,
+    "feynman-ii.27.16": 0.049,
+    "feynman-ii.27.18": 0.049,
+    "feynman-ii.8.31": 0.049,
+    "feynman-iii.12.43": 0.062,
+    "feynman-iii.15.14": 0.046
+   },
+   "C_hc3": {
+    "feynman-i.12.1": 0.048,
+    "feynman-i.29.4": 0.053,
+    "feynman-i.34.27": 1.0,
+    "feynman-i.38.12": 0.9975,
+    "feynman-i.39.10": 0.048,
+    "feynman-i.39.22": 0.06,
+    "feynman-i.43.31": 0.048,
+    "feynman-i.47.23": 0.059,
+    "feynman-ii.27.16": 0.053,
+    "feynman-ii.27.18": 1.0,
+    "feynman-ii.8.31": 0.053,
+    "feynman-iii.12.43": 1.0,
+    "feynman-iii.15.14": 0.998
+   },
+   "D_exoghc3": {
+    "feynman-i.12.1": 0.057,
+    "feynman-i.29.4": 0.994,
+    "feynman-i.34.27": 0.994,
+    "feynman-i.38.12": 1.0,
+    "feynman-i.39.10": 0.057,
+    "feynman-i.39.22": 0.9985,
+    "feynman-i.43.31": 0.998,
+    "feynman-i.47.23": 0.999,
+    "feynman-ii.27.16": 0.053,
+    "feynman-ii.27.18": 0.053,
+    "feynman-ii.8.31": 0.053,
+    "feynman-iii.12.43": 0.0655,
+    "feynman-iii.15.14": 1.0
+   }
+  },
+  "macro": {
+   "A_fc": 0.0535,
+   "B_resetF": 0.0497,
+   "C_hc3": 0.4167,
+   "D_exoghc3": 0.5632
+  },
+  "micro": {
+   "A_fc": 0.0535,
+   "B_resetF": 0.0497,
+   "C_hc3": 0.4167,
+   "D_exoghc3": 0.5632
+  },
+  "boot_ci": {
+   "A_fc": [
+    0.0512,
+    0.0556
+   ],
+   "B_resetF": [
+    0.048,
+    0.052
+   ],
+   "C_hc3": [
+    0.1973,
+    0.7068
+   ],
+   "D_exoghc3": [
+    0.2764,
+    0.7816
+   ]
+  },
+  "loo_range": {
+   "A_fc": [
+    0.0532,
+    0.054
+   ],
+   "B_resetF": [
+    0.0487,
+    0.05
+   ],
+   "C_hc3": [
+    0.3681,
+    0.4475
+   ],
+   "D_exoghc3": [
+    0.5268,
+    0.6058
+   ]
+  },
+  "dominance": {
+   "A_fc": {
+    "worst_task": "feynman-i.29.4",
+    "worst_rate": 0.0575,
+    "share_of_all_false_alarms": 0.0827,
+    "micro_wo_worst": 0.0532
+   },
+   "B_resetF": {
+    "worst_task": "feynman-iii.12.43",
+    "worst_rate": 0.062,
+    "share_of_all_false_alarms": 0.096,
+    "micro_wo_worst": 0.0487
+   },
+   "C_hc3": {
+    "worst_task": "feynman-i.34.27",
+    "worst_rate": 1.0,
+    "share_of_all_false_alarms": 0.1846,
+    "micro_wo_worst": 0.3681
+   },
+   "D_exoghc3": {
+    "worst_task": "feynman-i.38.12",
+    "worst_rate": 1.0,
+    "share_of_all_false_alarms": 0.1366,
+    "micro_wo_worst": 0.5268
+   }
+  }
+ },
+ "C_splitpool": {
+  "srsd_n50": {
+   "n_tasks": 13,
+   "cv_size_heldout_mean": 0.0535,
+   "cv_size_heldout_range": [
+    0.01,
+    0.095
+   ],
+   "aicc_size_heldout_mean": 0.0508,
+   "aicc_size_heldout_range": [
+    0.02,
+    0.085
+   ]
+  },
+  "srsd_n200": {
+   "n_tasks": 13,
+   "cv_size_heldout_mean": 0.0504,
+   "cv_size_heldout_range": [
+    0.01,
+    0.06
+   ],
+   "aicc_size_heldout_mean": 0.0515,
+   "aicc_size_heldout_range": [
+    0.02,
+    0.075
+   ]
+  }
+ },
+ "D_hc3": {
+  "s2_h0_n200": {
+   "n": 26000,
+   "pointbiserial_logcond_rej": 0.784,
+   "rej_rate_top_decile_cond": 1.0,
+   "rej_rate_bottom_decile_cond": 0.0504,
+   "cond_median": 11844490.8,
+   "cond_max": 1044693724617.3
+  }
+ },
+ "E_battery_set": {
+  "exponential": {
+   "n": 2000,
+   "true_family_excluded": 0.0495,
+   "truth_in_viable_set": 0.9505,
+   "viable_set_empty": 0.0,
+   "wrong_family_also_kept": 0.0495
+  },
+  "logarithmic": {
+   "n": 2000,
+   "true_family_excluded": 0.0595,
+   "truth_in_viable_set": 0.9405,
+   "viable_set_empty": 0.0,
+   "wrong_family_also_kept": 0.9195
+  },
+  "none": {
+   "n": 72000,
+   "note": "no member is the truth by design (structural H1)",
+   "viable_set_empty": 0.0,
+   "any_family_kept": 1.0
+  },
+  "power": {
+   "n": 16000,
+   "true_family_excluded": 0.0496,
+   "truth_in_viable_set": 0.9504,
+   "viable_set_empty": 0.0,
+   "wrong_family_also_kept": 0.2333
+  },
+  "rational": {
+   "n": 2000,
+   "true_family_excluded": 0.066,
+   "truth_in_viable_set": 0.934,
+   "viable_set_empty": 0.0,
+   "wrong_family_also_kept": 0.066
+  }
+ },
+ "F_s6_seeds": {
+  "cells": 24,
+  "max_spread": 0.094,
+  "median_spread": 0.0085,
+  "n_seeds": 5,
+  "p_resolution": "1/1000 (B=999)"
+ }
+}

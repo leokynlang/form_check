@@ -1,0 +1,226 @@
+﻿[P0] (Title) HX A Hybrid Directional Specification Test for Log Linear Physical Model Discovery
+[P1] (Paper Subtitle) Method Development and Benchmark Evidence
+[P2] (Normal) Anonymous manuscript
+[P3] (Normal) 5 September 2026
+[P4] (Normal) Research article
+[P6] (Heading 1) Abstract
+[P7] (Normal) Scientific model discovery requires more than predictive fit: a candidate law can interpolate a sample while silently violating its claimed functional form. We propose HX, a hybrid directional specification test for log-linear physical models. HX augments a restricted log-linear regression with two complementary direction families. Structural directions—quadratic, cubic, interaction, and oscillatory terms in standardized log predictors—target interpretable departures. Fitted-value directions—powers of the restricted fitted response—provide an omnibus response-sensitive probe related to Ramsey’s regression specification error test. A rank-aware modified Gram–Schmidt step removes directions already represented by the base model and limits the effective augmentation. Two residual-resampling statistics are then evaluated: a familywise maxT statistic for a concentrated departure and a joint partial-F statistic for a distributed departure. Their p-values are combined by a two-test Bonferroni minimum, so no independence assumption is required for the combination. The empirical record comprises a controlled development benchmark and a post-development randomized stress test. In 1,000 randomized groups (393 null and 607 alternative cases), HX attained a false-positive rate of 0.0509 (95% Wilson interval 0.0332–0.0773) and power of 0.9522 (0.9322–0.9665), compared with power 0.4942 for a single-direction form check, 0.8913 for the structural-only MD4 library, and 0.7512 for RESET. The randomized suite is a stress test rather than independent external validation, and frozen fitted-value directions make the reported residual-permutation calibration approximate. The method is therefore positioned as a falsification screen with explicit assumptions, failure states, and a confirmatory resampling protocol, not as a proof that a physical law is correct.
+[P8] (Normal) Keywords: model specification; log-linear physical laws; permutation inference; RESET; symbolic regression; falsification; dimensionless modeling
+[P9] (Heading 1) Plain Language Summary
+[P10] (Normal) A compact scientific equation may fit data well for the wrong reason. HX asks whether the residuals contain a recognizable shape that the proposed equation should already have explained. It searches several physically interpretable shapes and two broad fitted-value shapes, protects the directional search with a maxT correction, and also checks whether the directions matter jointly. A small HX p-value means the proposed form should be challenged; a large p-value means only that this particular battery did not expose a defect.
+[P12] (Heading 1) Contents
+[P15] (Heading 1) 1 Introduction
+[P16] (Normal) Log-linear regression is a natural representation for monomial laws, scaling relations, and dimensionally motivated models. If positive variables satisfy y = c∏xⱼ^βⱼ, taking logarithms yields an additive linear equation. This convenience can obscure a central scientific question: does the assumed functional form deserve to survive, or does the residual structure contradict it? Predictive accuracy alone cannot answer that question because flexible noise, limited dynamic range, and parameter compensation can make a wrong form look adequate in sample.
+[P17] (Normal) Specification tests address a narrower and more defensible objective. They do not certify a law; they attempt to falsify a proposed form by asking whether omitted structure remains. Classical RESET uses powers of fitted values as generic probes. Domain-oriented form checks instead use targeted transformations, which are interpretable but can be blind to alternatives outside the chosen direction. The motivating benchmark behind this work showed that neither strategy uniformly dominates: structural checks can expose departures that an omnibus fitted-value test misses, while fitted-value terms can recover alternatives that a restricted structural library does not span.
+[P18] (Normal) HX turns that complementarity into one auditable procedure. It combines structural and fitted-value directions, removes redundant columns, tests both the strongest coordinate and the augmentation as a whole, and returns explicit numerical failure states rather than silently coercing ill-posed fits into a p-value. The design target is a practical falsification layer that can sit between symbolic model generation and scientific interpretation.
+[P19] (Normal) This article makes four contributions. First, it gives a complete mathematical specification of the HX statistic and its output contract. Second, it separates search multiplicity, rank deficiency, and resampling assumptions that are often conflated in informal implementations. Third, it reports controlled and randomized evidence with exact denominators, uncertainty intervals, family-level results, and paired discordance counts. Fourth, it states what the evidence does not establish and defines a confirmatory protocol for independent evaluation.
+[P20] (Heading 1) 2 Related Work and Test Taxonomy
+[P21] (Normal) Ramsey’s RESET test augments a restricted regression with nonlinear functions of its fitted values and evaluates whether the augmentation contributes explanatory power [1]. RESET is attractive because it requires no explicit alternative, but the fitted-value basis can compress distinct physical departures into similar directions and may have low power against cancellation patterns. Heteroskedasticity-consistent covariance estimators improve robustness for Wald-style implementations but do not transform a generic basis into an interpretable mechanism [2].
+[P22] (Normal) Permutation inference provides finite-sample calibration when the chosen exchangeability conditions are satisfied. Freedman and Lane proposed a residual-based construction for general linear models [3], and Winkler et al. systematized permutation strategies, exchangeability blocks, nuisance adjustment, and error control [4]. For heteroskedastic regression errors, wild-bootstrap methods provide a more credible alternative to unrestricted residual permutation [5]. Westfall and Young’s maxT framework motivates simultaneous adjustment across correlated directional statistics [6].
+[P23] (Normal) A separate literature seeks physical structure during model discovery. Dimensionally consistent learning and Buckingham-Pi transformations reduce the search space and improve interpretability [7]. Symbolic-regression benchmarks such as SRBench, AI Feynman, PySR, and SRSD emphasize equation recovery, predictive performance, dimensional consistency, and dataset design [8–11]. HX addresses a complementary stage: after a candidate equation has been proposed and transformed to a restricted log-linear representation, does an explicit battery expose remaining structure?
+[P24] (Normal) The distinction is important. Equation discovery proposes; specification testing challenges. A discovery algorithm may rank HX-passing models above equally predictive HX-failing models, but HX does not identify the true law and should not be optimized on the same final validation data used to claim scientific adequacy.
+[P25] (Heading 1) 3 Problem Formulation
+[P26] (Normal) Let yᵢ > 0 be a response and xᵢⱼ > 0 be p predictors for observations i = 1,…,n. Define ℓyᵢ = log yᵢ and Xℓ,ᵢⱼ = log xᵢⱼ. The restricted model contains an intercept and the standardized log predictors Z. With B = [1, Z], the null model is
+[P28] (Normal) The alternative is deliberately composite: at least one admissible nonlinear direction explains residual variation beyond span(B). The test is conditional on the supplied data matrix, positivity and finite-value checks, the selected direction library, and the resampling scheme. Rejection therefore means that the specified log-linear form is incompatible with at least one tested departure at the chosen level. Non-rejection means only that the battery found insufficient evidence.
+[P30] (Heading 1) 4 HX Core Algorithm
+[P31] (Normal) HX is designed around complementary failure modes. A concentrated defect may align strongly with one interpretable direction, whereas a diffuse defect may be weak in every coordinate but large jointly. HX therefore retains two statistics rather than forcing one representation to serve both roles.
+[P33] (Caption) Figure 1. HX analysis pipeline. The maxT and joint-F branches are calibrated under the same declared resampling policy and combined only after each p-value is obtained.
+[P34] (Heading 2) 4.1 Restricted fit and preprocessing
+[P35] (Normal) Each log predictor is centered and scaled using the analysis sample. Constant or numerically degenerate columns are rejected before fitting. The restricted ordinary least-squares fit yields β̂ = B⁺ℓy, ŷ = Bβ̂, and r = ℓy − ŷ, where B⁺ denotes the Moore–Penrose inverse. The residual degrees of freedom must exceed a declared floor. A degenerate-fit guard is expressed as the translation-invariant ratio RSSr/TSSℓy, not as RSSr divided by the raw squared norm of ℓy.
+[P37] (Heading 2) 4.2 Candidate direction library
+[P38] (Normal) For each standardized predictor zⱼ, the structural library may contain centered quadratic zⱼ², centered cubic zⱼ³, and an oscillatory probe sin(2πzⱼ). Pairwise interactions zⱼzₖ are included for j < k. The fitted-value library contains centered powers of a standardized restricted fitted vector, typically ŷs² and ŷs³, where ŷs = (ŷ − mean ŷ)/sd(ŷ). Standardizing before taking powers makes the library insensitive to an additive shift or nonzero scalar rescaling of ℓy, apart from a harmless sign change in odd powers.
+[P40] (Normal) The names attached to retained columns are part of the diagnostic record. They support mechanistic follow-up but do not convert the selected coordinate into a separately confirmed discovery.
+[P41] (Heading 2) 4.3 Base residualization and rank-aware selection
+[P42] (Normal) Every candidate direction is residualized against the restricted model: D⊥ = (I − PB)D, with PB = BB⁺. A modified Gram–Schmidt process selects a numerically independent set. At each step, the candidate with the largest residual norm after projection on the already selected W is retained if the norm exceeds a tolerance. If a hard direction budget is active, selection should use a relative residual norm, ‖dⱼ,res‖/max(‖dⱼ,⊥‖,τ), to avoid a scale-dependent preference. In the reported implementation no hard budget bound the evaluated low-dimensional cases; the relative criterion is the normative rule for larger libraries.
+[P44] (Heading 2) 4.4 Directional maxT branch
+[P45] (Normal) For a retained orthonormal direction wⱼ, the score wⱼᵀr measures alignment between the restricted residual and that departure. It is studentized using the restricted residual variance estimate. HX records the maximum absolute score across q directions.
+[P47] (Normal) For each resample, the entire maximum is recomputed. The resulting pmax is therefore familywise adjusted over the retained direction family. The unadjusted coordinate-level p-value, when returned, is labeled exploratory and must not be interpreted as confirmatory after selection.
+[P48] (Heading 2) 4.5 Joint augmentation branch
+[P49] (Normal) The unrestricted design U = [B, W] yields residual sum of squares RSSu and residual degrees of freedom dfu. The partial-F statistic captures distributed misspecification whose energy is spread across several individually moderate coordinates.
+[P51] (Heading 2) 4.6 Residual resampling
+[P52] (Normal) The development implementation uses a frozen-direction reduced-model residual permutation. It forms ℓy*(b) = ŷ + P(b)r, where P(b) permutes residual entries, and evaluates the statistics with B and the selected W held fixed. With B-fixed structural directions, this is a standard reduced-model residual strategy whose accuracy depends on the exchangeability of residuals under the null. Because ŷ² and ŷ³ were constructed from the observed response and frozen across permutations, the fitted-value branch is response-adaptive; its finite-sample exactness is not guaranteed. The empirical p-values should therefore be read as calibrated approximations.
+[P53] (Normal) A confirmatory HX implementation should use one of two declared modes. Refit mode reconstructs the restricted fit, fitted-value directions, pivot selection, and both statistics inside every resample. Split mode constructs response-adaptive directions on training folds and tests them on disjoint observations, combining fold-level tests with a valid multiplicity correction. Under heteroskedasticity, unrestricted residual permutation should be replaced by a wild bootstrap; clustered or repeated observations require exchangeability blocks or cluster-level sign/weight schemes.
+[P55] (Heading 2) 4.7 Combined decision and output contract
+[P56] (Normal) Let pmax be the adjusted maxT p-value and pF the resampling p-value for Fjoint. HX uses a Bonferroni minimum across these two branches:
+[P58] (Normal) This combination does not require independence between branches. A result object contains pHX, pmax, pF, q, selected direction names, the maxT winner, observed statistics, sample size, ranks, degrees of freedom, conditioning diagnostics, resample count, seed, and a failure code. Returning only pHX is insufficient for scientific audit.
+[P59] (Heading 1) 5 Statistical Interpretation and Safeguards
+[P60] (Heading 2) 5.1 What error control is and is not claimed
+[P61] (Normal) The maxT branch controls search across the retained coordinate family when its resampling reference is valid. The final Bonferroni step controls the union of the maxT and joint-F branch decisions when both component p-values are valid. Neither statement repairs a misspecified resampling law. In the frozen fitted-value implementation, nominal size is evaluated empirically and the p-value is best described as approximate. The randomized null results are consistent with 5% calibration but are not a mathematical proof.
+[P62] (Heading 2) 5.2 Invariance requirements
+[P63] (List Bullet) Translation invariance: adding a constant to ℓy changes only the intercept and must not trigger a different degeneracy classification.
+[P64] (List Bullet) Response-scale invariance: multiplying ℓy by a nonzero constant should leave standardized direction geometry and p-values unchanged up to numerical tolerance.
+[P65] (List Bullet) Predictor-scale invariance: affine recoding of log predictors is absorbed by standardization, except for transformations that change ordering or domain validity.
+[P66] (List Bullet) Column-order stability: a declared deterministic tie rule must make retained direction names reproducible when residual norms are numerically equal.
+[P67] (Heading 2) 5.3 Guard conditions
+[P69] (Heading 1) 6 Evaluation Design
+[P70] (Heading 2) 6.1 Methods
+[P71] (Normal) Four methods were compared at α = 0.05: (i) a single-direction permutation form check; (ii) MD4, the structural-only direction library using maxT; (iii) HX, which adds fitted-value directions and the joint-F branch; and (iv) fitted-value RESET using its classical parametric F reference. The earlier manuscript also considered heteroskedasticity-consistent RESET variants, but the focused HX experiments used the classical fitted RESET comparator. All methods shared datasets, seeds, and decision thresholds; they did not share one common null generator. The permutation procedures used their declared empirical references, whereas RESET used its F reference. Power comparisons should therefore be interpreted jointly with each method’s empirical null calibration.
+[P72] (Heading 2) 6.2 Controlled development benchmark
+[P73] (Normal) The controlled suite comprised three null scenarios and six structural alternatives—quadratic, cubic, interaction, dilution, opposing, and threshold departures—at n = 50 and n = 200, with selected cubic and opposing cases also evaluated at n = 1,000. Each principal cell used 50 seeded replications with 1% relative noise. Additional NIST-style analytic functions were used as interpretable challenge cases. This suite was used during method development and is not an untouched final test set.
+[P74] (Heading 2) 6.3 Post-development randomized stress test
+[P75] (Normal) A master seed of 20261904 generated 1,000 groups: 393 null cases and 607 alternatives. Sample size, predictor count, noise, signal-to-noise ratio, exponents, and departure family varied across groups. The 12 alternative families were cross-cubic, cubic, exponential deformation, interaction, logistic bump, mixed cubic–oscillatory, opposing quadratic, quadratic, quartic, one-cycle sinusoid, two-cycle sinusoid, and threshold. The generator expands coverage, but its family design remained informed by development experience. We therefore call it a post-development randomized stress test rather than independent external validation.
+[P76] (Heading 2) 6.4 Metrics and paired inference
+[P77] (Normal) For null cases, the primary metric was false-positive rate with a 95% Wilson interval. For alternatives, the primary metric was rejection rate (power) with the same interval. Overall accuracy used the generated class label only as a summary, not as a substitute for separate size and power. Paired differences on the same cases were evaluated with exact two-sided McNemar tests, equivalent to a binomial test on discordant pairs.
+[P78] (Heading 1) 7 Results
+[P79] (Heading 2) 7.1 Controlled benchmark
+[P80] (Normal) At n = 200, the pooled null rejection rates were 0.033 for the single-direction form check, 0.027 for MD4, 0.033 for HX, and 0.053 for RESET. In the six controlled alternative families, HX rejected all 50 replications at both n = 50 and n = 200. The main gains were complementary: RESET was comparatively weak for dilution and opposing alternatives, while the single-direction check was weak for cubic, interaction, and opposing alternatives.
+[P81] (Caption) Table 1. Controlled alternative rejection rates by sample size
+[P83] (Heading 2) 7.2 Randomized calibration and power
+[P85] (Caption) Figure 2. False-positive rate and power in 1,000 randomized groups. The red line marks the nominal 0.05 level. Intervals are reported in Table 2.
+[P86] (Caption) Table 2. Randomized stress test results with 95% Wilson intervals
+[P88] (Normal) HX achieved the highest power and overall accuracy while its estimated false-positive rate remained close to the nominal level. RESET’s false-positive estimate was 0.0611; its confidence interval still included 0.05. The relevant conclusion is therefore not that HX had a demonstrably lower size than every comparator, but that it delivered substantially greater power without evidence of size inflation in this generator.
+[P89] (Heading 2) 7.3 Alternative-family coverage
+[P90] (Caption) Table 3. Alternative rejection rate by randomized family
+[P92] (Normal) HX reached 1.00 rejection rate in ten of twelve families. HX and MD4 both detected 0.97 of the two-cycle sinusoid cases, while threshold departures remained difficult for every method. Cross-cubic alternatives illustrate the fitted-value contribution: MD4 detected 0.29, whereas HX and RESET both detected 1.00. Opposing quadratic alternatives illustrate the structural contribution: HX and MD4 detected all cases, but RESET detected only 0.05.
+[P93] (Heading 2) 7.4 Paired discordance
+[P94] (Caption) Table 4. Exact paired comparisons on the 607 randomized alternatives
+[P96] (Normal) On null cases, HX versus form_check had 11 versus 12 discordant rejections (p = 1.000), HX versus MD4 had 6 versus 2 (p = 0.289), and HX versus RESET had 9 versus 13 (p = 0.524). The paired evidence therefore supports a power difference under this alternative generator but not a meaningful size difference among the methods.
+[P97] (Heading 2) 7.5 Direction attribution and analytic challenges
+[P98] (Caption) Table 5. Most frequent winning HX directions among randomized alternatives
+[P100] (Normal) The fitted-value cubic direction was the most common winner, followed by structural cubic, quadratic, and oscillatory directions. This distribution supports the hybrid design: no single family accounted for all detections. It is descriptive, not a post-selection confidence statement about the true mechanism.
+[P101] (Normal) In the analytic challenge set, HX and RESET both alarmed on several nonlinear functions. A notable case was F3, where structural-only MD4 missed while fitted-value terms enabled HX to reject. Conversely, F10 produced a rank-deficiency failure for HX while RESET returned an alarm, demonstrating why failure states must remain visible. The L1 case had n = 16, only three unrestricted residual degrees of freedom, and a condition number near 4.9 × 10⁹; HX rejected while RESET did not, but the numerical regime makes the result inconclusive rather than a clean method victory.
+[P102] (Heading 2) 7.6 Runtime
+[P103] (Normal) At n = 200 and p = 2, median development-run time was approximately 4.7 ms for HX, 4.6 ms for MD4, and 0.5 ms for parametric RESET on the recorded machine. These values are implementation- and hardware-dependent. Residual resampling dominates HX cost; confirmatory refit mode will be slower. Matrix-free projection B(B⁺D), batched resampling, and streaming maxima avoid unnecessary n × n projection matrices and full permutation-score storage.
+[P104] (Heading 1) 8 Mechanistic Interpretation
+[P105] (Heading 2) 8.1 Why the hybrid library helps
+[P106] (Normal) Structural directions supply locality and interpretability. A quadratic winner indicates curvature in one log predictor; an interaction winner indicates non-additivity; an oscillatory winner indicates a residual periodic pattern. These probes are weak when the omitted component lies outside the library or combines across predictors in a way that cancels a marginal projection. Fitted-value powers pool information along the restricted model’s predicted response and can capture broad departures without naming their source. They are correspondingly less diagnostic and response-adaptive.
+[P107] (Normal) The comparison between MD4 and HX is a structural ablation: adding fitted-value directions and the joint branch produced 37 HX-only versus no MD4-only rejection among randomized alternatives. It does not isolate the fitted-value library from the joint-F branch. A complete component ablation must cross structural-only versus fitted-only versus hybrid libraries with maxT-only versus joint-F-only versus combined decisions, using the same resampling policy and untouched confirmatory cases.
+[P108] (Heading 2) 8.2 Concentrated versus distributed departures
+[P109] (Normal) maxT is suited to sparse departures: one direction carries most of the omitted signal. Joint F is suited to dense departures: several coordinates carry moderate signal. Combining them spends at most a factor of two in p-value but protects against committing to either geometry. This is a two-branch portfolio inside one test, analogous to the broader benchmark’s finding that structural and omnibus diagnostics are complementary.
+[P110] (Heading 2) 8.3 Role in a model-discovery workflow
+[P111] (List Number) Generate candidate equations using physical constraints, symbolic regression, or expert hypotheses.
+[P112] (List Number) Reserve an untouched validation partition before tuning direction libraries or thresholds.
+[P113] (List Number) Fit each candidate on training data and apply HX under a declared confirmatory resampling mode on validation data.
+[P114] (List Number) Discard or revise candidates that HX falsifies; inspect winning directions to formulate the next hypothesis.
+[P115] (List Number) For candidates not rejected, report power diagnostics and the exact battery used; do not state that the equation has been proven.
+[P116] (Heading 1) 9 Limitations and Threats to Validity
+[P117] (Normal) First, the evidence is not an independent external validation. The controlled suite informed method development, and the randomized family generator reflects the same problem-solving context. The strong power estimates may therefore be optimistic for unrelated scientific domains.
+[P118] (Normal) Second, the reported HX p-values use frozen fitted-value directions under reduced-model residual permutation. The resulting calibration is approximate because the directions are response-adaptive. Empirical null calibration was satisfactory in the available generator, but confirmatory use should reconstruct adaptive steps within resamples, use sample splitting, or justify an alternative resampling law.
+[P119] (Normal) Third, unrestricted residual permutation assumes exchangeability. Heteroskedastic, clustered, temporal, or spatial errors violate that condition. Wild bootstrap, exchangeability blocks, or domain-specific dependence models are required. Fourth, the fixed library has blind spots: the threshold family remained difficult, and no finite battery can cover all misspecification. Fifth, small residual degrees of freedom and ill-conditioned designs can make both directional selection and F statistics unstable. Sixth, the winning direction is post-selection and exploratory; causal or physical interpretation requires a separately specified follow-up analysis.
+[P120] (Normal) Finally, algorithmic novelty is narrower than scientific validity. HX combines established ideas—RESET-style fitted-value powers, structured basis augmentation, maxT adjustment, joint testing, and residual resampling—into an explicit falsification workflow. Its value must be judged by transparent error control, robustness, and out-of-domain performance rather than by naming the combination.
+[P121] (Heading 1) 10 Reproducibility Protocol
+[P122] (Normal) A reproducible HX report should archive the raw positive variables, log-transformation rules, excluded observations, standardized design, restricted and augmented ranks, condition numbers, direction names, selection tolerance, residual-degree floor, α, resampling scheme, exchangeability blocks or bootstrap weights, resample count, random seed, observed Tmax and Fjoint, component and combined p-values, and failure code. The benchmark datasets and seeds must be immutable once confirmatory evaluation begins.
+[P123] (Normal) For a submission-quality replication, use at least 9,999 resamples near the decision boundary, rerun with independent seeds, verify the four invariance properties in Section 5.2, and include regression tests for malformed shapes, length mismatch, constant response, exact fit, rank deficiency, and ill conditioning. Compare matrix-free and reference implementations on small problems to numerical tolerance. Report every attempted case, including failures, rather than deleting cases without a p-value.
+[P125] (Heading 1) 11 Conclusion
+[P126] (Normal) HX is a hybrid specification test for falsifying proposed log-linear physical models. It combines interpretable structural directions with fitted-value powers, removes redundant directions, evaluates concentrated and distributed departures, and records numerical failure states. In the available randomized stress test, HX paired near-nominal null rejection with substantially higher power than a single-direction form check, structural-only MD4, and classical RESET. The result supports further evaluation, not unconditional deployment. The central methodological lesson is that a credible model check must expose its tested directions, multiplicity correction, resampling assumptions, and failures. Used in that form, HX can serve as a rigorous challenge layer in scientific model discovery.
+[P128] (Heading 1) Appendix A Algorithm Specification
+[P129] (Normal) Algorithm 1. HX with a declared resampling mode
+[P130] (Normal) 1.  Validate that Xℓ is finite and two-dimensional, ℓy is finite and aligned, n exceeds the residual-degree floor, and requested parameters are valid.
+[P131] (Normal) 2.  Standardize columns of Xℓ, form B = [1, Z], check rank and conditioning, and fit the restricted model.
+[P132] (Normal) 3.  Compute ŷ and r; reject constant-response or degenerate-exact-fit cases using TSS-based criteria.
+[P133] (Normal) 4.  Construct named structural directions and standardized fitted-value powers.
+[P134] (Normal) 5.  Residualize candidates against B without materializing an n × n projector.
+[P135] (Normal) 6.  Use modified Gram–Schmidt with deterministic, scale-aware pivoting to retain q independent coordinates W.
+[P136] (Normal) 7.  Compute observed Tmax and Fjoint; record the winning direction as exploratory.
+[P137] (Normal) 8.  Generate R resamples under the declared mode. For confirmatory response-adaptive inference, rebuild every adaptive step inside each resample or use a split-sample construction.
+[P138] (Normal) 9.  Compute pmax and pF with the plus-one correction, then pHX = min(1, 2 min(pmax, pF)).
+[P139] (Normal) 10.  Return the complete result object or a named failure state; never return a silent NaN or an unclassified exception.
+[P140] (Heading 1) Appendix B Failure Taxonomy
+[P142] (Heading 1) Appendix C Minimum Reporting Checklist
+[P143] (List Bullet) State the restricted equation, transformations, and positivity/domain rules.
+[P144] (List Bullet) List every candidate direction and whether it is response-adaptive.
+[P145] (List Bullet) Report retained directions, ranks, conditioning, residual degrees of freedom, and tolerances.
+[P146] (List Bullet) Name the resampling or bootstrap scheme and justify exchangeability or symmetry assumptions.
+[P147] (List Bullet) Report R, seeds, component p-values, combined p-value, α, and all failure states.
+[P148] (List Bullet) Label the winning direction and any unadjusted coordinate p-value as exploratory.
+[P149] (List Bullet) Separate development, stress-test, confirmatory, and external evidence.
+[P150] (List Bullet) Archive generator code and immutable confirmatory seeds before final evaluation.
+[P151] (Heading 1) References
+[P152] (Normal) [1] Ramsey, J. B. (1969). Tests for specification errors in classical linear least-squares regression analysis. Journal of the Royal Statistical Society Series B, 31, 350–371. https://doi.org/10.1111/j.2517-6161.1969.tb00796.x
+[P153] (Normal) [2] MacKinnon, J. G., & White, H. (1985). Some heteroskedasticity-consistent covariance matrix estimators with improved finite sample properties. Journal of Econometrics, 29, 305–325. https://doi.org/10.1016/0304-4076(85)90158-7
+[P154] (Normal) [3] Freedman, D., & Lane, D. (1983). A nonstochastic interpretation of reported significance levels. Journal of Business & Economic Statistics, 1, 292–298. https://doi.org/10.1080/07350015.1983.10509354
+[P155] (Normal) [4] Winkler, A. M., Ridgway, G. R., Webster, M. A., Smith, S. M., & Nichols, T. E. (2014). Permutation inference for the general linear model. NeuroImage, 92, 381–397. https://doi.org/10.1016/j.neuroimage.2014.01.060
+[P156] (Normal) [5] Davidson, R., & Flachaire, E. (2008). The wild bootstrap, tamed at last. Journal of Econometrics, 146, 162–169. https://doi.org/10.1016/j.jeconom.2008.08.003
+[P157] (Normal) [6] Westfall, P. H., & Young, S. S. (1993). Resampling-Based Multiple Testing: Examples and Methods for P-Value Adjustment. Wiley.
+[P158] (Normal) [7] Bakarji, J., Callaham, J. L., Brunton, S. L., & Kutz, J. N. (2022). Dimensionally consistent learning with Buckingham Pi. Nature Computational Science, 2, 834–844. https://doi.org/10.1038/s43588-022-00355-5
+[P159] (Normal) [8] La Cava, W., Orzechowski, P., Burlacu, B., et al. (2021). Contemporary symbolic regression methods and their relative performance. Proceedings of NeurIPS Datasets and Benchmarks.
+[P160] (Normal) [9] Udrescu, S.-M., & Tegmark, M. (2020). AI Feynman: A physics-inspired method for symbolic regression. Science Advances, 6, eaay2631. https://doi.org/10.1126/sciadv.aay2631
+[P161] (Normal) [10] Cranmer, M. (2023). Interpretable machine learning for science with PySR and SymbolicRegression.jl. arXiv:2305.01582. https://doi.org/10.48550/arXiv.2305.01582
+[P162] (Normal) [11] Matsubara, Y., Chiba, N., Igarashi, R., & Ushiku, Y. (2022). Rethinking symbolic regression datasets and benchmarks for scientific discovery. arXiv:2206.10540. https://doi.org/10.48550/arXiv.2206.10540
+[P163] (Normal) [12] Fisher, R. A. (1935). The Design of Experiments. Oliver & Boyd.
+[P164] (Normal) [13] White, H. (1980). A heteroskedasticity-consistent covariance matrix estimator and a direct test for heteroskedasticity. Econometrica, 48, 817–838. https://doi.org/10.2307/1912934
+=== TABLE 0 (6x2) ===
+Section | Purpose
+1–3 | Motivation, related work, and problem formulation
+4–5 | HX algorithm, inferential interpretation, and safeguards
+6–7 | Evaluation protocol and empirical results
+8–11 | Mechanisms, limitations, reproducibility, and conclusion
+Appendices | Pseudocode, failure taxonomy, and reporting checklist
+=== TABLE 1 (9x2) ===
+Symbol | Definition
+B | Restricted design matrix [1, Z]
+ŷ and r | Restricted fitted response and residual vector
+D | Candidate augmentation matrix before residualization
+W | Selected orthonormal augmentation coordinates
+q | Number of retained independent directions
+Tmax | Maximum absolute studentized directional score
+Fjoint | Partial-F statistic for the full selected augmentation
+pHX | Bonferroni-combined HX p-value
+=== TABLE 2 (10x2) ===
+Condition | Required response
+X is not two-dimensional | Return bad_shape_X; do not throw an opaque linear-algebra ex
+len(y) ≠ n | Return length_mismatch
+Nonfinite input or log-domain violation | Return nonfinite_input or domain_error
+rank(B) < columns(B) | Return rank_deficient_base
+Condition number above threshold | Return ill_conditioned_base with diagnostic value
+TSSℓy numerically zero | Return constant_response
+RSSr/TSSℓy below tolerance | Return degenerate_zero_residual
+No independent augmentation direction | Return no_valid_direction
+dfu below floor | Return insufficient_residual_df
+=== TABLE 3 (7x6) ===
+Family | n | form_check | MD4 | HX | RESET
+Quadratic | 50 / 200 | 1.00 / 1.00 | 1.00 / 1.00 | 1.00 / 1.00 | 1.00 / 1.00
+Cubic | 50 / 200 | 0.50 / 0.36 | 1.00 / 1.00 | 1.00 / 1.00 | 1.00 / 1.00
+Interaction | 50 / 200 | 0.24 / 0.18 | 1.00 / 1.00 | 1.00 / 1.00 | 1.00 / 1.00
+Dilution | 50 / 200 | 1.00 / 1.00 | 1.00 / 1.00 | 1.00 / 1.00 | 0.44 / 0.88
+Opposing | 50 / 200 | 0.00 / 0.02 | 1.00 / 1.00 | 1.00 / 1.00 | 0.42 / 0.96
+Threshold | 50 / 200 | 1.00 / 1.00 | 1.00 / 1.00 | 1.00 / 1.00 | 1.00 / 1.00
+=== TABLE 4 (5x6) ===
+Method | False positives | FPR [95% CI] | True positives | Power [95% CI] | Accuracy
+form_check | 21/393 | 0.0534 [0.0352, 0.0803] | 300/607 | 0.4942 [0.4546, 0.5339] | 0.672
+MD4 | 16/393 | 0.0407 [0.0252, 0.0651] | 541/607 | 0.8913 [0.8640, 0.9136] | 0.918
+HX | 20/393 | 0.0509 [0.0332, 0.0773] | 578/607 | 0.9522 [0.9322, 0.9665] | 0.951
+RESET | 24/393 | 0.0611 [0.0414, 0.0893] | 456/607 | 0.7512 [0.7153, 0.7840] | 0.825
+=== TABLE 5 (13x6) ===
+Family | n | form_check | MD4 | HX | RESET
+cross_cubic | 52 | 0.1 | 0.29 | 1.0 | 1.0
+cubic | 56 | 0.41 | 1.0 | 1.0 | 0.82
+exp_deform | 44 | 1.0 | 1.0 | 1.0 | 0.91
+interact | 47 | 0.21 | 1.0 | 1.0 | 1.0
+logistic_bump | 49 | 0.1 | 1.0 | 1.0 | 0.78
+mixed_cubic_osc | 54 | 0.52 | 1.0 | 1.0 | 0.87
+opposing_quad | 58 | 0.88 | 1.0 | 1.0 | 0.05
+quad | 58 | 1.0 | 1.0 | 1.0 | 0.98
+quartic | 48 | 1.0 | 1.0 | 1.0 | 1.0
+sin1 | 53 | 0.0 | 1.0 | 1.0 | 0.66
+sin2 | 38 | 0.18 | 0.97 | 0.97 | 0.63
+threshold | 50 | 0.42 | 0.44 | 0.44 | 0.38
+=== TABLE 6 (4x4) ===
+Comparator | HX only | Comparator only | Exact two-sided p
+form_check | 278 | 0 | 4.12 × 10⁻⁸⁴
+MD4 | 37 | 0 | 1.46 × 10⁻¹¹
+RESET | 123 | 1 | 1.18 × 10⁻³⁵
+=== TABLE 7 (9x3) ===
+Direction | Count | Share
+yhat3 | 216 | 35.6%
+cubic_x1 | 165 | 27.2%
+quad_x1 | 86 | 14.2%
+osc_x1 | 69 | 11.4%
+yhat2 | 42 | 6.9%
+quad_x2 | 26 | 4.3%
+osc_x2 | 2 | 0.3%
+cubic_x2 | 1 | 0.2%
+=== TABLE 8 (5x2) ===
+Evidence tier | Permitted claim
+Development benchmark | The method was tuned and its mechanisms were explored on the
+Post-development randomized stress test | The method generalized across randomized variants of declare
+Locked synthetic confirmation | Size and power were estimated on unseen seeds and preregiste
+External scientific datasets | Transportability was assessed in domains not used to design 
+=== TABLE 9 (7x3) ===
+Class | Examples | Interpretation
+Input | bad_shape_X, length_mismatch, nonfinite_input | The requested test is undefined for the supplied arrays
+Domain | domain_error | Log transformation or physical-domain condition failed
+Base model | rank_deficient_base, ill_conditioned_base | The restricted representation is not numerically identifiabl
+Response | constant_response, degenerate_zero_residual | There is insufficient residual variation for a specification
+Augmentation | no_valid_direction, insufficient_residual_df | The added library contributes no stable testable dimension
+Resampling | invalid_exchangeability, resampling_failure | The declared null generator is unjustified or could not be e

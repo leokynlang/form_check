@@ -1,0 +1,16 @@
+C:\Users\16910\AppData\Local\Temp\srsd-benchmark\datasets\feynman.py:2133: RuntimeWarning: invalid value encountered in sqrt
+  return np.sqrt(x[0] ** 2 / SPEED_OF_LIGHT ** 2 - np.pi ** 2 / x[1] ** 2)
+C:\Users\16910\AppData\Local\Temp\srsd-benchmark\datasets\feynman.py:3171: RuntimeWarning: invalid value encountered in sqrt
+  return np.sqrt(1 + 2 * x[0] * x[1] * x[2] ** 2 / (x[3] * (x[4] * x[5] * x[6] ** 2) ** 2))
+S2 shard 0: 48000 cum rows, 616s
+  -> D:\form_check\runs\cd_svd\s2_cd_svd_partial.csv  (48000 rows)
+S2 shard 1: 96000 cum rows, 1431s
+  -> D:\form_check\runs\cd_svd\s2_cd_svd_partial.csv  (96000 rows)
+S2 shard 2: 144000 cum rows, 1954s
+  -> D:\form_check\runs\cd_svd\s2_cd_svd_partial.csv  (144000 rows)
+S2 shard 3: 192000 cum rows, 2212s
+  -> D:\form_check\runs\cd_svd\s2_cd_svd_partial.csv  (192000 rows)
+S2 shard 4: 240000 cum rows, 2357s
+  -> D:\form_check\runs\cd_svd\s2_cd_svd_partial.csv  (240000 rows)
+  -> D:\form_check\runs\cd_svd\s2_cd_svd.csv  (240000 rows)
+TOTAL 2363s

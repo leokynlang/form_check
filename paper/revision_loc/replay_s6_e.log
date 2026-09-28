@@ -1,0 +1,214 @@
+=== S6 重放(wb_run.main,缓存数据,零网络) ===
+主权经济体: 217 个
+2019 lifeexp__gdppc: n=199
+2019 infmort__gdppc: n=188
+2019 gdp__pop: n=199
+2019 co2pc__gdppc: n=189
+2019 netusers__gdppc: n=182
+2019 lifeexp__gdppc_health: n=186
+2021 lifeexp__gdppc: n=199
+2021 infmort__gdppc: n=188
+2021 gdp__pop: n=199
+2021 co2pc__gdppc: n=189
+2021 netusers__gdppc: n=176
+2021 lifeexp__gdppc_health: n=186
+2022 lifeexp__gdppc: n=199
+2022 infmort__gdppc: n=188
+2022 gdp__pop: n=199
+2022 co2pc__gdppc: n=189
+2022 netusers__gdppc: n=178
+2022 lifeexp__gdppc_health: n=185
+2023 lifeexp__gdppc: n=197
+2023 infmort__gdppc: n=187
+2023 gdp__pop: n=197
+2023 co2pc__gdppc: n=187
+2023 netusers__gdppc: n=177
+2023 lifeexp__gdppc_health: n=184
+done -> D:\form_check\runs\cd_svd
+                             p_fc    p_fitted_f  p_fitted_hc3    p_exog_hc3
+year task                                                                  
+2019 co2pc__gdppc           0.005  5.973402e-03  3.730463e-04  3.730463e-04
+     gdp__pop               0.705  3.334367e-01  2.990385e-01  2.990385e-01
+     infmort__gdppc         0.003  1.768614e-03  3.891719e-03  3.891719e-03
+     lifeexp__gdppc         0.035  5.198532e-02  3.409775e-01  3.408848e-01
+     lifeexp__gdppc_health  0.294  8.062991e-02  6.247787e-01  8.243741e-01
+     netusers__gdppc        0.001  2.945875e-16  1.213814e-17  1.213814e-17
+2021 co2pc__gdppc           0.004  6.974880e-03  6.013287e-04  6.013287e-04
+     gdp__pop               0.804  3.253999e-01  2.623290e-01  2.623290e-01
+     infmort__gdppc         0.009  3.660961e-03  1.858771e-03  1.858771e-03
+     lifeexp__gdppc         0.928  5.717698e-01  7.013313e-01  7.013953e-01
+     lifeexp__gdppc_health  0.541  4.088280e-01  4.768592e-01  5.451859e-01
+     netusers__gdppc        0.001  3.999221e-18  1.060642e-18  1.060642e-18
+2022 co2pc__gdppc           0.004  6.958680e-03  2.874285e-04  2.874285e-04
+     gdp__pop               0.861  2.773538e-01  2.195186e-01  2.195186e-01
+     infmort__gdppc         0.043  5.687954e-02  1.594066e-01  1.594066e-01
+     lifeexp__gdppc         0.008  1.649434e-04  5.038237e-01  5.037555e-01
+     lifeexp__gdppc_health  0.108  2.346671e-04  5.023863e-01  8.229630e-01
+     netusers__gdppc        0.001  3.517987e-18  1.570927e-18  1.570927e-18
+2023 co2pc__gdppc           0.001  2.682855e-04  2.915720e-04  2.915720e-04
+     gdp__pop               0.912  2.547682e-01  1.890875e-01  1.890875e-01
+     infmort__gdppc         0.003  2.476447e-03  1.798232e-04  1.798232e-04
+     lifeexp__gdppc         0.940  3.584388e-01  2.082922e-01  2.083817e-01
+     lifeexp__gdppc_health  0.908  6.930864e-01  6.270257e-01  6.822394e-01
+     netusers__gdppc        0.001  6.954995e-20  4.017433e-20  4.017433e-20
+=== 工程台架 E 重放(smoke_test.main,clean/ 缓存) ===
+  ok epa_vehicles: comb_mpg~displ_l n=800 p_fc=0.386/0.596
+  ok epa_vehicles: co2_g_per_mi~displ_l n=800 p_fc=0.677/0.847
+  ok epa_vehicles: co2_g_per_mi~comb_mpg n=800 p_fc=0.030/0.000
+  ok epa_vehicles: comb_mpg~displ_l+cylinders n=800 p_fc=0.508/0.526
+  ok meteo_altamont_pass: wind_speed_100m~wind_speed_10m n=800 p_fc=0.229/0.000
+  ok meteo_altamont_pass: wind_gusts_10m~wind_speed_10m n=800 p_fc=0.001/0.000
+  ok meteo_baltic_ruegen: wind_speed_100m~wind_speed_10m n=800 p_fc=0.411/0.000
+  ok meteo_baltic_ruegen: wind_gusts_10m~wind_speed_10m n=800 p_fc=0.001/0.000
+  ok meteo_german_bight: wind_speed_100m~wind_speed_10m n=800 p_fc=0.007/0.000
+  ok meteo_german_bight: wind_gusts_10m~wind_speed_10m n=800 p_fc=0.001/0.000
+  ok meteo_inner_mongolia: wind_speed_100m~wind_speed_10m n=800 p_fc=0.021/0.000
+  ok meteo_inner_mongolia: wind_gusts_10m~wind_speed_10m n=800 p_fc=0.001/0.000
+  ok meteo_iowa_fields: wind_speed_100m~wind_speed_10m n=800 p_fc=0.013/0.000
+  ok meteo_iowa_fields: wind_gusts_10m~wind_speed_10m n=800 p_fc=0.001/0.000
+  ok meteo_kansas_plains: wind_speed_100m~wind_speed_10m n=800 p_fc=0.001/0.000
+  ok meteo_kansas_plains: wind_gusts_10m~wind_speed_10m n=800 p_fc=0.001/0.000
+  ok meteo_north_sea: wind_speed_100m~wind_speed_10m n=800 p_fc=0.001/0.000
+  ok meteo_north_sea: wind_gusts_10m~wind_speed_10m n=800 p_fc=0.001/0.000
+  ok meteo_patagonia: wind_speed_100m~wind_speed_10m n=800 p_fc=0.001/0.001
+  ok meteo_patagonia: wind_gusts_10m~wind_speed_10m n=800 p_fc=0.001/0.000
+  ok meteo_qingdao_offshore: wind_speed_100m~wind_speed_10m n=800 p_fc=0.013/0.000
+  ok meteo_qingdao_offshore: wind_gusts_10m~wind_speed_10m n=800 p_fc=0.001/0.000
+  ok meteo_texas_panhandle: wind_speed_100m~wind_speed_10m n=800 p_fc=0.001/0.000
+  ok meteo_texas_panhandle: wind_gusts_10m~wind_speed_10m n=800 p_fc=0.001/0.000
+  - nist_bennett5 y~x: n=0 跳过
+  ok nist_chwirut1: y~x n=214 p_fc=0.001/0.000
+  ok nist_chwirut2: y~x n=54 p_fc=0.001/0.000
+  - nist_danwood y~x: n=6 跳过
+  ok nist_eckerle4: y~x n=35 p_fc=0.001/0.000
+  ok nist_hahn1: y~x n=236 p_fc=0.001/0.000
+  ok nist_kirby2: y~x n=151 p_fc=0.001/0.000
+  ok nist_misra1a: y~x n=14 p_fc=0.001/0.000
+  ok nist_misra1b: y~x n=14 p_fc=0.001/0.000
+  ok nist_misra1c: y~x n=14 p_fc=0.001/0.000
+  ok nist_misra1d: y~x n=14 p_fc=0.001/0.000
+  - nist_roszman1 y~x: n=0 跳过
+  ok nist_thurber: y~x n=11 p_fc=nan/0.023
+  ok openml_ailerons: se_pos~alpha n=800 p_fc=0.001/0.000
+  ok openml_ailerons: se_pos~se_t1 n=800 p_fc=0.001/0.000
+  ok openml_ailerons: se_pos~alpha+se_t1 n=800 p_fc=0.330/0.566
+  ok openml_cpu_act: usr_pct~scall n=800 p_fc=0.023/0.013
+  ok openml_cpu_act: usr_pct~rchar n=800 p_fc=0.024/0.024
+  ok openml_cpu_act: usr_pct~scall+freemem+runqsz n=800 p_fc=0.001/0.000
+  ok openml_elusage: usage~temp_f n=55 p_fc=0.378/0.428
+  ok openml_elusage: usage~temp_f+month n=55 p_fc=0.903/0.391
+  ok rdataset_airquality: Ozone~Wind n=116 p_fc=0.613/0.196
+  ok rdataset_airquality: Ozone~Temp n=116 p_fc=0.027/0.097
+  ok rdataset_airquality: Ozone~Wind+Temp+Solar.R n=111 p_fc=0.810/0.208
+  ok rdataset_attenu: accel~dist n=182 p_fc=0.001/0.000
+  ok rdataset_attenu: accel~mag+dist n=182 p_fc=0.001/0.000
+  ok rdataset_cars: dist~speed n=50 p_fc=0.900/0.992
+  ok rdataset_cement_hald: y~x1 n=13 p_fc=0.967/0.414
+  ok rdataset_cement_hald: y~x1+x2+x3+x4 n=13 p_fc=0.004/0.916
+  ok rdataset_electricity: cost~q n=158 p_fc=0.001/0.000
+  ok rdataset_electricity: cost~q+pf n=158 p_fc=0.001/0.000
+  ok rdataset_housing: price~lotsize n=546 p_fc=0.284/0.000
+  ok rdataset_housing: price~lotsize+bedrooms+bathrms+stories n=546 p_fc=0.723/0.683
+  ok rdataset_petrol: Y~EP n=32 p_fc=0.726/0.348
+  ok rdataset_petrol: Y~SG+VP+V10+EP n=32 p_fc=0.297/0.002
+  ok rdataset_pressure: pressure~temperature n=18 p_fc=0.001/0.000
+  ok rdataset_puromycin: rate~conc n=23 p_fc=0.011/0.069
+  ok rdataset_rock: perm~area n=48 p_fc=0.414/0.640
+  ok rdataset_rock: perm~peri n=48 p_fc=0.008/0.020
+  ok rdataset_rock: perm~area+peri n=48 p_fc=0.835/0.000
+  ok rdataset_stormer: Time~Viscosity n=23 p_fc=0.935/0.993
+  ok rdataset_stormer: Time~Viscosity+Wt n=23 p_fc=0.001/0.001
+  ok rdataset_trees: Volume~Girth n=31 p_fc=0.988/0.576
+  ok rdataset_trees: Volume~Height n=31 p_fc=0.968/0.971
+  ok rdataset_trees: Volume~Girth+Height n=31 p_fc=0.511/0.760
+  ok rdataset_whiteside: Gas~temp_k n=56 p_fc=0.178/0.025
+  ok rdataset_women: weight~height n=15 p_fc=0.001/0.000
+  ok uci_air_quality: pt08s1_co~co_gt n=800 p_fc=0.001/0.000
+  ok uci_air_quality: pt08s2_nmhc~c6h6_gt n=800 p_fc=0.001/0.000
+  ok uci_air_quality: pt08s2_nmhc~c6h6_gt+temp_c n=800 p_fc=0.001/0.000
+  ok uci_auto_mpg: mpg~weight n=392 p_fc=0.007/0.011
+  ok uci_auto_mpg: mpg~displacement n=392 p_fc=0.017/0.002
+  ok uci_auto_mpg: mpg~horsepower n=392 p_fc=0.974/0.000
+  ok uci_auto_mpg: mpg~displacement+weight+horsepower n=392 p_fc=0.214/0.014
+  ok uci_automobile: price_usd~curb_weight_lb n=201 p_fc=0.132/0.200
+  ok uci_automobile: price_usd~engine_size_cc n=201 p_fc=0.138/0.000
+  ok uci_automobile: city_mpg~curb_weight_lb n=205 p_fc=0.002/0.008
+  ok uci_automobile: horsepower~engine_size_cc n=203 p_fc=0.878/0.000
+  ok uci_ccpp: PE~AT n=800 p_fc=0.001/0.000
+  ok uci_ccpp: PE~V n=800 p_fc=0.642/0.001
+  ok uci_ccpp: PE~AP n=800 p_fc=0.002/0.000
+  ok uci_ccpp: PE~AT+V n=800 p_fc=0.001/0.000
+  ok uci_concrete_slump: strength_mpa~cement n=103 p_fc=0.079/0.121
+  ok uci_concrete_slump: strength_mpa~water n=103 p_fc=0.002/0.005
+  ok uci_concrete_slump: flow_cm~water n=103 p_fc=0.108/0.279
+  ok uci_concrete_strength: strength_mpa~cement_kg_m3 n=800 p_fc=0.870/0.022
+  ok uci_concrete_strength: strength_mpa~water_kg_m3 n=800 p_fc=0.001/0.000
+  ok uci_concrete_strength: strength_mpa~age_day n=800 p_fc=0.001/0.000
+  ok uci_concrete_strength: strength_mpa~cement_kg_m3+water_kg_m3+age_day n=800 p_fc=0.001/0.000
+  ok uci_energy_efficiency: heating_load~surface_area n=768 p_fc=0.001/0.000
+  ok uci_energy_efficiency: heating_load~roof_area n=768 p_fc=0.001/0.000
+  ok uci_energy_efficiency: cooling_load~surface_area n=768 p_fc=0.001/0.000
+  ok uci_energy_efficiency: heating_load~surface_area+wall_area+roof_area n=768 p_fc=0.001/0.000
+  ok uci_gas_turbine_emissions: TEY~CDP n=800 p_fc=0.001/0.000
+  ok uci_gas_turbine_emissions: TEY~GTEP n=800 p_fc=0.001/0.000
+  ok uci_gas_turbine_emissions: NOX~TIT n=800 p_fc=0.001/0.000
+  ok uci_gas_turbine_emissions: CO~TIT n=800 p_fc=0.001/0.002
+  ok uci_steel_energy: usage_kwh~co2_tco2 n=800 p_fc=0.001/0.000
+  ok uci_steel_energy: usage_kwh~lag_reactive_kvarh n=800 p_fc=0.001/0.000
+  ok uci_steel_energy: usage_kwh~co2_tco2+lag_reactive_kvarh n=800 p_fc=0.001/0.000
+  ok uci_tetouan_power: zone1_kw~temp_c n=800 p_fc=0.050/0.095
+  ok uci_tetouan_power: zone1_kw~temp_c+humidity_pct+wind_speed_ms n=800 p_fc=0.500/0.067
+  ok uci_tetouan_power: zone3_kw~temp_c n=800 p_fc=0.001/0.000
+  ok uci_yacht_hydro: resid_resist~froude n=308 p_fc=0.001/0.000
+  ok uci_yacht_hydro: resid_resist~froude+ldr_ratio n=308 p_fc=0.001/0.000
+  ok usgs_01184000_rating: discharge_cfs~gage_height_ft n=800 p_fc=0.001/0.000
+  ok usgs_01463500_rating: discharge_cfs~gage_height_ft n=800 p_fc=0.001/0.000
+  ok usgs_01570500_rating: discharge_cfs~gage_height_ft n=800 p_fc=0.001/0.000
+  ok usgs_01646500_rating: discharge_cfs~gage_height_ft n=800 p_fc=0.001/0.000
+  ok usgs_06934500_rating: discharge_cfs~gage_height_ft n=800 p_fc=0.001/0.000
+  ok usgs_07010000_rating: discharge_cfs~gage_height_ft n=800 p_fc=0.001/0.000
+  ok usgs_07374000_rating: discharge_cfs~gage_height_ft n=800 p_fc=0.001/0.000
+  ok usgs_08158000_rating: discharge_cfs~gage_height_ft n=800 p_fc=0.027/0.000
+  ok usgs_09380000_rating: discharge_cfs~gage_height_ft n=800 p_fc=0.001/0.000
+  ok usgs_11447650_rating: discharge_cfs~gage_height_ft n=800 p_fc=0.001/0.000
+  ok usgs_12484500_rating: discharge_cfs~gage_height_ft n=800 p_fc=0.001/0.000
+  ok usgs_14105700_rating: discharge_cfs~gage_height_ft n=800 p_fc=0.001/0.000
+  ok usgs_eq_global: felt~mag n=800 p_fc=0.300/0.077
+  ok usgs_eq_global: nst~mag n=800 p_fc=0.001/0.001
+  ok usgs_eq_global: cdi~mag n=800 p_fc=0.940/0.916
+  ok webbook_1_butanol_dvaph: dvaph_kJ/mol~temp_k n=30 p_fc=0.004/0.000
+  ok webbook_1_propanol_dvaph: dvaph_kJ/mol~temp_k n=34 p_fc=0.003/0.000
+  ok webbook_acetone_dvaph: dvaph_kJ/mol~temp_k n=22 p_fc=0.003/0.009
+  ok webbook_aniline_dvaph: dvaph_kJ/mol~temp_k n=14 p_fc=0.023/0.029
+  ok webbook_benzene_dsubh: dsubh_kJ/mol~temp_k n=13 p_fc=0.512/0.006
+  ok webbook_benzene_dvaph: dvaph_kJ/mol~temp_k n=34 p_fc=0.010/0.010
+  ok webbook_butane_dvaph: dvaph_kJ/mol~temp_k n=11 p_fc=nan/0.051
+  ok webbook_carbon_disulfide_dvaph: dvaph_kJ/mol~temp_k n=12 p_fc=0.001/0.001
+  ok webbook_cyclohexane_dvaph: dvaph_kJ/mol~temp_k n=30 p_fc=0.001/0.000
+  ok webbook_ethane_dvaph: dvaph_kJ/mol~temp_k n=10 p_fc=nan/0.003
+  ok webbook_ethylbenzene_dvaph: dvaph_kJ/mol~temp_k n=11 p_fc=nan/0.017
+  ok webbook_ethylene_dvaph: dvaph_kJ/mol~temp_k n=10 p_fc=nan/0.066
+  ok webbook_ethylene_glycol_dvaph: dvaph_kJ/mol~temp_k n=10 p_fc=nan/0.724
+  ok webbook_heptane_dfush: dfush_kJ/mol~temp_k n=13 p_fc=0.003/0.017
+  ok webbook_heptane_dfuss: dfuss_J/mol*K~temp_k n=11 p_fc=nan/0.915
+  ok webbook_heptane_dvaph: dvaph_kJ/mol~temp_k n=16 p_fc=0.025/0.122
+  ok webbook_hexane_dvaph: dvaph_kJ/mol~temp_k n=23 p_fc=0.002/0.000
+  ok webbook_isooctane_dvaph: dvaph_kJ/mol~temp_k n=18 p_fc=0.004/0.000
+  ok webbook_methane_dvaph: dvaph_kJ/mol~temp_k n=16 p_fc=0.595/0.686
+  ok webbook_methanol_dvaph: dvaph_kJ/mol~temp_k n=29 p_fc=0.024/0.000
+  ok webbook_methyl_chloride_dvaph: dvaph_kJ/mol~temp_k n=10 p_fc=nan/0.020
+  ok webbook_octane_dvaph: dvaph_kJ/mol~temp_k n=17 p_fc=0.013/0.074
+  ok webbook_pentane_dvaph: dvaph_kJ/mol~temp_k n=13 p_fc=0.080/0.081
+  ok webbook_propane_dvaph: dvaph_kJ/mol~temp_k n=10 p_fc=nan/0.007
+  ok webbook_propylene_dvaph: dvaph_kJ/mol~temp_k n=11 p_fc=nan/0.008
+  ok webbook_toluene_dvaph: dvaph_kJ/mol~temp_k n=26 p_fc=0.891/0.172
+
+=== 冒烟汇总: 147/150 格成功 ===
+  fc: 拒绝率 0.660, 失败 10 格
+  fitted_f: 拒绝率 0.755, 失败 0 格
+  fitted_hc3: 拒绝率 0.633, 失败 0 格
+  exog_hc3: 拒绝率 0.592, 失败 3 格
+done -> D:\form_check\real_data\smoke_results.csv
+=== 哨兵比对 ===
+S6 : {"p_fitted_f": {"n_compared": 120, "max_abs_diff": 0.0}, "p_fc": {"n_compared": 120, "max_abs_diff": 0.0}}
+E  : {"p_fitted_f": {"n_compared": 147, "max_abs_diff": 1.3234889800848443e-23}, "p_fc": {"n_compared": 137, "max_abs_diff": 0.0}}

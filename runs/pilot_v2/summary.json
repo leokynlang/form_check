@@ -1,0 +1,448 @@
+{
+ "tag": "pilot_v2",
+ "n_rows": 14250,
+ "calibrated_tau_at_fpr5": {
+  "50": {
+   "fc": 0.031950000000000006,
+   "fitted_f": 0.034373776001385636,
+   "fitted_hc3": 0.0249833963151463,
+   "exog_hc3": 0.025769392614986918
+  },
+  "200": {
+   "fc": 0.05995,
+   "fitted_f": 0.057404100905870975,
+   "fitted_hc3": 0.04792326676538193,
+   "exog_hc3": 0.05839295111570397
+  },
+  "1000": {
+   "fc": 0.06880000000000001,
+   "fitted_f": 0.06431755373552517,
+   "fitted_hc3": 0.0634823456282048,
+   "exog_hc3": 0.0726620650134584
+  }
+ },
+ "h0_false_alarm_alpha05": {
+  "50": {
+   "fc": {
+    "rate": 0.05733333333333333
+   },
+   "fitted_f": {
+    "rate": 0.056
+   },
+   "fitted_hc3": {
+    "rate": 0.064
+   },
+   "exog_hc3": {
+    "rate": 0.061333333333333344
+   }
+  },
+  "200": {
+   "fc": {
+    "rate": 0.032
+   },
+   "fitted_f": {
+    "rate": 0.037333333333333336
+   },
+   "fitted_hc3": {
+    "rate": 0.042666666666666665
+   },
+   "exog_hc3": {
+    "rate": 0.036000000000000004
+   }
+  },
+  "1000": {
+   "fc": {
+    "rate": 0.024
+   },
+   "fitted_f": {
+    "rate": 0.03333333333333333
+   },
+   "fitted_hc3": {
+    "rate": 0.036000000000000004
+   },
+   "exog_hc3": {
+    "rate": 0.02666666666666667
+   }
+  }
+ },
+ "structural_h1_power_alpha05": {
+  "QUAD_LIN": {
+   "50": {
+    "fc": 1.0,
+    "fitted_f": 1.0,
+    "fitted_hc3": 1.0,
+    "exog_hc3": 1.0
+   },
+   "200": {
+    "fc": 1.0,
+    "fitted_f": 1.0,
+    "fitted_hc3": 1.0,
+    "exog_hc3": 1.0
+   },
+   "1000": {
+    "fc": 1.0,
+    "fitted_f": 1.0,
+    "fitted_hc3": 1.0,
+    "exog_hc3": 1.0
+   }
+  },
+  "CUBIC_LIN": {
+   "50": {
+    "fc": 0.42,
+    "fitted_f": 1.0,
+    "fitted_hc3": 1.0,
+    "exog_hc3": 1.0
+   },
+   "200": {
+    "fc": 0.5,
+    "fitted_f": 1.0,
+    "fitted_hc3": 1.0,
+    "exog_hc3": 1.0
+   },
+   "1000": {
+    "fc": 0.34,
+    "fitted_f": 1.0,
+    "fitted_hc3": 1.0,
+    "exog_hc3": 1.0
+   }
+  },
+  "INTERACT": {
+   "50": {
+    "fc": 0.34,
+    "fitted_f": 1.0,
+    "fitted_hc3": 1.0,
+    "exog_hc3": 0.14
+   },
+   "200": {
+    "fc": 0.26,
+    "fitted_f": 1.0,
+    "fitted_hc3": 1.0,
+    "exog_hc3": 0.1
+   },
+   "1000": {
+    "fc": 0.2,
+    "fitted_f": 1.0,
+    "fitted_hc3": 1.0,
+    "exog_hc3": 0.02
+   }
+  },
+  "THRESHOLD": {
+   "50": {
+    "fc": 1.0,
+    "fitted_f": 1.0,
+    "fitted_hc3": 1.0,
+    "exog_hc3": 1.0
+   },
+   "200": {
+    "fc": 1.0,
+    "fitted_f": 1.0,
+    "fitted_hc3": 1.0,
+    "exog_hc3": 1.0
+   },
+   "1000": {
+    "fc": 1.0,
+    "fitted_f": 1.0,
+    "fitted_hc3": 1.0,
+    "exog_hc3": 1.0
+   }
+  },
+  "EXP_MODEL": {
+   "50": {
+    "fc": 1.0,
+    "fitted_f": 1.0,
+    "fitted_hc3": 1.0,
+    "exog_hc3": 1.0
+   },
+   "200": {
+    "fc": 1.0,
+    "fitted_f": 1.0,
+    "fitted_hc3": 1.0,
+    "exog_hc3": 1.0
+   },
+   "1000": {
+    "fc": 1.0,
+    "fitted_f": 1.0,
+    "fitted_hc3": 1.0,
+    "exog_hc3": 1.0
+   }
+  },
+  "LOG_MODEL": {
+   "50": {
+    "fc": 1.0,
+    "fitted_f": 1.0,
+    "fitted_hc3": 1.0,
+    "exog_hc3": 1.0
+   },
+   "200": {
+    "fc": 1.0,
+    "fitted_f": 1.0,
+    "fitted_hc3": 1.0,
+    "exog_hc3": 1.0
+   },
+   "1000": {
+    "fc": 1.0,
+    "fitted_f": 1.0,
+    "fitted_hc3": 1.0,
+    "exog_hc3": 1.0
+   }
+  },
+  "RATIONAL": {
+   "50": {
+    "fc": 1.0,
+    "fitted_f": 1.0,
+    "fitted_hc3": 1.0,
+    "exog_hc3": 1.0
+   },
+   "200": {
+    "fc": 1.0,
+    "fitted_f": 1.0,
+    "fitted_hc3": 1.0,
+    "exog_hc3": 1.0
+   },
+   "1000": {
+    "fc": 1.0,
+    "fitted_f": 1.0,
+    "fitted_hc3": 1.0,
+    "exog_hc3": 1.0
+   }
+  },
+  "OMITTED_M": {
+   "50": {
+    "fc": 0.98,
+    "fitted_f": 0.98,
+    "fitted_hc3": 0.96,
+    "exog_hc3": 0.96
+   },
+   "200": {
+    "fc": 1.0,
+    "fitted_f": 1.0,
+    "fitted_hc3": 1.0,
+    "exog_hc3": 1.0
+   },
+   "1000": {
+    "fc": 1.0,
+    "fitted_f": 1.0,
+    "fitted_hc3": 1.0,
+    "exog_hc3": 1.0
+   }
+  },
+  "DILUTION": {
+   "50": {
+    "fc": 1.0,
+    "fitted_f": 0.5,
+    "fitted_hc3": 0.42,
+    "exog_hc3": 1.0
+   },
+   "200": {
+    "fc": 1.0,
+    "fitted_f": 0.96,
+    "fitted_hc3": 0.94,
+    "exog_hc3": 1.0
+   },
+   "1000": {
+    "fc": 1.0,
+    "fitted_f": 1.0,
+    "fitted_hc3": 1.0,
+    "exog_hc3": 1.0
+   }
+  },
+  "OPPOSING": {
+   "50": {
+    "fc": 0.02,
+    "fitted_f": 0.5,
+    "fitted_hc3": 0.26,
+    "exog_hc3": 1.0
+   },
+   "200": {
+    "fc": 0.0,
+    "fitted_f": 0.98,
+    "fitted_hc3": 0.94,
+    "exog_hc3": 1.0
+   },
+   "1000": {
+    "fc": 0.0,
+    "fitted_f": 1.0,
+    "fitted_hc3": 1.0,
+    "exog_hc3": 1.0
+   }
+  },
+  "COLLINEAR_CURV": {
+   "50": {
+    "fc": 1.0,
+    "fitted_f": 1.0,
+    "fitted_hc3": 1.0,
+    "exog_hc3": 1.0
+   },
+   "200": {
+    "fc": 1.0,
+    "fitted_f": 1.0,
+    "fitted_hc3": 1.0,
+    "exog_hc3": 1.0
+   },
+   "1000": {
+    "fc": 1.0,
+    "fitted_f": 1.0,
+    "fitted_hc3": 1.0,
+    "exog_hc3": 1.0
+   }
+  }
+ },
+ "noise_layer_rejection_alpha05": {
+  "H1_AUTOCORR": {
+   "50": {
+    "fc": 0.02,
+    "fitted_f": 0.04,
+    "fitted_hc3": 0.04,
+    "exog_hc3": 0.04
+   },
+   "200": {
+    "fc": 0.04,
+    "fitted_f": 0.1,
+    "fitted_hc3": 0.08,
+    "exog_hc3": 0.08
+   },
+   "1000": {
+    "fc": 0.14,
+    "fitted_f": 0.12,
+    "fitted_hc3": 0.1,
+    "exog_hc3": 0.1
+   }
+  },
+  "H1_HEAVYTAIL": {
+   "50": {
+    "fc": 0.0,
+    "fitted_f": 0.04,
+    "fitted_hc3": 0.04,
+    "exog_hc3": 0.04
+   },
+   "200": {
+    "fc": 0.06,
+    "fitted_f": 0.08,
+    "fitted_hc3": 0.06,
+    "exog_hc3": 0.06
+   },
+   "1000": {
+    "fc": 0.1,
+    "fitted_f": 0.06,
+    "fitted_hc3": 0.06,
+    "exog_hc3": 0.06
+   }
+  },
+  "H1_OUTLIER": {
+   "50": {
+    "fc": 0.02,
+    "fitted_f": 0.02,
+    "fitted_hc3": 0.0,
+    "exog_hc3": 0.0
+   },
+   "200": {
+    "fc": 0.0,
+    "fitted_f": 0.06,
+    "fitted_hc3": 0.02,
+    "exog_hc3": 0.02
+   },
+   "1000": {
+    "fc": 0.04,
+    "fitted_f": 0.02,
+    "fitted_hc3": 0.0,
+    "exog_hc3": 0.0
+   }
+  },
+  "H1_OUTLIER_GRP": {
+   "50": {
+    "fc": 0.06,
+    "fitted_f": 0.06,
+    "fitted_hc3": 0.04,
+    "exog_hc3": 0.04
+   },
+   "200": {
+    "fc": 0.02,
+    "fitted_f": 0.08,
+    "fitted_hc3": 0.04,
+    "exog_hc3": 0.04
+   },
+   "1000": {
+    "fc": 0.02,
+    "fitted_f": 0.02,
+    "fitted_hc3": 0.02,
+    "exog_hc3": 0.02
+   }
+  },
+  "H1_VAR_GROWING": {
+   "50": {
+    "fc": 0.04,
+    "fitted_f": 0.02,
+    "fitted_hc3": 0.02,
+    "exog_hc3": 0.02
+   },
+   "200": {
+    "fc": 0.06,
+    "fitted_f": 0.08,
+    "fitted_hc3": 0.1,
+    "exog_hc3": 0.1
+   },
+   "1000": {
+    "fc": 0.0,
+    "fitted_f": 0.04,
+    "fitted_hc3": 0.0,
+    "exog_hc3": 0.0
+   }
+  }
+ },
+ "power_at_empirical_fpr5_rel1pct": {
+  "50": {
+   "fc": 0.773090909090909,
+   "fitted_f": 0.8724528301886793,
+   "fitted_hc3": 0.8547169811320755,
+   "exog_hc3": 0.906
+  },
+  "200": {
+   "fc": 0.7916363636363636,
+   "fitted_f": 0.990188679245283,
+   "fitted_hc3": 0.9860377358490566,
+   "exog_hc3": 0.91
+  },
+  "1000": {
+   "fc": 0.7847272727272727,
+   "fitted_f": 1.0,
+   "fitted_hc3": 1.0,
+   "exog_hc3": 0.908
+  }
+ },
+ "extrap_auc": {
+  "form_check": 0.09322091626311292,
+  "RESET fitted HC3": 0.06882302671505183
+ },
+ "win_matrix_cells": {
+  "form_check": {
+   "form_check": 0,
+   "RESET fitted F": 36,
+   "RESET fitted HC3": 37,
+   "RESET exog HC3": 25
+  },
+  "RESET fitted F": {
+   "form_check": 8,
+   "RESET fitted F": 0,
+   "RESET fitted HC3": 2,
+   "RESET exog HC3": 15
+  },
+  "RESET fitted HC3": {
+   "form_check": 8,
+   "RESET fitted F": 9,
+   "RESET fitted HC3": 0,
+   "RESET exog HC3": 14
+  },
+  "RESET exog HC3": {
+   "form_check": 11,
+   "RESET fitted F": 12,
+   "RESET fitted HC3": 12,
+   "RESET exog HC3": 0
+  }
+ },
+ "failure_rates": {
+  "fc": 0.08421052631578947,
+  "fitted_f": 0.10526315789473684,
+  "fitted_hc3": 0.10526315789473684,
+  "exog_hc3": 0.1368421052631579
+ }
+}

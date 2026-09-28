@@ -1,0 +1,125 @@
+{
+ "summary": {
+  "H0_BASELINE@rel=0.01": {
+   "rej": {
+    "power": 0.075,
+    "exponential": 1.0,
+    "logarithmic": 1.0,
+    "rational": 1.0
+   },
+   "containment": 0.925,
+   "escalation": 0.075,
+   "median_n_viable": 1.0
+  },
+  "H0_BASELINE@rel=0.03": {
+   "rej": {
+    "power": 0.06,
+    "exponential": 1.0,
+    "logarithmic": 1.0,
+    "rational": 1.0
+   },
+   "containment": 0.94,
+   "escalation": 0.06,
+   "median_n_viable": 1.0
+  },
+  "EXP_MODEL@rel=0.01": {
+   "rej": {
+    "power": 1.0,
+    "exponential": 0.08,
+    "logarithmic": 1.0,
+    "rational": 1.0
+   },
+   "containment": 0.92,
+   "escalation": 0.08,
+   "median_n_viable": 1.0
+  },
+  "EXP_MODEL@rel=0.03": {
+   "rej": {
+    "power": 1.0,
+    "exponential": 0.055,
+    "logarithmic": 1.0,
+    "rational": 1.0
+   },
+   "containment": 0.945,
+   "escalation": 0.055,
+   "median_n_viable": 1.0
+  },
+  "LOG_MODEL@rel=0.01": {
+   "rej": {
+    "power": 1.0,
+    "exponential": 1.0,
+    "logarithmic": 0.115,
+    "rational": 0.095
+   },
+   "containment": 0.885,
+   "escalation": 0.025,
+   "median_n_viable": 2.0
+  },
+  "LOG_MODEL@rel=0.03": {
+   "rej": {
+    "power": 1.0,
+    "exponential": 1.0,
+    "logarithmic": 0.05,
+    "rational": 0.06
+   },
+   "containment": 0.95,
+   "escalation": 0.005,
+   "median_n_viable": 2.0
+  },
+  "RATIONAL@rel=0.01": {
+   "rej": {
+    "power": 1.0,
+    "exponential": 1.0,
+    "logarithmic": 1.0,
+    "rational": 0.045
+   },
+   "containment": 0.955,
+   "escalation": 0.045,
+   "median_n_viable": 1.0
+  },
+  "RATIONAL@rel=0.03": {
+   "rej": {
+    "power": 1.0,
+    "exponential": 1.0,
+    "logarithmic": 1.0,
+    "rational": 0.09
+   },
+   "containment": 0.91,
+   "escalation": 0.09,
+   "median_n_viable": 1.0
+  },
+  "THRESHOLD@rel=0.01": {
+   "rej": {
+    "power": 1.0,
+    "exponential": 1.0,
+    "logarithmic": 1.0,
+    "rational": 1.0
+   },
+   "containment": null,
+   "escalation": 1.0,
+   "median_n_viable": 0.0
+  },
+  "THRESHOLD@rel=0.03": {
+   "rej": {
+    "power": 1.0,
+    "exponential": 1.0,
+    "logarithmic": 1.0,
+    "rational": 1.0
+   },
+   "containment": null,
+   "escalation": 1.0,
+   "median_n_viable": 0.0
+  }
+ },
+ "config": {
+  "null": "wild_rademacher",
+  "B_PERM": 999,
+  "ALPHA": 0.05,
+  "N": 200,
+  "SEEDS": 200,
+  "RELS": [
+   0.01,
+   0.03
+  ]
+ }
+}

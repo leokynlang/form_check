@@ -1,0 +1,7 @@
+train pts: 10  holdout pts: 8
+holdout T: [np.int64(220), np.int64(240), np.int64(260), np.int64(280), np.int64(300), np.int64(320), np.int64(340), np.int64(360)]
+n fits: 200 evaluable: 199 declines: 1
+JOINT SILENCE: 0 = 0.0
+far-field err (flagged): median 0.77
+enrichment: nan
+written: D:/form_check/real_data/pressure_case_study_rows.csv

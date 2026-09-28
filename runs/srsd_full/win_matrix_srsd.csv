@@ -1,0 +1,5 @@
+,form_check,RESET fitted F,RESET fitted HC3,RESET exog HC3
+form_check,0,131,67,15
+RESET fitted F,47,0,42,0
+RESET fitted HC3,184,183,0,36
+RESET exog HC3,232,283,183,0
