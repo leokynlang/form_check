@@ -1,8 +1,12 @@
 """Validated autonomous discovery and automatic backend adjustment tests."""
 
+from pathlib import Path
+
 import dimreflex as dr
 import numpy as np
 import pandas as pd
+
+DATA_PATH = Path(__file__).resolve().parent.parent / "heat_exchanger_data.csv"
 
 
 def power_data(n=90, seed=13, outlier=None):
@@ -117,7 +121,7 @@ class TestAutomaticBackendAdjustment:
 
 class TestPiSpaceAutonomy:
     def test_auto_pi_discovers_validated_heat_transfer_model(self):
-        data = pd.read_csv("heat_exchanger_data.csv")
+        data = pd.read_csv(DATA_PATH)
         result = dr.discover_auto_pi(
             data, heat_system(), "h",
             families=["power_law", "piecewise_power_law", "rational_log"],
@@ -131,7 +135,7 @@ class TestPiSpaceAutonomy:
         assert target_group == {"k": -1.0, "D": 1.0, "h": 1.0}
 
     def test_discover_method_auto_uses_same_pipeline(self):
-        data = pd.read_csv("heat_exchanger_data.csv")
+        data = pd.read_csv(DATA_PATH)
         result = dr.discover(data, heat_system(), "h", method="auto")
         assert result["autonomous"]["success"]
         assert result["fit"]["success"]
