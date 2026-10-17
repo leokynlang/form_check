@@ -1,5 +1,41 @@
 # Joint Silence: P(beautiful certificate | wrong form)
 
+> ## ⚠️ 口径警告（2026-10-17 批注，引用本文件前必读）
+>
+> **本文件 Headline numbers 一节的数字与已保存原始产物不一致，不得直接引用。**
+>
+> 1. **SRSD 联合沉默率**：本文件记为 **32.0% / 24.6% / 19.4%**，并称覆盖
+>    "19 non-monomial equations (45,000 datasets per n)"。而已保存的
+>    `joint_silence_srsd_per_task.csv` 实际为 **18 个任务、每任务 2,000 份
+>    数据集（每档 36,000）**，按样本量加权所得为 **37.8% / 29.8% / 23.2%**
+>    （校准后 38.6% / 30.2% / 23.6%）；`summary.json` 的 `srsd_pool` 与后者
+>    完全一致。**两者不可互替。**
+> 2. **H0 基线**：本文件第 54–61 行用于计算后验的 "on true power laws (H0),
+>    joint silence is 70%"，与 `toolbox_silence_h0_reference.csv` 记录的
+>    **90.5%**（srsd, n=50, calibrated）不一致。该文件在 n=200 为 91.4%、
+>    synth n=50 为 89.3%。
+> 3. **因此本文件的 "P(wrong form | all-clear) ≈ 32/(32+70) ≈ 31%" 是用
+>    两个不同口径的数字相除得到的。** 若改用同口径重算：完整工具箱的
+>    H1 沉默率 42.2%（calibrated）与 H0 沉默率 90.5% 均来自可核实产物，
+>    得 `42.2/(42.2+90.5) ≈ 31.8%` —— 结论方向偶然一致，但依据必须替换。
+> 4. **条件代价亦不符**：第 101–105 行记 n=50 的 `P(err > 10%) = 8.0%`，
+>    而 `summary.json` 的 `conditional_extrapolation` 为 **7.1%**（alpha）
+>    与 **7.3%**（calibrated）。p90 亦为 8.6%–8.7% 而非 9.0%。量级接近，
+>    但引用时须以 JSON 原始值为准。
+> 5. **0.668% 与 6.874% 不在本文件**：本文件未出现这两个比例。其原始出处为
+>    `paper/draft_v3_complete.md` 第 43–50 行（"0.67% of screened wrong forms
+>    (481/71,992), but 6.9% of dangerous ones"）；`350/12,369 = 2.83%` 的出处为
+>    `paper/review3_results.md` 第 38 行（10% 危险阈值）。引用这些比例时**不要
+>    标注为本文件来源**。
+> 6. **正确处理**：本文件保留作历史记录，不删除、不改动下方原文。正式引用
+>    一律采用原始计数重算值，并以 `joint_silence_srsd_per_task.csv`、
+>    `toolbox_silence.csv`、`toolbox_silence_h0_reference.csv`、
+>    `summary.json` 为准。32.0% 与 45,000 份数据集的记载出处尚未查明，
+>    可能是另一次运行或早期版本，须在复现阶段定位。
+>
+> 该批注已同步写入 D:/dimreflex 计划书 v1.4 第五章第 1 节及其修订记录。
+> **在重新绑定并重跑之前，本文件的汇总数字不得进入论文表格或正文。**
+
 **New analysis, 2026-09-09.** Question posed by the author's reframing:
 not "which gate is better" but *when the fitted functional form is wrong,
 how often does every falsification check stay quiet — so the pipeline
