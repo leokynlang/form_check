@@ -87,3 +87,28 @@ Silent_Acceptance_revision_2026-10-17/manuscript.md。
 - 正在工作目录中的 PySR 对照实验仍为探索性口径，未并入主实验。
 - 已提交 Git 并公开于 https://github.com/leokynlang/form_check；
   上面 10-17 版说明中「没有提交 Git」一条据此失效。
+
+
+2026-10-18 审稿回复修订（R2 review-response）
+
+本次修改只落实审稿意见，不改动任何已报告的聚合数字、表格行或图。
+
+1. §7 可复现性声明：删除「Public access ... not established」，改为指向
+   https://github.com/leokynlang/form_check 与数据发布标签 data-2026-10-18，
+   并列明 manifest / SHA256 / 复现脚本。
+2. 参考文献 [17]：WebBook 许可描述由 public domain 更正为 copyrighted
+   SRD 69，原始页面与提取表不再分发，与 data_release/THIRD_PARTY_DATA.md
+   和 dataset_sources.json 保持一致。
+3. §4.10 增加 pooled 任务级阈值扫描：10% 阈值 481 条释放（bonus.15 242、
+   bonus.5 239）；12.5% 降至 176（bonus.15 5、bonus.5 171）；15% 为 111、
+   20% 为 39，均只来自 bonus.5。Abstract、Introduction、§5.3、Conclusion
+   同步说明释放集中在两个任务、剔除 bonus.15 后 n=200/1000 释放率为 0%。
+4. 新增 Appendix H（探索性 PySR 对照）：360 个候选，joint silent 87
+   (24.2%)；R²≥0.99 层 183 个中 70 个 silent (38.3%)；far>10% 层 142 个中
+   3 个 silent (2.1%)；R²≥0.99 且 far>10% 的 2 个候选全部被 D 拒绝。
+   明确标注 exploratory，不并入主表。
+5. 构建：manuscript.md 更新，PDF 重建为 38 页（Appendix H 新增 2 页）；
+   原 PDF 被 Foxit 占用无法覆盖，新文件命名为
+   Silent_Acceptance_research_R2_2026-10-18_rev2.pdf。
+6. 未改变：Tables 1-16 的全部数据行、S=65,992 / Sd=6,403 / Ld=481 /
+   Da=36,169，以及 data_release 中的已发布数据快照。

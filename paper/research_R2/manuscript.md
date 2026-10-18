@@ -27,9 +27,13 @@ workflow combines R² ≥ 0.99 with four valid, non-rejecting diagnostics.
 It releases 481 wrong models whose relative error exceeds 10% at the
 registered upper-end probe: 7.5% of screened dangerous wrong models
 (481/6,403), or 0.73% of all screened wrong models (481/65,992).
-The release fraction among all dangerous eligible fits decreases from
-2.94% at n=50 to 0.21% at n=1000. Thus the gates remove many
-dangerous fits while leaving a measurable residual failure channel.
+The releases are concentrated in two of the seventeen tasks; excluding
+the threshold-borderline task bonus.15, whose median probe error is
+9.2% against the 10% cutoff, the release fraction is 0% at n=200 and
+1000. The release fraction among all dangerous eligible fits decreases
+from 2.94% at n=50 to 0.21% at n=1000. Thus the gates remove many
+dangerous fits while leaving a measurable residual failure channel
+whose size depends on task composition and threshold placement.
 
 The benchmark connects diagnostic performance to complete-workflow
 outcomes and identifies which mismatch directions warrant additional
@@ -89,7 +93,10 @@ a stable numerical path is necessary for a meaningful comparison.
 Third, complete-workflow release is more informative than gate silence
 alone. In the 17-task extrapolation pool, 481 dangerous wrong models
 pass both R² ≥ 0.99 and every valid diagnostic: 7.5% of the
-screened-dangerous subset. The resulting failure channel can be
+screened-dangerous subset. These releases are concentrated in two
+tasks; excluding the threshold-borderline task bonus.15, the release
+fraction is 0% at n=200 and 1000, so the pooled 7.5% is not a
+task-uniform failure rate. The resulting failure channel can be
 quantified alongside the errors the gates remove.
 
 We make three contributions:
@@ -895,6 +902,16 @@ those subsets are 41.30%, 15.85%, and 6.40%. At n=1000
 and the 20% threshold, Sd=0 and Ld/Sd is undefined.
 The complete 2/5/10/20/50% sweep is in evidence/results.json.
 
+A pooled task-level sweep makes the composition visible. At the
+10% threshold, all 481 releases come from bonus.15 (242) and
+bonus.5 (239). At 12.5%, the count falls to 176: bonus.15
+contributes 5 and bonus.5 contributes 171. At 15%, all 111
+releases come from bonus.5; at 20%, all 39 do. The released set
+therefore consists of the two tasks throughout, but which task
+dominates changes sharply between 10% and 12.5%. These counts
+are reproduced by threshold_decomposition.py and recorded in
+evidence/threshold_decomposition.json.
+
 **Sample-size pattern.** Ld/Da decreases from 2.94% to 0.87%
 to 0.21%, and Ld/Sd decreases from 15.85% to 4.93% to
 1.22%. A fixed-label control assigns each matched (task, rel,
@@ -1052,12 +1069,14 @@ a common joint budget is needed to decide whether the added
 checks improve the trade-off.
 
 Conditional rates retain their populations. The 7.5% screened-dangerous
-release rate is the most direct measure of failure to intercept
-dangerous candidates that already meet the fit screen. The
-0.73% rate measures their frequency among all screened wrong
-forms. Deployment risk additionally depends on task prevalence
-and on the population of correct candidates, as the three-state
-accounting in Section 4.10 demonstrates.
+release rate measures failure to intercept dangerous candidates
+that already meet the fit screen, but it is a pooled figure driven by
+two tasks; excluding the threshold-borderline task bonus.15, the
+release fraction is 0% at n=200 and 1000. The 0.73% rate measures
+their frequency among all screened wrong forms. Deployment risk
+additionally depends on task prevalence and on the population of
+correct candidates, as the three-state accounting in Section 4.10
+demonstrates.
 
 ### 5.4 Use family viability and observations as diagnostic follow-up
 
@@ -1176,10 +1195,22 @@ The current validation includes record-level joins, input hashes,
 independent aggregation checks, selected implementation comparisons,
 and PDF consistency checks. Reproduction of the original fitting
 experiments is separate from re-aggregation of their stored outputs.
-Public access to a versioned artifact is not established in this
-working manuscript. A submission must provide its actual access
-location and applicable data redistribution terms. Appendix G
-preserves the numerical and interpretive correction history.
+
+The artifact is publicly available at
+https://github.com/leokynlang/form_check. The data snapshot
+accompanying this manuscript is release tag data-2026-10-18.
+data_release/manifest.json lists every member path, size, and
+SHA-256, and SHA256SUMS.txt covers the archive. The repository README
+gives the clone, install, data-restoration, and aggregation commands,
+including audit_size.py, audit_results.py, audit_s7.py,
+reproduce_r2.py, verify_composition.py, threshold_decomposition.py,
+and deep_analysis.py.
+
+Third-party data are not uniformly redistributed:
+data_release/THIRD_PARTY_DATA.md and dataset_sources.json record
+per-source decisions, and copyrighted sources such as WebBook SRD 69
+are source-download-only. Appendix G preserves the numerical and
+interpretive correction history.
 
 ## 8 Conclusion
 
@@ -1198,9 +1229,12 @@ fit screening with valid diagnostic non-rejection. Of 6,403 screened
 dangerous wrong models, 481 pass all four gates: a 7.5% residual
 release rate under the specified endpoint criterion. The
 corresponding frequency among all screened wrong models is 0.73%.
-The gates remove many dangerous candidates, yet the remaining
-failure channel is observable and depends on the tested structure
-and decision policy.
+The released records are concentrated in two tasks; excluding the
+threshold-borderline task bonus.15, no dangerous model is released
+at n=200 or 1000, so the pooled 7.5% should not be read as a
+task-uniform failure rate. The gates remove many dangerous
+candidates, yet the remaining failure channel is observable and
+depends on the tested structure and decision policy.
 
 The practical contribution is a framework for assessing diagnostic
 trade-offs on the same models, with failure registration and explicit
@@ -1242,7 +1276,7 @@ those tests.
 
 [15] UCI Machine Learning Repository. archive.ics.uci.edu (datasets: auto_mpg, automobile, concrete, slump, energy_efficiency, yacht, ccpp, air_quality, gas_turbine, tetouan, steel). Accessed 2026-09-06; raw snapshots and SHA-256 hashes recorded in the local artifact; redistribution subject to each dataset's stated license.
 [16] NIST Statistical Reference Datasets (StRD). itl.nist.gov/div898/strd. Accessed 2026-09-06; public domain.
-[17] NIST Chemistry WebBook, SRD 69. webbook.nist.gov. Accessed 2026-09-06; public domain (U.S. Government work).
+[17] NIST Chemistry WebBook, SRD 69. webbook.nist.gov. Accessed 2026-09-06. Copyrighted Standard Reference Database 69; raw pages and extracted tables are not redistributed in the public artifact.
 [18] U.S. Geological Survey. National Water Information System (NWIS instantaneous values, 12 gauges, WY2023) and FDSN event service (global M ≥ 5.5, 2000-2024). earthquake.usgs.gov / waterdata.usgs.gov. Accessed 2026-09-06; public domain (U.S. Government work).
 [19] Open-Meteo historical weather API (ERA5 reanalysis), 10 wind sites, 2023. open-meteo.com, CC BY 4.0 (ERA5: Copernicus licence). Accessed 2026-09-06; reanalysis, not in-situ measurement.
 [20] OpenML. openml.org (datasets: ailerons, cpu_act, elusage). Accessed 2026-09-06; per-dataset licenses vary and are recorded in the local manifest.
@@ -1502,8 +1536,17 @@ experiments and the conditional extension to discovery-generated
 candidates. Historical accounting corrections are retained in this
 appendix. All numerical data rows in Tables 1-16 and the companion
 engineering tables are preserved from R1. This revision adds no model
-fits or completed validation experiments. External PySR pilots in the
-working source tree are not incorporated into the main benchmark.
+fits or completed validation experiments. Appendix H reports an
+exploratory PySR counterpart outside the main tables.
+
+8. **Review-response revision (R2, 2026-10-18).** The artifact is
+public at https://github.com/leokynlang/form_check with data release
+tag data-2026-10-18. Section 7 now points to it; reference [17]'s
+licensing description is corrected; Section 4.10 adds a pooled
+task-level threshold sweep; the abstract, introduction, discussion,
+and conclusion state the task concentration of the 481 releases; and
+Appendix H adds the exploratory PySR counterpart. No aggregate
+(S, Sd, Ld, Da), table row, or figure in Tables 1-16 changed.
 
 ### G.2 Numerical implementation audit
 
@@ -1541,4 +1584,38 @@ statistical performance. The implementation audit was a separate,
 one-off comparison rather than a rolling software check on every
 fit. Close implementation agreement and empirical size are
 different validation questions.
+
+## Appendix H - Exploratory PySR counterpart
+
+This appendix reports an exploratory check that applies the four gates
+to expressions emitted by a symbolic-regression search. It is separate
+from the main benchmark: candidate generation is not frozen, the sample
+is small, and the counts are compatibility evidence rather than rate
+estimates. The data are in evidence/deep_analysis.json and
+runs/pysr_gate/wide_svd/ in the data bundle.
+
+**Protocol.** PySR searched the log-space training design with a
+restricted arithmetic operator set (`+`, `-`) matching the power-law
+hypothesis class. Each emitted expression was refitted as a prespecified
+candidate and passed through gates A-D under the same native thresholds.
+The run produced 360 candidates across the evaluated tasks.
+
+**Results.** All 360 candidates: 87 jointly silent (24.2%). In the
+R² ≥ 0.99 layer (183 candidates), 70 are jointly silent (38.3%), close
+in magnitude to the 38.6% S2 four-gate figure at n=50 although the
+candidate pools differ. In the far-field error >10% layer (142
+candidates), only 3 are jointly silent (2.1%); the R² ≥ 0.99 and
+far-field >10% intersection contains 2 candidates, both rejected by
+gate D (p ≈ 5×10⁻²⁹) while A, B, and C are silent. Per-gate rejection
+over all candidates: A 182 (50.6%), B 103 (28.6%), C 82 (22.8%),
+D 189 (52.5%); A is the sole rejecting gate on 45 candidates and D
+on 41.
+
+**Scope.** These counts describe one search configuration and 360
+candidates, of which only two meet the joint danger criterion. They do
+not establish a pass rate for discovery algorithms, do not rank the
+gates, and are not merged into Tables 1-16. Their purpose is to show
+that the same diagnostic record can be attached to search-selected
+expressions and that the main benchmark's failure channel has a
+counterpart in this pilot.
 
