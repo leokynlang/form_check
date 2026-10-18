@@ -48,3 +48,40 @@ pdfplumber 的 Python，运行：
 缓存聚合脚本依赖 D:/form_check 的原始实验缓存。
 validate_pdf.py 为了核对表格，需要桌面上一版目录：
 Silent_Acceptance_revision_2026-10-17/manuscript.md。
+
+
+2026-10-18 补充修订
+
+本次在 R2 稿基础上做任务级修订，未新增实验，未改动任何已报数字、表格行或图。
+
+修改：
+1. Section 4.10 增加任务级构成的两段：
+   481 条放行记录中，n=50 时 242 条来自 bonus.15、239 条来自 bonus.5，
+   其余 15 个任务合计 0 条；n=200 和 n=1000 时的放行记录（106、25 条）
+   全部来自 bonus.15。
+   17 个任务中有 6 个（bonus.20、i.27.6、i.37.4、i.39.11、i.43.43、
+   ii.38.14）合计 30,351 条危险记录、放行 0 条；其中 ii.38.14 单独有
+   557 条危险记录、放行 0 条。
+   排除 bonus.15 后，Ld/Sd 为 11.58%（n=50）、0%（n=200）、0%（n=1000）。
+   bonus.15 的外推探测值：中位数 9.19%，四分位区间 8.46%-9.50%，最大值
+   13.86%，无一超过 15%；bonus.5 的中位数为 15.56%，58.64% 超过 15%。
+2. Table 15 增加表注，区分两个合格池（18 个任务 / 17 个有限外推输出任务）。
+3. PDF 重建并更名为 Silent_Acceptance_research_R2_2026-10-18.pdf。
+   页数与 10-17 版相同（36 页），已有表格和图的内容计数不变，正文增加约
+   1,209 字符。
+
+新增文件：
+- reproduce_r2.py：按 audit_results.py 口径复现 Table 15 的 S/Sd/Ld/Da。
+- verify_composition.py：逐条验证上述数字，输出 evidence/verify_composition.json。
+- threshold_decomposition.py：danger 阈值 2/5/10/15/20/50% 下的任务级分解与
+  外推探测值分位数，输出 evidence/threshold_decomposition.json。
+- deep_analysis.py：far 阈值敏感性与 PySR 对照实验的门卫贡献分解，输出
+  evidence/deep_analysis.json。
+  这四个脚本与已有 audit 脚本一样，从自身位置解析仓库根目录。
+
+未改变：
+- Table 15 的 S=65,992、Sd=6,403、Ld=481、Da=36,169，以及全部已有表格行和图。
+- 未新增模型拟合、数据抽样或声称建议实验已经完成。
+- 正在工作目录中的 PySR 对照实验仍为探索性口径，未并入主实验。
+- 已提交 Git 并公开于 https://github.com/leokynlang/form_check；
+  上面 10-17 版说明中「没有提交 Git」一条据此失效。

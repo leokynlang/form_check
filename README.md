@@ -10,7 +10,7 @@ the models released by a fit screen plus diagnostic panel.
 
 ## Current manuscript and evidence
 
-- [Research manuscript R2 (PDF)](paper/research_R2/Silent_Acceptance_research_R2_2026-10-17.pdf)
+- [Research manuscript R2 (PDF)](paper/research_R2/Silent_Acceptance_research_R2_2026-10-18.pdf)
 - [Editable manuscript](paper/research_R2/manuscript.md)
 - [Record-level evidence](paper/research_R2/evidence/)
 - [Revision notes](paper/research_R2/REVISION_NOTES.txt)
@@ -65,17 +65,31 @@ After restoring `experiment-records`:
 python paper/research_R2/audit_size.py
 python paper/research_R2/audit_results.py
 python paper/research_R2/audit_s7.py
+python paper/research_R2/reproduce_r2.py
+python paper/research_R2/verify_composition.py
+python paper/research_R2/threshold_decomposition.py
+python paper/research_R2/deep_analysis.py
 ```
 
-The audit scripts resolve the repository root from their own locations. They read
+The first three rebuild the aggregated audit evidence behind the manuscript's
+tables. The last four produce the task-level composition analysis added on
+2026-10-18: `reproduce_r2.py` re-derives the joint-silence counts,
+`verify_composition.py` and `threshold_decomposition.py` decompose the released
+records by task across danger thresholds, and `deep_analysis.py` reports the
+far-threshold sensitivity of the same counts together with the per-gate
+contribution of the PySR counterpart experiment.
+
+All seven scripts resolve the repository root from their own locations. They read
 the original caches and write JSON evidence and figures only under
 `paper/research_R2/`. Re-aggregation is separate from regenerating the original
-model-fitting experiments.
+model-fitting experiments. `deep_analysis.py` additionally reads the PySR
+counterpart caches under `runs/pysr_gate/wide_svd/`, which the same bundle
+contains.
 
-The PDF is supplied ready to read. Its optional ReportLab builder requires Windows
-fonts (Times New Roman, Consolas, SimHei, and Segoe UI Symbol); the statistics scripts
-do not require those fonts. The frozen R2 PDF predates the public GitHub release,
-so this README is the current artifact-availability statement.
+The PDF is supplied ready to read and is versioned with the manuscript in this
+repository. Its optional ReportLab builder requires Windows fonts (Times New Roman,
+Consolas, SimHei, and Segoe UI Symbol); the statistics scripts do not require those
+fonts.
 
 ## Run experiments and tests
 

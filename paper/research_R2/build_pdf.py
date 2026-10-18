@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """build_pdf.py - Silent Acceptance 论文 PDF 构建(Report 路线,ReportLab)。
 输入: manuscript.md 和 figures/ 中的审计结果图。
-输出: tmp/pdfs/ 中的正文与封面，以及 Silent_Acceptance_research_R2_2026-10-17.pdf。
+输出: tmp/pdfs/ 中的正文与封面，以及 Silent_Acceptance_research_R2_2026-10-18.pdf。
 """
 import os
 import re
@@ -651,7 +651,7 @@ cv.setFont("Times New Roman", 11)
 cv.drawString(74, 170, "Anonymous - working manuscript, not submitted")
 cv.setFillColor(colors.HexColor("#baac86"))
 cv.setFont("Consolas", 9)
-cv.drawString(74, 143, "Research revision R2 / 2026-10-17")
+cv.drawString(74, 143, "Research revision R2 / 2026-10-18")
 cv.setStrokeColor(colors.HexColor("#baac86"))
 cv.line(74, 105, PAGE_W - 60, 105)
 cv.setFillColor(colors.HexColor("#b6c8d9"))
@@ -676,7 +676,7 @@ def normalize(page):
     return page
 
 
-FINAL = os.path.join(PAPER_DIR, "Silent_Acceptance_research_R2_2026-10-17.pdf")
+FINAL = os.path.join(PAPER_DIR, "Silent_Acceptance_research_R2_2026-10-18.pdf")
 writer = PdfWriter()
 writer.add_page(normalize(PdfReader(COVER).pages[0]))
 for pg in PdfReader(BODY).pages:

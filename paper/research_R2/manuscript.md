@@ -1,6 +1,6 @@
 # Silent Acceptance: A Benchmark of Specification Gates and Extrapolation Failures in Physical Model Assessment
 
-**Revision status - R2, 2026-10-17. Working manuscript.**
+**Revision status - R2, 2026-10-18. Working manuscript.**
 Research presentation revised using the R1 audited results.
 Appendix G records the correction history and the scope of this revision.
 
@@ -847,7 +847,7 @@ withholds release. The error threshold defines the consequence
 evaluated here; the probe measures one input rather than an
 operating-domain maximum.
 
-**Table 15 - Joint release on the 17-task S2 H1 pool. Each n has 34,000 records. Count symbols S, Sd, Ld, and Da distinguish the event populations from gate labels A-D.**
+**Table 15 - Joint release on the 17-task S2 H1 pool. Each n has 34,000 records. Count symbols S, Sd, Ld, and Da distinguish the event populations from gate labels A-D. Eligibility excludes i.30.5 (statistic-sentinel failure) and i.26.2 (no finite far-field outcome); Table 16 uses the 18-task H1 pool without the finite-far requirement.**
 
 | n | Screened S | Dangerous in S: Sd | Released dangerous Ld | All dangerous Da | Ld / S | Ld / Sd | Ld / Da |
 |---|---|---|---|---|---|---|---|
@@ -879,7 +879,12 @@ wrong models, 481/6,403 (7.51%) are released. Among screened wrong
 models below the danger threshold, 27,025/59,589 (45.35%) are
 released. The panel therefore excludes most screened-dangerous
 records from release while retaining a substantial residual channel.
-These pooled rates summarize the sampled task composition.
+These pooled rates summarize the sampled task composition, and
+that composition is concentrated. The 481 releases come from two
+of the seventeen tasks: bonus.15 (242) and bonus.5 (239). Six
+of the remaining fifteen release no dangerous record at any n while
+contributing 30,351 dangerous records between them; among these,
+all 557 dangerous records of ii.38.14 are intercepted.
 Structural mismatch and failure at the chosen probe are different
 labels, and their relation varies by equation.
 
@@ -899,6 +904,19 @@ Ld/Da is 2.93%, 0.31%, and 0.21%. The decreasing pattern
 survives this label control. Its interpretation still combines
 fit-screen behavior, diagnostic sensitivity, and changing probe
 coordinates; training samples are not constructed as nested sets.
+
+**Task composition of the released set.** The released records
+change identity with n. At n=50 the 350 releases are 239 from
+bonus.5 and 111 from bonus.15. At n=200 and n=1000 every release
+(106 and 25) comes from bonus.15 alone. Excluding that task,
+Ld/Sd is 11.58%, 0%, and 0%. The fixed-label control holds the
+danger label but not the task composition: bonus.15 has a median
+relative far-field error of 9.2%, with the 75th and 90th
+percentiles at 9.5% and 9.8% against the 10% threshold. Its
+danger label therefore moves with the threshold while its fitted
+form and task identity do not change. The decreasing pattern
+combines a panel effect with the position of one task's error
+distribution relative to a fixed cutoff.
 
 **Information in a clean diagnostic record.** The corresponding
 180,000-record H0/H1 pool has three states: true H0

@@ -1,0 +1,489 @@
+{
+  "pool": {
+    "tasks": 17,
+    "records_per_n": 34000,
+    "total": 102000
+  },
+  "pooled_sweep": [
+    {
+      "threshold": 0.02,
+      "S": 65992,
+      "Sd": 19901,
+      "Sd_frac": 0.30157,
+      "Ld": 4862,
+      "Ld_over_S": 0.07368,
+      "Ld_over_Sd": 0.24431,
+      "bonus15": 3005,
+      "bonus5": 311,
+      "bonus15_share": 0.6181,
+      "bonus5_share": 0.064,
+      "other": 1546,
+      "by_task": {
+        "feynman-bonus.15": 3005,
+        "feynman-bonus.5": 311,
+        "feynman-i.41.16": 202,
+        "feynman-i.48.2": 200,
+        "feynman-ii.13.23": 200,
+        "feynman-iii.4.32": 196,
+        "feynman-iii.4.33": 194,
+        "feynman-ii.13.34": 186,
+        "feynman-ii.11.27": 185,
+        "feynman-i.10.7": 183
+      }
+    },
+    {
+      "threshold": 0.05,
+      "S": 65992,
+      "Sd": 17260,
+      "Sd_frac": 0.26155,
+      "Ld": 3248,
+      "Ld_over_S": 0.04922,
+      "Ld_over_Sd": 0.18818,
+      "bonus15": 2908,
+      "bonus5": 296,
+      "bonus15_share": 0.8953,
+      "bonus5_share": 0.0911,
+      "other": 44,
+      "by_task": {
+        "feynman-bonus.15": 2908,
+        "feynman-bonus.5": 296,
+        "feynman-i.41.16": 8,
+        "feynman-ii.13.34": 6,
+        "feynman-i.48.2": 5,
+        "feynman-i.10.7": 5,
+        "feynman-ii.11.27": 5,
+        "feynman-ii.13.23": 5,
+        "feynman-iii.4.32": 5,
+        "feynman-iii.4.33": 5
+      }
+    },
+    {
+      "threshold": 0.1,
+      "S": 65992,
+      "Sd": 6403,
+      "Sd_frac": 0.09703,
+      "Ld": 481,
+      "Ld_over_S": 0.00729,
+      "Ld_over_Sd": 0.07512,
+      "bonus15": 242,
+      "bonus5": 239,
+      "bonus15_share": 0.5031,
+      "bonus5_share": 0.4969,
+      "other": 0,
+      "by_task": {
+        "feynman-bonus.15": 242,
+        "feynman-bonus.5": 239
+      }
+    },
+    {
+      "threshold": 0.15,
+      "S": 65992,
+      "Sd": 3660,
+      "Sd_frac": 0.05546,
+      "Ld": 111,
+      "Ld_over_S": 0.00168,
+      "Ld_over_Sd": 0.03033,
+      "bonus15": 0,
+      "bonus5": 111,
+      "bonus15_share": 0.0,
+      "bonus5_share": 1.0,
+      "other": 0,
+      "by_task": {
+        "feynman-bonus.5": 111
+      }
+    },
+    {
+      "threshold": 0.2,
+      "S": 65992,
+      "Sd": 742,
+      "Sd_frac": 0.01124,
+      "Ld": 39,
+      "Ld_over_S": 0.00059,
+      "Ld_over_Sd": 0.05256,
+      "bonus15": 0,
+      "bonus5": 39,
+      "bonus15_share": 0.0,
+      "bonus5_share": 1.0,
+      "other": 0,
+      "by_task": {
+        "feynman-bonus.5": 39
+      }
+    },
+    {
+      "threshold": 0.5,
+      "S": 65992,
+      "Sd": 317,
+      "Sd_frac": 0.0048,
+      "Ld": 0,
+      "Ld_over_S": 0.0,
+      "Ld_over_Sd": 0.0,
+      "bonus15": 0,
+      "bonus5": 0,
+      "bonus15_share": null,
+      "bonus5_share": null,
+      "other": 0,
+      "by_task": {}
+    }
+  ],
+  "n50_sweep": [
+    {
+      "threshold": 0.02,
+      "S": 22060,
+      "Sd": 7702,
+      "Sd_frac": 0.34914,
+      "Ld": 3181,
+      "Ld_over_S": 0.1442,
+      "Ld_over_Sd": 0.41301,
+      "bonus15": 1459,
+      "bonus5": 311,
+      "bonus15_share": 0.4587,
+      "bonus5_share": 0.0978,
+      "other": 1411,
+      "by_task": {
+        "feynman-bonus.15": 1459,
+        "feynman-bonus.5": 311,
+        "feynman-i.48.2": 182,
+        "feynman-ii.13.23": 182,
+        "feynman-i.41.16": 181,
+        "feynman-iii.4.32": 177,
+        "feynman-ii.11.27": 174,
+        "feynman-iii.4.33": 173,
+        "feynman-i.10.7": 171,
+        "feynman-ii.13.34": 171
+      }
+    },
+    {
+      "threshold": 0.05,
+      "S": 22060,
+      "Sd": 5418,
+      "Sd_frac": 0.2456,
+      "Ld": 1702,
+      "Ld_over_S": 0.07715,
+      "Ld_over_Sd": 0.31414,
+      "bonus15": 1362,
+      "bonus5": 296,
+      "bonus15_share": 0.8002,
+      "bonus5_share": 0.1739,
+      "other": 44,
+      "by_task": {
+        "feynman-bonus.15": 1362,
+        "feynman-bonus.5": 296,
+        "feynman-i.41.16": 8,
+        "feynman-ii.13.34": 6,
+        "feynman-i.48.2": 5,
+        "feynman-i.10.7": 5,
+        "feynman-ii.11.27": 5,
+        "feynman-ii.13.23": 5,
+        "feynman-iii.4.32": 5,
+        "feynman-iii.4.33": 5
+      }
+    },
+    {
+      "threshold": 0.1,
+      "S": 22060,
+      "Sd": 2208,
+      "Sd_frac": 0.10009,
+      "Ld": 350,
+      "Ld_over_S": 0.01587,
+      "Ld_over_Sd": 0.15851,
+      "bonus15": 111,
+      "bonus5": 239,
+      "bonus15_share": 0.3171,
+      "bonus5_share": 0.6829,
+      "other": 0,
+      "by_task": {
+        "feynman-bonus.5": 239,
+        "feynman-bonus.15": 111
+      }
+    },
+    {
+      "threshold": 0.15,
+      "S": 22060,
+      "Sd": 1103,
+      "Sd_frac": 0.05,
+      "Ld": 111,
+      "Ld_over_S": 0.00503,
+      "Ld_over_Sd": 0.10063,
+      "bonus15": 0,
+      "bonus5": 111,
+      "bonus15_share": 0.0,
+      "bonus5_share": 1.0,
+      "other": 0,
+      "by_task": {
+        "feynman-bonus.5": 111
+      }
+    },
+    {
+      "threshold": 0.2,
+      "S": 22060,
+      "Sd": 609,
+      "Sd_frac": 0.02761,
+      "Ld": 39,
+      "Ld_over_S": 0.00177,
+      "Ld_over_Sd": 0.06404,
+      "bonus15": 0,
+      "bonus5": 39,
+      "bonus15_share": 0.0,
+      "bonus5_share": 1.0,
+      "other": 0,
+      "by_task": {
+        "feynman-bonus.5": 39
+      }
+    },
+    {
+      "threshold": 0.5,
+      "S": 22060,
+      "Sd": 314,
+      "Sd_frac": 0.01423,
+      "Ld": 0,
+      "Ld_over_S": 0.0,
+      "Ld_over_Sd": 0.0,
+      "bonus15": 0,
+      "bonus5": 0,
+      "bonus15_share": null,
+      "bonus5_share": null,
+      "other": 0,
+      "by_task": {}
+    }
+  ],
+  "n200_sweep": [
+    {
+      "threshold": 0.02,
+      "S": 21932,
+      "Sd": 6195,
+      "Sd_frac": 0.28246,
+      "Ld": 1084,
+      "Ld_over_S": 0.04943,
+      "Ld_over_Sd": 0.17498,
+      "bonus15": 949,
+      "bonus5": 0,
+      "bonus15_share": 0.8755,
+      "bonus5_share": 0.0,
+      "other": 135,
+      "by_task": {
+        "feynman-bonus.15": 949,
+        "feynman-i.41.16": 21,
+        "feynman-iii.4.33": 21,
+        "feynman-iii.4.32": 19,
+        "feynman-i.48.2": 18,
+        "feynman-ii.13.23": 18,
+        "feynman-ii.13.34": 15,
+        "feynman-i.10.7": 12,
+        "feynman-ii.11.27": 11
+      }
+    },
+    {
+      "threshold": 0.05,
+      "S": 21932,
+      "Sd": 5842,
+      "Sd_frac": 0.26637,
+      "Ld": 949,
+      "Ld_over_S": 0.04327,
+      "Ld_over_Sd": 0.16244,
+      "bonus15": 949,
+      "bonus5": 0,
+      "bonus15_share": 1.0,
+      "bonus5_share": 0.0,
+      "other": 0,
+      "by_task": {
+        "feynman-bonus.15": 949
+      }
+    },
+    {
+      "threshold": 0.1,
+      "S": 21932,
+      "Sd": 2150,
+      "Sd_frac": 0.09803,
+      "Ld": 106,
+      "Ld_over_S": 0.00483,
+      "Ld_over_Sd": 0.0493,
+      "bonus15": 106,
+      "bonus5": 0,
+      "bonus15_share": 1.0,
+      "bonus5_share": 0.0,
+      "other": 0,
+      "by_task": {
+        "feynman-bonus.15": 106
+      }
+    },
+    {
+      "threshold": 0.15,
+      "S": 21932,
+      "Sd": 1104,
+      "Sd_frac": 0.05034,
+      "Ld": 0,
+      "Ld_over_S": 0.0,
+      "Ld_over_Sd": 0.0,
+      "bonus15": 0,
+      "bonus5": 0,
+      "bonus15_share": null,
+      "bonus5_share": null,
+      "other": 0,
+      "by_task": {}
+    },
+    {
+      "threshold": 0.2,
+      "S": 21932,
+      "Sd": 133,
+      "Sd_frac": 0.00606,
+      "Ld": 0,
+      "Ld_over_S": 0.0,
+      "Ld_over_Sd": 0.0,
+      "bonus15": 0,
+      "bonus5": 0,
+      "bonus15_share": null,
+      "bonus5_share": null,
+      "other": 0,
+      "by_task": {}
+    },
+    {
+      "threshold": 0.5,
+      "S": 21932,
+      "Sd": 3,
+      "Sd_frac": 0.00014,
+      "Ld": 0,
+      "Ld_over_S": 0.0,
+      "Ld_over_Sd": 0.0,
+      "bonus15": 0,
+      "bonus5": 0,
+      "bonus15_share": null,
+      "bonus5_share": null,
+      "other": 0,
+      "by_task": {}
+    }
+  ],
+  "n1000_sweep": [
+    {
+      "threshold": 0.02,
+      "S": 22000,
+      "Sd": 6004,
+      "Sd_frac": 0.27291,
+      "Ld": 597,
+      "Ld_over_S": 0.02714,
+      "Ld_over_Sd": 0.09943,
+      "bonus15": 597,
+      "bonus5": 0,
+      "bonus15_share": 1.0,
+      "bonus5_share": 0.0,
+      "other": 0,
+      "by_task": {
+        "feynman-bonus.15": 597
+      }
+    },
+    {
+      "threshold": 0.05,
+      "S": 22000,
+      "Sd": 6000,
+      "Sd_frac": 0.27273,
+      "Ld": 597,
+      "Ld_over_S": 0.02714,
+      "Ld_over_Sd": 0.0995,
+      "bonus15": 597,
+      "bonus5": 0,
+      "bonus15_share": 1.0,
+      "bonus5_share": 0.0,
+      "other": 0,
+      "by_task": {
+        "feynman-bonus.15": 597
+      }
+    },
+    {
+      "threshold": 0.1,
+      "S": 22000,
+      "Sd": 2045,
+      "Sd_frac": 0.09295,
+      "Ld": 25,
+      "Ld_over_S": 0.00114,
+      "Ld_over_Sd": 0.01222,
+      "bonus15": 25,
+      "bonus5": 0,
+      "bonus15_share": 1.0,
+      "bonus5_share": 0.0,
+      "other": 0,
+      "by_task": {
+        "feynman-bonus.15": 25
+      }
+    },
+    {
+      "threshold": 0.15,
+      "S": 22000,
+      "Sd": 1453,
+      "Sd_frac": 0.06605,
+      "Ld": 0,
+      "Ld_over_S": 0.0,
+      "Ld_over_Sd": 0.0,
+      "bonus15": 0,
+      "bonus5": 0,
+      "bonus15_share": null,
+      "bonus5_share": null,
+      "other": 0,
+      "by_task": {}
+    },
+    {
+      "threshold": 0.2,
+      "S": 22000,
+      "Sd": 0,
+      "Sd_frac": 0.0,
+      "Ld": 0,
+      "Ld_over_S": 0.0,
+      "Ld_over_Sd": null,
+      "bonus15": 0,
+      "bonus5": 0,
+      "bonus15_share": null,
+      "bonus5_share": null,
+      "other": 0,
+      "by_task": {}
+    },
+    {
+      "threshold": 0.5,
+      "S": 22000,
+      "Sd": 0,
+      "Sd_frac": 0.0,
+      "Ld": 0,
+      "Ld_over_S": 0.0,
+      "Ld_over_Sd": null,
+      "bonus15": 0,
+      "bonus5": 0,
+      "bonus15_share": null,
+      "bonus5_share": null,
+      "other": 0,
+      "by_task": {}
+    }
+  ],
+  "far_quantiles": {
+    "feynman-bonus.15": {
+      "n": 6000,
+      "q01": 0.0411,
+      "q25": 0.0846,
+      "median": 0.0919,
+      "q75": 0.095,
+      "q90": 0.0976,
+      "q99": 0.1101,
+      "frac_gt_10pct": 0.0545,
+      "frac_gt_15pct": 0.0
+    },
+    "feynman-bonus.5": {
+      "n": 5675,
+      "q01": 0.0324,
+      "q25": 0.1365,
+      "median": 0.1556,
+      "q75": 0.1718,
+      "q90": 0.1919,
+      "q99": 0.2567,
+      "frac_gt_10pct": 0.9167,
+      "frac_gt_15pct": 0.5864
+    },
+    "feynman-ii.38.14": {
+      "n": 6000,
+      "q01": 0.0135,
+      "q25": 0.0668,
+      "median": 0.0768,
+      "q75": 0.0855,
+      "q90": 0.0989,
+      "q99": 0.1309,
+      "frac_gt_10pct": 0.0928,
+      "frac_gt_15pct": 0.0025
+    },
+    "feynman-i.27.6": null
+  }
+}

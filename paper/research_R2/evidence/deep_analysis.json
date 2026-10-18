@@ -1,0 +1,236 @@
+{
+  "paper_side_threshold_sensitivity": {
+    "screened": 71992,
+    "thresholds": [
+      {
+        "threshold": 0.05,
+        "dangerous": 22369,
+        "dangerous_frac_of_screened": 0.3107,
+        "silent": 3248,
+        "release_rate_of_dangerous": 0.1452,
+        "by_task": {
+          "feynman-bonus.15": 2908,
+          "feynman-bonus.5": 296,
+          "feynman-i.41.16": 8,
+          "feynman-ii.13.34": 6,
+          "feynman-i.48.2": 5,
+          "feynman-i.10.7": 5,
+          "feynman-ii.11.27": 5,
+          "feynman-ii.13.23": 5,
+          "feynman-iii.4.32": 5,
+          "feynman-iii.4.33": 5
+        },
+        "bonus15_share": 0.8953
+      },
+      {
+        "threshold": 0.075,
+        "dangerous": 16765,
+        "dangerous_frac_of_screened": 0.2329,
+        "silent": 2698,
+        "release_rate_of_dangerous": 0.1609,
+        "by_task": {
+          "feynman-bonus.15": 2424,
+          "feynman-bonus.5": 274
+        },
+        "bonus15_share": 0.8984
+      },
+      {
+        "threshold": 0.1,
+        "dangerous": 6997,
+        "dangerous_frac_of_screened": 0.0972,
+        "silent": 481,
+        "release_rate_of_dangerous": 0.0687,
+        "by_task": {
+          "feynman-bonus.15": 242,
+          "feynman-bonus.5": 239
+        },
+        "bonus15_share": 0.5031
+      },
+      {
+        "threshold": 0.125,
+        "dangerous": 5281,
+        "dangerous_frac_of_screened": 0.0734,
+        "silent": 176,
+        "release_rate_of_dangerous": 0.0333,
+        "by_task": {
+          "feynman-bonus.5": 171,
+          "feynman-bonus.15": 5
+        },
+        "bonus15_share": 0.0284
+      },
+      {
+        "threshold": 0.15,
+        "dangerous": 3724,
+        "dangerous_frac_of_screened": 0.0517,
+        "silent": 111,
+        "release_rate_of_dangerous": 0.0298,
+        "by_task": {
+          "feynman-bonus.5": 111
+        },
+        "bonus15_share": 0.0
+      },
+      {
+        "threshold": 0.2,
+        "dangerous": 746,
+        "dangerous_frac_of_screened": 0.0104,
+        "silent": 39,
+        "release_rate_of_dangerous": 0.0523,
+        "by_task": {
+          "feynman-bonus.5": 39
+        },
+        "bonus15_share": 0.0
+      }
+    ],
+    "dangerous_all_h1_at_10pct": [
+      {
+        "task": "feynman-bonus.15",
+        "dangerous": 327,
+        "silent": 242,
+        "release_rate": 0.7401
+      },
+      {
+        "task": "feynman-bonus.20",
+        "dangerous": 6000,
+        "silent": 0,
+        "release_rate": 0.0
+      },
+      {
+        "task": "feynman-bonus.5",
+        "dangerous": 5491,
+        "silent": 247,
+        "release_rate": 0.045
+      },
+      {
+        "task": "feynman-i.27.6",
+        "dangerous": 5956,
+        "silent": 318,
+        "release_rate": 0.0534
+      },
+      {
+        "task": "feynman-i.30.5",
+        "dangerous": 594,
+        "silent": 0,
+        "release_rate": 0.0
+      },
+      {
+        "task": "feynman-i.37.4",
+        "dangerous": 5838,
+        "silent": 170,
+        "release_rate": 0.0291
+      },
+      {
+        "task": "feynman-i.39.11",
+        "dangerous": 6000,
+        "silent": 61,
+        "release_rate": 0.0102
+      },
+      {
+        "task": "feynman-i.43.43",
+        "dangerous": 6000,
+        "silent": 59,
+        "release_rate": 0.0098
+      },
+      {
+        "task": "feynman-ii.38.14",
+        "dangerous": 557,
+        "silent": 0,
+        "release_rate": 0.0
+      }
+    ]
+  },
+  "pysr_side": {
+    "gate_contribution": {
+      "A": {
+        "reject_n": 182,
+        "reject_rate": 0.5056,
+        "sole_defense_n": 45
+      },
+      "B": {
+        "reject_n": 103,
+        "reject_rate": 0.2861,
+        "sole_defense_n": 4
+      },
+      "C": {
+        "reject_n": 82,
+        "reject_rate": 0.2278,
+        "sole_defense_n": 6
+      },
+      "D": {
+        "reject_n": 189,
+        "reject_rate": 0.525,
+        "sole_defense_n": 41
+      },
+      "joint_silent_n": 87,
+      "joint_silent_rate": 0.2417,
+      "tau": {
+        "A": 0.104,
+        "B": 0.1366,
+        "C": 0.1388,
+        "D": 0.0567
+      }
+    },
+    "layers": {
+      "全部": {
+        "n": 360,
+        "silent_n": 87,
+        "silent_rate": 0.2417
+      },
+      "R2>=0.99": {
+        "n": 183,
+        "silent_n": 70,
+        "silent_rate": 0.3825
+      },
+      "far>10%": {
+        "n": 142,
+        "silent_n": 3,
+        "silent_rate": 0.0211
+      },
+      "R2>=0.99且far>10%": {
+        "n": 2,
+        "silent_n": 0,
+        "silent_rate": 0.0
+      }
+    },
+    "danger_candidates": [
+      {
+        "task": "FeynmanICh39Eq11",
+        "seed": 6,
+        "r2_log": 0.9953625768409449,
+        "far_paper": 0.8248264723412982,
+        "p_fc": 0.396,
+        "p_fitted_f": 0.6657361286866694,
+        "p_fitted_hc3_svd": 0.7194083693626412,
+        "p_exog_hc3_svd": 5.369690078162434e-29,
+        "silent": false,
+        "reject_A": false,
+        "reject_B": false,
+        "reject_C": false,
+        "reject_D": true,
+        "pysr_expr": "-x0 - x0 - x0 + x1 + x2 + 2.0236173"
+      },
+      {
+        "task": "FeynmanICh43Eq43",
+        "seed": 6,
+        "r2_log": 0.9946464693463317,
+        "far_paper": 0.8248246925008136,
+        "p_fc": 0.396,
+        "p_fitted_f": 0.5010105766013037,
+        "p_fitted_hc3_svd": 0.47760229828112727,
+        "p_exog_hc3_svd": 5.366817416070318e-29,
+        "silent": false,
+        "reject_A": false,
+        "reject_B": false,
+        "reject_C": false,
+        "reject_D": true,
+        "pysr_expr": "x1 - (x0 + x0 + x0 + x2 + 11.01248) - 39.600796"
+      }
+    ],
+    "danger_layer_gate_catch": {
+      "A": 84,
+      "B": 67,
+      "C": 45,
+      "D": 98,
+      "n": 142
+    }
+  }
+}
