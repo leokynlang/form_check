@@ -71,3 +71,13 @@ docs/PHYSICAL_COVERAGE_PROTOCOL.md
    runs/p01_v2 与 runs/p02_fixed_domain（含 58,112 与 246,240 份数据、冻结
    协议、manifest、源快照、逐单元输出与审计 JSON）体量较大，未随静态包发布，
    可向作者索取冻结副本。只发布汇总表是体量决定，不表示新 run 已公开。
+
+9. （同日后续）第 8 条末句所述"索取冻结副本"已由实际发布取代：R3 逐记录数据
+   （P0-1 v2 与 P0-2 的全部 parquet）已作为 release asset 发布在 tag
+   r3-2026-10-18 上——p01-v2-records.zip（1,106 成员，76 MiB）与
+   p02-fixed-domain-records.zip（3,966 成员，873 MiB）。每个成员在归档内的
+   DATA_BUNDLE_INFO.json 中记录 SHA-256 与字节数；data_release/manifest_r3.json
+   逐一列出成员路径与哈希；tools/download_data.py
+   --manifest data_release/manifest_r3.json 可校验并还原。据此第 7 节已改写，
+   并明确边界：这些数据使拟合实验可从原始训练观测重跑，而不只是重新聚合
+   已保存的统计量。本次发布未改变任何统计口径、表值或结论。

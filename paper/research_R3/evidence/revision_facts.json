@@ -735,6 +735,6 @@
     "selection_evidence": "All120 source rows retained; expressions/constants/original coordinates unchanged; common positive-support quantiles and centered widths independently reconstructed; admission rules have no fit or diagnostic outcomes; primary/fine grouping uncertainty explicitly retained.",
     "audit_source_sha256": "b37d4ed24615f73b85c0b9acc9aebc8b9d7c56651096ca15c75c37788ca9fb03"
   },
-  "manuscript_sha256": "dfa65bb6a20af3e5192c447082e892e44fb49c3ed76d1849921fd0b20a575438",
-  "revision_notes_sha256": "d0dc02ab927f2f57a18ba1d9df44e5cd977d31f92750c08e32af08b9221a7d06"
+  "manuscript_sha256": "d9c350cb7d207b7c974b9a5caadf5b62818fe7943f6b34e47374d656914c310a",
+  "revision_notes_sha256": "e02907c94216f19177bbd7720e672c2f2dc012f1e713774b2011a3d61d456cef"
 }

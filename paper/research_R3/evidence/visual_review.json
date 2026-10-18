@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "pdf_sha256": "5f1fd1afd6e1ec06a81590f067779020c0c052a6fe3ca5bc08d2bf5891a01433",
+  "pdf_sha256": "ac15d071bc59a7c92f46d4cba223f48ad784d25f634ef7a1640e4b64773c9a48",
   "page_count": 51,
   "render_engine": "Poppler pdftoppm",
   "render_dpi": 80,
@@ -58,15 +58,9 @@
     51
   ],
   "full_page_detail_reviewed": [
-    10,
-    11,
-    32,
-    33,
-    46,
-    47,
-    48
+    33
   ],
-  "render_directory": "tmp/pdfcheck",
+  "render_directory": "tmp/pdfs/rebuild",
   "contact_files": [
     "contact-1.png",
     "contact-2.png",
@@ -76,8 +70,10 @@
     "contact-6.png"
   ],
   "findings": [
-    "The only layout change in this rebuild is the cover author block: Anonymous and the not-submitted line were replaced by Guiyi Liao, Independent Researcher, liao25806@gtiit.edu.cn.",
-    "Cover checked at 120 dpi; body pages, tables 17-19, figures D.6-D.7 and the Section 3.8/7 text are unchanged from the previously contact-reviewed rebuild.",
-    "No overlap, clipping, or missing glyphs on the revised cover; PDF metadata author and creator now read Guiyi Liao."
+    "This rebuild changes only the Section 7 data-availability paragraph plus the matching REVISION_NOTES entry; abstract, tables, figures and appendices keep their previous content.",
+    "All 51 pages were re-rendered at 80 dpi and reviewed as six contact sheets. No overlap, clipping, missing glyph, or table/figure overflow was found.",
+    "PDF page 33 (the Section 7 paragraph) was additionally rendered at 110 dpi and reviewed in detail: the replacement text is fully justified, introduces no orphan line or margin overrun, and contains no literal asterisk markup.",
+    "Page count stays 51 and page geometry stays A4 (595.276 x 841.89 pt).",
+    "Table rows rendered by pdfplumber remain inside page bounds on every page; no U+FFFD, box-drawing or NUL glyph was rendered."
   ]
 }

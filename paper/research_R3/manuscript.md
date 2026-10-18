@@ -1732,11 +1732,18 @@ runs/p02_fixed_domain. In P0-1 v2, decisions.parquet and
 raw_policy.parquet alone total about 41 MB, and the run also stores
 protocol_frozen.json, manifest.json, source_snapshot.json, the per-cell
 files, and audit.json. P0-2 keeps two nonoverlapping stage trees, a
-1.8 MB grid_manifest.json, and freeze_independent_audit.json. These
-record-level files, including the 58,112 P0-1 v2 datasets and the
-246,240 P0-2 datasets, are available as a frozen copy on request to
-the author. Shipping only the summary tables is a size decision, not
-a claim that the new runs are already public.
+1.8 MB grid_manifest.json, and freeze_independent_audit.json. A
+gitignore rule excludes record-level parquet data from the repository,
+so these files, including the 58,112 P0-1 v2 datasets and the 246,240
+P0-2 datasets, ship as the release assets p01-v2-records.zip and
+p02-fixed-domain-records.zip on tag r3-2026-10-18. Each archive records
+a SHA-256 and byte count per member, and data_release/manifest_r3.json
+lists every member path and hash. Restoring them with
+tools/download_data.py --manifest data_release/manifest_r3.json makes
+the fitted experiments re-runnable from their original training
+observations. Without them, the summaries, protocols, source snapshots
+and audit scripts can be re-aggregated and checked, but the A-G
+statistics cannot be recomputed from those observations.
 
 ## 8 Conclusion
 
