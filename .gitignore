@@ -25,6 +25,8 @@ Thumbs.db
 
 # Environment
 .env
+.env.*
+!.env.example
 venv/
 .venv/
 
@@ -65,6 +67,16 @@ real_data/**/__pycache__/
 
 # [可再生] 中间目录:一次性补丁脚本、渲染中间件
 tmp/
+
+# Large research data and generated search traces are published as Release assets.
+outputs/
+runs/pysr_gate/
+data_release/*.zip
+data_release/.downloads/
+*.bak-before-*
+paper/body.pdf
+paper/cover.pdf
+paper/research_R2/tmp/
 
 # [可再生] 论文构建器的 QA 渲染输出(20MB,build_pdf.py 可重生成)
 paper/qa_render*/

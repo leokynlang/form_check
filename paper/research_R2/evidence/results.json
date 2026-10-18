@@ -1,0 +1,1608 @@
+{
+  "schema_version": 1,
+  "generated_at_utc": "2026-10-17T16:18:41.943851+00:00",
+  "audit_script": {
+    "path": "D:\\form_check\\paper\\research_R2\\audit_results.py",
+    "sha256": "60c48c5afdbf657f6f7a357b81f02477685441898a3aabef26e6cc6a6c56f0e9"
+  },
+  "inputs": {
+    "raw_s2": {
+      "path": "D:\\form_check\\runs\\srsd_full\\raw_srsd.parquet",
+      "sha256": "62df25df55c48a95ab7670a62da829ef8295740be7c469e4af40241b76385943",
+      "bytes": 34563229
+    },
+    "quality_s2": {
+      "path": "D:\\form_check\\runs\\srsd_full\\quality_recompute.parquet",
+      "sha256": "fad89cf33a43824029e444eb288f92617c8670b5f4ff129188371f128c5046c2",
+      "bytes": 26236629
+    },
+    "svd_s2": {
+      "path": "D:\\form_check\\runs\\cd_svd\\s2_cd_svd.csv",
+      "sha256": "7f3965b27c2e8729715fc4e46c7db74865e45c15c57e9aad6a2eecd8a0e7d47c",
+      "bytes": 44554701
+    },
+    "s2_config": {
+      "path": "D:\\form_check\\runs\\srsd_full\\config.json",
+      "sha256": "48e688639e521674a8b37c934b1719a4721d153599507402b43f34e1933140d6",
+      "bytes": 16156
+    }
+  },
+  "reference_scripts": [
+    {
+      "path": "D:\\form_check\\paper\\review3_analysis.py",
+      "sha256": "5e4027d7e11739ea8898b282ac2bac2ce03606c40d999b76ed5b0b7e1d82d8f7"
+    },
+    {
+      "path": "D:\\form_check\\paper\\v5_round2_analysis.py",
+      "sha256": "2e0f16e80e899a5c4ccc0b564e58d0524cdd1265649bf41b8b3f4a661aa3898e"
+    },
+    {
+      "path": "D:\\form_check\\svd_main_results.py",
+      "sha256": "a35a54f30f2b5bb8d4f62e2778788ea2562ee4f9d65c0f213149c7e76a8b3026"
+    },
+    {
+      "path": "D:\\form_check\\run_srsd.py",
+      "sha256": "25070612458f0452a674bc6e6dbcaa15ae0a0b58d0198e2b36058b6df944c9bc"
+    },
+    {
+      "path": "D:\\form_check\\srsd_fitting_quality.py",
+      "sha256": "aa85f6f6821d80aa1c03dd661049e7b7aff4e2770c5d510293d14943a10f28d7"
+    }
+  ],
+  "runtime": {
+    "python": "3.13.15",
+    "numpy": "2.5.2",
+    "pandas": "3.0.5",
+    "matplotlib": "3.11.1"
+  },
+  "provenance": "Reaggregation of cached results only, no new datasets or model fits. Input hashes identify exact artifacts, not independent validation of their generation.",
+  "join": {
+    "keys": [
+      "task",
+      "n",
+      "rel",
+      "seed"
+    ],
+    "validation": "one_to_one",
+    "matched_rows": 240000,
+    "unmatched_rows": 0
+  },
+  "exclusions": {
+    "feynman-i.30.5": {
+      "nonzero_noise_rows": 6000,
+      "sentinel_valid": 0,
+      "finite_r2": 6000,
+      "finite_extrap": 6000,
+      "all_gates_valid": 6000,
+      "rule": "Excluded from every inferential pool: replay sentinel failed."
+    },
+    "feynman-i.26.2": {
+      "nonzero_noise_rows": 6000,
+      "sentinel_valid": 6000,
+      "finite_r2": 6000,
+      "finite_extrap": 0,
+      "all_gates_valid": 6000,
+      "rule": "Retained for gate-only Table3; excluded only from extrapolation/certificate/Table7 pools because reference extrapolation is missing."
+    }
+  },
+  "far_field_definition": {
+    "source": "run_srsd.py:31,55-73; runs/srsd_full/config.json far=3.0",
+    "cached_column": "raw_srsd.parquet extrap_far_relerr; quality_recompute supplies only fit-quality fields",
+    "probe_grid": "12 log-space points along first feature: 6 from observed log-min-ln(3) to log-min, 6 from observed log-max to log-max+ln(3); other log-features held at their training medians",
+    "reported_far_metric": "abs(exp(log_prediction-log_noiseless_closed_form_truth)-1) at the LAST grid point only: first feature=3*observed training maximum",
+    "not": "Not one decade, not an error maximum across the grid, not the grid-median error, not a guarantee over an extrapolation domain",
+    "sampling_warning": "Training extrema and hence the evaluation coordinate can change across n and seed; cross-n label changes do not isolate estimation error alone",
+    "same_distribution_test_n": 2000,
+    "seed_rule": "200_000 + s*97 + n_idx*13 + rel_idx*5_000_000"
+  },
+  "table3": {
+    "H0_pool": {
+      "N": 78000,
+      "tasks": [
+        "feynman-i.12.1",
+        "feynman-i.29.4",
+        "feynman-i.34.27",
+        "feynman-i.38.12",
+        "feynman-i.39.10",
+        "feynman-i.39.22",
+        "feynman-i.43.31",
+        "feynman-i.47.23",
+        "feynman-ii.27.16",
+        "feynman-ii.27.18",
+        "feynman-ii.8.31",
+        "feynman-iii.12.43",
+        "feynman-iii.15.14"
+      ],
+      "task_count": 13,
+      "by_n": {
+        "50": 26000,
+        "200": 26000,
+        "1000": 26000
+      }
+    },
+    "H1_pool": {
+      "N": 108000,
+      "tasks": [
+        "feynman-bonus.15",
+        "feynman-bonus.20",
+        "feynman-bonus.5",
+        "feynman-i.10.7",
+        "feynman-i.26.2",
+        "feynman-i.27.6",
+        "feynman-i.37.4",
+        "feynman-i.39.11",
+        "feynman-i.41.16",
+        "feynman-i.43.43",
+        "feynman-i.48.2",
+        "feynman-ii.11.27",
+        "feynman-ii.11.28",
+        "feynman-ii.13.23",
+        "feynman-ii.13.34",
+        "feynman-ii.38.14",
+        "feynman-iii.4.32",
+        "feynman-iii.4.33"
+      ],
+      "task_count": 18,
+      "by_n": {
+        "50": 36000,
+        "200": 36000,
+        "1000": 36000
+      }
+    },
+    "denominator_policy": "All H1 rows retained. Nonfinite p or typed decline is not a rejection; decline is separately counted, never certified as acceptance.",
+    "calibration": "Per method and n: numpy quantile(method=linear) at .05 of finite, non-declined H0 p. Reject iff valid p <= threshold. Thresholds are not retuned within task bootstrap.",
+    "bootstrap": {
+      "repetitions": 10000,
+      "paired_D_A_seed": 20260908,
+      "pointwise_power_seed": 20260922,
+      "unit": "equation, equally weighted; paired resampling for D-A"
+    },
+    "by_n": {
+      "50": {
+        "A": {
+          "threshold": 0.05,
+          "calibration_N_all": 26000,
+          "calibration_N_valid": 26000,
+          "calibration_FPR_all_rows": 0.05026923076923077,
+          "N_all": 36000,
+          "N_valid": 36000,
+          "declines": 0,
+          "decline_rate": 0.0,
+          "decline_reasons": {},
+          "rejections": 13904,
+          "power": 0.38622222222222224,
+          "power_valid_only_sensitivity": 0.38622222222222224,
+          "task_bootstrap_ci95": [
+            0.2481659722222222,
+            0.5315569444444445
+          ]
+        },
+        "B": {
+          "threshold": 0.05069850246051324,
+          "calibration_N_all": 26000,
+          "calibration_N_valid": 26000,
+          "calibration_FPR_all_rows": 0.05,
+          "N_all": 36000,
+          "N_valid": 35998,
+          "declines": 2,
+          "decline_rate": 5.555555555555556e-05,
+          "decline_reasons": {
+            "rank_deficient": 2
+          },
+          "rejections": 6747,
+          "power": 0.18741666666666668,
+          "power_valid_only_sensitivity": 0.18742707928218236,
+          "task_bootstrap_ci95": [
+            0.07833263888888888,
+            0.3345
+          ]
+        },
+        "C": {
+          "threshold": 0.04241148326943004,
+          "calibration_N_all": 26000,
+          "calibration_N_valid": 26000,
+          "calibration_FPR_all_rows": 0.05,
+          "N_all": 36000,
+          "N_valid": 35998,
+          "declines": 2,
+          "decline_rate": 5.555555555555556e-05,
+          "decline_reasons": {
+            "rank_deficient": 2
+          },
+          "rejections": 4620,
+          "power": 0.12833333333333333,
+          "power_valid_only_sensitivity": 0.1283404633590755,
+          "task_bootstrap_ci95": [
+            0.05305416666666667,
+            0.2457784722222222
+          ]
+        },
+        "D": {
+          "threshold": 0.039258193180026595,
+          "calibration_N_all": 26000,
+          "calibration_N_valid": 26000,
+          "calibration_FPR_all_rows": 0.05,
+          "N_all": 36000,
+          "N_valid": 36000,
+          "declines": 0,
+          "decline_rate": 0.0,
+          "decline_reasons": {},
+          "rejections": 16785,
+          "power": 0.46625,
+          "power_valid_only_sensitivity": 0.46625,
+          "task_bootstrap_ci95": [
+            0.3084423611111111,
+            0.6297590277777777
+          ]
+        }
+      },
+      "200": {
+        "A": {
+          "threshold": 0.046,
+          "calibration_N_all": 26000,
+          "calibration_N_valid": 26000,
+          "calibration_FPR_all_rows": 0.050346153846153846,
+          "N_all": 36000,
+          "N_valid": 36000,
+          "declines": 0,
+          "decline_rate": 0.0,
+          "decline_reasons": {},
+          "rejections": 17509,
+          "power": 0.48636111111111113,
+          "power_valid_only_sensitivity": 0.48636111111111113,
+          "task_bootstrap_ci95": [
+            0.3033868055555555,
+            0.6661743055555555
+          ]
+        },
+        "B": {
+          "threshold": 0.050462048304606766,
+          "calibration_N_all": 26000,
+          "calibration_N_valid": 26000,
+          "calibration_FPR_all_rows": 0.05,
+          "N_all": 36000,
+          "N_valid": 35944,
+          "declines": 56,
+          "decline_rate": 0.0015555555555555555,
+          "decline_reasons": {
+            "rank_deficient": 56
+          },
+          "rejections": 9133,
+          "power": 0.25369444444444444,
+          "power_valid_only_sensitivity": 0.25408969508123747,
+          "task_bootstrap_ci95": [
+            0.11680069444444445,
+            0.4160291666666666
+          ]
+        },
+        "C": {
+          "threshold": 0.046533979322883716,
+          "calibration_N_all": 26000,
+          "calibration_N_valid": 26000,
+          "calibration_FPR_all_rows": 0.05,
+          "N_all": 36000,
+          "N_valid": 35944,
+          "declines": 56,
+          "decline_rate": 0.0015555555555555555,
+          "decline_reasons": {
+            "rank_deficient": 56
+          },
+          "rejections": 7958,
+          "power": 0.22105555555555556,
+          "power_valid_only_sensitivity": 0.22139995548631203,
+          "task_bootstrap_ci95": [
+            0.10205347222222222,
+            0.36180694444444433
+          ]
+        },
+        "D": {
+          "threshold": 0.04473704032323323,
+          "calibration_N_all": 26000,
+          "calibration_N_valid": 26000,
+          "calibration_FPR_all_rows": 0.05,
+          "N_all": 36000,
+          "N_valid": 36000,
+          "declines": 0,
+          "decline_rate": 0.0,
+          "decline_reasons": {},
+          "rejections": 23638,
+          "power": 0.6566111111111111,
+          "power_valid_only_sensitivity": 0.6566111111111111,
+          "task_bootstrap_ci95": [
+            0.46058125000000005,
+            0.8328631944444445
+          ]
+        }
+      },
+      "1000": {
+        "A": {
+          "threshold": 0.047,
+          "calibration_N_all": 26000,
+          "calibration_N_valid": 26000,
+          "calibration_FPR_all_rows": 0.050346153846153846,
+          "N_all": 36000,
+          "N_valid": 36000,
+          "declines": 0,
+          "decline_rate": 0.0,
+          "decline_reasons": {},
+          "rejections": 20537,
+          "power": 0.5704722222222223,
+          "power_valid_only_sensitivity": 0.5704722222222223,
+          "task_bootstrap_ci95": [
+            0.36671944444444443,
+            0.7664458333333334
+          ]
+        },
+        "B": {
+          "threshold": 0.04769480658664894,
+          "calibration_N_all": 26000,
+          "calibration_N_valid": 26000,
+          "calibration_FPR_all_rows": 0.05,
+          "N_all": 36000,
+          "N_valid": 35409,
+          "declines": 591,
+          "decline_rate": 0.016416666666666666,
+          "decline_reasons": {
+            "rank_deficient": 591
+          },
+          "rejections": 13776,
+          "power": 0.38266666666666665,
+          "power_valid_only_sensitivity": 0.3890536304329408,
+          "task_bootstrap_ci95": [
+            0.20146875,
+            0.5763694444444443
+          ]
+        },
+        "C": {
+          "threshold": 0.04667379493951007,
+          "calibration_N_all": 26000,
+          "calibration_N_valid": 26000,
+          "calibration_FPR_all_rows": 0.05,
+          "N_all": 36000,
+          "N_valid": 35409,
+          "declines": 591,
+          "decline_rate": 0.016416666666666666,
+          "decline_reasons": {
+            "rank_deficient": 591
+          },
+          "rejections": 13800,
+          "power": 0.38333333333333336,
+          "power_valid_only_sensitivity": 0.38973142421418283,
+          "task_bootstrap_ci95": [
+            0.20008125000000002,
+            0.5780041666666665
+          ]
+        },
+        "D": {
+          "threshold": 0.042934940747766756,
+          "calibration_N_all": 26000,
+          "calibration_N_valid": 26000,
+          "calibration_FPR_all_rows": 0.05,
+          "N_all": 36000,
+          "N_valid": 36000,
+          "declines": 0,
+          "decline_rate": 0.0,
+          "decline_reasons": {},
+          "rejections": 25851,
+          "power": 0.7180833333333333,
+          "power_valid_only_sensitivity": 0.7180833333333333,
+          "task_bootstrap_ci95": [
+            0.5104715277777779,
+            0.8941944444444445
+          ]
+        }
+      }
+    },
+    "per_task": {
+      "50": {
+        "feynman-bonus.15": {
+          "A": 0.0855,
+          "B": 0.049,
+          "C": 0.0385,
+          "D": 0.1655
+        },
+        "feynman-bonus.20": {
+          "A": 0.783,
+          "B": 1.0,
+          "C": 0.999,
+          "D": 0.4655
+        },
+        "feynman-bonus.5": {
+          "A": 0.8,
+          "B": 0.046,
+          "C": 0.042,
+          "D": 0.4485
+        },
+        "feynman-i.10.7": {
+          "A": 0.534,
+          "B": 0.059,
+          "C": 0.0365,
+          "D": 0.4845
+        },
+        "feynman-i.26.2": {
+          "A": 0.366,
+          "B": 0.9085,
+          "C": 0.36,
+          "D": 1.0
+        },
+        "feynman-i.27.6": {
+          "A": 0.7865,
+          "B": 0.0755,
+          "C": 0.091,
+          "D": 0.2335
+        },
+        "feynman-i.37.4": {
+          "A": 0.5905,
+          "B": 0.2805,
+          "C": 0.128,
+          "D": 0.779
+        },
+        "feynman-i.39.11": {
+          "A": 0.0705,
+          "B": 0.164,
+          "C": 0.04,
+          "D": 0.9565
+        },
+        "feynman-i.41.16": {
+          "A": 0.132,
+          "B": 0.036,
+          "C": 0.038,
+          "D": 0.04
+        },
+        "feynman-i.43.43": {
+          "A": 0.0705,
+          "B": 0.1455,
+          "C": 0.038,
+          "D": 0.9565
+        },
+        "feynman-i.48.2": {
+          "A": 0.499,
+          "B": 0.059,
+          "C": 0.041,
+          "D": 0.5485
+        },
+        "feynman-ii.11.27": {
+          "A": 0.058,
+          "B": 0.0555,
+          "C": 0.0585,
+          "D": 0.059
+        },
+        "feynman-ii.11.28": {
+          "A": 0.059,
+          "B": 0.065,
+          "C": 0.057,
+          "D": 0.054
+        },
+        "feynman-ii.13.23": {
+          "A": 0.499,
+          "B": 0.059,
+          "C": 0.041,
+          "D": 0.548
+        },
+        "feynman-ii.13.34": {
+          "A": 0.499,
+          "B": 0.194,
+          "C": 0.145,
+          "D": 0.5485
+        },
+        "feynman-ii.38.14": {
+          "A": 0.9985,
+          "B": 0.063,
+          "C": 0.05,
+          "D": 1.0
+        },
+        "feynman-iii.4.32": {
+          "A": 0.0605,
+          "B": 0.0485,
+          "C": 0.053,
+          "D": 0.0525
+        },
+        "feynman-iii.4.33": {
+          "A": 0.0605,
+          "B": 0.0655,
+          "C": 0.0535,
+          "D": 0.0525
+        }
+      },
+      "200": {
+        "feynman-bonus.15": {
+          "A": 0.1385,
+          "B": 0.045,
+          "C": 0.0385,
+          "D": 0.471
+        },
+        "feynman-bonus.20": {
+          "A": 0.9925,
+          "B": 1.0,
+          "C": 1.0,
+          "D": 0.9815
+        },
+        "feynman-bonus.5": {
+          "A": 0.9995,
+          "B": 0.0345,
+          "C": 0.0625,
+          "D": 0.997
+        },
+        "feynman-i.10.7": {
+          "A": 0.74,
+          "B": 0.042,
+          "C": 0.0365,
+          "D": 0.7565
+        },
+        "feynman-i.26.2": {
+          "A": 0.4175,
+          "B": 1.0,
+          "C": 0.75,
+          "D": 1.0
+        },
+        "feynman-i.27.6": {
+          "A": 1.0,
+          "B": 0.2385,
+          "C": 0.371,
+          "D": 0.9755
+        },
+        "feynman-i.37.4": {
+          "A": 0.9375,
+          "B": 0.7805,
+          "C": 0.604,
+          "D": 0.9965
+        },
+        "feynman-i.39.11": {
+          "A": 0.054,
+          "B": 0.2855,
+          "C": 0.15,
+          "D": 1.0
+        },
+        "feynman-i.41.16": {
+          "A": 0.1205,
+          "B": 0.025,
+          "C": 0.039,
+          "D": 0.0445
+        },
+        "feynman-i.43.43": {
+          "A": 0.054,
+          "B": 0.283,
+          "C": 0.1435,
+          "D": 1.0
+        },
+        "feynman-i.48.2": {
+          "A": 0.701,
+          "B": 0.043,
+          "C": 0.034,
+          "D": 0.7975
+        },
+        "feynman-ii.11.27": {
+          "A": 0.0525,
+          "B": 0.047,
+          "C": 0.058,
+          "D": 0.0555
+        },
+        "feynman-ii.11.28": {
+          "A": 0.047,
+          "B": 0.0415,
+          "C": 0.047,
+          "D": 0.049
+        },
+        "feynman-ii.13.23": {
+          "A": 0.701,
+          "B": 0.043,
+          "C": 0.034,
+          "D": 0.7975
+        },
+        "feynman-ii.13.34": {
+          "A": 0.701,
+          "B": 0.4725,
+          "C": 0.435,
+          "D": 0.797
+        },
+        "feynman-ii.38.14": {
+          "A": 1.0,
+          "B": 0.067,
+          "C": 0.0565,
+          "D": 1.0
+        },
+        "feynman-iii.4.32": {
+          "A": 0.049,
+          "B": 0.06,
+          "C": 0.066,
+          "D": 0.05
+        },
+        "feynman-iii.4.33": {
+          "A": 0.049,
+          "B": 0.0585,
+          "C": 0.0535,
+          "D": 0.05
+        }
+      },
+      "1000": {
+        "feynman-bonus.15": {
+          "A": 0.357,
+          "B": 0.055,
+          "C": 0.0565,
+          "D": 0.6715
+        },
+        "feynman-bonus.20": {
+          "A": 1.0,
+          "B": 1.0,
+          "C": 1.0,
+          "D": 1.0
+        },
+        "feynman-bonus.5": {
+          "A": 1.0,
+          "B": 0.0875,
+          "C": 0.1395,
+          "D": 1.0
+        },
+        "feynman-i.10.7": {
+          "A": 0.978,
+          "B": 0.0505,
+          "C": 0.0475,
+          "D": 0.9905
+        },
+        "feynman-i.26.2": {
+          "A": 0.495,
+          "B": 1.0,
+          "C": 0.9625,
+          "D": 1.0
+        },
+        "feynman-i.27.6": {
+          "A": 1.0,
+          "B": 0.924,
+          "C": 0.9715,
+          "D": 1.0
+        },
+        "feynman-i.37.4": {
+          "A": 1.0,
+          "B": 1.0,
+          "C": 1.0,
+          "D": 1.0
+        },
+        "feynman-i.39.11": {
+          "A": 0.0705,
+          "B": 0.777,
+          "C": 0.7605,
+          "D": 1.0
+        },
+        "feynman-i.41.16": {
+          "A": 0.1295,
+          "B": 0.0245,
+          "C": 0.0425,
+          "D": 0.05
+        },
+        "feynman-i.43.43": {
+          "A": 0.0705,
+          "B": 0.773,
+          "C": 0.751,
+          "D": 1.0
+        },
+        "feynman-i.48.2": {
+          "A": 0.9665,
+          "B": 0.0525,
+          "C": 0.048,
+          "D": 0.998
+        },
+        "feynman-ii.11.27": {
+          "A": 0.05,
+          "B": 0.055,
+          "C": 0.06,
+          "D": 0.045
+        },
+        "feynman-ii.11.28": {
+          "A": 0.0545,
+          "B": 0.0335,
+          "C": 0.0365,
+          "D": 0.0515
+        },
+        "feynman-ii.13.23": {
+          "A": 0.9665,
+          "B": 0.0525,
+          "C": 0.048,
+          "D": 0.998
+        },
+        "feynman-ii.13.34": {
+          "A": 0.9665,
+          "B": 0.7455,
+          "C": 0.737,
+          "D": 0.998
+        },
+        "feynman-ii.38.14": {
+          "A": 1.0,
+          "B": 0.0755,
+          "C": 0.06,
+          "D": 1.0
+        },
+        "feynman-iii.4.32": {
+          "A": 0.082,
+          "B": 0.127,
+          "C": 0.125,
+          "D": 0.0615
+        },
+        "feynman-iii.4.33": {
+          "A": 0.082,
+          "B": 0.055,
+          "C": 0.054,
+          "D": 0.0615
+        }
+      }
+    },
+    "paired_D_A": {
+      "50": {
+        "mean_D": 0.4662500000000001,
+        "mean_A": 0.38622222222222224,
+        "delta": 0.08002777777777778,
+        "ci95": [
+          -0.08319583333333333,
+          0.25552916666666664
+        ],
+        "tasks": 18,
+        "D_wins": 10,
+        "ties": 0,
+        "D_loses": 8
+      },
+      "200": {
+        "mean_D": 0.6566111111111113,
+        "mean_A": 0.48636111111111113,
+        "delta": 0.17024999999999998,
+        "ci95": [
+          0.04211111111111113,
+          0.3288069444444444
+        ],
+        "tasks": 18,
+        "D_wins": 13,
+        "ties": 1,
+        "D_loses": 4
+      },
+      "1000": {
+        "mean_D": 0.7180833333333334,
+        "mean_A": 0.5704722222222223,
+        "delta": 0.14761111111111108,
+        "ci95": [
+          0.021722222222222223,
+          0.30208749999999995
+        ],
+        "tasks": 18,
+        "D_wins": 8,
+        "ties": 5,
+        "D_loses": 5
+      }
+    }
+  },
+  "h0_bootstrap": {
+    "seed": 20260920,
+    "repetitions": 10000,
+    "order": "n=50,200,1000; C SVD, C legacy, D SVD, D legacy (matches review3 RNG traversal)",
+    "unit": "13 equations; 2000 rows/equation/n; native alpha=.05, no empirical threshold recalibration",
+    "by_n": {
+      "50": {
+        "C_SVD": {
+          "N": 26000,
+          "task_count": 13,
+          "point": 0.05653846153846154,
+          "ci95": [
+            0.05296153846153846,
+            0.05942307692307692
+          ],
+          "LOEO": [
+            0.055875,
+            0.058041666666666665
+          ],
+          "fit_level_Wilson95": [
+            0.05379607243222645,
+            0.059411872766275034
+          ]
+        },
+        "C_legacy": {
+          "N": 26000,
+          "task_count": 13,
+          "point": 0.4219615384615386,
+          "ci95": [
+            0.20338461538461544,
+            0.6412711538461537
+          ],
+          "LOEO": [
+            0.3737916666666667,
+            0.4525833333333334
+          ],
+          "fit_level_Wilson95": [
+            0.4159703903138727,
+            0.42797574332079863
+          ]
+        },
+        "D_SVD": {
+          "N": 26000,
+          "task_count": 13,
+          "point": 0.06038461538461538,
+          "ci95": [
+            0.05576923076923076,
+            0.06426923076923077
+          ],
+          "LOEO": [
+            0.059666666666666666,
+            0.06229166666666667
+          ],
+          "fit_level_Wilson95": [
+            0.05755370344267358,
+            0.06334541308975243
+          ]
+        },
+        "D_legacy": {
+          "N": 26000,
+          "task_count": 13,
+          "point": 0.5637307692307691,
+          "ci95": [
+            0.3418836538461538,
+            0.7827692307692308
+          ],
+          "LOEO": [
+            0.5273749999999998,
+            0.6075833333333333
+          ],
+          "fit_level_Wilson95": [
+            0.5576937738794957,
+            0.5697489351236339
+          ]
+        }
+      },
+      "200": {
+        "C_SVD": {
+          "N": 26000,
+          "task_count": 13,
+          "point": 0.05311538461538463,
+          "ci95": [
+            0.05030769230769232,
+            0.056384615384615394
+          ],
+          "LOEO": [
+            0.05200000000000001,
+            0.053541666666666675
+          ],
+          "fit_level_Wilson95": [
+            0.050454839403609716,
+            0.05590796330769894
+          ]
+        },
+        "C_legacy": {
+          "N": 26000,
+          "task_count": 13,
+          "point": 0.4167307692307692,
+          "ci95": [
+            0.19692307692307692,
+            0.7067317307692309
+          ],
+          "LOEO": [
+            0.368125,
+            0.44745833333333335
+          ],
+          "fit_level_Wilson95": [
+            0.41075078382330155,
+            0.4227353567972325
+          ]
+        },
+        "D_SVD": {
+          "N": 26000,
+          "task_count": 13,
+          "point": 0.0563846153846154,
+          "ci95": [
+            0.05461538461538463,
+            0.058384615384615396
+          ],
+          "LOEO": [
+            0.055625000000000015,
+            0.05666666666666668
+          ],
+          "fit_level_Wilson95": [
+            0.05364584077649803,
+            0.059254457568646474
+          ]
+        },
+        "D_legacy": {
+          "N": 26000,
+          "task_count": 13,
+          "point": 0.5632307692307692,
+          "ci95": [
+            0.27569038461538464,
+            0.7815384615384614
+          ],
+          "LOEO": [
+            0.5268333333333334,
+            0.60575
+          ],
+          "fit_level_Wilson95": [
+            0.5571930700006158,
+            0.5692497867291035
+          ]
+        }
+      },
+      "1000": {
+        "C_SVD": {
+          "N": 26000,
+          "task_count": 13,
+          "point": 0.05488461538461539,
+          "ci95": [
+            0.05288461538461539,
+            0.05665384615384616
+          ],
+          "LOEO": [
+            0.054541666666666676,
+            0.055291666666666676
+          ],
+          "fit_level_Wilson95": [
+            0.052181392444747385,
+            0.05771934908016656
+          ]
+        },
+        "C_legacy": {
+          "N": 26000,
+          "task_count": 13,
+          "point": 0.4178846153846154,
+          "ci95": [
+            0.19884615384615387,
+            0.6370384615384617
+          ],
+          "LOEO": [
+            0.369375,
+            0.44854166666666667
+          ],
+          "fit_level_Wilson95": [
+            0.41190210810581857,
+            0.42389138391489284
+          ]
+        },
+        "D_SVD": {
+          "N": 26000,
+          "task_count": 13,
+          "point": 0.058269230769230775,
+          "ci95": [
+            0.056423076923076916,
+            0.059615384615384626
+          ],
+          "LOEO": [
+            0.057999999999999996,
+            0.05904166666666666
+          ],
+          "fit_level_Wilson95": [
+            0.05548657525788308,
+            0.06118239704088444
+          ]
+        },
+        "D_legacy": {
+          "N": 26000,
+          "task_count": 13,
+          "point": 0.5646153846153846,
+          "ci95": [
+            0.2761923076923077,
+            0.7822307692307693
+          ],
+          "LOEO": [
+            0.5283333333333333,
+            0.6068749999999999
+          ],
+          "fit_level_Wilson95": [
+            0.5585796498450081,
+            0.5706320285649241
+          ]
+        }
+      }
+    }
+  },
+  "extrapolation": {
+    "pool": {
+      "N": 102000,
+      "tasks": [
+        "feynman-bonus.15",
+        "feynman-bonus.20",
+        "feynman-bonus.5",
+        "feynman-i.10.7",
+        "feynman-i.27.6",
+        "feynman-i.37.4",
+        "feynman-i.39.11",
+        "feynman-i.41.16",
+        "feynman-i.43.43",
+        "feynman-i.48.2",
+        "feynman-ii.11.27",
+        "feynman-ii.11.28",
+        "feynman-ii.13.23",
+        "feynman-ii.13.34",
+        "feynman-ii.38.14",
+        "feynman-iii.4.32",
+        "feynman-iii.4.33"
+      ],
+      "task_count": 17,
+      "by_n": {
+        "50": 34000,
+        "200": 34000,
+        "1000": 34000
+      }
+    },
+    "all_classes_pool": {
+      "N": 180000,
+      "tasks": [
+        "feynman-bonus.15",
+        "feynman-bonus.20",
+        "feynman-bonus.5",
+        "feynman-i.10.7",
+        "feynman-i.12.1",
+        "feynman-i.27.6",
+        "feynman-i.29.4",
+        "feynman-i.34.27",
+        "feynman-i.37.4",
+        "feynman-i.38.12",
+        "feynman-i.39.10",
+        "feynman-i.39.11",
+        "feynman-i.39.22",
+        "feynman-i.41.16",
+        "feynman-i.43.31",
+        "feynman-i.43.43",
+        "feynman-i.47.23",
+        "feynman-i.48.2",
+        "feynman-ii.11.27",
+        "feynman-ii.11.28",
+        "feynman-ii.13.23",
+        "feynman-ii.13.34",
+        "feynman-ii.27.16",
+        "feynman-ii.27.18",
+        "feynman-ii.38.14",
+        "feynman-ii.8.31",
+        "feynman-iii.12.43",
+        "feynman-iii.15.14",
+        "feynman-iii.4.32",
+        "feynman-iii.4.33"
+      ],
+      "task_count": 30,
+      "by_n": {
+        "50": 60000,
+        "200": 60000,
+        "1000": 60000
+      }
+    },
+    "definitions": {
+      "screen": "finite r2 >= .99",
+      "danger": "finite extrap_far_relerr > threshold",
+      "certificate": "screen AND all four gate p finite AND no typed decline AND no native-alpha rejection",
+      "declines": "retained in population denominator but never accepted"
+    },
+    "table15": {
+      "50": {
+        "N_H1": 34000,
+        "task_count": 17,
+        "A_screened_wrong": 22060,
+        "B_screened_dangerous": 2208,
+        "C_released_dangerous": 350,
+        "D_all_dangerous": 11922,
+        "gate_only_silent_dangerous": 966,
+        "panel_declines": 2,
+        "C_over_A": 0.01586582048957389,
+        "C_over_B": 0.1585144927536232,
+        "C_over_D": 0.029357490353967456,
+        "danger_share_B_over_A": 0.100090661831369,
+        "screened_nondangerous_wrong": 19852,
+        "released_nondangerous_wrong": 10975,
+        "release_given_screened_nondangerous_wrong": 0.552841023574451
+      },
+      "200": {
+        "N_H1": 34000,
+        "task_count": 17,
+        "A_screened_wrong": 21932,
+        "B_screened_dangerous": 2150,
+        "C_released_dangerous": 106,
+        "D_all_dangerous": 12202,
+        "gate_only_silent_dangerous": 106,
+        "panel_declines": 56,
+        "C_over_A": 0.004833120554441,
+        "C_over_B": 0.04930232558139535,
+        "C_over_D": 0.008687100475331912,
+        "danger_share_B_over_A": 0.09803027539668065,
+        "screened_nondangerous_wrong": 19782,
+        "released_nondangerous_wrong": 8929,
+        "release_given_screened_nondangerous_wrong": 0.451369932261652
+      },
+      "1000": {
+        "N_H1": 34000,
+        "task_count": 17,
+        "A_screened_wrong": 22000,
+        "B_screened_dangerous": 2045,
+        "C_released_dangerous": 25,
+        "D_all_dangerous": 12045,
+        "gate_only_silent_dangerous": 25,
+        "panel_declines": 591,
+        "C_over_A": 0.0011363636363636363,
+        "C_over_B": 0.012224938875305624,
+        "C_over_D": 0.0020755500207555004,
+        "danger_share_B_over_A": 0.09295454545454546,
+        "screened_nondangerous_wrong": 19955,
+        "released_nondangerous_wrong": 7121,
+        "release_given_screened_nondangerous_wrong": 0.3568529190679028
+      }
+    },
+    "pooled": {
+      "N_H1": 102000,
+      "task_count": 17,
+      "A_screened_wrong": 65992,
+      "B_screened_dangerous": 6403,
+      "C_released_dangerous": 481,
+      "D_all_dangerous": 36169,
+      "gate_only_silent_dangerous": 1097,
+      "panel_declines": 649,
+      "C_over_A": 0.007288762274215057,
+      "C_over_B": 0.07512103701389973,
+      "C_over_D": 0.01329868119107523,
+      "danger_share_B_over_A": 0.09702691235301249,
+      "screened_nondangerous_wrong": 59589,
+      "released_nondangerous_wrong": 27025,
+      "release_given_screened_nondangerous_wrong": 0.45352330128043766
+    },
+    "threshold_sensitivity": {
+      "0.02": {
+        "50": {
+          "N_H1": 34000,
+          "task_count": 17,
+          "A_screened_wrong": 22060,
+          "B_screened_dangerous": 7702,
+          "C_released_dangerous": 3181,
+          "D_all_dangerous": 17808,
+          "gate_only_silent_dangerous": 3995,
+          "panel_declines": 2,
+          "C_over_A": 0.1441976427923844,
+          "C_over_B": 0.4130096078940535,
+          "C_over_D": 0.17862758310871518,
+          "danger_share_B_over_A": 0.3491387126019946,
+          "screened_nondangerous_wrong": 14358,
+          "released_nondangerous_wrong": 8144,
+          "release_given_screened_nondangerous_wrong": 0.5672099178158518
+        },
+        "200": {
+          "N_H1": 34000,
+          "task_count": 17,
+          "A_screened_wrong": 21932,
+          "B_screened_dangerous": 6195,
+          "C_released_dangerous": 1084,
+          "D_all_dangerous": 16284,
+          "gate_only_silent_dangerous": 1103,
+          "panel_declines": 56,
+          "C_over_A": 0.04942549699069852,
+          "C_over_B": 0.17497982243744956,
+          "C_over_D": 0.06656841070989929,
+          "danger_share_B_over_A": 0.28246397957322633,
+          "screened_nondangerous_wrong": 15737,
+          "released_nondangerous_wrong": 7951,
+          "release_given_screened_nondangerous_wrong": 0.5052424223168329
+        },
+        "1000": {
+          "N_H1": 34000,
+          "task_count": 17,
+          "A_screened_wrong": 22000,
+          "B_screened_dangerous": 6004,
+          "C_released_dangerous": 597,
+          "D_all_dangerous": 16004,
+          "gate_only_silent_dangerous": 597,
+          "panel_declines": 591,
+          "C_over_A": 0.027136363636363636,
+          "C_over_B": 0.09943371085942705,
+          "C_over_D": 0.03730317420644839,
+          "danger_share_B_over_A": 0.27290909090909093,
+          "screened_nondangerous_wrong": 15996,
+          "released_nondangerous_wrong": 6549,
+          "release_given_screened_nondangerous_wrong": 0.40941485371342834
+        }
+      },
+      "0.05": {
+        "50": {
+          "N_H1": 34000,
+          "task_count": 17,
+          "A_screened_wrong": 22060,
+          "B_screened_dangerous": 5418,
+          "C_released_dangerous": 1702,
+          "D_all_dangerous": 15261,
+          "gate_only_silent_dangerous": 2333,
+          "panel_declines": 2,
+          "C_over_A": 0.0771532184950136,
+          "C_over_B": 0.31413805832410485,
+          "C_over_D": 0.11152611231243038,
+          "danger_share_B_over_A": 0.2456029011786038,
+          "screened_nondangerous_wrong": 16642,
+          "released_nondangerous_wrong": 9623,
+          "release_given_screened_nondangerous_wrong": 0.5782357889676721
+        },
+        "200": {
+          "N_H1": 34000,
+          "task_count": 17,
+          "A_screened_wrong": 21932,
+          "B_screened_dangerous": 5842,
+          "C_released_dangerous": 949,
+          "D_all_dangerous": 15907,
+          "gate_only_silent_dangerous": 949,
+          "panel_declines": 56,
+          "C_over_A": 0.04327010760532555,
+          "C_over_B": 0.1624443683669976,
+          "C_over_D": 0.05965926950399195,
+          "danger_share_B_over_A": 0.26636877621739924,
+          "screened_nondangerous_wrong": 16090,
+          "released_nondangerous_wrong": 8086,
+          "release_given_screened_nondangerous_wrong": 0.5025481665630827
+        },
+        "1000": {
+          "N_H1": 34000,
+          "task_count": 17,
+          "A_screened_wrong": 22000,
+          "B_screened_dangerous": 6000,
+          "C_released_dangerous": 597,
+          "D_all_dangerous": 16000,
+          "gate_only_silent_dangerous": 597,
+          "panel_declines": 591,
+          "C_over_A": 0.027136363636363636,
+          "C_over_B": 0.0995,
+          "C_over_D": 0.0373125,
+          "danger_share_B_over_A": 0.2727272727272727,
+          "screened_nondangerous_wrong": 16000,
+          "released_nondangerous_wrong": 6549,
+          "release_given_screened_nondangerous_wrong": 0.4093125
+        }
+      },
+      "0.1": {
+        "50": {
+          "N_H1": 34000,
+          "task_count": 17,
+          "A_screened_wrong": 22060,
+          "B_screened_dangerous": 2208,
+          "C_released_dangerous": 350,
+          "D_all_dangerous": 11922,
+          "gate_only_silent_dangerous": 966,
+          "panel_declines": 2,
+          "C_over_A": 0.01586582048957389,
+          "C_over_B": 0.1585144927536232,
+          "C_over_D": 0.029357490353967456,
+          "danger_share_B_over_A": 0.100090661831369,
+          "screened_nondangerous_wrong": 19852,
+          "released_nondangerous_wrong": 10975,
+          "release_given_screened_nondangerous_wrong": 0.552841023574451
+        },
+        "200": {
+          "N_H1": 34000,
+          "task_count": 17,
+          "A_screened_wrong": 21932,
+          "B_screened_dangerous": 2150,
+          "C_released_dangerous": 106,
+          "D_all_dangerous": 12202,
+          "gate_only_silent_dangerous": 106,
+          "panel_declines": 56,
+          "C_over_A": 0.004833120554441,
+          "C_over_B": 0.04930232558139535,
+          "C_over_D": 0.008687100475331912,
+          "danger_share_B_over_A": 0.09803027539668065,
+          "screened_nondangerous_wrong": 19782,
+          "released_nondangerous_wrong": 8929,
+          "release_given_screened_nondangerous_wrong": 0.451369932261652
+        },
+        "1000": {
+          "N_H1": 34000,
+          "task_count": 17,
+          "A_screened_wrong": 22000,
+          "B_screened_dangerous": 2045,
+          "C_released_dangerous": 25,
+          "D_all_dangerous": 12045,
+          "gate_only_silent_dangerous": 25,
+          "panel_declines": 591,
+          "C_over_A": 0.0011363636363636363,
+          "C_over_B": 0.012224938875305624,
+          "C_over_D": 0.0020755500207555004,
+          "danger_share_B_over_A": 0.09295454545454546,
+          "screened_nondangerous_wrong": 19955,
+          "released_nondangerous_wrong": 7121,
+          "release_given_screened_nondangerous_wrong": 0.3568529190679028
+        }
+      },
+      "0.2": {
+        "50": {
+          "N_H1": 34000,
+          "task_count": 17,
+          "A_screened_wrong": 22060,
+          "B_screened_dangerous": 609,
+          "C_released_dangerous": 39,
+          "D_all_dangerous": 9964,
+          "gate_only_silent_dangerous": 636,
+          "panel_declines": 2,
+          "C_over_A": 0.0017679057116953762,
+          "C_over_B": 0.06403940886699508,
+          "C_over_D": 0.003914090726615817,
+          "danger_share_B_over_A": 0.027606527651858566,
+          "screened_nondangerous_wrong": 21451,
+          "released_nondangerous_wrong": 11286,
+          "release_given_screened_nondangerous_wrong": 0.5261293179805138
+        },
+        "200": {
+          "N_H1": 34000,
+          "task_count": 17,
+          "A_screened_wrong": 21932,
+          "B_screened_dangerous": 133,
+          "C_released_dangerous": 0,
+          "D_all_dangerous": 10079,
+          "gate_only_silent_dangerous": 0,
+          "panel_declines": 56,
+          "C_over_A": 0.0,
+          "C_over_B": 0.0,
+          "C_over_D": 0.0,
+          "danger_share_B_over_A": 0.006064198431515594,
+          "screened_nondangerous_wrong": 21799,
+          "released_nondangerous_wrong": 9035,
+          "release_given_screened_nondangerous_wrong": 0.4144685536033763
+        },
+        "1000": {
+          "N_H1": 34000,
+          "task_count": 17,
+          "A_screened_wrong": 22000,
+          "B_screened_dangerous": 0,
+          "C_released_dangerous": 0,
+          "D_all_dangerous": 10000,
+          "gate_only_silent_dangerous": 0,
+          "panel_declines": 591,
+          "C_over_A": 0.0,
+          "C_over_B": null,
+          "C_over_D": 0.0,
+          "danger_share_B_over_A": 0.0,
+          "screened_nondangerous_wrong": 22000,
+          "released_nondangerous_wrong": 7146,
+          "release_given_screened_nondangerous_wrong": 0.32481818181818184
+        }
+      },
+      "0.5": {
+        "50": {
+          "N_H1": 34000,
+          "task_count": 17,
+          "A_screened_wrong": 22060,
+          "B_screened_dangerous": 314,
+          "C_released_dangerous": 0,
+          "D_all_dangerous": 8183,
+          "gate_only_silent_dangerous": 460,
+          "panel_declines": 2,
+          "C_over_A": 0.0,
+          "C_over_B": 0.0,
+          "C_over_D": 0.0,
+          "danger_share_B_over_A": 0.014233907524932003,
+          "screened_nondangerous_wrong": 21746,
+          "released_nondangerous_wrong": 11325,
+          "release_given_screened_nondangerous_wrong": 0.5207854318035501
+        },
+        "200": {
+          "N_H1": 34000,
+          "task_count": 17,
+          "A_screened_wrong": 21932,
+          "B_screened_dangerous": 3,
+          "C_released_dangerous": 0,
+          "D_all_dangerous": 8450,
+          "gate_only_silent_dangerous": 0,
+          "panel_declines": 56,
+          "C_over_A": 0.0,
+          "C_over_B": 0.0,
+          "C_over_D": 0.0,
+          "danger_share_B_over_A": 0.00013678643078606601,
+          "screened_nondangerous_wrong": 21929,
+          "released_nondangerous_wrong": 9035,
+          "release_given_screened_nondangerous_wrong": 0.4120114916320854
+        },
+        "1000": {
+          "N_H1": 34000,
+          "task_count": 17,
+          "A_screened_wrong": 22000,
+          "B_screened_dangerous": 0,
+          "C_released_dangerous": 0,
+          "D_all_dangerous": 8278,
+          "gate_only_silent_dangerous": 0,
+          "panel_declines": 591,
+          "C_over_A": 0.0,
+          "C_over_B": null,
+          "C_over_D": 0.0,
+          "danger_share_B_over_A": 0.0,
+          "screened_nondangerous_wrong": 22000,
+          "released_nondangerous_wrong": 7146,
+          "release_given_screened_nondangerous_wrong": 0.32481818181818184
+        }
+      }
+    },
+    "fixed_label_n1000": {
+      "complete_triples": 34000,
+      "available_triples": 34000,
+      "label_transitions": {
+        "50_to_200": {
+          "both": 11362,
+          "only_lower_n": 560,
+          "only_higher_n": 840,
+          "neither": 21238
+        },
+        "200_to_1000": {
+          "both": 11931,
+          "only_lower_n": 271,
+          "only_higher_n": 114,
+          "neither": 21684
+        },
+        "50_to_1000": {
+          "both": 11375,
+          "only_lower_n": 547,
+          "only_higher_n": 670,
+          "neither": 21408
+        }
+      },
+      "by_n": {
+        "50": {
+          "N_H1": 34000,
+          "task_count": 17,
+          "A_screened_wrong": 22060,
+          "B_screened_dangerous": 2105,
+          "C_released_dangerous": 353,
+          "D_all_dangerous": 12045,
+          "gate_only_silent_dangerous": 986,
+          "panel_declines": 2,
+          "C_over_A": 0.01600181323662738,
+          "C_over_B": 0.16769596199524942,
+          "C_over_D": 0.029306766293067662,
+          "danger_share_B_over_A": 0.09542157751586582,
+          "screened_nondangerous_wrong": 19955,
+          "released_nondangerous_wrong": 10972,
+          "release_given_screened_nondangerous_wrong": 0.5498371335504886
+        },
+        "200": {
+          "N_H1": 34000,
+          "task_count": 17,
+          "A_screened_wrong": 21932,
+          "B_screened_dangerous": 1977,
+          "C_released_dangerous": 37,
+          "D_all_dangerous": 12045,
+          "gate_only_silent_dangerous": 37,
+          "panel_declines": 56,
+          "C_over_A": 0.001687032646361481,
+          "C_over_B": 0.018715225088517955,
+          "C_over_D": 0.0030718140307181402,
+          "danger_share_B_over_A": 0.09014225788801751,
+          "screened_nondangerous_wrong": 19955,
+          "released_nondangerous_wrong": 8998,
+          "release_given_screened_nondangerous_wrong": 0.45091455775494865
+        },
+        "1000": {
+          "N_H1": 34000,
+          "task_count": 17,
+          "A_screened_wrong": 22000,
+          "B_screened_dangerous": 2045,
+          "C_released_dangerous": 25,
+          "D_all_dangerous": 12045,
+          "gate_only_silent_dangerous": 25,
+          "panel_declines": 591,
+          "C_over_A": 0.0011363636363636363,
+          "C_over_B": 0.012224938875305624,
+          "C_over_D": 0.0020755500207555004,
+          "danger_share_B_over_A": 0.09295454545454546,
+          "screened_nondangerous_wrong": 19955,
+          "released_nondangerous_wrong": 7121,
+          "release_given_screened_nondangerous_wrong": 0.3568529190679028
+        }
+      },
+      "interpretation": "Descriptive same-index comparison only. Holding the n=1000 label fixed does not isolate a causal screen effect from a gate effect or establish common nested samples. The first-feature probe coordinate also depends on the observed training maximum and can change across n."
+    },
+    "certificate": {
+      "states": {
+        "true_H0": {
+          "N": 78000,
+          "certificates": 65934,
+          "P_certificate_given_state": 0.8453076923076923
+        },
+        "dangerous_wrong_H1": {
+          "N": 36169,
+          "certificates": 481,
+          "P_certificate_given_state": 0.01329868119107523
+        },
+        "nondangerous_wrong_H1": {
+          "N": 65831,
+          "certificates": 27025,
+          "P_certificate_given_state": 0.4105208792210357
+        }
+      },
+      "LR_dangerous_wrong_vs_true": 0.01573235558139758,
+      "inverse_LR_true_vs_dangerous_wrong": 63.563272189349114,
+      "empirical_three_state_P_dangerous_wrong_given_certificate": 0.005147688356164384,
+      "empirical_three_state_certificates": 93440,
+      "binary_illustration_equal_prior_P_dangerous_wrong_given_certificate": 0.015488682126693203,
+      "binary_empirical_restricted_to_true_or_dangerous_wrong": 0.0072423398328690805,
+      "warning": "Equal-prior posterior is only a hypothetical two-state population excluding nondangerous H1. Do not insert prior P(H1)=19/32 into likelihood P(certificate|dangerous H1): the conditioned classes differ. Empirical full-pool posterior uses all three states."
+    },
+    "table7": {
+      "pool": {
+        "N": 180000,
+        "tasks": [
+          "feynman-bonus.15",
+          "feynman-bonus.20",
+          "feynman-bonus.5",
+          "feynman-i.10.7",
+          "feynman-i.12.1",
+          "feynman-i.27.6",
+          "feynman-i.29.4",
+          "feynman-i.34.27",
+          "feynman-i.37.4",
+          "feynman-i.38.12",
+          "feynman-i.39.10",
+          "feynman-i.39.11",
+          "feynman-i.39.22",
+          "feynman-i.41.16",
+          "feynman-i.43.31",
+          "feynman-i.43.43",
+          "feynman-i.47.23",
+          "feynman-i.48.2",
+          "feynman-ii.11.27",
+          "feynman-ii.11.28",
+          "feynman-ii.13.23",
+          "feynman-ii.13.34",
+          "feynman-ii.27.16",
+          "feynman-ii.27.18",
+          "feynman-ii.38.14",
+          "feynman-ii.8.31",
+          "feynman-iii.12.43",
+          "feynman-iii.15.14",
+          "feynman-iii.4.32",
+          "feynman-iii.4.33"
+        ],
+        "task_count": 30,
+        "by_n": {
+          "50": 60000,
+          "200": 60000,
+          "1000": 60000
+        }
+      },
+      "danger_definition": "far-field error>.10 across H0 and H1, no fit screen",
+      "N_dangerous": 36206,
+      "base_rate": 0.20114444444444443,
+      "methods": {
+        "A": {
+          "alarms": 53480,
+          "true_positives": 22600,
+          "precision": 0.4225878833208676,
+          "recall": 0.624205932718334,
+          "declines": 0
+        },
+        "B": {
+          "alarms": 27821,
+          "true_positives": 17746,
+          "precision": 0.6378634844182453,
+          "recall": 0.4901397558415732,
+          "declines": 649
+        },
+        "C": {
+          "alarms": 27139,
+          "true_positives": 16797,
+          "precision": 0.6189247945760713,
+          "recall": 0.4639286306137104,
+          "declines": 649
+        },
+        "D": {
+          "alarms": 65625,
+          "true_positives": 32020,
+          "precision": 0.48792380952380954,
+          "recall": 0.8843838037894272,
+          "declines": 0
+        }
+      },
+      "true_positive_overlap_A_B": {
+        "A_only": 10296,
+        "B_only": 5442,
+        "both": 12304
+      }
+    },
+    "old_results_status": "Old Table15, threshold sweep, fixed-label decomposition, Table7 and D4 must not be carried over unchanged: old pools included i.30.5. This audit supplies replacements. Raw danger flips are descriptive, not identified estimation-error mechanisms."
+  },
+  "limits": [
+    "Calibration FPR is fitted on H0 reference pools, not a new independent test of deployed FPR.",
+    "Task bootstrap holds H0 thresholds fixed and does not include threshold-estimation uncertainty.",
+    "A missing/declined diagnostic never creates an accepted certificate.",
+    "A danger-label change across n is descriptive; it does not identify a causal mechanism."
+  ],
+  "figures": {
+    "D2": {
+      "path": "D:\\form_check\\paper\\research_R2\\figures\\review3_fig_D2.png",
+      "sha256": "706aa05efbfc5e27b0867e31db1cdfabd7e162aa17465b96c588995969ab5f35"
+    },
+    "D3": {
+      "path": "D:\\form_check\\paper\\research_R2\\figures\\review3_fig_D3.png",
+      "sha256": "a02559a82f104515f74f5389375fd940a27e8f75be552e78b68e5422a2ef40d7"
+    },
+    "D4": {
+      "path": "D:\\form_check\\paper\\research_R2\\figures\\review3_fig_D4.png",
+      "sha256": "f01e052b9652057151e407977b62a5546d5cecda18cd897417d00538bd483376"
+    }
+  }
+}

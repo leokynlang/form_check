@@ -1,0 +1,66 @@
+{
+  "pdf": "C:\\Users\\16910\\Desktop\\Silent_Acceptance_research_revision_2026-10-17\\Silent_Acceptance_research_R2_2026-10-17.pdf",
+  "pages": 36,
+  "sha256": "c43732dcfb3ab1187d2d079c6688feaf125339257afdaefa6ec9e26c7de9546b",
+  "render_directory": "C:\\Users\\16910\\Desktop\\Silent_Acceptance_research_revision_2026-10-17\\tmp\\pdfs\\review-c43732dcfb3a",
+  "manuscript_sha256": "947b36987bb78f1de8313c81a841b9cd1cefbbf127e756b9a83e7afb62ef4604",
+  "baseline_sha256": "a1ab02d96c8a0410cfba914db5069c80e4a7f1f98b3227ba8c33d4ffcd06bb29",
+  "unchanged_table_groups": 22,
+  "unchanged_table_data_rows": 106,
+  "table_integrity": "R2 data rows exactly match audited R1",
+  "future_validation_status": "planned, not reported as completed",
+  "required_tokens_found": [
+    "0.73%",
+    "7.5%",
+    "Table 15",
+    "Table 16",
+    "6,000",
+    "26,000",
+    "audit_size.py",
+    "audit_s7.py",
+    "Appendix G"
+  ],
+  "out_of_page_text_blocks": [],
+  "key_pages": {
+    "Table 1 -": [
+      10
+    ],
+    "Table 3 -": [
+      11
+    ],
+    "Table 15 -": [
+      18
+    ],
+    "Table 16 -": [
+      19
+    ],
+    "Appendix D": [
+      2,
+      27
+    ],
+    "Figure D.1": [
+      27
+    ],
+    "Figure D.2": [
+      28
+    ],
+    "Figure D.5": [
+      17,
+      22,
+      30
+    ],
+    "References": [
+      2,
+      23,
+      35
+    ],
+    "Appendix G": [
+      2,
+      5,
+      11,
+      20,
+      23,
+      34
+    ]
+  }
+}

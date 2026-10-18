@@ -1,0 +1,20 @@
+{
+  "243": {
+    "url": "https://archive.ics.uci.edu/dataset/243/yacht+hydrodynamics",
+    "cc_by_4_0_found": true,
+    "reviewed_on": "2026-10-18",
+    "verification_method": "Manual review of the official UCI dataset page after a transient direct-fetch failure",
+    "license": "CC BY 4.0",
+    "creators": ["J. Gerritsma", "R. Onnink", "A. Versluis"],
+    "dataset_doi": "10.24432/C5XG7R"
+  },
+  "291": {
+    "url": "https://archive.ics.uci.edu/dataset/291/airfoil+self+noise",
+    "cc_by_4_0_found": true,
+    "reviewed_on": "2026-10-18",
+    "verification_method": "Manual review of the official UCI dataset page after a transient direct-fetch failure",
+    "license": "CC BY 4.0",
+    "creators": ["Thomas Brooks", "D. Pope", "Michael Marcolini"],
+    "dataset_doi": "10.24432/C5VW2C"
+  }
+}

@@ -1,0 +1,1367 @@
+[
+  {
+    "dataset": "epa_vehicles",
+    "source": "epa_fueleconomy",
+    "source_url": "https://www.fueleconomy.gov/feg/download.shtml",
+    "redistributed": true,
+    "terms": "DOE/EPA FuelEconomy.gov public data",
+    "terms_url": "https://www.fueleconomy.gov/feg/download.shtml",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\epa_fueleconomy\\vehicles.csv.zip",
+        "sha256": "66a2948c425c3cf8ad61a184a12296099ef368217d3012b3f7531dcc9c5e2649"
+      }
+    ]
+  },
+  {
+    "dataset": "meteo_altamont_pass",
+    "source": "open_meteo",
+    "source_url": "https://archive-api.open-meteo.com/v1/archive?latitude=37.71529&longitude=-121.64438&start_date=2023-01-01&end_date=2023-12-31&timezone=UTC",
+    "redistributed": true,
+    "terms": "CC BY 4.0; Open-Meteo / Copernicus ERA5 attribution",
+    "terms_url": "https://open-meteo.com/en/licence",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\open_meteo\\altamont_pass_2023.json",
+        "sha256": "06c06261d2780bd5091c0cbfaaa2b77cfa9bff9df32f9a64c08e72144ce88e54"
+      }
+    ]
+  },
+  {
+    "dataset": "meteo_baltic_ruegen",
+    "source": "open_meteo",
+    "source_url": "https://archive-api.open-meteo.com/v1/archive?latitude=54.65729&longitude=13.313609&start_date=2023-01-01&end_date=2023-12-31&timezone=UTC",
+    "redistributed": true,
+    "terms": "CC BY 4.0; Open-Meteo / Copernicus ERA5 attribution",
+    "terms_url": "https://open-meteo.com/en/licence",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\open_meteo\\baltic_ruegen_2023.json",
+        "sha256": "984c724aa81d074321b4623e37da4e0c1e5d11fe16aa47b70688111314390e3a"
+      }
+    ]
+  },
+  {
+    "dataset": "meteo_german_bight",
+    "source": "open_meteo",
+    "source_url": "https://archive-api.open-meteo.com/v1/archive?latitude=54.024605&longitude=7.4999995&start_date=2023-01-01&end_date=2023-12-31&timezone=UTC",
+    "redistributed": true,
+    "terms": "CC BY 4.0; Open-Meteo / Copernicus ERA5 attribution",
+    "terms_url": "https://open-meteo.com/en/licence",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\open_meteo\\german_bight_2023.json",
+        "sha256": "9e1e637e8a64b51376095e03a03e83318c5d3fb4047c91b8615e1f98e8919053"
+      }
+    ]
+  },
+  {
+    "dataset": "meteo_inner_mongolia",
+    "source": "open_meteo",
+    "source_url": "https://archive-api.open-meteo.com/v1/archive?latitude=43.971878&longitude=113.490135&start_date=2023-01-01&end_date=2023-12-31&timezone=UTC",
+    "redistributed": true,
+    "terms": "CC BY 4.0; Open-Meteo / Copernicus ERA5 attribution",
+    "terms_url": "https://open-meteo.com/en/licence",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\open_meteo\\inner_mongolia_2023.json",
+        "sha256": "6997165c4368630850dc874b77d0d397183a390eae849bf74d677f12b6d7ed89"
+      }
+    ]
+  },
+  {
+    "dataset": "meteo_iowa_fields",
+    "source": "open_meteo",
+    "source_url": "https://archive-api.open-meteo.com/v1/archive?latitude=42.003513&longitude=-93.53714&start_date=2023-01-01&end_date=2023-12-31&timezone=UTC",
+    "redistributed": true,
+    "terms": "CC BY 4.0; Open-Meteo / Copernicus ERA5 attribution",
+    "terms_url": "https://open-meteo.com/en/licence",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\open_meteo\\iowa_fields_2023.json",
+        "sha256": "596a597298c76149548ae6f87bef5aefc97e59ed403378606e42d4a13a0baf9c"
+      }
+    ]
+  },
+  {
+    "dataset": "meteo_kansas_plains",
+    "source": "open_meteo",
+    "source_url": "https://archive-api.open-meteo.com/v1/archive?latitude=38.488575&longitude=-98.54816&start_date=2023-01-01&end_date=2023-12-31&timezone=UTC",
+    "redistributed": true,
+    "terms": "CC BY 4.0; Open-Meteo / Copernicus ERA5 attribution",
+    "terms_url": "https://open-meteo.com/en/licence",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\open_meteo\\kansas_plains_2023.json",
+        "sha256": "c66d57de88a822c76efe62d518608f7530df3d9fe47063ad2058db3488fc1d53"
+      }
+    ]
+  },
+  {
+    "dataset": "meteo_north_sea",
+    "source": "open_meteo",
+    "source_url": "https://archive-api.open-meteo.com/v1/archive?latitude=56.48506&longitude=2.993763&start_date=2023-01-01&end_date=2023-12-31&timezone=UTC",
+    "redistributed": true,
+    "terms": "CC BY 4.0; Open-Meteo / Copernicus ERA5 attribution",
+    "terms_url": "https://open-meteo.com/en/licence",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\open_meteo\\north_sea_2023.json",
+        "sha256": "dbc98071da6781c1fdb1a61a5091b764e4e8aa6525a3a586532a6d2f4ecc0d3f"
+      }
+    ]
+  },
+  {
+    "dataset": "meteo_patagonia",
+    "source": "open_meteo",
+    "source_url": "https://archive-api.open-meteo.com/v1/archive?latitude=-46.994728&longitude=-68.522736&start_date=2023-01-01&end_date=2023-12-31&timezone=UTC",
+    "redistributed": true,
+    "terms": "CC BY 4.0; Open-Meteo / Copernicus ERA5 attribution",
+    "terms_url": "https://open-meteo.com/en/licence",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\open_meteo\\patagonia_2023.json",
+        "sha256": "c66d05d359478127da21d3fefb9e753ef340d599ec1b3cbe3ddee6d124902c10"
+      }
+    ]
+  },
+  {
+    "dataset": "meteo_qingdao_offshore",
+    "source": "open_meteo",
+    "source_url": "https://archive-api.open-meteo.com/v1/archive?latitude=35.88752&longitude=120.81396&start_date=2023-01-01&end_date=2023-12-31&timezone=UTC",
+    "redistributed": true,
+    "terms": "CC BY 4.0; Open-Meteo / Copernicus ERA5 attribution",
+    "terms_url": "https://open-meteo.com/en/licence",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\open_meteo\\qingdao_offshore_2023.json",
+        "sha256": "eac2bac2a19766f05b75e9aa8c14c583d9dade2fa0c8e9f070429eb04df8a46e"
+      }
+    ]
+  },
+  {
+    "dataset": "meteo_texas_panhandle",
+    "source": "open_meteo",
+    "source_url": "https://archive-api.open-meteo.com/v1/archive?latitude=35.184532&longitude=-101.823975&start_date=2023-01-01&end_date=2023-12-31&timezone=UTC",
+    "redistributed": true,
+    "terms": "CC BY 4.0; Open-Meteo / Copernicus ERA5 attribution",
+    "terms_url": "https://open-meteo.com/en/licence",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\open_meteo\\texas_panhandle_2023.json",
+        "sha256": "a2e3addf0336532cb231ae3ee5f77fa47e6212232c38759f4b99c2ae1a9d75af"
+      }
+    ]
+  },
+  {
+    "dataset": "nist_bennett5",
+    "source": "nist_strd",
+    "source_url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Bennett5.dat",
+    "redistributed": true,
+    "terms": "NIST non-SRD data terms",
+    "terms_url": "https://www.nist.gov/open/license",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\nist_strd\\Bennett5.dat",
+        "sha256": "b34d160605b959c301d13aac6627b693743d32ad98a6c4f830a3f728cdff0f52"
+      }
+    ]
+  },
+  {
+    "dataset": "nist_chwirut1",
+    "source": "nist_strd",
+    "source_url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Chwirut1.dat",
+    "redistributed": true,
+    "terms": "NIST non-SRD data terms",
+    "terms_url": "https://www.nist.gov/open/license",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\nist_strd\\Chwirut1.dat",
+        "sha256": "d9a055dfe5af71a8754c00f073ef00f8fed2e3fd1c6fd20cea8fd62d7cc3ed84"
+      }
+    ]
+  },
+  {
+    "dataset": "nist_chwirut2",
+    "source": "nist_strd",
+    "source_url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Chwirut2.dat",
+    "redistributed": true,
+    "terms": "NIST non-SRD data terms",
+    "terms_url": "https://www.nist.gov/open/license",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\nist_strd\\Chwirut2.dat",
+        "sha256": "c37e5522a34f9a57e18d7d10f8736202eabc0c33b8e7ad0010e618db04b57411"
+      }
+    ]
+  },
+  {
+    "dataset": "nist_danwood",
+    "source": "nist_strd",
+    "source_url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/DanWood.dat",
+    "redistributed": true,
+    "terms": "NIST non-SRD data terms",
+    "terms_url": "https://www.nist.gov/open/license",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\nist_strd\\DanWood.dat",
+        "sha256": "5eae83de8b34e34c631a5738d640183b0628913e728437ae77f066e832186e24"
+      }
+    ]
+  },
+  {
+    "dataset": "nist_eckerle4",
+    "source": "nist_strd",
+    "source_url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Eckerle4.dat",
+    "redistributed": true,
+    "terms": "NIST non-SRD data terms",
+    "terms_url": "https://www.nist.gov/open/license",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\nist_strd\\Eckerle4.dat",
+        "sha256": "8ec2133b29a0a7cecbfccd51f7c61ee432f73c460bf5ce7106d672642e57a61e"
+      }
+    ]
+  },
+  {
+    "dataset": "nist_hahn1",
+    "source": "nist_strd",
+    "source_url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Hahn1.dat",
+    "redistributed": true,
+    "terms": "NIST non-SRD data terms",
+    "terms_url": "https://www.nist.gov/open/license",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\nist_strd\\Hahn1.dat",
+        "sha256": "7e885af48e18a222033a66cb22b491f0f5bc761b652142c0d9b28132daf63956"
+      }
+    ]
+  },
+  {
+    "dataset": "nist_kirby2",
+    "source": "nist_strd",
+    "source_url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Kirby2.dat",
+    "redistributed": true,
+    "terms": "NIST non-SRD data terms",
+    "terms_url": "https://www.nist.gov/open/license",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\nist_strd\\Kirby2.dat",
+        "sha256": "cbd288dd9d8586ec97ca408277d1a27ef41b19b543c158d594af189de80ae61c"
+      }
+    ]
+  },
+  {
+    "dataset": "nist_misra1a",
+    "source": "nist_strd",
+    "source_url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Misra1a.dat",
+    "redistributed": true,
+    "terms": "NIST non-SRD data terms",
+    "terms_url": "https://www.nist.gov/open/license",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\nist_strd\\Misra1a.dat",
+        "sha256": "9d3194d537d9a6bbf92eb819504070923a1885d0191f40b6b3aaeedd130b98e2"
+      }
+    ]
+  },
+  {
+    "dataset": "nist_misra1b",
+    "source": "nist_strd",
+    "source_url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Misra1b.dat",
+    "redistributed": true,
+    "terms": "NIST non-SRD data terms",
+    "terms_url": "https://www.nist.gov/open/license",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\nist_strd\\Misra1b.dat",
+        "sha256": "dd27e310f787dcbc2addc50b9f8e5e3b82155f732926898b1858e4d08eead6a8"
+      }
+    ]
+  },
+  {
+    "dataset": "nist_misra1c",
+    "source": "nist_strd",
+    "source_url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Misra1c.dat",
+    "redistributed": true,
+    "terms": "NIST non-SRD data terms",
+    "terms_url": "https://www.nist.gov/open/license",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\nist_strd\\Misra1c.dat",
+        "sha256": "012f75aa0ff112afabdff73880e324ab28e2dc267b678537611c403b959dc941"
+      }
+    ]
+  },
+  {
+    "dataset": "nist_misra1d",
+    "source": "nist_strd",
+    "source_url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Misra1d.dat",
+    "redistributed": true,
+    "terms": "NIST non-SRD data terms",
+    "terms_url": "https://www.nist.gov/open/license",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\nist_strd\\Misra1d.dat",
+        "sha256": "4dfa39a381a5ffea3e5d9306af1bda9d53bc57226a8e6f0c19af6b9702580481"
+      }
+    ]
+  },
+  {
+    "dataset": "nist_roszman1",
+    "source": "nist_strd",
+    "source_url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Roszman1.dat",
+    "redistributed": true,
+    "terms": "NIST non-SRD data terms",
+    "terms_url": "https://www.nist.gov/open/license",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\nist_strd\\Roszman1.dat",
+        "sha256": "fb526231ae6b02929e3de54e072e259b3d87424089abd4b1015ffb946b1e0ab0"
+      }
+    ]
+  },
+  {
+    "dataset": "nist_thurber",
+    "source": "nist_strd",
+    "source_url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Thurber.dat",
+    "redistributed": true,
+    "terms": "NIST non-SRD data terms",
+    "terms_url": "https://www.nist.gov/open/license",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\nist_strd\\Thurber.dat",
+        "sha256": "806b8d00a5365eff907561db796fec3af8a26a5f353297d4311fd46ed5b0146f"
+      }
+    ]
+  },
+  {
+    "dataset": "openml_ailerons",
+    "source": "openml",
+    "source_url": "https://www.openml.org/d/296",
+    "redistributed": false,
+    "terms": "not mirrored: metadata says Public, without an unambiguous standard license",
+    "terms_url": "https://www.openml.org/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\openml\\ailerons.arff",
+        "sha256": "4aecc3e23a49a9a6300cb72c7dd57d6412fb16a0843c5aeb20508604e4fbb3f1"
+      }
+    ]
+  },
+  {
+    "dataset": "openml_cpu_act",
+    "source": "openml",
+    "source_url": "https://www.openml.org/d/197",
+    "redistributed": false,
+    "terms": "not mirrored: metadata says Public, without an unambiguous standard license",
+    "terms_url": "https://www.openml.org/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\openml\\cpu_act.arff",
+        "sha256": "16ada2bd7088e92ac1cdc2c5285275a0bfd72dcafa7095ac3870f9943423c507"
+      }
+    ]
+  },
+  {
+    "dataset": "openml_elusage",
+    "source": "openml",
+    "source_url": "https://www.openml.org/d/228",
+    "redistributed": false,
+    "terms": "not mirrored: metadata says Public, without an unambiguous standard license",
+    "terms_url": "https://www.openml.org/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\openml\\elusage.arff",
+        "sha256": "e6f9abbef35dcbe078723e8428cf7510a64c34daf495763b03db0206adff018d"
+      }
+    ]
+  },
+  {
+    "dataset": "rdataset_airquality",
+    "source": "rdatasets",
+    "source_url": "https://vincentarelbundock.github.io/Rdatasets/csv/datasets/airquality.csv",
+    "redistributed": false,
+    "terms": "not mirrored: original data licensing not definitive",
+    "terms_url": "https://vincentarelbundock.github.io/Rdatasets/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\rdatasets\\airquality.csv",
+        "sha256": "65d2c4afd976c169af9bb0bd97e9e78e1e8a185f1b52e2e3153e30f90c7fb5f8"
+      }
+    ]
+  },
+  {
+    "dataset": "rdataset_attenu",
+    "source": "rdatasets",
+    "source_url": "https://vincentarelbundock.github.io/Rdatasets/csv/datasets/attenu.csv",
+    "redistributed": false,
+    "terms": "not mirrored: original data licensing not definitive",
+    "terms_url": "https://vincentarelbundock.github.io/Rdatasets/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\rdatasets\\attenu.csv",
+        "sha256": "5ea8f236c21c775cf508128911628b95eac2bf8222464c369107e399244ce3da"
+      }
+    ]
+  },
+  {
+    "dataset": "rdataset_cars",
+    "source": "rdatasets",
+    "source_url": "https://vincentarelbundock.github.io/Rdatasets/csv/datasets/cars.csv",
+    "redistributed": false,
+    "terms": "not mirrored: original data licensing not definitive",
+    "terms_url": "https://vincentarelbundock.github.io/Rdatasets/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\rdatasets\\cars.csv",
+        "sha256": "08e75516e5fd1377db316a3ed790545c942dcf905c69f49d0c6f16873a4a6242"
+      }
+    ]
+  },
+  {
+    "dataset": "rdataset_cement_hald",
+    "source": "rdatasets",
+    "source_url": "https://vincentarelbundock.github.io/Rdatasets/csv/MASS/cement.csv",
+    "redistributed": false,
+    "terms": "not mirrored: original data licensing not definitive",
+    "terms_url": "https://vincentarelbundock.github.io/Rdatasets/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\rdatasets\\cement_hald.csv",
+        "sha256": "1b91e175e9776f9ebda7bdd32b060bf661ce5cd33841c9f81033b56daafc6997"
+      }
+    ]
+  },
+  {
+    "dataset": "rdataset_electricity",
+    "source": "rdatasets",
+    "source_url": "https://vincentarelbundock.github.io/Rdatasets/csv/Ecdat/Electricity.csv",
+    "redistributed": false,
+    "terms": "not mirrored: original data licensing not definitive",
+    "terms_url": "https://vincentarelbundock.github.io/Rdatasets/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\rdatasets\\electricity.csv",
+        "sha256": "7331a074eac71f8592da91c81b6dad4298f60040634a8c0e0b45cad56e0287a3"
+      }
+    ]
+  },
+  {
+    "dataset": "rdataset_housing",
+    "source": "rdatasets",
+    "source_url": "https://vincentarelbundock.github.io/Rdatasets/csv/Ecdat/Housing.csv",
+    "redistributed": false,
+    "terms": "not mirrored: original data licensing not definitive",
+    "terms_url": "https://vincentarelbundock.github.io/Rdatasets/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\rdatasets\\housing.csv",
+        "sha256": "8b2ae10b051d64d8f6bfc8aad588abdd9bcf18458e430ae0e515010215f65400"
+      }
+    ]
+  },
+  {
+    "dataset": "rdataset_petrol",
+    "source": "rdatasets",
+    "source_url": "https://vincentarelbundock.github.io/Rdatasets/csv/MASS/petrol.csv",
+    "redistributed": false,
+    "terms": "not mirrored: original data licensing not definitive",
+    "terms_url": "https://vincentarelbundock.github.io/Rdatasets/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\rdatasets\\petrol.csv",
+        "sha256": "2c4e989ae4f7f5b7fc9ec294a9a11bddf47da0ba43f2c1f697bf9216d683eb15"
+      }
+    ]
+  },
+  {
+    "dataset": "rdataset_pressure",
+    "source": "rdatasets",
+    "source_url": "https://vincentarelbundock.github.io/Rdatasets/csv/datasets/pressure.csv",
+    "redistributed": false,
+    "terms": "not mirrored: original data licensing not definitive",
+    "terms_url": "https://vincentarelbundock.github.io/Rdatasets/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\rdatasets\\pressure.csv",
+        "sha256": "5ef371dc3f05836aab2f46025c5cc7574a460afbc6d31d875d73194ac1f157b5"
+      }
+    ]
+  },
+  {
+    "dataset": "rdataset_puromycin",
+    "source": "rdatasets",
+    "source_url": "https://vincentarelbundock.github.io/Rdatasets/csv/datasets/Puromycin.csv",
+    "redistributed": false,
+    "terms": "not mirrored: original data licensing not definitive",
+    "terms_url": "https://vincentarelbundock.github.io/Rdatasets/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\rdatasets\\puromycin.csv",
+        "sha256": "389be46927d2217b13d48b5b9ec56374007a87ea607c8e6f004c17683c427c70"
+      }
+    ]
+  },
+  {
+    "dataset": "rdataset_rock",
+    "source": "rdatasets",
+    "source_url": "https://vincentarelbundock.github.io/Rdatasets/csv/datasets/rock.csv",
+    "redistributed": false,
+    "terms": "not mirrored: original data licensing not definitive",
+    "terms_url": "https://vincentarelbundock.github.io/Rdatasets/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\rdatasets\\rock.csv",
+        "sha256": "6dfbd52bc247177469e716fdc8395e43f0f776f5c08f88ad275d3993f25da2fd"
+      }
+    ]
+  },
+  {
+    "dataset": "rdataset_stormer",
+    "source": "rdatasets",
+    "source_url": "https://vincentarelbundock.github.io/Rdatasets/csv/MASS/stormer.csv",
+    "redistributed": false,
+    "terms": "not mirrored: original data licensing not definitive",
+    "terms_url": "https://vincentarelbundock.github.io/Rdatasets/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\rdatasets\\stormer.csv",
+        "sha256": "02832e5da13ad8b510c4bbe6fb020f02d04cecb2ebdf356caa4339380f179e02"
+      }
+    ]
+  },
+  {
+    "dataset": "rdataset_trees",
+    "source": "rdatasets",
+    "source_url": "https://vincentarelbundock.github.io/Rdatasets/csv/datasets/trees.csv",
+    "redistributed": false,
+    "terms": "not mirrored: original data licensing not definitive",
+    "terms_url": "https://vincentarelbundock.github.io/Rdatasets/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\rdatasets\\trees.csv",
+        "sha256": "7547a8a919872cf39d2e77db7a2945e1abe258e0c40e3f2482586103fa2f7948"
+      }
+    ]
+  },
+  {
+    "dataset": "rdataset_whiteside",
+    "source": "rdatasets",
+    "source_url": "https://vincentarelbundock.github.io/Rdatasets/csv/MASS/whiteside.csv",
+    "redistributed": false,
+    "terms": "not mirrored: original data licensing not definitive",
+    "terms_url": "https://vincentarelbundock.github.io/Rdatasets/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\rdatasets\\whiteside.csv",
+        "sha256": "306930c8ea31835c768ab5657c8d5d6ef20102343dccbbf4f7010c5bbaa3762f"
+      }
+    ]
+  },
+  {
+    "dataset": "rdataset_women",
+    "source": "rdatasets",
+    "source_url": "https://vincentarelbundock.github.io/Rdatasets/csv/datasets/women.csv",
+    "redistributed": false,
+    "terms": "not mirrored: original data licensing not definitive",
+    "terms_url": "https://vincentarelbundock.github.io/Rdatasets/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\rdatasets\\women.csv",
+        "sha256": "ff95dfaa417b2da885d08a1e9844a73ccf398263ac29b823e227437e590b361c"
+      }
+    ]
+  },
+  {
+    "dataset": "uci_air_quality",
+    "source": "uci",
+    "source_url": "https://archive.ics.uci.edu/dataset/360/air+quality",
+    "redistributed": true,
+    "terms": "CC BY 4.0",
+    "terms_url": "https://archive.ics.uci.edu/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\uci\\360_air_quality\\data.csv",
+        "sha256": "4c42e4729e876dfdecf3bfb0ed658f2bdfb2b3007da496440d303260a97733e5"
+      }
+    ]
+  },
+  {
+    "dataset": "uci_auto_mpg",
+    "source": "uci",
+    "source_url": "https://archive.ics.uci.edu/dataset/9/auto+mpg",
+    "redistributed": true,
+    "terms": "CC BY 4.0",
+    "terms_url": "https://archive.ics.uci.edu/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\uci\\9_auto_mpg\\data.csv",
+        "sha256": "240f4657d747fe105f3c992251daba65f926ef54c4dec3cde34e398e8cf5da9c"
+      }
+    ]
+  },
+  {
+    "dataset": "uci_automobile",
+    "source": "uci",
+    "source_url": "https://archive.ics.uci.edu/dataset/10/automobile",
+    "redistributed": true,
+    "terms": "CC BY 4.0",
+    "terms_url": "https://archive.ics.uci.edu/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\uci\\10_automobile\\data.csv",
+        "sha256": "fe36b5dcd1a8603ce46d80dae5682765d3671613622840602d748e4cadeda6b9"
+      }
+    ]
+  },
+  {
+    "dataset": "uci_ccpp",
+    "source": "uci",
+    "source_url": "https://archive.ics.uci.edu/dataset/294/combined+cycle+power+plant",
+    "redistributed": true,
+    "terms": "CC BY 4.0",
+    "terms_url": "https://archive.ics.uci.edu/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\uci\\294_ccpp\\data.csv",
+        "sha256": "3c1fc11025f8424f8d95802d8b7086dffd3f73a552c6dcab3d973620986194b2"
+      }
+    ]
+  },
+  {
+    "dataset": "uci_concrete_slump",
+    "source": "uci",
+    "source_url": "https://archive.ics.uci.edu/dataset/182/concrete+slump+test",
+    "redistributed": true,
+    "terms": "CC BY 4.0",
+    "terms_url": "https://archive.ics.uci.edu/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\uci\\182_concrete_slump\\slump_test.data",
+        "sha256": "78cea9fbb28ad8fc17f389e216e724dc04642c6c363143e67f6bcb97e74525ee"
+      }
+    ]
+  },
+  {
+    "dataset": "uci_concrete_strength",
+    "source": "uci",
+    "source_url": "https://archive.ics.uci.edu/dataset/165/concrete+compressive+strength",
+    "redistributed": true,
+    "terms": "CC BY 4.0",
+    "terms_url": "https://archive.ics.uci.edu/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\uci\\165_concrete_strength\\data.csv",
+        "sha256": "8d4b15b6fc68cd932d745cbd663d5ceae66dd54422e99c1e4865f2936ab7e2af"
+      }
+    ]
+  },
+  {
+    "dataset": "uci_energy_efficiency",
+    "source": "uci",
+    "source_url": "https://archive.ics.uci.edu/dataset/242/energy+efficiency",
+    "redistributed": true,
+    "terms": "CC BY 4.0",
+    "terms_url": "https://archive.ics.uci.edu/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\uci\\242_energy_efficiency\\data.csv",
+        "sha256": "db44dbe453acd464b5cf65be2fb01a28aa9c5b2630300e65fbe28cde35f5d96f"
+      }
+    ]
+  },
+  {
+    "dataset": "uci_gas_turbine_emissions",
+    "source": "uci",
+    "source_url": "https://archive.ics.uci.edu/dataset/551/gas+turbine+co+and+nox+emission+data+set",
+    "redistributed": true,
+    "terms": "CC BY 4.0",
+    "terms_url": "https://archive.ics.uci.edu/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\uci\\551_gas_turbine_emissions\\data.csv",
+        "sha256": "33cbb8c68e24e3782547ccf0ed60d9ec0cc10732c3f84b08ed08fea08bfdaa6a"
+      }
+    ]
+  },
+  {
+    "dataset": "uci_steel_energy",
+    "source": "uci",
+    "source_url": "https://archive.ics.uci.edu/dataset/851/steel+industry+energy+consumption",
+    "redistributed": true,
+    "terms": "CC BY 4.0",
+    "terms_url": "https://archive.ics.uci.edu/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\uci\\851_steel_energy\\data.csv",
+        "sha256": "9b1cee6f9cb9cd9df2b95814ca90a9a2ff15b7f5f1fba0fae3c643e82072eacc"
+      }
+    ]
+  },
+  {
+    "dataset": "uci_tetouan_power",
+    "source": "uci",
+    "source_url": "https://archive.ics.uci.edu/dataset/849/power+consumption+of+tetouan+city",
+    "redistributed": true,
+    "terms": "CC BY 4.0",
+    "terms_url": "https://archive.ics.uci.edu/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\uci\\849_tetouan_power\\data.csv",
+        "sha256": "ca8b2f30cf07dd872cb7f2aa45dac110ee38dbe5fc5910a6ff4bcc530dae3a40"
+      }
+    ]
+  },
+  {
+    "dataset": "uci_yacht_hydro",
+    "source": "uci",
+    "source_url": "https://archive.ics.uci.edu/dataset/243/yacht+hydrodynamics",
+    "redistributed": true,
+    "terms": "CC BY 4.0",
+    "terms_url": "https://archive.ics.uci.edu/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\uci\\243_yacht_hydro\\yacht_hydrodynamics.data",
+        "sha256": "00dfecc0fc01ddd4c90b558a3ac11b246df8ebcfea130724223475a9a67f0ea1"
+      }
+    ]
+  },
+  {
+    "dataset": "usgs_01184000_rating",
+    "source": "usgs",
+    "source_url": "https://waterservices.usgs.gov/nwis/iv/?sites=01184000&startDT=2023-01-01&endDT=2023-12-31&parameterCd=00060,00065&format=json",
+    "redistributed": true,
+    "terms": "USGS public-domain data",
+    "terms_url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\usgs\\iv_connecticut_thompsonville_01184000_2023.json",
+        "sha256": "97badf5c7a2f765eba16729dac2f647160e1946c9f3aff7795babec3c1806039"
+      }
+    ]
+  },
+  {
+    "dataset": "usgs_01463500_rating",
+    "source": "usgs",
+    "source_url": "https://waterservices.usgs.gov/nwis/iv/?sites=01463500&startDT=2023-01-01&endDT=2023-12-31&parameterCd=00060,00065&format=json",
+    "redistributed": true,
+    "terms": "USGS public-domain data",
+    "terms_url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\usgs\\iv_delaware_trenton_01463500_2023.json",
+        "sha256": "aa3f0c6b9bcb45f163717855d2c30dd36e4a43ae0d6bd1600ff945448a4b1360"
+      }
+    ]
+  },
+  {
+    "dataset": "usgs_01570500_rating",
+    "source": "usgs",
+    "source_url": "https://waterservices.usgs.gov/nwis/iv/?sites=01570500&startDT=2023-01-01&endDT=2023-12-31&parameterCd=00060,00065&format=json",
+    "redistributed": true,
+    "terms": "USGS public-domain data",
+    "terms_url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\usgs\\iv_susquehanna_harrisburg_01570500_2023.json",
+        "sha256": "861c7871701d908b4b57a22e46a89bc62d09032ab5c526a84e67eb41b8c087bb"
+      }
+    ]
+  },
+  {
+    "dataset": "usgs_01646500_rating",
+    "source": "usgs",
+    "source_url": "https://waterservices.usgs.gov/nwis/iv/?sites=01646500&startDT=2023-01-01&endDT=2023-12-31&parameterCd=00060,00065&format=json",
+    "redistributed": true,
+    "terms": "USGS public-domain data",
+    "terms_url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\usgs\\iv_potomac_01646500_2023.json",
+        "sha256": "2717c4b47abd481b778d62db5708424cc5e9408433f86d812893e42ee059a558"
+      }
+    ]
+  },
+  {
+    "dataset": "usgs_06934500_rating",
+    "source": "usgs",
+    "source_url": "https://waterservices.usgs.gov/nwis/iv/?sites=06934500&startDT=2023-01-01&endDT=2023-12-31&parameterCd=00060,00065&format=json",
+    "redistributed": true,
+    "terms": "USGS public-domain data",
+    "terms_url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\usgs\\iv_missouri_hermann_06934500_2023.json",
+        "sha256": "0af753605f18f1012d1b4f123cbe43b8998b54b8e3d7e0d9aeb10b4f299bed57"
+      }
+    ]
+  },
+  {
+    "dataset": "usgs_07010000_rating",
+    "source": "usgs",
+    "source_url": "https://waterservices.usgs.gov/nwis/iv/?sites=07010000&startDT=2023-01-01&endDT=2023-12-31&parameterCd=00060,00065&format=json",
+    "redistributed": true,
+    "terms": "USGS public-domain data",
+    "terms_url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\usgs\\iv_mississippi_memphis_07010000_2023.json",
+        "sha256": "548f99c3d9b1b97e43f7412a24107c324cfd3f2281b4a4545e9a224f3706f18f"
+      }
+    ]
+  },
+  {
+    "dataset": "usgs_07374000_rating",
+    "source": "usgs",
+    "source_url": "https://waterservices.usgs.gov/nwis/iv/?sites=07374000&startDT=2023-01-01&endDT=2023-12-31&parameterCd=00060,00065&format=json",
+    "redistributed": true,
+    "terms": "USGS public-domain data",
+    "terms_url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\usgs\\iv_atchafalaya_simmesport_07374000_2023.json",
+        "sha256": "20e7c8c1613318c2bc385a11cec1cb21fa5a0d797646468c2c81f90b9424cc1b"
+      }
+    ]
+  },
+  {
+    "dataset": "usgs_08158000_rating",
+    "source": "usgs",
+    "source_url": "https://waterservices.usgs.gov/nwis/iv/?sites=08158000&startDT=2023-01-01&endDT=2023-12-31&parameterCd=00060,00065&format=json",
+    "redistributed": true,
+    "terms": "USGS public-domain data",
+    "terms_url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\usgs\\iv_guadalupe_08158000_2023.json",
+        "sha256": "3a8c306ceec9f8c1684e6bdbe2c8ff20b073c05ec5390ef3ba6fa47ceedd29dd"
+      }
+    ]
+  },
+  {
+    "dataset": "usgs_09380000_rating",
+    "source": "usgs",
+    "source_url": "https://waterservices.usgs.gov/nwis/iv/?sites=09380000&startDT=2023-01-01&endDT=2023-12-31&parameterCd=00060,00065&format=json",
+    "redistributed": true,
+    "terms": "USGS public-domain data",
+    "terms_url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\usgs\\iv_colorado_leesferry_09380000_2023.json",
+        "sha256": "017cac43583560a04988516aa825d91001cd9c3e72b2c59335911d6b059fa43d"
+      }
+    ]
+  },
+  {
+    "dataset": "usgs_11447650_rating",
+    "source": "usgs",
+    "source_url": "https://waterservices.usgs.gov/nwis/iv/?sites=11447650&startDT=2023-01-01&endDT=2023-12-31&parameterCd=00060,00065&format=json",
+    "redistributed": true,
+    "terms": "USGS public-domain data",
+    "terms_url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\usgs\\iv_sacramento_freeport_11447650_2023.json",
+        "sha256": "89df1f888ad790e9ac92d5135e2c7b064a0f330326a728e960e046fea8454b43"
+      }
+    ]
+  },
+  {
+    "dataset": "usgs_12484500_rating",
+    "source": "usgs",
+    "source_url": "https://waterservices.usgs.gov/nwis/iv/?sites=12484500&startDT=2023-01-01&endDT=2023-12-31&parameterCd=00060,00065&format=json",
+    "redistributed": true,
+    "terms": "USGS public-domain data",
+    "terms_url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\usgs\\iv_nooksack_12484500_2023.json",
+        "sha256": "77c56daf642acb73c3230c2e953c8200660bcc9859b800c666294860983b18bc"
+      }
+    ]
+  },
+  {
+    "dataset": "usgs_14105700_rating",
+    "source": "usgs",
+    "source_url": "https://waterservices.usgs.gov/nwis/iv/?sites=14105700&startDT=2023-01-01&endDT=2023-12-31&parameterCd=00060,00065&format=json",
+    "redistributed": true,
+    "terms": "USGS public-domain data",
+    "terms_url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\usgs\\iv_columbia_thedalles_14105700_2023.json",
+        "sha256": "f4923e3f904cfed19be868e1c906b8fc0a91ac6861779f4369c5d8dc3505d1fd"
+      }
+    ]
+  },
+  {
+    "dataset": "usgs_eq_global",
+    "source": "usgs_eq",
+    "source_url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2000-01-01&endtime=2024-12-31&minmagnitude=5.5&orderby=time-asc",
+    "redistributed": true,
+    "terms": "USGS public-domain data",
+    "terms_url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\usgs_eq\\global_m55_2000_2024.geojson",
+        "sha256": "b1b55b9d3ad31e0511b098f3eeb08b8cdf083cb8acfaa71804bfa2bf399688b8"
+      }
+    ]
+  },
+  {
+    "dataset": "webbook_1_butanol_dvaph",
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "redistributed": false,
+    "terms": "not mirrored: SRD 69 copyright; obtain from source",
+    "terms_url": "https://webbook.nist.gov/chemistry/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\1_butanol_phase.html",
+        "sha256": "f6e83f6570191516ceda3b13d1988b3da982c809133eb6f7d431bb864e3b05dd"
+      }
+    ]
+  },
+  {
+    "dataset": "webbook_1_propanol_dvaph",
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "redistributed": false,
+    "terms": "not mirrored: SRD 69 copyright; obtain from source",
+    "terms_url": "https://webbook.nist.gov/chemistry/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\1_propanol_phase.html",
+        "sha256": "01263b9d1a06ad463e51fa93f8d07371eb46fcf88ec48dd4797a018f0d5d7c57"
+      }
+    ]
+  },
+  {
+    "dataset": "webbook_acetone_dvaph",
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "redistributed": false,
+    "terms": "not mirrored: SRD 69 copyright; obtain from source",
+    "terms_url": "https://webbook.nist.gov/chemistry/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\acetone_phase.html",
+        "sha256": "2d073350a3afbb7614109cf538c8f2395272fb3e634e5b93812d1d25b50d9c78"
+      }
+    ]
+  },
+  {
+    "dataset": "webbook_aniline_dvaph",
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "redistributed": false,
+    "terms": "not mirrored: SRD 69 copyright; obtain from source",
+    "terms_url": "https://webbook.nist.gov/chemistry/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\aniline_phase.html",
+        "sha256": "64ec9ac256b3aa1df009b7f1e44fa8ed58e9ebafa74a549d6b696aa491f04264"
+      }
+    ]
+  },
+  {
+    "dataset": "webbook_benzene_dsubh",
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "redistributed": false,
+    "terms": "not mirrored: SRD 69 copyright; obtain from source",
+    "terms_url": "https://webbook.nist.gov/chemistry/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\benzene_phase.html",
+        "sha256": "9ec966f194d82ad6bf9615378c2a441076147d44331227900df3787a515beee6"
+      }
+    ]
+  },
+  {
+    "dataset": "webbook_benzene_dvaph",
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "redistributed": false,
+    "terms": "not mirrored: SRD 69 copyright; obtain from source",
+    "terms_url": "https://webbook.nist.gov/chemistry/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\benzene_phase.html",
+        "sha256": "9ec966f194d82ad6bf9615378c2a441076147d44331227900df3787a515beee6"
+      }
+    ]
+  },
+  {
+    "dataset": "webbook_butane_dvaph",
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "redistributed": false,
+    "terms": "not mirrored: SRD 69 copyright; obtain from source",
+    "terms_url": "https://webbook.nist.gov/chemistry/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\butane_phase.html",
+        "sha256": "3adf616d43b28c460be059dd2756ba793a2a3fff85b1cd7d42223ae88c7fb14a"
+      }
+    ]
+  },
+  {
+    "dataset": "webbook_carbon_disulfide_dvaph",
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "redistributed": false,
+    "terms": "not mirrored: SRD 69 copyright; obtain from source",
+    "terms_url": "https://webbook.nist.gov/chemistry/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\carbon_disulfide_phase.html",
+        "sha256": "f735b0d33e843cc93b3d9c4cc4ab72f300c0ce5ddd5f80bfd52c885d3b6628cd"
+      }
+    ]
+  },
+  {
+    "dataset": "webbook_cyclohexane_dvaph",
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "redistributed": false,
+    "terms": "not mirrored: SRD 69 copyright; obtain from source",
+    "terms_url": "https://webbook.nist.gov/chemistry/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\cyclohexane_phase.html",
+        "sha256": "f28d22c268f2096af0447d547bb7aa8516ad7ddc6fa6d774fda19f7024a7e826"
+      }
+    ]
+  },
+  {
+    "dataset": "webbook_ethane_dvaph",
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "redistributed": false,
+    "terms": "not mirrored: SRD 69 copyright; obtain from source",
+    "terms_url": "https://webbook.nist.gov/chemistry/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\ethane_phase.html",
+        "sha256": "24366f13fef5c12e45a3a735d1892a7f3b0fdb397f2796c6b47cff7e33733b73"
+      }
+    ]
+  },
+  {
+    "dataset": "webbook_ethylbenzene_dvaph",
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "redistributed": false,
+    "terms": "not mirrored: SRD 69 copyright; obtain from source",
+    "terms_url": "https://webbook.nist.gov/chemistry/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\ethylbenzene_phase.html",
+        "sha256": "89cfd1e9e29e2e566154b7bf10583ba35c74070070beb4a1867171df26bdb053"
+      }
+    ]
+  },
+  {
+    "dataset": "webbook_ethylene_dvaph",
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "redistributed": false,
+    "terms": "not mirrored: SRD 69 copyright; obtain from source",
+    "terms_url": "https://webbook.nist.gov/chemistry/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\ethylene_phase.html",
+        "sha256": "0a5f3d9421d626a8de3b7797be8152ce79836d3a05ce93f4dd0a65ef8c3d2ae3"
+      }
+    ]
+  },
+  {
+    "dataset": "webbook_ethylene_glycol_dvaph",
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "redistributed": false,
+    "terms": "not mirrored: SRD 69 copyright; obtain from source",
+    "terms_url": "https://webbook.nist.gov/chemistry/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\ethylene_glycol_phase.html",
+        "sha256": "020d88048fa58e256c539ec5a8b58e62269e8b28fc5aaaf83d933f9bc44c4293"
+      }
+    ]
+  },
+  {
+    "dataset": "webbook_heptane_dfush",
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "redistributed": false,
+    "terms": "not mirrored: SRD 69 copyright; obtain from source",
+    "terms_url": "https://webbook.nist.gov/chemistry/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\heptane_phase.html",
+        "sha256": "a055fa923ea3d9b95e6714a1a30dec2242d45f3b3c81ddd97a031d5463955e95"
+      }
+    ]
+  },
+  {
+    "dataset": "webbook_heptane_dfuss",
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "redistributed": false,
+    "terms": "not mirrored: SRD 69 copyright; obtain from source",
+    "terms_url": "https://webbook.nist.gov/chemistry/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\heptane_phase.html",
+        "sha256": "a055fa923ea3d9b95e6714a1a30dec2242d45f3b3c81ddd97a031d5463955e95"
+      }
+    ]
+  },
+  {
+    "dataset": "webbook_heptane_dvaph",
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "redistributed": false,
+    "terms": "not mirrored: SRD 69 copyright; obtain from source",
+    "terms_url": "https://webbook.nist.gov/chemistry/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\heptane_phase.html",
+        "sha256": "a055fa923ea3d9b95e6714a1a30dec2242d45f3b3c81ddd97a031d5463955e95"
+      }
+    ]
+  },
+  {
+    "dataset": "webbook_hexane_dvaph",
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "redistributed": false,
+    "terms": "not mirrored: SRD 69 copyright; obtain from source",
+    "terms_url": "https://webbook.nist.gov/chemistry/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\hexane_phase.html",
+        "sha256": "0f6efa09c5edbcb9f556052030a7cca4cd079cafd76180e141dae34a706d6102"
+      }
+    ]
+  },
+  {
+    "dataset": "webbook_isooctane_dvaph",
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "redistributed": false,
+    "terms": "not mirrored: SRD 69 copyright; obtain from source",
+    "terms_url": "https://webbook.nist.gov/chemistry/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\isooctane_phase.html",
+        "sha256": "7d1c5ff64a8986d151ba3614d715a89a2a365d5ea242bccde3c996359a253af3"
+      }
+    ]
+  },
+  {
+    "dataset": "webbook_methane_dvaph",
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "redistributed": false,
+    "terms": "not mirrored: SRD 69 copyright; obtain from source",
+    "terms_url": "https://webbook.nist.gov/chemistry/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\methane_phase.html",
+        "sha256": "fbe0de409e7cd5885d24b79e67d1ee067c373024254239d917cbf2b7d60df550"
+      }
+    ]
+  },
+  {
+    "dataset": "webbook_methanol_dvaph",
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "redistributed": false,
+    "terms": "not mirrored: SRD 69 copyright; obtain from source",
+    "terms_url": "https://webbook.nist.gov/chemistry/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\methanol_phase.html",
+        "sha256": "dd34feadbe653a56da4b76ddb368ca375699c5c5c3cf5ddf55b5fc66dd43a239"
+      }
+    ]
+  },
+  {
+    "dataset": "webbook_methyl_chloride_dvaph",
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "redistributed": false,
+    "terms": "not mirrored: SRD 69 copyright; obtain from source",
+    "terms_url": "https://webbook.nist.gov/chemistry/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\methyl_chloride_phase.html",
+        "sha256": "560b4d7647552b1ed11e49da91741a41681b43a16214fe76c15bf1289898c508"
+      }
+    ]
+  },
+  {
+    "dataset": "webbook_octane_dvaph",
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "redistributed": false,
+    "terms": "not mirrored: SRD 69 copyright; obtain from source",
+    "terms_url": "https://webbook.nist.gov/chemistry/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\octane_phase.html",
+        "sha256": "059213b741e5d27af42d5fb187fecb92a1d20d33d0503dccd8aac44391ac5c2a"
+      }
+    ]
+  },
+  {
+    "dataset": "webbook_pentane_dvaph",
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "redistributed": false,
+    "terms": "not mirrored: SRD 69 copyright; obtain from source",
+    "terms_url": "https://webbook.nist.gov/chemistry/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\pentane_phase.html",
+        "sha256": "3c997a4bcc50948ad3ede1559d3ade6811c015a40cbca92999e8696c131dac2f"
+      }
+    ]
+  },
+  {
+    "dataset": "webbook_propane_dvaph",
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "redistributed": false,
+    "terms": "not mirrored: SRD 69 copyright; obtain from source",
+    "terms_url": "https://webbook.nist.gov/chemistry/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\propane_phase.html",
+        "sha256": "237f64fc947c9fe3b0f8db04211191f6beca23967bbb717803541d1fa8e90b8f"
+      }
+    ]
+  },
+  {
+    "dataset": "webbook_propylene_dvaph",
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "redistributed": false,
+    "terms": "not mirrored: SRD 69 copyright; obtain from source",
+    "terms_url": "https://webbook.nist.gov/chemistry/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\propylene_phase.html",
+        "sha256": "37b2cfae0a1b301bafd3a62ac5bf2bfb5f012b8eb6ea2238a2b5071b6af23005"
+      }
+    ]
+  },
+  {
+    "dataset": "webbook_toluene_dvaph",
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "redistributed": false,
+    "terms": "not mirrored: SRD 69 copyright; obtain from source",
+    "terms_url": "https://webbook.nist.gov/chemistry/",
+    "changes": "See clean manifest notes and real_data/prepare_data.py",
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\toluene_phase.html",
+        "sha256": "04441fa5193b4c7a03205517b20a2278113aaacfadf6e1ebd407013713eeda9d"
+      }
+    ]
+  }
+]

@@ -1,0 +1,50 @@
+Silent Acceptance - R2 研究叙事修订说明
+日期：2026-10-17
+
+本目录是根据既有审计结果重新组织的研究稿。上一版 R1 和最初稿保留在原位置。
+
+交付：
+- Silent_Acceptance_research_R2_2026-10-17.pdf：新版论文。
+- manuscript.md：可编辑正文。
+- build_pdf.py：PDF 构建脚本，附录 D 图注和附录 F 清单由此脚本生成。
+- audit_size.py / audit_results.py / audit_s7.py：R1 的缓存聚合脚本。
+- evidence/：聚合证据和本次 PDF/数据一致性检查。
+- figures/：已核对的结果图。
+
+本次修改：
+1. 标题改为：
+   Silent Acceptance: A Benchmark of Specification Gates and Extrapolation Failures
+   in Physical Model Assessment
+2. 摘要聚焦问题、方法、主要发现和贡献，约 250 个英文词。
+   主要结果保留 481 个漏放记录、7.5% 和 0.73% 的正确分母、
+   D 在共同任务池的平均表现及样本量趋势。
+3. 引言明确三项贡献：
+   诊断基准与决策统计口径；失效方向与方法比较；完整流程联合放行。
+4. 讨论由逐问回应改成方法选择、统计/数值可靠性和流程评价的研究讨论。
+5. 统计纠错历史集中到 Appendix G。数值实现审计保留具体测量。
+6. Table 15 的计数符号改为 S、Sd、Ld、Da，避免与检验 A-D 混淆。
+7. 方法部分明确 native、reference-calibrated 与 joint-panel 的不同口径，
+   并将代码中的 ground-truth 标签表述为结构定义标签。
+8. Section 6 列出两组优先验证实验：
+   同样本/独立校准/共同联合误报预算比较；固定事前外推评价域。
+   真实搜索器输出的独立候选验证作为进一步扩展。
+9. 正文、封面、目录、图注和结论同步调整。
+
+未新增或改变的内容：
+- 22 组表格的 106 行数据与 R1 完全一致，检查记录见 evidence/pdf_checks.json。
+- 未新增模型拟合、数据抽样或声称建议实验已经完成。
+- 正在工作目录中的 PySR pilots 尚未并入主实验；其试验对象、选择后数据使用
+  和校准方式仍需按候选级验证目标处理。
+- 没有修改 D:/form_check 的代码或实验缓存，也没有提交 Git。
+- 当前仍为工作稿，公开归档地址和投稿格式需在选定投稿目标后落实。
+
+复建：
+使用有 numpy、pandas、scipy、matplotlib、pyarrow、reportlab、pypdf、Pillow、
+pdfplumber 的 Python，运行：
+  python build_pdf.py
+  python validate_pdf.py
+后者需要 pdftoppm（Poppler），会自动渲染并生成联系表。
+
+缓存聚合脚本依赖 D:/form_check 的原始实验缓存。
+validate_pdf.py 为了核对表格，需要桌面上一版目录：
+Silent_Acceptance_revision_2026-10-17/manuscript.md。

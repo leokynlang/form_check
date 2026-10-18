@@ -1,0 +1,1813 @@
+{
+  "created_at_utc": "2026-10-17T16:18:34.098138+00:00",
+  "operation": "Read-only aggregation of cached results; no simulation or fitting",
+  "python": "3.13.15",
+  "pandas": "3.0.5",
+  "numpy": "2.5.2",
+  "matplotlib": "3.11.1",
+  "alpha": 0.05,
+  "decision_rule": "p < alpha (asserted against stored reject flags)",
+  "wilson_z": 1.9599639845400536,
+  "interval_scope": "Pointwise Wilson intervals for conditional simulation proportions; not task-generalization or simultaneous coverage guarantees",
+  "validity_filter": "H0, rel > 0, no data/method failure, finite p in [0,1], matching SVD sentinel",
+  "inputs": {
+    "s1_raw": {
+      "path": "D:\\form_check\\runs\\full_500\\raw.parquet",
+      "sha256": "187224eabaede7e0824fe09cb16083306d835d90714ddccf41385180e11951b1",
+      "bytes": 17327180
+    },
+    "s1_svd": {
+      "path": "D:\\form_check\\runs\\cd_svd\\s1_cd_svd.csv",
+      "sha256": "d0aae53f53c0dd68471cb9ecf91bf0516b5eccc5c24c0283cf2a5e15d10101fc",
+      "bytes": 25465000
+    },
+    "s2_raw": {
+      "path": "D:\\form_check\\runs\\srsd_full\\raw_srsd.parquet",
+      "sha256": "62df25df55c48a95ab7670a62da829ef8295740be7c469e4af40241b76385943",
+      "bytes": 34563229
+    },
+    "s2_svd": {
+      "path": "D:\\form_check\\runs\\cd_svd\\s2_cd_svd.csv",
+      "sha256": "7f3965b27c2e8729715fc4e46c7db74865e45c15c57e9aad6a2eecd8a0e7d47c",
+      "bytes": 44554701
+    },
+    "s1_old_summary": {
+      "path": "D:\\form_check\\runs\\full_500\\summary.json",
+      "sha256": "b227d5c79cf40c9efe32c8183196dddec99b9a0a783960276ad0e97e11e9b814",
+      "bytes": 8113
+    },
+    "s1_svd_summary": {
+      "path": "D:\\form_check\\runs\\cd_svd\\summary_s1.json",
+      "sha256": "8144ead1707c1aa3020c1012afd5b103f2b12cc500b77c5c6bf03be25e906c6f",
+      "bytes": 6937
+    },
+    "s1_runner": {
+      "path": "D:\\form_check\\run_experiment.py",
+      "sha256": "8a07a11c5b79bbf37614378131043b4f8cba8c0a07fdbc1c75d087e4eb6fb5b3",
+      "bytes": 7861
+    },
+    "s1_old_aggregator": {
+      "path": "D:\\form_check\\analyze.py",
+      "sha256": "db12adbbd0866d5ed7291d7dec78bdbf84d01849e5843ea421be59eee3674c85",
+      "bytes": 13893
+    }
+  },
+  "script_sha256": "608d443246732ef53aa366bc94ef839f636657f42fe2b3c708e42cc027cab893",
+  "tables": {
+    "s1": {
+      "h0_tasks": [
+        "H0_BASELINE",
+        "H0_CORR",
+        "H0_MULTIVAR"
+      ],
+      "by_n": {
+        "50": {
+          "all_h0_rows": 7500,
+          "zero_noise_rows_excluded": 1500,
+          "positive_noise_rows": 6000,
+          "noise_levels_positive": [
+            0.005,
+            0.01,
+            0.03,
+            0.05
+          ],
+          "grid_counts": [
+            {
+              "task": "H0_BASELINE",
+              "rel": 0.0,
+              "rows": 500
+            },
+            {
+              "task": "H0_BASELINE",
+              "rel": 0.005,
+              "rows": 500
+            },
+            {
+              "task": "H0_BASELINE",
+              "rel": 0.01,
+              "rows": 500
+            },
+            {
+              "task": "H0_BASELINE",
+              "rel": 0.03,
+              "rows": 500
+            },
+            {
+              "task": "H0_BASELINE",
+              "rel": 0.05,
+              "rows": 500
+            },
+            {
+              "task": "H0_CORR",
+              "rel": 0.0,
+              "rows": 500
+            },
+            {
+              "task": "H0_CORR",
+              "rel": 0.005,
+              "rows": 500
+            },
+            {
+              "task": "H0_CORR",
+              "rel": 0.01,
+              "rows": 500
+            },
+            {
+              "task": "H0_CORR",
+              "rel": 0.03,
+              "rows": 500
+            },
+            {
+              "task": "H0_CORR",
+              "rel": 0.05,
+              "rows": 500
+            },
+            {
+              "task": "H0_MULTIVAR",
+              "rel": 0.0,
+              "rows": 500
+            },
+            {
+              "task": "H0_MULTIVAR",
+              "rel": 0.005,
+              "rows": 500
+            },
+            {
+              "task": "H0_MULTIVAR",
+              "rel": 0.01,
+              "rows": 500
+            },
+            {
+              "task": "H0_MULTIVAR",
+              "rel": 0.03,
+              "rows": 500
+            },
+            {
+              "task": "H0_MULTIVAR",
+              "rel": 0.05,
+              "rows": 500
+            }
+          ],
+          "methods": {
+            "A": {
+              "rejected": 350,
+              "evaluated": 6000,
+              "rate": 0.058333333333333334,
+              "wilson95": [
+                0.05268075436014037,
+                0.06455109855406803
+              ],
+              "display_4dp": "0.0583 [0.0527-0.0646]",
+              "positive_noise_excluded": 0,
+              "positive_noise_failure_flag": 0,
+              "positive_noise_nonfinite_p": 0,
+              "zero_noise_failure_flag": 1500,
+              "rejected_if_failed_rows_counted_nonreject": 350,
+              "legacy_all_rows_denominator": 7500,
+              "legacy_all_rows_rate": 0.04666666666666667,
+              "p_equal_alpha": 5
+            },
+            "B": {
+              "rejected": 334,
+              "evaluated": 6000,
+              "rate": 0.05566666666666667,
+              "wilson95": [
+                0.05014445916200019,
+                0.061757472864143056
+              ],
+              "display_4dp": "0.0557 [0.0501-0.0618]",
+              "positive_noise_excluded": 0,
+              "positive_noise_failure_flag": 0,
+              "positive_noise_nonfinite_p": 0,
+              "zero_noise_failure_flag": 1500,
+              "rejected_if_failed_rows_counted_nonreject": 334,
+              "legacy_all_rows_denominator": 7500,
+              "legacy_all_rows_rate": 0.044533333333333334,
+              "p_equal_alpha": 0
+            },
+            "C": {
+              "rejected": 361,
+              "evaluated": 6000,
+              "rate": 0.06016666666666667,
+              "wilson95": [
+                0.05442648976050412,
+                0.06646968376424908
+              ],
+              "display_4dp": "0.0602 [0.0544-0.0665]",
+              "positive_noise_excluded": 0,
+              "positive_noise_failure_flag": 0,
+              "positive_noise_nonfinite_p": 0,
+              "zero_noise_failure_flag": 1500,
+              "rejected_if_failed_rows_counted_nonreject": 361,
+              "legacy_all_rows_denominator": 7500,
+              "legacy_all_rows_rate": 0.048133333333333334,
+              "p_equal_alpha": 0
+            },
+            "D": {
+              "rejected": 405,
+              "evaluated": 6000,
+              "rate": 0.0675,
+              "wilson95": [
+                0.061424555325746484,
+                0.0741289006411859
+              ],
+              "display_4dp": "0.0675 [0.0614-0.0741]",
+              "positive_noise_excluded": 0,
+              "positive_noise_failure_flag": 0,
+              "positive_noise_nonfinite_p": 0,
+              "zero_noise_failure_flag": 1500,
+              "rejected_if_failed_rows_counted_nonreject": 405,
+              "legacy_all_rows_denominator": 7500,
+              "legacy_all_rows_rate": 0.054,
+              "p_equal_alpha": 0
+            }
+          }
+        },
+        "200": {
+          "all_h0_rows": 7500,
+          "zero_noise_rows_excluded": 1500,
+          "positive_noise_rows": 6000,
+          "noise_levels_positive": [
+            0.005,
+            0.01,
+            0.03,
+            0.05
+          ],
+          "grid_counts": [
+            {
+              "task": "H0_BASELINE",
+              "rel": 0.0,
+              "rows": 500
+            },
+            {
+              "task": "H0_BASELINE",
+              "rel": 0.005,
+              "rows": 500
+            },
+            {
+              "task": "H0_BASELINE",
+              "rel": 0.01,
+              "rows": 500
+            },
+            {
+              "task": "H0_BASELINE",
+              "rel": 0.03,
+              "rows": 500
+            },
+            {
+              "task": "H0_BASELINE",
+              "rel": 0.05,
+              "rows": 500
+            },
+            {
+              "task": "H0_CORR",
+              "rel": 0.0,
+              "rows": 500
+            },
+            {
+              "task": "H0_CORR",
+              "rel": 0.005,
+              "rows": 500
+            },
+            {
+              "task": "H0_CORR",
+              "rel": 0.01,
+              "rows": 500
+            },
+            {
+              "task": "H0_CORR",
+              "rel": 0.03,
+              "rows": 500
+            },
+            {
+              "task": "H0_CORR",
+              "rel": 0.05,
+              "rows": 500
+            },
+            {
+              "task": "H0_MULTIVAR",
+              "rel": 0.0,
+              "rows": 500
+            },
+            {
+              "task": "H0_MULTIVAR",
+              "rel": 0.005,
+              "rows": 500
+            },
+            {
+              "task": "H0_MULTIVAR",
+              "rel": 0.01,
+              "rows": 500
+            },
+            {
+              "task": "H0_MULTIVAR",
+              "rel": 0.03,
+              "rows": 500
+            },
+            {
+              "task": "H0_MULTIVAR",
+              "rel": 0.05,
+              "rows": 500
+            }
+          ],
+          "methods": {
+            "A": {
+              "rejected": 274,
+              "evaluated": 6000,
+              "rate": 0.04566666666666667,
+              "wilson95": [
+                0.0406687699639757,
+                0.05124595873192321
+              ],
+              "display_4dp": "0.0457 [0.0407-0.0512]",
+              "positive_noise_excluded": 0,
+              "positive_noise_failure_flag": 0,
+              "positive_noise_nonfinite_p": 0,
+              "zero_noise_failure_flag": 1500,
+              "rejected_if_failed_rows_counted_nonreject": 274,
+              "legacy_all_rows_denominator": 7500,
+              "legacy_all_rows_rate": 0.036533333333333334,
+              "p_equal_alpha": 5
+            },
+            "B": {
+              "rejected": 311,
+              "evaluated": 6000,
+              "rate": 0.051833333333333335,
+              "wilson95": [
+                0.046505115018097384,
+                0.0577350557314522
+              ],
+              "display_4dp": "0.0518 [0.0465-0.0577]",
+              "positive_noise_excluded": 0,
+              "positive_noise_failure_flag": 0,
+              "positive_noise_nonfinite_p": 0,
+              "zero_noise_failure_flag": 1500,
+              "rejected_if_failed_rows_counted_nonreject": 311,
+              "legacy_all_rows_denominator": 7500,
+              "legacy_all_rows_rate": 0.041466666666666666,
+              "p_equal_alpha": 0
+            },
+            "C": {
+              "rejected": 341,
+              "evaluated": 6000,
+              "rate": 0.05683333333333333,
+              "wilson95": [
+                0.051253645449643045,
+                0.06298012696502871
+              ],
+              "display_4dp": "0.0568 [0.0513-0.0630]",
+              "positive_noise_excluded": 0,
+              "positive_noise_failure_flag": 0,
+              "positive_noise_nonfinite_p": 0,
+              "zero_noise_failure_flag": 1500,
+              "rejected_if_failed_rows_counted_nonreject": 341,
+              "legacy_all_rows_denominator": 7500,
+              "legacy_all_rows_rate": 0.04546666666666667,
+              "p_equal_alpha": 0
+            },
+            "D": {
+              "rejected": 315,
+              "evaluated": 6000,
+              "rate": 0.0525,
+              "wilson95": [
+                0.047137458400984406,
+                0.05843519257058147
+              ],
+              "display_4dp": "0.0525 [0.0471-0.0584]",
+              "positive_noise_excluded": 0,
+              "positive_noise_failure_flag": 0,
+              "positive_noise_nonfinite_p": 0,
+              "zero_noise_failure_flag": 1500,
+              "rejected_if_failed_rows_counted_nonreject": 315,
+              "legacy_all_rows_denominator": 7500,
+              "legacy_all_rows_rate": 0.042,
+              "p_equal_alpha": 0
+            }
+          }
+        },
+        "1000": {
+          "all_h0_rows": 7500,
+          "zero_noise_rows_excluded": 1500,
+          "positive_noise_rows": 6000,
+          "noise_levels_positive": [
+            0.005,
+            0.01,
+            0.03,
+            0.05
+          ],
+          "grid_counts": [
+            {
+              "task": "H0_BASELINE",
+              "rel": 0.0,
+              "rows": 500
+            },
+            {
+              "task": "H0_BASELINE",
+              "rel": 0.005,
+              "rows": 500
+            },
+            {
+              "task": "H0_BASELINE",
+              "rel": 0.01,
+              "rows": 500
+            },
+            {
+              "task": "H0_BASELINE",
+              "rel": 0.03,
+              "rows": 500
+            },
+            {
+              "task": "H0_BASELINE",
+              "rel": 0.05,
+              "rows": 500
+            },
+            {
+              "task": "H0_CORR",
+              "rel": 0.0,
+              "rows": 500
+            },
+            {
+              "task": "H0_CORR",
+              "rel": 0.005,
+              "rows": 500
+            },
+            {
+              "task": "H0_CORR",
+              "rel": 0.01,
+              "rows": 500
+            },
+            {
+              "task": "H0_CORR",
+              "rel": 0.03,
+              "rows": 500
+            },
+            {
+              "task": "H0_CORR",
+              "rel": 0.05,
+              "rows": 500
+            },
+            {
+              "task": "H0_MULTIVAR",
+              "rel": 0.0,
+              "rows": 500
+            },
+            {
+              "task": "H0_MULTIVAR",
+              "rel": 0.005,
+              "rows": 500
+            },
+            {
+              "task": "H0_MULTIVAR",
+              "rel": 0.01,
+              "rows": 500
+            },
+            {
+              "task": "H0_MULTIVAR",
+              "rel": 0.03,
+              "rows": 500
+            },
+            {
+              "task": "H0_MULTIVAR",
+              "rel": 0.05,
+              "rows": 500
+            }
+          ],
+          "methods": {
+            "A": {
+              "rejected": 308,
+              "evaluated": 6000,
+              "rate": 0.051333333333333335,
+              "wilson95": [
+                0.046031025747914754,
+                0.05720978483512262
+              ],
+              "display_4dp": "0.0513 [0.0460-0.0572]",
+              "positive_noise_excluded": 0,
+              "positive_noise_failure_flag": 0,
+              "positive_noise_nonfinite_p": 0,
+              "zero_noise_failure_flag": 1500,
+              "rejected_if_failed_rows_counted_nonreject": 308,
+              "legacy_all_rows_denominator": 7500,
+              "legacy_all_rows_rate": 0.04106666666666667,
+              "p_equal_alpha": 7
+            },
+            "B": {
+              "rejected": 283,
+              "evaluated": 6000,
+              "rate": 0.04716666666666667,
+              "wilson95": [
+                0.042086178633804705,
+                0.052826630561630866
+              ],
+              "display_4dp": "0.0472 [0.0421-0.0528]",
+              "positive_noise_excluded": 0,
+              "positive_noise_failure_flag": 0,
+              "positive_noise_nonfinite_p": 0,
+              "zero_noise_failure_flag": 1500,
+              "rejected_if_failed_rows_counted_nonreject": 283,
+              "legacy_all_rows_denominator": 7500,
+              "legacy_all_rows_rate": 0.037733333333333334,
+              "p_equal_alpha": 0
+            },
+            "C": {
+              "rejected": 287,
+              "evaluated": 6000,
+              "rate": 0.04783333333333333,
+              "wilson95": [
+                0.04271661910966607,
+                0.053528670307785776
+              ],
+              "display_4dp": "0.0478 [0.0427-0.0535]",
+              "positive_noise_excluded": 0,
+              "positive_noise_failure_flag": 0,
+              "positive_noise_nonfinite_p": 0,
+              "zero_noise_failure_flag": 1500,
+              "rejected_if_failed_rows_counted_nonreject": 287,
+              "legacy_all_rows_denominator": 7500,
+              "legacy_all_rows_rate": 0.038266666666666664,
+              "p_equal_alpha": 0
+            },
+            "D": {
+              "rejected": 301,
+              "evaluated": 6000,
+              "rate": 0.050166666666666665,
+              "wilson95": [
+                0.044925390472571367,
+                0.05598357972193749
+              ],
+              "display_4dp": "0.0502 [0.0449-0.0560]",
+              "positive_noise_excluded": 0,
+              "positive_noise_failure_flag": 0,
+              "positive_noise_nonfinite_p": 0,
+              "zero_noise_failure_flag": 1500,
+              "rejected_if_failed_rows_counted_nonreject": 301,
+              "legacy_all_rows_denominator": 7500,
+              "legacy_all_rows_rate": 0.04013333333333333,
+              "p_equal_alpha": 0
+            }
+          }
+        }
+      }
+    },
+    "s2": {
+      "h0_tasks": [
+        "feynman-i.12.1",
+        "feynman-i.29.4",
+        "feynman-i.34.27",
+        "feynman-i.38.12",
+        "feynman-i.39.10",
+        "feynman-i.39.22",
+        "feynman-i.43.31",
+        "feynman-i.47.23",
+        "feynman-ii.27.16",
+        "feynman-ii.27.18",
+        "feynman-ii.8.31",
+        "feynman-iii.12.43",
+        "feynman-iii.15.14"
+      ],
+      "by_n": {
+        "50": {
+          "all_h0_rows": 32500,
+          "zero_noise_rows_excluded": 6500,
+          "positive_noise_rows": 26000,
+          "noise_levels_positive": [
+            0.005,
+            0.01,
+            0.03,
+            0.05
+          ],
+          "grid_counts": [
+            {
+              "task": "feynman-i.12.1",
+              "rel": 0.0,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.12.1",
+              "rel": 0.005,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.12.1",
+              "rel": 0.01,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.12.1",
+              "rel": 0.03,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.12.1",
+              "rel": 0.05,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.29.4",
+              "rel": 0.0,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.29.4",
+              "rel": 0.005,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.29.4",
+              "rel": 0.01,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.29.4",
+              "rel": 0.03,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.29.4",
+              "rel": 0.05,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.34.27",
+              "rel": 0.0,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.34.27",
+              "rel": 0.005,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.34.27",
+              "rel": 0.01,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.34.27",
+              "rel": 0.03,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.34.27",
+              "rel": 0.05,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.38.12",
+              "rel": 0.0,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.38.12",
+              "rel": 0.005,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.38.12",
+              "rel": 0.01,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.38.12",
+              "rel": 0.03,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.38.12",
+              "rel": 0.05,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.39.10",
+              "rel": 0.0,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.39.10",
+              "rel": 0.005,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.39.10",
+              "rel": 0.01,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.39.10",
+              "rel": 0.03,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.39.10",
+              "rel": 0.05,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.39.22",
+              "rel": 0.0,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.39.22",
+              "rel": 0.005,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.39.22",
+              "rel": 0.01,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.39.22",
+              "rel": 0.03,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.39.22",
+              "rel": 0.05,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.43.31",
+              "rel": 0.0,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.43.31",
+              "rel": 0.005,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.43.31",
+              "rel": 0.01,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.43.31",
+              "rel": 0.03,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.43.31",
+              "rel": 0.05,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.47.23",
+              "rel": 0.0,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.47.23",
+              "rel": 0.005,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.47.23",
+              "rel": 0.01,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.47.23",
+              "rel": 0.03,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.47.23",
+              "rel": 0.05,
+              "rows": 500
+            },
+            {
+              "task": "feynman-ii.27.16",
+              "rel": 0.0,
+              "rows": 500
+            },
+            {
+              "task": "feynman-ii.27.16",
+              "rel": 0.005,
+              "rows": 500
+            },
+            {
+              "task": "feynman-ii.27.16",
+              "rel": 0.01,
+              "rows": 500
+            },
+            {
+              "task": "feynman-ii.27.16",
+              "rel": 0.03,
+              "rows": 500
+            },
+            {
+              "task": "feynman-ii.27.16",
+              "rel": 0.05,
+              "rows": 500
+            },
+            {
+              "task": "feynman-ii.27.18",
+              "rel": 0.0,
+              "rows": 500
+            },
+            {
+              "task": "feynman-ii.27.18",
+              "rel": 0.005,
+              "rows": 500
+            },
+            {
+              "task": "feynman-ii.27.18",
+              "rel": 0.01,
+              "rows": 500
+            },
+            {
+              "task": "feynman-ii.27.18",
+              "rel": 0.03,
+              "rows": 500
+            },
+            {
+              "task": "feynman-ii.27.18",
+              "rel": 0.05,
+              "rows": 500
+            },
+            {
+              "task": "feynman-ii.8.31",
+              "rel": 0.0,
+              "rows": 500
+            },
+            {
+              "task": "feynman-ii.8.31",
+              "rel": 0.005,
+              "rows": 500
+            },
+            {
+              "task": "feynman-ii.8.31",
+              "rel": 0.01,
+              "rows": 500
+            },
+            {
+              "task": "feynman-ii.8.31",
+              "rel": 0.03,
+              "rows": 500
+            },
+            {
+              "task": "feynman-ii.8.31",
+              "rel": 0.05,
+              "rows": 500
+            },
+            {
+              "task": "feynman-iii.12.43",
+              "rel": 0.0,
+              "rows": 500
+            },
+            {
+              "task": "feynman-iii.12.43",
+              "rel": 0.005,
+              "rows": 500
+            },
+            {
+              "task": "feynman-iii.12.43",
+              "rel": 0.01,
+              "rows": 500
+            },
+            {
+              "task": "feynman-iii.12.43",
+              "rel": 0.03,
+              "rows": 500
+            },
+            {
+              "task": "feynman-iii.12.43",
+              "rel": 0.05,
+              "rows": 500
+            },
+            {
+              "task": "feynman-iii.15.14",
+              "rel": 0.0,
+              "rows": 500
+            },
+            {
+              "task": "feynman-iii.15.14",
+              "rel": 0.005,
+              "rows": 500
+            },
+            {
+              "task": "feynman-iii.15.14",
+              "rel": 0.01,
+              "rows": 500
+            },
+            {
+              "task": "feynman-iii.15.14",
+              "rel": 0.03,
+              "rows": 500
+            },
+            {
+              "task": "feynman-iii.15.14",
+              "rel": 0.05,
+              "rows": 500
+            }
+          ],
+          "methods": {
+            "A": {
+              "rejected": 1271,
+              "evaluated": 26000,
+              "rate": 0.04888461538461539,
+              "wilson95": [
+                0.04632962107096595,
+                0.05157289317302572
+              ],
+              "display_4dp": "0.0489 [0.0463-0.0516]",
+              "positive_noise_excluded": 0,
+              "positive_noise_failure_flag": 0,
+              "positive_noise_nonfinite_p": 0,
+              "zero_noise_failure_flag": 6500,
+              "rejected_if_failed_rows_counted_nonreject": 1271,
+              "legacy_all_rows_denominator": 32500,
+              "legacy_all_rows_rate": 0.03910769230769231,
+              "p_equal_alpha": 36
+            },
+            "B": {
+              "rejected": 1297,
+              "evaluated": 26000,
+              "rate": 0.04988461538461538,
+              "wilson95": [
+                0.04730420711830159,
+                0.05259801167251045
+              ],
+              "display_4dp": "0.0499 [0.0473-0.0526]",
+              "positive_noise_excluded": 0,
+              "positive_noise_failure_flag": 0,
+              "positive_noise_nonfinite_p": 0,
+              "zero_noise_failure_flag": 6500,
+              "rejected_if_failed_rows_counted_nonreject": 1297,
+              "legacy_all_rows_denominator": 32500,
+              "legacy_all_rows_rate": 0.03990769230769231,
+              "p_equal_alpha": 0
+            },
+            "C": {
+              "rejected": 1470,
+              "evaluated": 26000,
+              "rate": 0.05653846153846154,
+              "wilson95": [
+                0.05379607243222645,
+                0.059411872766275034
+              ],
+              "display_4dp": "0.0565 [0.0538-0.0594]",
+              "positive_noise_excluded": 0,
+              "positive_noise_failure_flag": 0,
+              "positive_noise_nonfinite_p": 0,
+              "zero_noise_failure_flag": 6500,
+              "rejected_if_failed_rows_counted_nonreject": 1470,
+              "legacy_all_rows_denominator": 32500,
+              "legacy_all_rows_rate": 0.045230769230769234,
+              "p_equal_alpha": 0
+            },
+            "D": {
+              "rejected": 1570,
+              "evaluated": 26000,
+              "rate": 0.060384615384615384,
+              "wilson95": [
+                0.05755370344267358,
+                0.06334541308975243
+              ],
+              "display_4dp": "0.0604 [0.0576-0.0633]",
+              "positive_noise_excluded": 0,
+              "positive_noise_failure_flag": 0,
+              "positive_noise_nonfinite_p": 0,
+              "zero_noise_failure_flag": 6500,
+              "rejected_if_failed_rows_counted_nonreject": 1570,
+              "legacy_all_rows_denominator": 32500,
+              "legacy_all_rows_rate": 0.04830769230769231,
+              "p_equal_alpha": 0
+            }
+          }
+        },
+        "200": {
+          "all_h0_rows": 32500,
+          "zero_noise_rows_excluded": 6500,
+          "positive_noise_rows": 26000,
+          "noise_levels_positive": [
+            0.005,
+            0.01,
+            0.03,
+            0.05
+          ],
+          "grid_counts": [
+            {
+              "task": "feynman-i.12.1",
+              "rel": 0.0,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.12.1",
+              "rel": 0.005,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.12.1",
+              "rel": 0.01,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.12.1",
+              "rel": 0.03,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.12.1",
+              "rel": 0.05,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.29.4",
+              "rel": 0.0,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.29.4",
+              "rel": 0.005,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.29.4",
+              "rel": 0.01,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.29.4",
+              "rel": 0.03,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.29.4",
+              "rel": 0.05,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.34.27",
+              "rel": 0.0,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.34.27",
+              "rel": 0.005,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.34.27",
+              "rel": 0.01,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.34.27",
+              "rel": 0.03,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.34.27",
+              "rel": 0.05,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.38.12",
+              "rel": 0.0,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.38.12",
+              "rel": 0.005,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.38.12",
+              "rel": 0.01,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.38.12",
+              "rel": 0.03,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.38.12",
+              "rel": 0.05,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.39.10",
+              "rel": 0.0,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.39.10",
+              "rel": 0.005,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.39.10",
+              "rel": 0.01,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.39.10",
+              "rel": 0.03,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.39.10",
+              "rel": 0.05,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.39.22",
+              "rel": 0.0,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.39.22",
+              "rel": 0.005,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.39.22",
+              "rel": 0.01,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.39.22",
+              "rel": 0.03,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.39.22",
+              "rel": 0.05,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.43.31",
+              "rel": 0.0,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.43.31",
+              "rel": 0.005,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.43.31",
+              "rel": 0.01,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.43.31",
+              "rel": 0.03,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.43.31",
+              "rel": 0.05,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.47.23",
+              "rel": 0.0,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.47.23",
+              "rel": 0.005,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.47.23",
+              "rel": 0.01,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.47.23",
+              "rel": 0.03,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.47.23",
+              "rel": 0.05,
+              "rows": 500
+            },
+            {
+              "task": "feynman-ii.27.16",
+              "rel": 0.0,
+              "rows": 500
+            },
+            {
+              "task": "feynman-ii.27.16",
+              "rel": 0.005,
+              "rows": 500
+            },
+            {
+              "task": "feynman-ii.27.16",
+              "rel": 0.01,
+              "rows": 500
+            },
+            {
+              "task": "feynman-ii.27.16",
+              "rel": 0.03,
+              "rows": 500
+            },
+            {
+              "task": "feynman-ii.27.16",
+              "rel": 0.05,
+              "rows": 500
+            },
+            {
+              "task": "feynman-ii.27.18",
+              "rel": 0.0,
+              "rows": 500
+            },
+            {
+              "task": "feynman-ii.27.18",
+              "rel": 0.005,
+              "rows": 500
+            },
+            {
+              "task": "feynman-ii.27.18",
+              "rel": 0.01,
+              "rows": 500
+            },
+            {
+              "task": "feynman-ii.27.18",
+              "rel": 0.03,
+              "rows": 500
+            },
+            {
+              "task": "feynman-ii.27.18",
+              "rel": 0.05,
+              "rows": 500
+            },
+            {
+              "task": "feynman-ii.8.31",
+              "rel": 0.0,
+              "rows": 500
+            },
+            {
+              "task": "feynman-ii.8.31",
+              "rel": 0.005,
+              "rows": 500
+            },
+            {
+              "task": "feynman-ii.8.31",
+              "rel": 0.01,
+              "rows": 500
+            },
+            {
+              "task": "feynman-ii.8.31",
+              "rel": 0.03,
+              "rows": 500
+            },
+            {
+              "task": "feynman-ii.8.31",
+              "rel": 0.05,
+              "rows": 500
+            },
+            {
+              "task": "feynman-iii.12.43",
+              "rel": 0.0,
+              "rows": 500
+            },
+            {
+              "task": "feynman-iii.12.43",
+              "rel": 0.005,
+              "rows": 500
+            },
+            {
+              "task": "feynman-iii.12.43",
+              "rel": 0.01,
+              "rows": 500
+            },
+            {
+              "task": "feynman-iii.12.43",
+              "rel": 0.03,
+              "rows": 500
+            },
+            {
+              "task": "feynman-iii.12.43",
+              "rel": 0.05,
+              "rows": 500
+            },
+            {
+              "task": "feynman-iii.15.14",
+              "rel": 0.0,
+              "rows": 500
+            },
+            {
+              "task": "feynman-iii.15.14",
+              "rel": 0.005,
+              "rows": 500
+            },
+            {
+              "task": "feynman-iii.15.14",
+              "rel": 0.01,
+              "rows": 500
+            },
+            {
+              "task": "feynman-iii.15.14",
+              "rel": 0.03,
+              "rows": 500
+            },
+            {
+              "task": "feynman-iii.15.14",
+              "rel": 0.05,
+              "rows": 500
+            }
+          ],
+          "methods": {
+            "A": {
+              "rejected": 1391,
+              "evaluated": 26000,
+              "rate": 0.0535,
+              "wilson95": [
+                0.05083010670359924,
+                0.056301813141101865
+              ],
+              "display_4dp": "0.0535 [0.0508-0.0563]",
+              "positive_noise_excluded": 0,
+              "positive_noise_failure_flag": 0,
+              "positive_noise_nonfinite_p": 0,
+              "zero_noise_failure_flag": 6500,
+              "rejected_if_failed_rows_counted_nonreject": 1391,
+              "legacy_all_rows_denominator": 32500,
+              "legacy_all_rows_rate": 0.0428,
+              "p_equal_alpha": 10
+            },
+            "B": {
+              "rejected": 1292,
+              "evaluated": 26000,
+              "rate": 0.049692307692307695,
+              "wilson95": [
+                0.047116763617701146,
+                0.052400896606414685
+              ],
+              "display_4dp": "0.0497 [0.0471-0.0524]",
+              "positive_noise_excluded": 0,
+              "positive_noise_failure_flag": 0,
+              "positive_noise_nonfinite_p": 0,
+              "zero_noise_failure_flag": 6500,
+              "rejected_if_failed_rows_counted_nonreject": 1292,
+              "legacy_all_rows_denominator": 32500,
+              "legacy_all_rows_rate": 0.039753846153846153,
+              "p_equal_alpha": 0
+            },
+            "C": {
+              "rejected": 1381,
+              "evaluated": 26000,
+              "rate": 0.05311538461538461,
+              "wilson95": [
+                0.050454839403609716,
+                0.05590796330769894
+              ],
+              "display_4dp": "0.0531 [0.0505-0.0559]",
+              "positive_noise_excluded": 0,
+              "positive_noise_failure_flag": 0,
+              "positive_noise_nonfinite_p": 0,
+              "zero_noise_failure_flag": 6500,
+              "rejected_if_failed_rows_counted_nonreject": 1381,
+              "legacy_all_rows_denominator": 32500,
+              "legacy_all_rows_rate": 0.04249230769230769,
+              "p_equal_alpha": 0
+            },
+            "D": {
+              "rejected": 1466,
+              "evaluated": 26000,
+              "rate": 0.05638461538461539,
+              "wilson95": [
+                0.05364584077649803,
+                0.059254457568646474
+              ],
+              "display_4dp": "0.0564 [0.0536-0.0593]",
+              "positive_noise_excluded": 0,
+              "positive_noise_failure_flag": 0,
+              "positive_noise_nonfinite_p": 0,
+              "zero_noise_failure_flag": 6500,
+              "rejected_if_failed_rows_counted_nonreject": 1466,
+              "legacy_all_rows_denominator": 32500,
+              "legacy_all_rows_rate": 0.04510769230769231,
+              "p_equal_alpha": 0
+            }
+          }
+        },
+        "1000": {
+          "all_h0_rows": 32500,
+          "zero_noise_rows_excluded": 6500,
+          "positive_noise_rows": 26000,
+          "noise_levels_positive": [
+            0.005,
+            0.01,
+            0.03,
+            0.05
+          ],
+          "grid_counts": [
+            {
+              "task": "feynman-i.12.1",
+              "rel": 0.0,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.12.1",
+              "rel": 0.005,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.12.1",
+              "rel": 0.01,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.12.1",
+              "rel": 0.03,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.12.1",
+              "rel": 0.05,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.29.4",
+              "rel": 0.0,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.29.4",
+              "rel": 0.005,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.29.4",
+              "rel": 0.01,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.29.4",
+              "rel": 0.03,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.29.4",
+              "rel": 0.05,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.34.27",
+              "rel": 0.0,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.34.27",
+              "rel": 0.005,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.34.27",
+              "rel": 0.01,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.34.27",
+              "rel": 0.03,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.34.27",
+              "rel": 0.05,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.38.12",
+              "rel": 0.0,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.38.12",
+              "rel": 0.005,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.38.12",
+              "rel": 0.01,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.38.12",
+              "rel": 0.03,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.38.12",
+              "rel": 0.05,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.39.10",
+              "rel": 0.0,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.39.10",
+              "rel": 0.005,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.39.10",
+              "rel": 0.01,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.39.10",
+              "rel": 0.03,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.39.10",
+              "rel": 0.05,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.39.22",
+              "rel": 0.0,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.39.22",
+              "rel": 0.005,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.39.22",
+              "rel": 0.01,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.39.22",
+              "rel": 0.03,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.39.22",
+              "rel": 0.05,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.43.31",
+              "rel": 0.0,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.43.31",
+              "rel": 0.005,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.43.31",
+              "rel": 0.01,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.43.31",
+              "rel": 0.03,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.43.31",
+              "rel": 0.05,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.47.23",
+              "rel": 0.0,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.47.23",
+              "rel": 0.005,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.47.23",
+              "rel": 0.01,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.47.23",
+              "rel": 0.03,
+              "rows": 500
+            },
+            {
+              "task": "feynman-i.47.23",
+              "rel": 0.05,
+              "rows": 500
+            },
+            {
+              "task": "feynman-ii.27.16",
+              "rel": 0.0,
+              "rows": 500
+            },
+            {
+              "task": "feynman-ii.27.16",
+              "rel": 0.005,
+              "rows": 500
+            },
+            {
+              "task": "feynman-ii.27.16",
+              "rel": 0.01,
+              "rows": 500
+            },
+            {
+              "task": "feynman-ii.27.16",
+              "rel": 0.03,
+              "rows": 500
+            },
+            {
+              "task": "feynman-ii.27.16",
+              "rel": 0.05,
+              "rows": 500
+            },
+            {
+              "task": "feynman-ii.27.18",
+              "rel": 0.0,
+              "rows": 500
+            },
+            {
+              "task": "feynman-ii.27.18",
+              "rel": 0.005,
+              "rows": 500
+            },
+            {
+              "task": "feynman-ii.27.18",
+              "rel": 0.01,
+              "rows": 500
+            },
+            {
+              "task": "feynman-ii.27.18",
+              "rel": 0.03,
+              "rows": 500
+            },
+            {
+              "task": "feynman-ii.27.18",
+              "rel": 0.05,
+              "rows": 500
+            },
+            {
+              "task": "feynman-ii.8.31",
+              "rel": 0.0,
+              "rows": 500
+            },
+            {
+              "task": "feynman-ii.8.31",
+              "rel": 0.005,
+              "rows": 500
+            },
+            {
+              "task": "feynman-ii.8.31",
+              "rel": 0.01,
+              "rows": 500
+            },
+            {
+              "task": "feynman-ii.8.31",
+              "rel": 0.03,
+              "rows": 500
+            },
+            {
+              "task": "feynman-ii.8.31",
+              "rel": 0.05,
+              "rows": 500
+            },
+            {
+              "task": "feynman-iii.12.43",
+              "rel": 0.0,
+              "rows": 500
+            },
+            {
+              "task": "feynman-iii.12.43",
+              "rel": 0.005,
+              "rows": 500
+            },
+            {
+              "task": "feynman-iii.12.43",
+              "rel": 0.01,
+              "rows": 500
+            },
+            {
+              "task": "feynman-iii.12.43",
+              "rel": 0.03,
+              "rows": 500
+            },
+            {
+              "task": "feynman-iii.12.43",
+              "rel": 0.05,
+              "rows": 500
+            },
+            {
+              "task": "feynman-iii.15.14",
+              "rel": 0.0,
+              "rows": 500
+            },
+            {
+              "task": "feynman-iii.15.14",
+              "rel": 0.005,
+              "rows": 500
+            },
+            {
+              "task": "feynman-iii.15.14",
+              "rel": 0.01,
+              "rows": 500
+            },
+            {
+              "task": "feynman-iii.15.14",
+              "rel": 0.03,
+              "rows": 500
+            },
+            {
+              "task": "feynman-iii.15.14",
+              "rel": 0.05,
+              "rows": 500
+            }
+          ],
+          "methods": {
+            "A": {
+              "rejected": 1344,
+              "evaluated": 26000,
+              "rate": 0.05169230769230769,
+              "wilson95": [
+                0.04906669979915601,
+                0.054450369518600564
+              ],
+              "display_4dp": "0.0517 [0.0491-0.0545]",
+              "positive_noise_excluded": 0,
+              "positive_noise_failure_flag": 0,
+              "positive_noise_nonfinite_p": 0,
+              "zero_noise_failure_flag": 6500,
+              "rejected_if_failed_rows_counted_nonreject": 1344,
+              "legacy_all_rows_denominator": 32500,
+              "legacy_all_rows_rate": 0.04135384615384615,
+              "p_equal_alpha": 38
+            },
+            "B": {
+              "rejected": 1370,
+              "evaluated": 26000,
+              "rate": 0.05269230769230769,
+              "wilson95": [
+                0.05004209137152513,
+                0.05547468249305183
+              ],
+              "display_4dp": "0.0527 [0.0500-0.0555]",
+              "positive_noise_excluded": 0,
+              "positive_noise_failure_flag": 0,
+              "positive_noise_nonfinite_p": 0,
+              "zero_noise_failure_flag": 6500,
+              "rejected_if_failed_rows_counted_nonreject": 1370,
+              "legacy_all_rows_denominator": 32500,
+              "legacy_all_rows_rate": 0.04215384615384615,
+              "p_equal_alpha": 0
+            },
+            "C": {
+              "rejected": 1427,
+              "evaluated": 26000,
+              "rate": 0.054884615384615386,
+              "wilson95": [
+                0.05218139244474739,
+                0.05771934908016655
+              ],
+              "display_4dp": "0.0549 [0.0522-0.0577]",
+              "positive_noise_excluded": 0,
+              "positive_noise_failure_flag": 0,
+              "positive_noise_nonfinite_p": 0,
+              "zero_noise_failure_flag": 6500,
+              "rejected_if_failed_rows_counted_nonreject": 1427,
+              "legacy_all_rows_denominator": 32500,
+              "legacy_all_rows_rate": 0.04390769230769231,
+              "p_equal_alpha": 0
+            },
+            "D": {
+              "rejected": 1515,
+              "evaluated": 26000,
+              "rate": 0.05826923076923077,
+              "wilson95": [
+                0.05548657525788308,
+                0.06118239704088444
+              ],
+              "display_4dp": "0.0583 [0.0555-0.0612]",
+              "positive_noise_excluded": 0,
+              "positive_noise_failure_flag": 0,
+              "positive_noise_nonfinite_p": 0,
+              "zero_noise_failure_flag": 6500,
+              "rejected_if_failed_rows_counted_nonreject": 1515,
+              "legacy_all_rows_denominator": 32500,
+              "legacy_all_rows_rate": 0.046615384615384614,
+              "p_equal_alpha": 0
+            }
+          }
+        }
+      }
+    }
+  },
+  "s1_legacy_check": "All 12 old Table 1 point rates reproduced only with zero-noise failures included in 7500 denominator; correct positive-noise denominator is 6000.",
+  "figure": {
+    "path": "D:\\form_check\\paper\\research_R2\\figures\\review3_fig_D1.png",
+    "sha256": "e002a6cafdcbdc3029a1019568bef4cc65639931c5b9c9a5a5c31cea00b64572"
+  }
+}

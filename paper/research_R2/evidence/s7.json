@@ -1,0 +1,858 @@
+{
+  "generated_at_utc": "2026-10-17T16:18:47.776780+00:00",
+  "execution": "Read-only aggregation of cached results; no new fitting, sampling, or benchmark imports.",
+  "runtime": {
+    "python": "3.13.15",
+    "pandas": "3.0.5",
+    "numpy": "2.5.2"
+  },
+  "inputs": {
+    "s2_original": {
+      "path": "D:\\form_check\\runs\\srsd_full\\raw_srsd.parquet",
+      "bytes": 34563229,
+      "sha256": "62df25df55c48a95ab7670a62da829ef8295740be7c469e4af40241b76385943"
+    },
+    "s2_svd": {
+      "path": "D:\\form_check\\runs\\cd_svd\\s2_cd_svd.csv",
+      "bytes": 44554701,
+      "sha256": "7f3965b27c2e8729715fc4e46c7db74865e45c15c57e9aad6a2eecd8a0e7d47c"
+    },
+    "s5_results": {
+      "path": "D:\\form_check\\runs\\gate_cmp\\results.csv",
+      "bytes": 2214461,
+      "sha256": "b53b5354cfce3ba6e5bcde79c0696a2d63c9b9484b34115b9270ab5ae1a25c8c"
+    },
+    "s5_thresholds": {
+      "path": "D:\\form_check\\runs\\gate_cmp\\summary.json",
+      "bytes": 13547,
+      "sha256": "a55023f63d7538faeae37ce1a0ff6716b57ca8787eeb44d7eab75b2041c50806"
+    },
+    "four_gate_script": {
+      "path": "D:\\form_check\\joint_silence.py",
+      "bytes": 10775,
+      "sha256": "064f146ace428435a8ab43e0305ca83d3cf4559e85a407e0009bfaf3d52ec86e"
+    },
+    "three_gate_script": {
+      "path": "D:\\form_check\\joint_silence_toolbox.py",
+      "bytes": 4069,
+      "sha256": "28077e9826c06735593cec2b64a6388d5dd0bcc8e5bc32211cb2845f14fb2486"
+    },
+    "s5_runner_source": {
+      "path": "D:\\form_check\\gate_compare.py",
+      "bytes": 12969,
+      "sha256": "171bdbb3c0a98b33d8b9599960464a8484136c24ef62d8ba9a58bc6115022837"
+    },
+    "current_wrapper_source": {
+      "path": "D:\\form_check\\common.py",
+      "bytes": 17635,
+      "sha256": "1cef8a33ff8c7f6f31618efde13b45740e45bb3f6161c8a686b291d2932fba0a"
+    },
+    "archived_four_gate_script": {
+      "path": "D:\\form_check\\paper\\revision_loc\\joint_silence_v5.py",
+      "bytes": 10585,
+      "sha256": "eeb1fc068723365b379633904a25a23a9870f6f37ce95e24f8aa9ebee120b669"
+    },
+    "stored_four_gate_summary": {
+      "path": "D:\\form_check\\runs\\joint_silence\\joint_silence_srsd_pool.csv",
+      "bytes": 592,
+      "sha256": "b8aca2c0881718b930cb08899dfbd23051cfa1bf2b86b4ea8ca4967d1ca089c4"
+    },
+    "stored_three_gate_summary": {
+      "path": "D:\\form_check\\runs\\joint_silence\\toolbox_silence.csv",
+      "bytes": 947,
+      "sha256": "1159b370f1e54675d5b287804f0b96f55b9d6d7cd8f41346cc00fe5962a61bb5"
+    },
+    "stored_three_gate_h0": {
+      "path": "D:\\form_check\\runs\\joint_silence\\toolbox_silence_h0_reference.csv",
+      "bytes": 362,
+      "sha256": "4505e8be51c459d55af1acb55e2dcfe22795e9f1dd81dd7a72d7d67cb2fd2694"
+    }
+  },
+  "audit_script_sha256": "a7c1cab3dee83132dbb6b2ec84d6c1a77f332091889728976dd831d5cf77d9c8",
+  "four_gate_arm": {
+    "methods": [
+      "A: permutation curvature",
+      "B: fitted RESET F",
+      "C: fitted HC3 SVD",
+      "D: exog HC3 SVD"
+    ],
+    "filters": [
+      "SVD sentinel_ok == True",
+      "task != feynman-i.30.5",
+      "inner join original S2 and SVD by task/n/rel/seed",
+      "rel > 0",
+      "NaN p-value prevents silence"
+    ],
+    "provenance": "Reanalysis of existing S2 fits, not independent S7 sampling. 4 positive noise levels times 500 seed IDs give 2000 records per task/n.",
+    "native_threshold_audit": {
+      "rule": "Reject p < .05, not p <= .05; silent requires p >= .05 and all p finite. This matches joint_silence.py:43-50 and stored A/B/C/D decisions on the eligible joined pool.",
+      "per_gate": {
+        "p_fc": {
+          "stored_decision_column": "rej_fc",
+          "p_equals_005": 210,
+          "stored_vs_strict_mismatches": 0,
+          "stored_vs_inclusive_mismatches": 210,
+          "infinite_p_values": 0
+        },
+        "p_fitted_f": {
+          "stored_decision_column": "rej_fitted_f",
+          "p_equals_005": 0,
+          "stored_vs_strict_mismatches": 0,
+          "stored_vs_inclusive_mismatches": 0,
+          "infinite_p_values": 0
+        },
+        "p_C_svd": {
+          "stored_decision_column": "rej_C_svd",
+          "p_equals_005": 0,
+          "stored_vs_strict_mismatches": 0,
+          "stored_vs_inclusive_mismatches": 0,
+          "infinite_p_values": 0
+        },
+        "p_D_svd": {
+          "stored_decision_column": "rej_D_svd",
+          "p_equals_005": 0,
+          "stored_vs_strict_mismatches": 0,
+          "stored_vs_inclusive_mismatches": 0,
+          "infinite_p_values": 0
+        }
+      },
+      "scope": "Only the eligible S2/SVD joined pool is checked; no claim is made that all suites or historical source versions use the same convention."
+    },
+    "results": [
+      {
+        "n": 50,
+        "calibration_thresholds": {
+          "p_fc": 0.05,
+          "p_fitted_f": 0.05069850246051324,
+          "p_C_svd": 0.04241148326943004,
+          "p_D_svd": 0.039258193180026595
+        },
+        "threshold_rule": "Per-gate H0-pool 5th percentile, pooled over positive noise layers at this n; reject p < threshold.",
+        "counts": {
+          "H0": {
+            "task_count": 13,
+            "tasks": [
+              "feynman-i.12.1",
+              "feynman-i.29.4",
+              "feynman-i.34.27",
+              "feynman-i.38.12",
+              "feynman-i.39.10",
+              "feynman-i.39.22",
+              "feynman-i.43.31",
+              "feynman-i.47.23",
+              "feynman-ii.27.16",
+              "feynman-ii.27.18",
+              "feynman-ii.8.31",
+              "feynman-iii.12.43",
+              "feynman-iii.15.14"
+            ],
+            "rows_per_task": {
+              "feynman-i.12.1": 2000,
+              "feynman-i.29.4": 2000,
+              "feynman-i.34.27": 2000,
+              "feynman-i.38.12": 2000,
+              "feynman-i.39.10": 2000,
+              "feynman-i.39.22": 2000,
+              "feynman-i.43.31": 2000,
+              "feynman-i.47.23": 2000,
+              "feynman-ii.27.16": 2000,
+              "feynman-ii.27.18": 2000,
+              "feynman-ii.8.31": 2000,
+              "feynman-iii.12.43": 2000,
+              "feynman-iii.15.14": 2000
+            },
+            "seed_ids_per_task_noise_cell": [
+              500
+            ],
+            "rel_values": [
+              0.005,
+              0.01,
+              0.03,
+              0.05
+            ],
+            "declined_any": 0,
+            "native": {
+              "silent": 22624,
+              "total": 26000,
+              "rate": 0.8701538461538462
+            },
+            "native_stored_decisions": {
+              "silent": 22624,
+              "total": 26000,
+              "rate": 0.8701538461538462
+            },
+            "inclusive_threshold_sensitivity_not_native": {
+              "silent": 22604,
+              "total": 26000,
+              "rate": 0.8693846153846154
+            },
+            "calibrated": {
+              "silent": 22821,
+              "total": 26000,
+              "rate": 0.8777307692307692
+            }
+          },
+          "H1": {
+            "task_count": 18,
+            "tasks": [
+              "feynman-bonus.15",
+              "feynman-bonus.20",
+              "feynman-bonus.5",
+              "feynman-i.10.7",
+              "feynman-i.26.2",
+              "feynman-i.27.6",
+              "feynman-i.37.4",
+              "feynman-i.39.11",
+              "feynman-i.41.16",
+              "feynman-i.43.43",
+              "feynman-i.48.2",
+              "feynman-ii.11.27",
+              "feynman-ii.11.28",
+              "feynman-ii.13.23",
+              "feynman-ii.13.34",
+              "feynman-ii.38.14",
+              "feynman-iii.4.32",
+              "feynman-iii.4.33"
+            ],
+            "rows_per_task": {
+              "feynman-bonus.15": 2000,
+              "feynman-bonus.20": 2000,
+              "feynman-bonus.5": 2000,
+              "feynman-i.10.7": 2000,
+              "feynman-i.26.2": 2000,
+              "feynman-i.27.6": 2000,
+              "feynman-i.37.4": 2000,
+              "feynman-i.39.11": 2000,
+              "feynman-i.41.16": 2000,
+              "feynman-i.43.43": 2000,
+              "feynman-i.48.2": 2000,
+              "feynman-ii.11.27": 2000,
+              "feynman-ii.11.28": 2000,
+              "feynman-ii.13.23": 2000,
+              "feynman-ii.13.34": 2000,
+              "feynman-ii.38.14": 2000,
+              "feynman-iii.4.32": 2000,
+              "feynman-iii.4.33": 2000
+            },
+            "seed_ids_per_task_noise_cell": [
+              500
+            ],
+            "rel_values": [
+              0.005,
+              0.01,
+              0.03,
+              0.05
+            ],
+            "declined_any": 2,
+            "native": {
+              "silent": 13616,
+              "total": 36000,
+              "rate": 0.37822222222222224
+            },
+            "native_stored_decisions": {
+              "silent": 13616,
+              "total": 36000,
+              "rate": 0.37822222222222224
+            },
+            "inclusive_threshold_sensitivity_not_native": {
+              "silent": 13590,
+              "total": 36000,
+              "rate": 0.3775
+            },
+            "calibrated": {
+              "silent": 13888,
+              "total": 36000,
+              "rate": 0.3857777777777778
+            }
+          }
+        },
+        "likelihood": {
+          "native": {
+            "definition": "P(silent|H0)/P(silent|H1), using the same arm and threshold regime",
+            "LR_H0_over_H1": 2.3006417789026483,
+            "posterior_H1_given_silent_at_equal_prior": 0.3029713816239902,
+            "prior_H1": 0.5,
+            "interpretation": "Descriptive pool likelihood ratio; posterior requires the stated mixing prior."
+          },
+          "calibrated": {
+            "definition": "P(silent|H0)/P(silent|H1), using the same arm and threshold regime",
+            "LR_H0_over_H1": 2.2752237681673164,
+            "posterior_H1_given_silent_at_equal_prior": 0.30532264992677427,
+            "prior_H1": 0.5,
+            "interpretation": "Descriptive pool likelihood ratio; posterior requires the stated mixing prior."
+          }
+        }
+      },
+      {
+        "n": 200,
+        "calibration_thresholds": {
+          "p_fc": 0.046,
+          "p_fitted_f": 0.050462048304606766,
+          "p_C_svd": 0.046533979322883716,
+          "p_D_svd": 0.04473704032323323
+        },
+        "threshold_rule": "Per-gate H0-pool 5th percentile, pooled over positive noise layers at this n; reject p < threshold.",
+        "counts": {
+          "H0": {
+            "task_count": 13,
+            "tasks": [
+              "feynman-i.12.1",
+              "feynman-i.29.4",
+              "feynman-i.34.27",
+              "feynman-i.38.12",
+              "feynman-i.39.10",
+              "feynman-i.39.22",
+              "feynman-i.43.31",
+              "feynman-i.47.23",
+              "feynman-ii.27.16",
+              "feynman-ii.27.18",
+              "feynman-ii.8.31",
+              "feynman-iii.12.43",
+              "feynman-iii.15.14"
+            ],
+            "rows_per_task": {
+              "feynman-i.12.1": 2000,
+              "feynman-i.29.4": 2000,
+              "feynman-i.34.27": 2000,
+              "feynman-i.38.12": 2000,
+              "feynman-i.39.10": 2000,
+              "feynman-i.39.22": 2000,
+              "feynman-i.43.31": 2000,
+              "feynman-i.47.23": 2000,
+              "feynman-ii.27.16": 2000,
+              "feynman-ii.27.18": 2000,
+              "feynman-ii.8.31": 2000,
+              "feynman-iii.12.43": 2000,
+              "feynman-iii.15.14": 2000
+            },
+            "seed_ids_per_task_noise_cell": [
+              500
+            ],
+            "rel_values": [
+              0.005,
+              0.01,
+              0.03,
+              0.05
+            ],
+            "declined_any": 0,
+            "native": {
+              "silent": 22910,
+              "total": 26000,
+              "rate": 0.8811538461538462
+            },
+            "native_stored_decisions": {
+              "silent": 22910,
+              "total": 26000,
+              "rate": 0.8811538461538462
+            },
+            "inclusive_threshold_sensitivity_not_native": {
+              "silent": 22905,
+              "total": 26000,
+              "rate": 0.8809615384615385
+            },
+            "calibrated": {
+              "silent": 23102,
+              "total": 26000,
+              "rate": 0.8885384615384615
+            }
+          },
+          "H1": {
+            "task_count": 18,
+            "tasks": [
+              "feynman-bonus.15",
+              "feynman-bonus.20",
+              "feynman-bonus.5",
+              "feynman-i.10.7",
+              "feynman-i.26.2",
+              "feynman-i.27.6",
+              "feynman-i.37.4",
+              "feynman-i.39.11",
+              "feynman-i.41.16",
+              "feynman-i.43.43",
+              "feynman-i.48.2",
+              "feynman-ii.11.27",
+              "feynman-ii.11.28",
+              "feynman-ii.13.23",
+              "feynman-ii.13.34",
+              "feynman-ii.38.14",
+              "feynman-iii.4.32",
+              "feynman-iii.4.33"
+            ],
+            "rows_per_task": {
+              "feynman-bonus.15": 2000,
+              "feynman-bonus.20": 2000,
+              "feynman-bonus.5": 2000,
+              "feynman-i.10.7": 2000,
+              "feynman-i.26.2": 2000,
+              "feynman-i.27.6": 2000,
+              "feynman-i.37.4": 2000,
+              "feynman-i.39.11": 2000,
+              "feynman-i.41.16": 2000,
+              "feynman-i.43.43": 2000,
+              "feynman-i.48.2": 2000,
+              "feynman-ii.11.27": 2000,
+              "feynman-ii.11.28": 2000,
+              "feynman-ii.13.23": 2000,
+              "feynman-ii.13.34": 2000,
+              "feynman-ii.38.14": 2000,
+              "feynman-iii.4.32": 2000,
+              "feynman-iii.4.33": 2000
+            },
+            "seed_ids_per_task_noise_cell": [
+              500
+            ],
+            "rel_values": [
+              0.005,
+              0.01,
+              0.03,
+              0.05
+            ],
+            "declined_any": 56,
+            "native": {
+              "silent": 10717,
+              "total": 36000,
+              "rate": 0.29769444444444443
+            },
+            "native_stored_decisions": {
+              "silent": 10717,
+              "total": 36000,
+              "rate": 0.29769444444444443
+            },
+            "inclusive_threshold_sensitivity_not_native": {
+              "silent": 10703,
+              "total": 36000,
+              "rate": 0.29730555555555555
+            },
+            "calibrated": {
+              "silent": 10877,
+              "total": 36000,
+              "rate": 0.3021388888888889
+            }
+          }
+        },
+        "likelihood": {
+          "native": {
+            "definition": "P(silent|H0)/P(silent|H1), using the same arm and threshold regime",
+            "LR_H0_over_H1": 2.9599270748846194,
+            "posterior_H1_given_silent_at_equal_prior": 0.2525299029728059,
+            "prior_H1": 0.5,
+            "interpretation": "Descriptive pool likelihood ratio; posterior requires the stated mixing prior."
+          },
+          "calibrated": {
+            "definition": "P(silent|H0)/P(silent|H1), using the same arm and threshold regime",
+            "LR_H0_over_H1": 2.940827858360266,
+            "posterior_H1_given_silent_at_equal_prior": 0.25375378878286975,
+            "prior_H1": 0.5,
+            "interpretation": "Descriptive pool likelihood ratio; posterior requires the stated mixing prior."
+          }
+        }
+      },
+      {
+        "n": 1000,
+        "calibration_thresholds": {
+          "p_fc": 0.047,
+          "p_fitted_f": 0.04769480658664894,
+          "p_C_svd": 0.04667379493951007,
+          "p_D_svd": 0.042934940747766756
+        },
+        "threshold_rule": "Per-gate H0-pool 5th percentile, pooled over positive noise layers at this n; reject p < threshold.",
+        "counts": {
+          "H0": {
+            "task_count": 13,
+            "tasks": [
+              "feynman-i.12.1",
+              "feynman-i.29.4",
+              "feynman-i.34.27",
+              "feynman-i.38.12",
+              "feynman-i.39.10",
+              "feynman-i.39.22",
+              "feynman-i.43.31",
+              "feynman-i.47.23",
+              "feynman-ii.27.16",
+              "feynman-ii.27.18",
+              "feynman-ii.8.31",
+              "feynman-iii.12.43",
+              "feynman-iii.15.14"
+            ],
+            "rows_per_task": {
+              "feynman-i.12.1": 2000,
+              "feynman-i.29.4": 2000,
+              "feynman-i.34.27": 2000,
+              "feynman-i.38.12": 2000,
+              "feynman-i.39.10": 2000,
+              "feynman-i.39.22": 2000,
+              "feynman-i.43.31": 2000,
+              "feynman-i.47.23": 2000,
+              "feynman-ii.27.16": 2000,
+              "feynman-ii.27.18": 2000,
+              "feynman-ii.8.31": 2000,
+              "feynman-iii.12.43": 2000,
+              "feynman-iii.15.14": 2000
+            },
+            "seed_ids_per_task_noise_cell": [
+              500
+            ],
+            "rel_values": [
+              0.005,
+              0.01,
+              0.03,
+              0.05
+            ],
+            "declined_any": 0,
+            "native": {
+              "silent": 22893,
+              "total": 26000,
+              "rate": 0.8805
+            },
+            "native_stored_decisions": {
+              "silent": 22893,
+              "total": 26000,
+              "rate": 0.8805
+            },
+            "inclusive_threshold_sensitivity_not_native": {
+              "silent": 22871,
+              "total": 26000,
+              "rate": 0.8796538461538461
+            },
+            "calibrated": {
+              "silent": 23108,
+              "total": 26000,
+              "rate": 0.8887692307692308
+            }
+          },
+          "H1": {
+            "task_count": 18,
+            "tasks": [
+              "feynman-bonus.15",
+              "feynman-bonus.20",
+              "feynman-bonus.5",
+              "feynman-i.10.7",
+              "feynman-i.26.2",
+              "feynman-i.27.6",
+              "feynman-i.37.4",
+              "feynman-i.39.11",
+              "feynman-i.41.16",
+              "feynman-i.43.43",
+              "feynman-i.48.2",
+              "feynman-ii.11.27",
+              "feynman-ii.11.28",
+              "feynman-ii.13.23",
+              "feynman-ii.13.34",
+              "feynman-ii.38.14",
+              "feynman-iii.4.32",
+              "feynman-iii.4.33"
+            ],
+            "rows_per_task": {
+              "feynman-bonus.15": 2000,
+              "feynman-bonus.20": 2000,
+              "feynman-bonus.5": 2000,
+              "feynman-i.10.7": 2000,
+              "feynman-i.26.2": 2000,
+              "feynman-i.27.6": 2000,
+              "feynman-i.37.4": 2000,
+              "feynman-i.39.11": 2000,
+              "feynman-i.41.16": 2000,
+              "feynman-i.43.43": 2000,
+              "feynman-i.48.2": 2000,
+              "feynman-ii.11.27": 2000,
+              "feynman-ii.11.28": 2000,
+              "feynman-ii.13.23": 2000,
+              "feynman-ii.13.34": 2000,
+              "feynman-ii.38.14": 2000,
+              "feynman-iii.4.32": 2000,
+              "feynman-iii.4.33": 2000
+            },
+            "seed_ids_per_task_noise_cell": [
+              500
+            ],
+            "rel_values": [
+              0.005,
+              0.01,
+              0.03,
+              0.05
+            ],
+            "declined_any": 591,
+            "native": {
+              "silent": 8355,
+              "total": 36000,
+              "rate": 0.23208333333333334
+            },
+            "native_stored_decisions": {
+              "silent": 8355,
+              "total": 36000,
+              "rate": 0.23208333333333334
+            },
+            "inclusive_threshold_sensitivity_not_native": {
+              "silent": 8349,
+              "total": 36000,
+              "rate": 0.23191666666666666
+            },
+            "calibrated": {
+              "silent": 8478,
+              "total": 36000,
+              "rate": 0.2355
+            }
+          }
+        },
+        "likelihood": {
+          "native": {
+            "definition": "P(silent|H0)/P(silent|H1), using the same arm and threshold regime",
+            "LR_H0_over_H1": 3.793895870736086,
+            "posterior_H1_given_silent_at_equal_prior": 0.20859860684592915,
+            "prior_H1": 0.5,
+            "interpretation": "Descriptive pool likelihood ratio; posterior requires the stated mixing prior."
+          },
+          "calibrated": {
+            "definition": "P(silent|H0)/P(silent|H1), using the same arm and threshold regime",
+            "LR_H0_over_H1": 3.7739670096357996,
+            "posterior_H1_given_silent_at_equal_prior": 0.20946939892579794,
+            "prior_H1": 0.5,
+            "interpretation": "Descriptive pool likelihood ratio; posterior requires the stated mixing prior."
+          }
+        }
+      }
+    ]
+  },
+  "three_gate_arm": {
+    "methods": [
+      "A: permutation curvature",
+      "E: CV-quad",
+      "F: AICc-quad"
+    ],
+    "filters": [
+      "gate_cmp bench == srsd",
+      "klass H0 or H1",
+      "recorded fail_fc or fail_mc prevents silence"
+    ],
+    "design": {
+      "rel": 0.03,
+      "seeds_per_task": 200,
+      "seed_rule": "400000 + s*97 + n_index*13",
+      "SVD_C_D_present": false
+    },
+    "sentinel_evidence": {
+      "runner_calls": "gate_compare.py:160 calls common.form_check_with_p; lines 161-162 retain p_fc/rej_fc/fail_fc only.",
+      "current_wrapper_checks": "common.py:127 rejects unchecked native results; lines 145-147 compare native and wrapper curvature and record statistic_mismatch.",
+      "stored_columns": [
+        "bench",
+        "task",
+        "klass",
+        "group",
+        "n",
+        "seed",
+        "p_fc",
+        "rej_fc",
+        "fail_fc",
+        "D_cv",
+        "d0_fire",
+        "delta_aicc",
+        "m0_fire",
+        "fail_mc"
+      ],
+      "explicit_replay_sentinel_ok_column": false,
+      "native_checked_column": false,
+      "all_recorded_fail_fc": {
+        "NONE": 20400
+      },
+      "all_recorded_fail_mc": {
+        "NONE": 20400
+      },
+      "i305": {
+        "rows": 400,
+        "rows_by_n": {
+          "50": 200,
+          "200": 200
+        },
+        "recorded_fail_fc": {
+          "NONE": 400
+        },
+        "recorded_fail_mc": {
+          "NONE": 400
+        },
+        "missing_p_fc": 0
+      },
+      "qualification": "Current source contains a native-wrapper drift check and saved S5 rows report no failure, but CSV lacks replay sentinel_ok and raw native/recomputed statistics. No run-level code-hash manifest was located in runs/gate_cmp. This is not equivalent to the separately replayed S2/SVD sentinel evidence and does not prove historical implementation validity.",
+      "scope_decision": "Retain as exploratory 19-H1 S5 A/E/F analysis. No recorded S5 i.30.5 mismatch justifies exclusion solely on the separate S2 replay outcome; keep the same S5 task policy in Table 12 and this arm."
+    },
+    "results": [
+      {
+        "n": 50,
+        "E_threshold": 0.0009507011862585,
+        "F_threshold": 1.0251948472131858,
+        "threshold_rule": "A uses stored rej_fc; E rejects D_cv>d_star; F rejects delta_aicc>m_star. E/F thresholds fitted separately on this S5 H0 pool, not a joint 5% budget.",
+        "counts": {
+          "H0": {
+            "task_count": 13,
+            "tasks": [
+              "feynman-i.12.1",
+              "feynman-i.29.4",
+              "feynman-i.34.27",
+              "feynman-i.38.12",
+              "feynman-i.39.10",
+              "feynman-i.39.22",
+              "feynman-i.43.31",
+              "feynman-i.47.23",
+              "feynman-ii.27.16",
+              "feynman-ii.27.18",
+              "feynman-ii.8.31",
+              "feynman-iii.12.43",
+              "feynman-iii.15.14"
+            ],
+            "A": {
+              "silent": 2468,
+              "total": 2600,
+              "rate": 0.9492307692307692
+            },
+            "AEF": {
+              "silent": 2352,
+              "total": 2600,
+              "rate": 0.9046153846153846
+            },
+            "paired_A_silent_removed_by_EF": 116,
+            "declined_any": 0,
+            "nonfinite_scores_without_failure": 0
+          },
+          "H1": {
+            "task_count": 19,
+            "tasks": [
+              "feynman-bonus.15",
+              "feynman-bonus.20",
+              "feynman-bonus.5",
+              "feynman-i.10.7",
+              "feynman-i.26.2",
+              "feynman-i.27.6",
+              "feynman-i.30.5",
+              "feynman-i.37.4",
+              "feynman-i.39.11",
+              "feynman-i.41.16",
+              "feynman-i.43.43",
+              "feynman-i.48.2",
+              "feynman-ii.11.27",
+              "feynman-ii.11.28",
+              "feynman-ii.13.23",
+              "feynman-ii.13.34",
+              "feynman-ii.38.14",
+              "feynman-iii.4.32",
+              "feynman-iii.4.33"
+            ],
+            "A": {
+              "silent": 2479,
+              "total": 3800,
+              "rate": 0.6523684210526316
+            },
+            "AEF": {
+              "silent": 1602,
+              "total": 3800,
+              "rate": 0.42157894736842105
+            },
+            "paired_A_silent_removed_by_EF": 877,
+            "declined_any": 0,
+            "nonfinite_scores_without_failure": 0
+          }
+        },
+        "likelihood": {
+          "definition": "P(silent|H0)/P(silent|H1), using the same arm and threshold regime",
+          "LR_H0_over_H1": 2.14577931431864,
+          "posterior_H1_given_silent_at_equal_prior": 0.3178862533199011,
+          "prior_H1": 0.5,
+          "interpretation": "Descriptive pool likelihood ratio; posterior requires the stated mixing prior."
+        }
+      },
+      {
+        "n": 200,
+        "E_threshold": 0.0001571955236605,
+        "F_threshold": 1.5222728198632467,
+        "threshold_rule": "A uses stored rej_fc; E rejects D_cv>d_star; F rejects delta_aicc>m_star. E/F thresholds fitted separately on this S5 H0 pool, not a joint 5% budget.",
+        "counts": {
+          "H0": {
+            "task_count": 13,
+            "tasks": [
+              "feynman-i.12.1",
+              "feynman-i.29.4",
+              "feynman-i.34.27",
+              "feynman-i.38.12",
+              "feynman-i.39.10",
+              "feynman-i.39.22",
+              "feynman-i.43.31",
+              "feynman-i.47.23",
+              "feynman-ii.27.16",
+              "feynman-ii.27.18",
+              "feynman-ii.8.31",
+              "feynman-iii.12.43",
+              "feynman-iii.15.14"
+            ],
+            "A": {
+              "silent": 2500,
+              "total": 2600,
+              "rate": 0.9615384615384616
+            },
+            "AEF": {
+              "silent": 2377,
+              "total": 2600,
+              "rate": 0.9142307692307692
+            },
+            "paired_A_silent_removed_by_EF": 123,
+            "declined_any": 0,
+            "nonfinite_scores_without_failure": 0
+          },
+          "H1": {
+            "task_count": 19,
+            "tasks": [
+              "feynman-bonus.15",
+              "feynman-bonus.20",
+              "feynman-bonus.5",
+              "feynman-i.10.7",
+              "feynman-i.26.2",
+              "feynman-i.27.6",
+              "feynman-i.30.5",
+              "feynman-i.37.4",
+              "feynman-i.39.11",
+              "feynman-i.41.16",
+              "feynman-i.43.43",
+              "feynman-i.48.2",
+              "feynman-ii.11.27",
+              "feynman-ii.11.28",
+              "feynman-ii.13.23",
+              "feynman-ii.13.34",
+              "feynman-ii.38.14",
+              "feynman-iii.4.32",
+              "feynman-iii.4.33"
+            ],
+            "A": {
+              "silent": 1926,
+              "total": 3800,
+              "rate": 0.5068421052631579
+            },
+            "AEF": {
+              "silent": 1160,
+              "total": 3800,
+              "rate": 0.30526315789473685
+            },
+            "paired_A_silent_removed_by_EF": 766,
+            "declined_any": 0,
+            "nonfinite_scores_without_failure": 0
+          }
+        },
+        "likelihood": {
+          "definition": "P(silent|H0)/P(silent|H1), using the same arm and threshold regime",
+          "LR_H0_over_H1": 2.9948938992042438,
+          "posterior_H1_given_silent_at_equal_prior": 0.25031953919957506,
+          "prior_H1": 0.5,
+          "interpretation": "Descriptive pool likelihood ratio; posterior requires the stated mixing prior."
+        }
+      }
+    ]
+  },
+  "cross_arm": {
+    "same_task_n_seed_key_matches": 0,
+    "same_pool_four_vs_six_from_current_inputs": false,
+    "reason": "S5 results have only A/E/F and no B/C/D; S2 records have A-D but no E/F on those draws. Cannot infer a paired 38.6% to 42.2% increase."
+  },
+  "limitations": [
+    "Reference H0 results use the same pool used to calibrate thresholds; not independent calibration validation.",
+    "No shared joint false-positive budget is imposed on A versus A/E/F.",
+    "Equations, not repeated datasets, are the units for between-equation generalization.",
+    "Legacy revision_loc/joint_silence_v5.py omits rel>0 in the SRSD split, unlike the root script.",
+    "This audit does not validate generator correctness, original model fitting, or the statistical tests."
+  ]
+}

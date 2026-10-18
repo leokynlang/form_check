@@ -30,7 +30,14 @@ variants, nested-rival comparison) remain jointly blind to some
 form mismatches — wrong forms passing an R² ≥ 0.99 screen are
 jointly missed by all four gates at 0.67% overall, and among
 *dangerous* wrong forms (extrapolation error >10%) the joint
-release rate is 6.9%. We do not claim, and our data contradicts,
+release rate is 6.9%. With that screen removed the same four gates
+are jointly silent on **37.8%** of wrong forms drawn from real
+equations at n = 50 — roughly two orders of magnitude above the
+synthetic bench's 0.15–0.22% on the same unscreened basis — and
+adding selection-side gates raises rather than lowers the calibrated
+figure (38.6% → 42.2%, against 90.5% silence on true forms; a silent
+certificate therefore carries only a 2.2× likelihood ratio). We do
+not claim, and our data contradicts,
 stronger readings: fit screening combined with the gates carries
 real information (a full-green certificate is 65× less likely for
 a dangerous wrong form than for a true one: .013 against .845); the failure is
@@ -64,6 +71,10 @@ placing the benchmark's best test against the "obvious alternative"
 it had never faced — a nested quadratic rival adjudicated by 5-fold
 cross-validation or AICc; and (S6) six macroeconomic relations from
 World Bank open data across four years and ~190 economies per cell.
+A seventh suite (S7) re-samples S2's 18 non-monomial equations on an
+independent seed grid — 108,000 further fits — to measure the panel's
+joint-silence rate with the fit screen removed; its counts are
+reported separately and are not folded into the 508,825 above.
 All methods run under one protocol: a common significance level; power
 compared only at matched empirical false-positive rate; preregistered
 labels; explicit registration of every degenerate or rank-deficient
@@ -193,7 +204,7 @@ The question this benchmark answers is narrow and falsifiable: **when the
 ground truth is known and the candidate form is wrong, which gates detect
 the misspecification — at what false-alarm cost, on what reference budget,
 and do the synthetic failure modes transfer to real data?** We contribute:
-(i) the benchmark — six suites, 508,825 fitted datasets plus 472,500
+(i) the benchmark — six core suites, 508,825 fitted datasets plus 472,500
 held-out evaluations, released generators with seed rules making any cell
 independently reproducible; (ii) the protocol — matched-basis comparison
 with empirical-FPR calibration and failure registration; (iii) the
@@ -489,15 +500,51 @@ engineering companion bench (Appendix E) extends the same contract to
 physical-engineering data: nine open sources, 91 datasets, 150
 preregistered relations, run as a single-realization smoke pass.
 
+### 3.7 Suite S7 — the joint-silence rate
+
+Section 4.10 asks what the *pipeline* releases (fit screen, then
+gates). S7 asks a different question: with the fit screen removed,
+**how often does the entire gate panel stay silent on a wrong form?**
+The two must never be pooled — S7's denominator is every evaluated H1
+fit, not the screened subset — and they price different deployment
+questions. Section 4.10 prices the pipeline a practitioner would
+actually run; S7 prices the gates themselves.
+
+Design. The 18 non-monomial H1 equations of S2 that survive the
+far-field probe (`feynman-i.30.5` withdrew, v5 App. B). Per task and
+n ∈ {50, 200, 1000}, 2,000 datasets — 36,000 per n, on a seed grid
+disjoint from S2's 500-seed draw. Gates A/B at native thresholds,
+C/D on the SVD path. Two threshold regimes: naive α = .05, and
+H0-pool calibrated to the same per-gate 5% budget. Joint silence
+requires that **no gate rejects and no gate declines**: a `fail_*`
+registration is an honest refusal of the evaluation, not a
+certificate, and counting it as silence would flatter the panel.
+
+A second arm adds the model-comparison gates (CV-quad,
+AICc-quad — the S5 members) on `gate_cmp`'s SRSD arm (3,800
+datasets; a subset of the 20,400-cell S5 bench, not the whole of it)
+to test whether selection-side gates seal the leaks the
+specification gates leave open. Its H0 reference is that same
+panel's silence rate on true power laws. Because the arms rest on
+different benches, **their levels are not comparable across arms**;
+only within-arm contrasts are used below.
+
+Conditional cost is measured separately: among jointly-silent wrong
+forms, the far-field (one-decade) extrapolation error distribution.
+A silent certificate whose median far-field error is small is not
+thereby safe; the claim is about the tail.
+
 ## 4 Results
 
 Table numbering is consecutive: Tables 1–2 size, Tables 3–4 power,
 Table 5 the family map, Table 6 noise, Table 7 extrapolation, Tables 8–10
 the battery, Tables 11–12 the gate comparison, Tables 13–14 real data,
-Table 15 the no-entailment summary. All
+Table 15 the no-entailment summary, Table 16 the joint-silence rate. All
 rates are rejection fractions; Wilson 95% intervals for headline rates
 appear in Appendix C. Seed counts per cell: 500 (S1, S2, S4), 30 (S3),
-200 (S5), 5 (S6 — permutation-p stability, not rate estimation).
+200 (S5), 5 (S6 — permutation-p stability, not rate estimation), 2,000
+per task (S7; equations, not datasets, are the independent unit there —
+see §6).
 
 ### 4.1 Size: false-positive rates on true monomials
 
@@ -1068,6 +1115,72 @@ R² ≥ 0.99 are jointly silent on 0–0.1% of samples (1/811 at n = 50,
 which is why the real-formula release numbers are the finding and
 the synthetic ones the foil.
 
+### 4.11 The joint-silence rate: how often does the whole panel stay quiet?
+
+Section 4.10 measured what the pipeline releases *after* the screen.
+Strip the screen away and what remains is a different quantity: the
+gate panel's own detection record. That record — not the screen's
+selectivity — is what a practitioner inherits whenever a fit passes on
+grounds other than an R² threshold: a hand-built correlation, a
+literature formula being re-certified, a model carried in from an
+earlier study. The two quantities are not ordered as larger or
+smaller; they answer different questions, and §4.11 contrasts them
+only within their own conditioning.
+
+**Table 16 — Joint silence on S2's 18 non-monomial H1 equations (2,000 datasets per task per n; 36,000 per n; gates A–D, C/D on the SVD path). Joint silence = no gate rejects AND no gate declines.**
+
+| n | naive α = .05 | H0-pool calibrated |
+|---|---|---|
+| 50 | 37.8% | 38.6% |
+| 200 | 29.8% | 30.2% |
+| 1000 | 23.2% | 23.6% |
+
+Three readings.
+
+**(a) The synthetic foil does not transfer.** On the synthetic bench
+(S1, same four gates, **no screen applied**) joint silence runs
+0.15–0.22% at n = 50. On equations drawn from real physics the same
+four gates are jointly silent on **37.8%** of wrong forms at the same
+n — a factor of roughly 170–250 on a like-for-like basis. That
+like-for-like contrast is the one that carries a claim; comparison
+against Section 4.10's screened rate would not, and is not made here.
+The synthetic gallery was built with deviations designed to be
+detectable; real formulas were not built at all. On this bench this
+is the benchmark's largest genuine-versus-synthetic gap, and it is
+offered as such — a gap between two benches, not an estimate of any
+real-world error rate.
+
+**(b) Adding selection gates does not close it.** At matched
+calibration the four-gate panel is silent on **38.6%** of wrong forms
+at n = 50 (Table 16, calibrated column). Adding the model-comparison
+gates (CV-quad ∪ AICc-quad on `gate_cmp`'s SRSD arm) raises that to
+**42.2%** rather than lowering it, because the added gates carry
+their own 5% error budget and the union's silence on true power laws
+is **90.5%**. The likelihood ratio a silent certificate can carry is
+therefore only 42.2 / (42.2 + 90.5) ≈ **2.2×**; at a 50/50 class
+prior the posterior that a silent fit is nevertheless wrong is ≈
+**32%**. Silence is weak evidence, not safety.
+
+**(c) The cost of silence is tail-loaded.** Among jointly-silent
+wrong forms at n = 50, far-field error is *small at the median* (0.8%)
+— which is exactly why the panel is silent — but **7.3%** of silent
+certificates carry >10% far-field error (p90 = 8.7%). At n = 200 and
+n = 1000 that share falls to 1.0% and 0.3%. The panel's silence is
+not uniform in consequence; it concentrates where the misfit is small
+in-domain and damaging one decade out.
+
+**Relation to Section 4.10 — the denominators must not be pooled.**
+These are not rival estimates of one quantity. Section 4.10's rates
+are *conditioned on* the R² ≥ 0.99 screen and answer "what does the
+pipeline emit"; S7's are *unconditioned* and answer "what does the
+panel alone detect". The n = 50 pair — 13.2% of screened dangerous
+models released (§4.10, C/B) versus 37.8% of all wrong forms jointly
+silent (Table 16) — differs in large part because the screen admits
+only about a tenth of wrong forms (24,060 of 240,000 S2 fits, §4.10)
+before the gates ever run. Quoting either as "the release rate"
+without its conditioning would repeat the denominator error Section
+4.10 documents, one level up.
+
 ## 5 Analysis
 
 **Q1. Does the low-df curvature test beat RESET on univariate quadratic
@@ -1244,6 +1357,29 @@ generalization over equations, and the HC3 failure is concentrated in 5
 of 13 equations. No multiple-comparison correction is applied across the
 1,480 cells; rates are descriptive, and family-level set decisions are
 analyzed as sets (§4.6) rather than as four independent tests.
+
+**Joint-silence suite (S7).** The suite's two arms rest on different
+benches — A–D on the S2 18-equation pool (36,000 datasets per n) and
+the model-comparison extension on `gate_cmp` (3,800) — so their
+levels are reported separately and are **not** comparable across
+arms; only within-arm contrasts are used. The four-gate arm's H0
+reference was not re-measured on the S7 seed grid, so Table 16 is an
+H1-side measurement: the 90.5% true-form silence rate quoted in
+§4.11(b) belongs to the **model-comparison arm alone** and is not
+the four-gate arm's null. Table 16 carries no Wilson intervals — the
+2,000 datasets per task are draws within 18 equations, so equations,
+not datasets, are the independent unit, and the per-task spread is
+wide by design (per-task detail is retained rather than
+macro-averaged away). Two exclusions predate the suite:
+`feynman-i.30.5` (withdrawn, v5 App. B) and `rel = 0` cells (no
+certificates exist there). **Provenance.** S7's cached outputs are
+`runs/joint_silence/`. The summary table in that directory's
+`REPORT.md` disagrees with the per-task CSV it was computed from
+(32.0% vs 37.8% at n = 50 after weighting; 70% vs 90.5% for the H0
+baseline) and carries a dated in-file annotation to that effect.
+Every number in Table 16 is regenerated from the per-task CSV
+(`joint_silence_srsd_per_task.csv`), and the discrepant summary is
+not used anywhere in this paper.
 **HC3 independent verification.** After two revision rounds: fitted-HC3
 (C) is verified on 2 failing tasks × 60 seeds; exog-HC3 (D) is verified
 across all 13 H0 equations with stratified sampling (176 fits) — in
@@ -1350,7 +1486,7 @@ blind spots — not the absence of a statistical relationship, which
 our own likelihood-ratio accounting contradicts.
 
 The falsification-side benchmark built to measure this is itself a
-deliverable: six suites, one protocol that puts every gate on a
+deliverable: seven suites, one protocol that puts every gate on a
 common basis, and full registration of every failure — with all
 C/D method comparisons on the independently verified SVD
 implementation. Under that correction the gate ranking changes
@@ -1792,3 +1928,22 @@ fetch/prepare/smoke scripts.
    measured object is gate behavior on a pre-specified power-law
    candidate, not the pass rate of method-emitted wrong forms; that
    experiment is named as the next suite.
+7. **Suite S7 added (joint-silence rate).** The panel's silence is now
+   measured with the fit screen removed, on an independent re-sampling
+   of S2's 18 non-monomial equations (2,000 datasets per task per n;
+   36,000 per n). Joint silence — no gate rejects and no gate declines
+   — is 37.8% / 29.8% / 23.2% naive and 38.6% / 30.2% / 23.6%
+   H0-calibrated at n = 50 / 200 / 1000 (Table 16). This is a different
+   quantity from §4.10's pipeline yield and the two are never pooled:
+   §4.10 conditions on the R² ≥ 0.99 screen, S7 does not. Against the
+   synthetic bench's 0.15–0.22% on the same unscreened basis the gap is
+   170–250×. Adding the S5 model-comparison gates at matched
+   calibration moves the n = 50 figure from 38.6% to 42.2%, against
+   90.5% silence on true power laws (LR ≈ 2.2×; posterior ≈ 32% under a
+   50/50 prior). **Provenance:** `runs/joint_silence/`; every number is
+   regenerated from `joint_silence_srsd_per_task.csv`, whose values
+   disagree with that directory's `REPORT.md` summary table (32.0% vs
+   37.8%; 70% vs 90.5% for the H0 baseline — annotated in-file, October
+   2026); the summary is not used anywhere, and no Wilson intervals are
+   given because equations, not datasets, are the independent unit.
+   Abstract, §4's table index, §6, and §8 are updated accordingly.

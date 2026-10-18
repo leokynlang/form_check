@@ -1,0 +1,10 @@
+# Preserve exact bytes of recorded data/configuration and release integrity metadata.
+/runs/** -text
+/real_data/** -text
+/data_release/** -text
+*.csv -text
+*.parquet binary
+*.pdf binary
+*.png binary
+*.jpg binary
+*.zip binary

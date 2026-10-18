@@ -1,0 +1,3202 @@
+{
+  "uci_auto_mpg": {
+    "source": "uci",
+    "source_url": "https://archive.ics.uci.edu/dataset/9/auto+mpg",
+    "description": "1970-1982 款汽车: 油耗(mpg) vs 排量/马力/整备质量。Physical intuitiveness: heavier/more powerful -> lower mpg, log-log 中近似线性但整备质量与排量强共线。",
+    "columns": {
+      "displacement": "in**3",
+      "horsepower": "hp",
+      "weight": "lb",
+      "mpg": "mile/gal (target)"
+    },
+    "n_rows": 392,
+    "candidate_relations": [
+      {
+        "target": "mpg",
+        "features": [
+          "weight"
+        ],
+        "note": "经典: 重车费油"
+      },
+      {
+        "target": "mpg",
+        "features": [
+          "displacement"
+        ],
+        "note": "排量 vs 油耗"
+      },
+      {
+        "target": "mpg",
+        "features": [
+          "horsepower"
+        ],
+        "note": "马力 vs 油耗"
+      },
+      {
+        "target": "mpg",
+        "features": [
+          "displacement",
+          "weight",
+          "horsepower"
+        ],
+        "note": "三特征, 强共线考共线性告警"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\uci\\9_auto_mpg\\data.csv",
+        "sha256": "240f4657d747fe105f3c992251daba65f926ef54c4dec3cde34e398e8cf5da9c"
+      }
+    ],
+    "notes": [
+      "原始 398 行, horsepower 含 6 个 '?' 缺失, 直接丢行不插值",
+      "cylinders/origin/model_year/acceleration 为离散或弱物理列, 清洗期剔除"
+    ]
+  },
+  "uci_concrete_strength": {
+    "source": "uci",
+    "source_url": "https://archive.ics.uci.edu/dataset/165/concrete+compressive+strength",
+    "description": "1030 组混凝土试块抗压强度 vs 配比组分与龄期 (Yeh 1998)。强度~龄期是固化增长曲线(亚线性、趋饱和), 幂律只在中段近似。",
+    "columns": {
+      "age_day": "day",
+      "strength_mpa": "MPa (target)"
+    },
+    "n_rows": 1030,
+    "candidate_relations": [
+      {
+        "target": "strength_mpa",
+        "features": [
+          "cement_kg_m3"
+        ],
+        "note": "Abrams/Bolomey 类单变量"
+      },
+      {
+        "target": "strength_mpa",
+        "features": [
+          "water_kg_m3"
+        ],
+        "note": "水灰比方向, 预期负指数"
+      },
+      {
+        "target": "strength_mpa",
+        "features": [
+          "age_day"
+        ],
+        "note": "固化龄期, 已知亚线性趋饱和"
+      },
+      {
+        "target": "strength_mpa",
+        "features": [
+          "cement_kg_m3",
+          "water_kg_m3",
+          "age_day"
+        ],
+        "note": "三特征多变量"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\uci\\165_concrete_strength\\data.csv",
+        "sha256": "8d4b15b6fc68cd932d745cbd663d5ceae66dd54422e99c1e4865f2936ab7e2af"
+      }
+    ],
+    "notes": [
+      "含大量 0 组分(配比本就可为 0); 框架逐特征降级路径的天然考场"
+    ]
+  },
+  "uci_concrete_slump": {
+    "source": "uci",
+    "source_url": "https://archive.ics.uci.edu/dataset/182/concrete+slump+test",
+    "description": "103 组高强混凝土坍落度试验 (Yeh 2007): 坍落/流动/28 天抗压强度 vs 七组分配比。强度~水泥/水是配比设计经典方向; 流动性~用水率近线性。",
+    "columns": {
+      "cement": "kg/m3 batch component",
+      "slag": "kg/m3 batch component",
+      "fly_ash": "kg/m3 batch component",
+      "water": "kg/m3 batch component",
+      "superplast": "kg/m3 batch component",
+      "coarse_agg": "kg/m3 batch component",
+      "fine_agg": "kg/m3 batch component",
+      "slump_cm": "cm",
+      "flow_cm": "cm (target)",
+      "strength_mpa": "MPa (target)"
+    },
+    "n_rows": 103,
+    "candidate_relations": [
+      {
+        "target": "strength_mpa",
+        "features": [
+          "cement"
+        ],
+        "note": "强度~水泥用量"
+      },
+      {
+        "target": "strength_mpa",
+        "features": [
+          "water"
+        ],
+        "note": "强度~用水量, 预期负指数方向"
+      },
+      {
+        "target": "flow_cm",
+        "features": [
+          "water"
+        ],
+        "note": "流动性~用水量近线性"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\uci\\182_concrete_slump\\slump_test.data",
+        "sha256": "78cea9fbb28ad8fc17f389e216e724dc04642c6c363143e67f6bcb97e74525ee"
+      }
+    ],
+    "notes": [
+      "slump_cm 含 0 值(高流态), 该列不进候选关系避免正值过滤失真",
+      "zip 内另有 slump_test.test(40 行), 不用"
+    ]
+  },
+  "uci_energy_efficiency": {
+    "source": "uci",
+    "source_url": "https://archive.ics.uci.edu/dataset/242/energy+efficiency",
+    "description": "768 栋矩形建筑能耗仿真 (Tsanas & Xifara 2012): 采暖/制冷负荷 vs 形状参数。制冷负荷~glazing 在原研究中非单调。",
+    "columns": {
+      "rel_compact": "-",
+      "surface_area": "m**2",
+      "wall_area": "m**2",
+      "roof_area": "m**2",
+      "heating_load": "kWh/m**2 (target)",
+      "cooling_load": "kWh/m**2 (target)"
+    },
+    "n_rows": 768,
+    "candidate_relations": [
+      {
+        "target": "heating_load",
+        "features": [
+          "surface_area"
+        ],
+        "note": ""
+      },
+      {
+        "target": "heating_load",
+        "features": [
+          "roof_area"
+        ],
+        "note": ""
+      },
+      {
+        "target": "cooling_load",
+        "features": [
+          "surface_area"
+        ],
+        "note": ""
+      },
+      {
+        "target": "heating_load",
+        "features": [
+          "surface_area",
+          "wall_area",
+          "roof_area"
+        ],
+        "note": "三面积特征, 相互强相关"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\uci\\242_energy_efficiency\\data.csv",
+        "sha256": "db44dbe453acd464b5cf65be2fb01a28aa9c5b2630300e65fbe28cde35f5d96f"
+      }
+    ],
+    "notes": [
+      "X5 overall_height 仅 2 个水平(3.5/7 m), 做特征会阶跃, 已剔除",
+      "X6/X7/X8 为离散编码列, 已剔除"
+    ]
+  },
+  "uci_yacht_hydro": {
+    "source": "uci",
+    "source_url": "https://archive.ics.uci.edu/dataset/243/yacht+hydrodynamics",
+    "description": "308 组帆船船模拖曳水池试验 (Tsur & Tuller, Delft 系列): 剩余阻力/单位排水量 vs Froude 数与船型参数。高速段阻力~速度指数可达 5-6, 是 log-log 强弯曲的经典考场。",
+    "columns": {
+      "long_pos": "-",
+      "pris_coef": "-",
+      "ldr_ratio": "L/D**3",
+      "bdr_ratio": "B/T",
+      "lbl_ratio": "L/B",
+      "froude": "V/sqrt(gL) (feature)",
+      "resid_resist": "base unit (target)"
+    },
+    "n_rows": 308,
+    "candidate_relations": [
+      {
+        "target": "resid_resist",
+        "features": [
+          "froude"
+        ],
+        "note": "阻力~Froude, 高速段强弯曲"
+      },
+      {
+        "target": "resid_resist",
+        "features": [
+          "froude",
+          "ldr_ratio"
+        ],
+        "note": "双特征"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\uci\\243_yacht_hydro\\yacht_hydrodynamics.data",
+        "sha256": "00dfecc0fc01ddd4c90b558a3ac11b246df8ebcfea130724223475a9a67f0ea1"
+      }
+    ],
+    "notes": [
+      "long_pos 有负值, 不进特征; 各船型参数在每条船内为常数, 跨船才变化(分组共线结构)"
+    ]
+  },
+  "uci_ccpp": {
+    "source": "uci",
+    "source_url": "https://archive.ics.uci.edu/dataset/294/combined+cycle+power+plant",
+    "description": "9568 条联合循环电厂满负荷净电力输出 (Tüfekci 2014, 6 年 1 小时平均): PE vs 环境温度/真空/气压/湿度。PE~AT 近线性(汽轮机效率), 是幂律 H0 的真实代理。",
+    "columns": {
+      "AT": "C ambient temperature",
+      "V": "cm Hg exhaust vacuum",
+      "AP": "mbar ambient pressure",
+      "RH": "% relative humidity",
+      "PE": "MW net electrical output (target)"
+    },
+    "n_rows": 9568,
+    "candidate_relations": [
+      {
+        "target": "PE",
+        "features": [
+          "AT"
+        ],
+        "note": "效率~温度, 近线性幂律(指数约 0.9-1)"
+      },
+      {
+        "target": "PE",
+        "features": [
+          "V"
+        ],
+        "note": "真空度影响"
+      },
+      {
+        "target": "PE",
+        "features": [
+          "AP"
+        ],
+        "note": "气压影响, 弱"
+      },
+      {
+        "target": "PE",
+        "features": [
+          "AT",
+          "V"
+        ],
+        "note": "双特征"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\uci\\294_ccpp\\data.csv",
+        "sha256": "3c1fc11025f8424f8d95802d8b7086dffd3f73a552c6dcab3d973620986194b2"
+      }
+    ],
+    "notes": [
+      "全列正值; 大样本(n=9568)下排列检验较慢, 冒烟只抽子样"
+    ]
+  },
+  "uci_air_quality": {
+    "source": "uci",
+    "source_url": "https://archive.ics.uci.edu/dataset/360/air+quality",
+    "description": "意大利某公路边空气污染监测站一年小时值 (De Vito 2008): 5 种金属氧化物传感器响应 vs 参比分析仪浓度 + 温湿度。传感器~浓度是计量校准曲线的天然台架。",
+    "columns": {
+      "co_gt": "mg/m3 reference",
+      "pt08s1_co": "sensor a.u.",
+      "nmhc_gt": "ppb reference",
+      "c6h6_gt": "ug/m3 reference",
+      "pt08s2_nmhc": "sensor a.u.",
+      "nox_gt": "ppb reference",
+      "pt08s3_nox": "sensor a.u.",
+      "no2_gt": "ug/m3 reference",
+      "pt08s4_no2": "sensor a.u.",
+      "pt08s5_o3": "sensor a.u.",
+      "temp_c": "C",
+      "rh_pct": "%",
+      "ah": "absolute humidity"
+    },
+    "n_rows": 9357,
+    "candidate_relations": [
+      {
+        "target": "pt08s1_co",
+        "features": [
+          "co_gt"
+        ],
+        "note": "锡氧化物传感器 vs CO 参比: 校准曲线"
+      },
+      {
+        "target": "pt08s2_nmhc",
+        "features": [
+          "c6h6_gt"
+        ],
+        "note": "钨氧化物传感器 vs 苯参比"
+      },
+      {
+        "target": "pt08s2_nmhc",
+        "features": [
+          "c6h6_gt",
+          "temp_c"
+        ],
+        "note": "加温度特征: 传感器温度交叉敏感"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\uci\\360_air_quality\\data.csv",
+        "sha256": "4c42e4729e876dfdecf3bfb0ed658f2bdfb2b3007da496440d303260a97733e5"
+      }
+    ],
+    "notes": [
+      "-200 为数据方文档化的缺失哨兵, 读入即 NaN(不插值)",
+      "nmhc_gt 缺失约 90%, 仅存档不进关系",
+      "小时均值, 时间自相关未处理"
+    ]
+  },
+  "uci_tetouan_power": {
+    "source": "uci",
+    "source_url": "https://archive.ics.uci.edu/dataset/849/power+consumption+of+tetouan+city",
+    "description": "摩洛哥 Tetouan 市三配区 2017 全年 10min 电力消费 (52,417 行) vs 温/湿/风/辐照度。负荷~气温呈冬夏双峰 U 形(采暖+制冷), 对幂律是连续弯曲考场。",
+    "columns": {
+      "temp_c": "C",
+      "humidity_pct": "%",
+      "wind_speed_ms": "m/s",
+      "gen_diffuse": "irradiance a.u.",
+      "diffuse": "irradiance a.u.",
+      "zone1_kw": "kW (target)",
+      "zone2_kw": "kW (target)",
+      "zone3_kw": "kW (target)"
+    },
+    "n_rows": 52416,
+    "candidate_relations": [
+      {
+        "target": "zone1_kw",
+        "features": [
+          "temp_c"
+        ],
+        "note": "负荷~气温: U 形双峰, 已知非单调"
+      },
+      {
+        "target": "zone1_kw",
+        "features": [
+          "temp_c",
+          "humidity_pct",
+          "wind_speed_ms"
+        ],
+        "note": "三气象特征多变量"
+      },
+      {
+        "target": "zone3_kw",
+        "features": [
+          "temp_c"
+        ],
+        "note": "第三区(商业为主)负荷~气温"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\uci\\849_tetouan_power\\data.csv",
+        "sha256": "ca8b2f30cf07dd872cb7f2aa45dac110ee38dbe5fc5910a6ff4bcc530dae3a40"
+      }
+    ],
+    "notes": [
+      "diffuse flows 原文未标单位, 列名不带单位声明",
+      "10min 分辨率时间自相关; 大样本冒烟抽子样"
+    ]
+  },
+  "uci_steel_energy": {
+    "source": "uci",
+    "source_url": "https://archive.ics.uci.edu/dataset/851/steel+industry+energy+consumption",
+    "description": "韩国某小型钢厂 2018 年 15min 智能电表遥测 (35,040 行): 有功/无功/功率因数/CO2。能耗~CO2 由燃烧化学计量近比例耦合; 无功~负载是感应电机饱和曲线。",
+    "columns": {
+      "usage_kwh": "kWh (target)",
+      "lag_reactive_kvarh": "kVarh",
+      "lead_reactive_kvarh": "kVarh",
+      "co2_tco2": "t CO2",
+      "lag_pf": "%",
+      "lead_pf": "%",
+      "nsm": "seconds from midnight"
+    },
+    "n_rows": 35040,
+    "candidate_relations": [
+      {
+        "target": "usage_kwh",
+        "features": [
+          "co2_tco2"
+        ],
+        "note": "能耗~CO2: 化学计量近比例(含0行被滤)"
+      },
+      {
+        "target": "usage_kwh",
+        "features": [
+          "lag_reactive_kvarh"
+        ],
+        "note": "感应电机无功~负载"
+      },
+      {
+        "target": "usage_kwh",
+        "features": [
+          "co2_tco2",
+          "lag_reactive_kvarh"
+        ],
+        "note": "双特征"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\uci\\851_steel_energy\\data.csv",
+        "sha256": "9b1cee6f9cb9cd9df2b95814ca90a9a2ff15b7f5f1fba0fae3c643e82072eacc"
+      }
+    ],
+    "notes": [
+      "轻载行 CO2=0(电弧炉间歇), 正值过滤后保留重载段——留痕不掩盖",
+      "nsm 呈日内周期, 不进关系(非物理幂律候选)"
+    ]
+  },
+  "uci_gas_turbine_emissions": {
+    "source": "uci",
+    "source_url": "https://archive.ics.uci.edu/dataset/551/gas+turbine+co+and+nox+emission+data+set",
+    "description": "燃机 CO/NOx 排放与热效率遥测 (Kaya et al. 2019, 2011-2015, ~36733 行): 环境参数+燃烧参数。TEY~CDP 近线性; CO~TIT 呈化学反应非线性。",
+    "columns": {
+      "AT": "C ambient",
+      "AP": "mbar",
+      "AH": "% absolute humidity",
+      "AFDP": "mbar air-fuel dp",
+      "GTEP": "mbar turbine ep",
+      "TIT": "K turbine inlet temp",
+      "TAT": "K turbine after temp",
+      "TEY": "MWh energy yield (target)",
+      "CDP": "mbar compressor dp",
+      "CO": "mg/m3 (target)",
+      "NOX": "mg/m3 (target)"
+    },
+    "n_rows": 36733,
+    "candidate_relations": [
+      {
+        "target": "TEY",
+        "features": [
+          "CDP"
+        ],
+        "note": "能量产出~压气机出口压力, 近线性"
+      },
+      {
+        "target": "TEY",
+        "features": [
+          "GTEP"
+        ],
+        "note": "turbine energy pressure"
+      },
+      {
+        "target": "NOX",
+        "features": [
+          "TIT"
+        ],
+        "note": "NOx~燃烧温度, 热力型生成非线性"
+      },
+      {
+        "target": "CO",
+        "features": [
+          "TIT"
+        ],
+        "note": "CO~燃烧温度, 完全燃烧方向"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\uci\\551_gas_turbine_emissions\\data.csv",
+        "sha256": "33cbb8c68e24e3782547ccf0ed60d9ec0cc10732c3f84b08ed08fea08bfdaa6a"
+      }
+    ],
+    "notes": [
+      "AT 全期含负值(冬季), 相关行会被运行时正值过滤剔除; CO 含 0 值",
+      "giga_conflicts: 无; 大样本, 冒烟只抽子样"
+    ]
+  },
+  "nist_chwirut1": {
+    "source": "nist_strd",
+    "source_url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Chwirut1.dat",
+    "description": "超声标定: 超声响应 y vs 金属距离 x (n=214, NIST)",
+    "columns": {
+      "y": "response (target)",
+      "x": "predictor"
+    },
+    "n_rows": 214,
+    "candidate_relations": [
+      {
+        "target": "y",
+        "features": [
+          "x"
+        ],
+        "note": "NIST 认证非线性模型的变量, 幂律仅作对照"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\nist_strd\\Chwirut1.dat",
+        "sha256": "d9a055dfe5af71a8754c00f073ef00f8fed2e3fd1c6fd20cea8fd62d7cc3ed84"
+      }
+    ],
+    "notes": [
+      "官方认证模型是非线性最小二乘形式, 不是幂律; 这些集用于考 form_check 在小 n 真实标定数据上的行为",
+      "变量声明: ['y', 'x']"
+    ]
+  },
+  "nist_chwirut2": {
+    "source": "nist_strd",
+    "source_url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Chwirut2.dat",
+    "description": "超声标定短版 (n=54)",
+    "columns": {
+      "y": "response (target)",
+      "x": "predictor"
+    },
+    "n_rows": 54,
+    "candidate_relations": [
+      {
+        "target": "y",
+        "features": [
+          "x"
+        ],
+        "note": "NIST 认证非线性模型的变量, 幂律仅作对照"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\nist_strd\\Chwirut2.dat",
+        "sha256": "c37e5522a34f9a57e18d7d10f8736202eabc0c33b8e7ad0010e618db04b57411"
+      }
+    ],
+    "notes": [
+      "官方认证模型是非线性最小二乘形式, 不是幂律; 这些集用于考 form_check 在小 n 真实标定数据上的行为",
+      "变量声明: ['y', 'x']"
+    ]
+  },
+  "nist_misra1a": {
+    "source": "nist_strd",
+    "source_url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Misra1a.dat",
+    "description": "牙科根管种植体/骨界面 (Misra 1978), n=14",
+    "columns": {
+      "y": "response (target)",
+      "x": "predictor"
+    },
+    "n_rows": 14,
+    "candidate_relations": [
+      {
+        "target": "y",
+        "features": [
+          "x"
+        ],
+        "note": "NIST 认证非线性模型的变量, 幂律仅作对照"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\nist_strd\\Misra1a.dat",
+        "sha256": "9d3194d537d9a6bbf92eb819504070923a1885d0191f40b6b3aaeedd130b98e2"
+      }
+    ],
+    "notes": [
+      "官方认证模型是非线性最小二乘形式, 不是幂律; 这些集用于考 form_check 在小 n 真实标定数据上的行为",
+      "变量声明: ['y', 'x']",
+      "n=14: 低于 run_all_methods 的小样本门槛, fc 拒检(留痕)",
+      "官方 n=14, 四个 Misra 集 .dat 均为 14 行(以文件为准)"
+    ]
+  },
+  "nist_misra1b": {
+    "source": "nist_strd",
+    "source_url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Misra1b.dat",
+    "description": "同 Misra1a 模型的第二组, n=40",
+    "columns": {
+      "y": "response (target)",
+      "x": "predictor"
+    },
+    "n_rows": 14,
+    "candidate_relations": [
+      {
+        "target": "y",
+        "features": [
+          "x"
+        ],
+        "note": "NIST 认证非线性模型的变量, 幂律仅作对照"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\nist_strd\\Misra1b.dat",
+        "sha256": "dd27e310f787dcbc2addc50b9f8e5e3b82155f732926898b1858e4d08eead6a8"
+      }
+    ],
+    "notes": [
+      "官方认证模型是非线性最小二乘形式, 不是幂律; 这些集用于考 form_check 在小 n 真实标定数据上的行为",
+      "变量声明: ['y', 'x']",
+      "n=14, 同上"
+    ]
+  },
+  "nist_misra1c": {
+    "source": "nist_strd",
+    "source_url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Misra1c.dat",
+    "description": "同 Misra1a 模型的第三组, n=24",
+    "columns": {
+      "y": "response (target)",
+      "x": "predictor"
+    },
+    "n_rows": 14,
+    "candidate_relations": [
+      {
+        "target": "y",
+        "features": [
+          "x"
+        ],
+        "note": "NIST 认证非线性模型的变量, 幂律仅作对照"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\nist_strd\\Misra1c.dat",
+        "sha256": "012f75aa0ff112afabdff73880e324ab28e2dc267b678537611c403b959dc941"
+      }
+    ],
+    "notes": [
+      "官方认证模型是非线性最小二乘形式, 不是幂律; 这些集用于考 form_check 在小 n 真实标定数据上的行为",
+      "变量声明: ['y', 'x']",
+      "n=14, 同上"
+    ]
+  },
+  "nist_misra1d": {
+    "source": "nist_strd",
+    "source_url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Misra1d.dat",
+    "description": "同 Misra1a 模型的第四组, n=44",
+    "columns": {
+      "y": "response (target)",
+      "x": "predictor"
+    },
+    "n_rows": 14,
+    "candidate_relations": [
+      {
+        "target": "y",
+        "features": [
+          "x"
+        ],
+        "note": "NIST 认证非线性模型的变量, 幂律仅作对照"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\nist_strd\\Misra1d.dat",
+        "sha256": "4dfa39a381a5ffea3e5d9306af1bda9d53bc57226a8e6f0c19af6b9702580481"
+      }
+    ],
+    "notes": [
+      "官方认证模型是非线性最小二乘形式, 不是幂律; 这些集用于考 form_check 在小 n 真实标定数据上的行为",
+      "变量声明: ['y', 'x']",
+      "n=14, 同上"
+    ]
+  },
+  "nist_danwood": {
+    "source": "nist_strd",
+    "source_url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/DanWood.dat",
+    "description": "能源装置: 能耗 kWh y vs 运行天数 x (Daniel & Wood), n=6",
+    "columns": {
+      "y": "response (target)",
+      "x": "predictor"
+    },
+    "n_rows": 6,
+    "candidate_relations": [
+      {
+        "target": "y",
+        "features": [
+          "x"
+        ],
+        "note": "NIST 认证非线性模型的变量, 幂律仅作对照"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\nist_strd\\DanWood.dat",
+        "sha256": "5eae83de8b34e34c631a5738d640183b0628913e728437ae77f066e832186e24"
+      }
+    ],
+    "notes": [
+      "官方认证模型是非线性最小二乘形式, 不是幂律; 这些集用于考 form_check 在小 n 真实标定数据上的行为",
+      "变量声明: ['y', 'x']",
+      "n=6: 低于任何检验的可用样本量, 仅存档"
+    ]
+  },
+  "nist_kirby2": {
+    "source": "nist_strd",
+    "source_url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Kirby2.dat",
+    "description": "微荧光分析 (Kirby 1976), n=151",
+    "columns": {
+      "y": "response (target)",
+      "x": "predictor"
+    },
+    "n_rows": 151,
+    "candidate_relations": [
+      {
+        "target": "y",
+        "features": [
+          "x"
+        ],
+        "note": "NIST 认证非线性模型的变量, 幂律仅作对照"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\nist_strd\\Kirby2.dat",
+        "sha256": "cbd288dd9d8586ec97ca408277d1a27ef41b19b543c158d594af189de80ae61c"
+      }
+    ],
+    "notes": [
+      "官方认证模型是非线性最小二乘形式, 不是幂律; 这些集用于考 form_check 在小 n 真实标定数据上的行为",
+      "变量声明: ['y', 'x']"
+    ]
+  },
+  "nist_hahn1": {
+    "source": "nist_strd",
+    "source_url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Hahn1.dat",
+    "description": "铜镍合金热膨胀系数 y vs 温度 x (Hahn 1970s), n=236",
+    "columns": {
+      "y": "response (target)",
+      "x": "predictor"
+    },
+    "n_rows": 236,
+    "candidate_relations": [
+      {
+        "target": "y",
+        "features": [
+          "x"
+        ],
+        "note": "NIST 认证非线性模型的变量, 幂律仅作对照"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\nist_strd\\Hahn1.dat",
+        "sha256": "7e885af48e18a222033a66cb22b491f0f5bc761b652142c0d9b28132daf63956"
+      }
+    ],
+    "notes": [
+      "官方认证模型是非线性最小二乘形式, 不是幂律; 这些集用于考 form_check 在小 n 真实标定数据上的行为",
+      "变量声明: ['y', 'x']"
+    ]
+  },
+  "nist_roszman1": {
+    "source": "nist_strd",
+    "source_url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Roszman1.dat",
+    "description": "电子量子产额 y vs 频率 x (Roszman), n=176",
+    "columns": {
+      "y": "response (target)",
+      "x": "predictor"
+    },
+    "n_rows": 25,
+    "candidate_relations": [
+      {
+        "target": "y",
+        "features": [
+          "x"
+        ],
+        "note": "NIST 认证非线性模型的变量, 幂律仅作对照"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\nist_strd\\Roszman1.dat",
+        "sha256": "fb526231ae6b02929e3de54e072e259b3d87424089abd4b1015ffb946b1e0ab0"
+      }
+    ],
+    "notes": [
+      "官方认证模型是非线性最小二乘形式, 不是幂律; 这些集用于考 form_check 在小 n 真实标定数据上的行为",
+      "变量声明: ['y', 'x']",
+      "x 全负(-4869~-464): log 不可用, 同上"
+    ]
+  },
+  "nist_thurber": {
+    "source": "nist_strd",
+    "source_url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Thurber.dat",
+    "description": "电子器件电流 y vs 电压 x (Thurber), n=37",
+    "columns": {
+      "y": "response (target)",
+      "x": "predictor"
+    },
+    "n_rows": 37,
+    "candidate_relations": [
+      {
+        "target": "y",
+        "features": [
+          "x"
+        ],
+        "note": "NIST 认证非线性模型的变量, 幂律仅作对照"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\nist_strd\\Thurber.dat",
+        "sha256": "806b8d00a5365eff907561db796fec3af8a26a5f353297d4311fd46ed5b0146f"
+      }
+    ],
+    "notes": [
+      "官方认证模型是非线性最小二乘形式, 不是幂律; 这些集用于考 form_check 在小 n 真实标定数据上的行为",
+      "变量声明: ['y', 'x']",
+      "x 含负值(-3.07~2.20): 正值过滤后 n=11, fc 小样本拒检留痕"
+    ]
+  },
+  "nist_eckerle4": {
+    "source": "nist_strd",
+    "source_url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Eckerle4.dat",
+    "description": "圆形干涉滤波器透射率 y vs 波长 x (Eckerle), n=33",
+    "columns": {
+      "y": "response (target)",
+      "x": "predictor"
+    },
+    "n_rows": 35,
+    "candidate_relations": [
+      {
+        "target": "y",
+        "features": [
+          "x"
+        ],
+        "note": "NIST 认证非线性模型的变量, 幂律仅作对照"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\nist_strd\\Eckerle4.dat",
+        "sha256": "8ec2133b29a0a7cecbfccd51f7c61ee432f73c460bf5ce7106d672642e57a61e"
+      }
+    ],
+    "notes": [
+      "官方认证模型是非线性最小二乘形式, 不是幂律; 这些集用于考 form_check 在小 n 真实标定数据上的行为",
+      "变量声明: ['y', 'x']"
+    ]
+  },
+  "nist_bennett5": {
+    "source": "nist_strd",
+    "source_url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Bennett5.dat",
+    "description": "磁滞回线类标定 (Bennett 1954?), n=154",
+    "columns": {
+      "y": "response (target)",
+      "x": "predictor"
+    },
+    "n_rows": 154,
+    "candidate_relations": [
+      {
+        "target": "y",
+        "features": [
+          "x"
+        ],
+        "note": "NIST 认证非线性模型的变量, 幂律仅作对照"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\nist_strd\\Bennett5.dat",
+        "sha256": "b34d160605b959c301d13aac6627b693743d32ad98a6c4f830a3f728cdff0f52"
+      }
+    ],
+    "notes": [
+      "官方认证模型是非线性最小二乘形式, 不是幂律; 这些集用于考 form_check 在小 n 真实标定数据上的行为",
+      "变量声明: ['y', 'x']",
+      "y 全负(-34.8~-31.8): log 不可用, 保留为框架'诚实失败'考场"
+    ]
+  },
+  "webbook_1_butanol_dvaph": {
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "description": "1_butanol: 相变 ΔvapH vs 温度逐点测量值 (NIST Chemistry WebBook/TRC 汇编)。ΔvapH(T) 在临界点趋零(Watson 型), 对 T 的幂律只在中段近似——已知非幂律形状。",
+    "columns": {
+      "temp_k": "K",
+      "dvaph_kJ/mol": "kJ/mol (target)"
+    },
+    "n_rows": 30,
+    "candidate_relations": [
+      {
+        "target": "dvaph_kJ/mol",
+        "features": [
+          "temp_k"
+        ],
+        "note": "蒸发焓~温度: 已知非幂律(临界趋零)"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\1_butanol_phase.html",
+        "sha256": "f6e83f6570191516ceda3b13d1988b3da982c809133eb6f7d431bb864e3b05dd"
+      }
+    ],
+    "notes": [
+      "同温度多来源测量点全部保留(重复测量是真实数据的一部分)",
+      "含 '±' 不确定度的取中心值"
+    ]
+  },
+  "webbook_1_propanol_dvaph": {
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "description": "1_propanol: 相变 ΔvapH vs 温度逐点测量值 (NIST Chemistry WebBook/TRC 汇编)。ΔvapH(T) 在临界点趋零(Watson 型), 对 T 的幂律只在中段近似——已知非幂律形状。",
+    "columns": {
+      "temp_k": "K",
+      "dvaph_kJ/mol": "kJ/mol (target)"
+    },
+    "n_rows": 34,
+    "candidate_relations": [
+      {
+        "target": "dvaph_kJ/mol",
+        "features": [
+          "temp_k"
+        ],
+        "note": "蒸发焓~温度: 已知非幂律(临界趋零)"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\1_propanol_phase.html",
+        "sha256": "01263b9d1a06ad463e51fa93f8d07371eb46fcf88ec48dd4797a018f0d5d7c57"
+      }
+    ],
+    "notes": [
+      "同温度多来源测量点全部保留(重复测量是真实数据的一部分)",
+      "含 '±' 不确定度的取中心值"
+    ]
+  },
+  "webbook_acetone_dvaph": {
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "description": "acetone: 相变 ΔvapH vs 温度逐点测量值 (NIST Chemistry WebBook/TRC 汇编)。ΔvapH(T) 在临界点趋零(Watson 型), 对 T 的幂律只在中段近似——已知非幂律形状。",
+    "columns": {
+      "temp_k": "K",
+      "dvaph_kJ/mol": "kJ/mol (target)"
+    },
+    "n_rows": 22,
+    "candidate_relations": [
+      {
+        "target": "dvaph_kJ/mol",
+        "features": [
+          "temp_k"
+        ],
+        "note": "蒸发焓~温度: 已知非幂律(临界趋零)"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\acetone_phase.html",
+        "sha256": "2d073350a3afbb7614109cf538c8f2395272fb3e634e5b93812d1d25b50d9c78"
+      }
+    ],
+    "notes": [
+      "同温度多来源测量点全部保留(重复测量是真实数据的一部分)",
+      "含 '±' 不确定度的取中心值"
+    ]
+  },
+  "webbook_aniline_dvaph": {
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "description": "aniline: 相变 ΔvapH vs 温度逐点测量值 (NIST Chemistry WebBook/TRC 汇编)。ΔvapH(T) 在临界点趋零(Watson 型), 对 T 的幂律只在中段近似——已知非幂律形状。",
+    "columns": {
+      "temp_k": "K",
+      "dvaph_kJ/mol": "kJ/mol (target)"
+    },
+    "n_rows": 14,
+    "candidate_relations": [
+      {
+        "target": "dvaph_kJ/mol",
+        "features": [
+          "temp_k"
+        ],
+        "note": "蒸发焓~温度: 已知非幂律(临界趋零)"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\aniline_phase.html",
+        "sha256": "64ec9ac256b3aa1df009b7f1e44fa8ed58e9ebafa74a549d6b696aa491f04264"
+      }
+    ],
+    "notes": [
+      "同温度多来源测量点全部保留(重复测量是真实数据的一部分)",
+      "含 '±' 不确定度的取中心值"
+    ]
+  },
+  "webbook_benzene_dvaph": {
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "description": "benzene: 相变 ΔvapH vs 温度逐点测量值 (NIST Chemistry WebBook/TRC 汇编)。ΔvapH(T) 在临界点趋零(Watson 型), 对 T 的幂律只在中段近似——已知非幂律形状。",
+    "columns": {
+      "temp_k": "K",
+      "dvaph_kJ/mol": "kJ/mol (target)"
+    },
+    "n_rows": 34,
+    "candidate_relations": [
+      {
+        "target": "dvaph_kJ/mol",
+        "features": [
+          "temp_k"
+        ],
+        "note": "蒸发焓~温度: 已知非幂律(临界趋零)"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\benzene_phase.html",
+        "sha256": "9ec966f194d82ad6bf9615378c2a441076147d44331227900df3787a515beee6"
+      }
+    ],
+    "notes": [
+      "同温度多来源测量点全部保留(重复测量是真实数据的一部分)",
+      "含 '±' 不确定度的取中心值"
+    ]
+  },
+  "webbook_benzene_dsubh": {
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "description": "benzene: 相变 ΔsubH vs 温度逐点测量值 (NIST Chemistry WebBook/TRC 汇编)。ΔvapH(T) 在临界点趋零(Watson 型), 对 T 的幂律只在中段近似——已知非幂律形状。",
+    "columns": {
+      "temp_k": "K",
+      "dsubh_kJ/mol": "kJ/mol (target)"
+    },
+    "n_rows": 13,
+    "candidate_relations": [
+      {
+        "target": "dsubh_kJ/mol",
+        "features": [
+          "temp_k"
+        ],
+        "note": "蒸发焓~温度: 已知非幂律(临界趋零)"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\benzene_phase.html",
+        "sha256": "9ec966f194d82ad6bf9615378c2a441076147d44331227900df3787a515beee6"
+      }
+    ],
+    "notes": [
+      "同温度多来源测量点全部保留(重复测量是真实数据的一部分)",
+      "含 '±' 不确定度的取中心值"
+    ]
+  },
+  "webbook_butane_dvaph": {
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "description": "butane: 相变 ΔvapH vs 温度逐点测量值 (NIST Chemistry WebBook/TRC 汇编)。ΔvapH(T) 在临界点趋零(Watson 型), 对 T 的幂律只在中段近似——已知非幂律形状。",
+    "columns": {
+      "temp_k": "K",
+      "dvaph_kJ/mol": "kJ/mol (target)"
+    },
+    "n_rows": 11,
+    "candidate_relations": [
+      {
+        "target": "dvaph_kJ/mol",
+        "features": [
+          "temp_k"
+        ],
+        "note": "蒸发焓~温度: 已知非幂律(临界趋零)"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\butane_phase.html",
+        "sha256": "3adf616d43b28c460be059dd2756ba793a2a3fff85b1cd7d42223ae88c7fb14a"
+      }
+    ],
+    "notes": [
+      "同温度多来源测量点全部保留(重复测量是真实数据的一部分)",
+      "含 '±' 不确定度的取中心值"
+    ]
+  },
+  "webbook_carbon_disulfide_dvaph": {
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "description": "carbon_disulfide: 相变 ΔvapH vs 温度逐点测量值 (NIST Chemistry WebBook/TRC 汇编)。ΔvapH(T) 在临界点趋零(Watson 型), 对 T 的幂律只在中段近似——已知非幂律形状。",
+    "columns": {
+      "temp_k": "K",
+      "dvaph_kJ/mol": "kJ/mol (target)"
+    },
+    "n_rows": 12,
+    "candidate_relations": [
+      {
+        "target": "dvaph_kJ/mol",
+        "features": [
+          "temp_k"
+        ],
+        "note": "蒸发焓~温度: 已知非幂律(临界趋零)"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\carbon_disulfide_phase.html",
+        "sha256": "f735b0d33e843cc93b3d9c4cc4ab72f300c0ce5ddd5f80bfd52c885d3b6628cd"
+      }
+    ],
+    "notes": [
+      "同温度多来源测量点全部保留(重复测量是真实数据的一部分)",
+      "含 '±' 不确定度的取中心值"
+    ]
+  },
+  "webbook_cyclohexane_dvaph": {
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "description": "cyclohexane: 相变 ΔvapH vs 温度逐点测量值 (NIST Chemistry WebBook/TRC 汇编)。ΔvapH(T) 在临界点趋零(Watson 型), 对 T 的幂律只在中段近似——已知非幂律形状。",
+    "columns": {
+      "temp_k": "K",
+      "dvaph_kJ/mol": "kJ/mol (target)"
+    },
+    "n_rows": 30,
+    "candidate_relations": [
+      {
+        "target": "dvaph_kJ/mol",
+        "features": [
+          "temp_k"
+        ],
+        "note": "蒸发焓~温度: 已知非幂律(临界趋零)"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\cyclohexane_phase.html",
+        "sha256": "f28d22c268f2096af0447d547bb7aa8516ad7ddc6fa6d774fda19f7024a7e826"
+      }
+    ],
+    "notes": [
+      "同温度多来源测量点全部保留(重复测量是真实数据的一部分)",
+      "含 '±' 不确定度的取中心值"
+    ]
+  },
+  "webbook_ethane_dvaph": {
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "description": "ethane: 相变 ΔvapH vs 温度逐点测量值 (NIST Chemistry WebBook/TRC 汇编)。ΔvapH(T) 在临界点趋零(Watson 型), 对 T 的幂律只在中段近似——已知非幂律形状。",
+    "columns": {
+      "temp_k": "K",
+      "dvaph_kJ/mol": "kJ/mol (target)"
+    },
+    "n_rows": 10,
+    "candidate_relations": [
+      {
+        "target": "dvaph_kJ/mol",
+        "features": [
+          "temp_k"
+        ],
+        "note": "蒸发焓~温度: 已知非幂律(临界趋零)"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\ethane_phase.html",
+        "sha256": "24366f13fef5c12e45a3a735d1892a7f3b0fdb397f2796c6b47cff7e33733b73"
+      }
+    ],
+    "notes": [
+      "同温度多来源测量点全部保留(重复测量是真实数据的一部分)",
+      "含 '±' 不确定度的取中心值"
+    ]
+  },
+  "webbook_ethylbenzene_dvaph": {
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "description": "ethylbenzene: 相变 ΔvapH vs 温度逐点测量值 (NIST Chemistry WebBook/TRC 汇编)。ΔvapH(T) 在临界点趋零(Watson 型), 对 T 的幂律只在中段近似——已知非幂律形状。",
+    "columns": {
+      "temp_k": "K",
+      "dvaph_kJ/mol": "kJ/mol (target)"
+    },
+    "n_rows": 11,
+    "candidate_relations": [
+      {
+        "target": "dvaph_kJ/mol",
+        "features": [
+          "temp_k"
+        ],
+        "note": "蒸发焓~温度: 已知非幂律(临界趋零)"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\ethylbenzene_phase.html",
+        "sha256": "89cfd1e9e29e2e566154b7bf10583ba35c74070070beb4a1867171df26bdb053"
+      }
+    ],
+    "notes": [
+      "同温度多来源测量点全部保留(重复测量是真实数据的一部分)",
+      "含 '±' 不确定度的取中心值"
+    ]
+  },
+  "webbook_ethylene_glycol_dvaph": {
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "description": "ethylene_glycol: 相变 ΔvapH vs 温度逐点测量值 (NIST Chemistry WebBook/TRC 汇编)。ΔvapH(T) 在临界点趋零(Watson 型), 对 T 的幂律只在中段近似——已知非幂律形状。",
+    "columns": {
+      "temp_k": "K",
+      "dvaph_kJ/mol": "kJ/mol (target)"
+    },
+    "n_rows": 10,
+    "candidate_relations": [
+      {
+        "target": "dvaph_kJ/mol",
+        "features": [
+          "temp_k"
+        ],
+        "note": "蒸发焓~温度: 已知非幂律(临界趋零)"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\ethylene_glycol_phase.html",
+        "sha256": "020d88048fa58e256c539ec5a8b58e62269e8b28fc5aaaf83d933f9bc44c4293"
+      }
+    ],
+    "notes": [
+      "同温度多来源测量点全部保留(重复测量是真实数据的一部分)",
+      "含 '±' 不确定度的取中心值"
+    ]
+  },
+  "webbook_ethylene_dvaph": {
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "description": "ethylene: 相变 ΔvapH vs 温度逐点测量值 (NIST Chemistry WebBook/TRC 汇编)。ΔvapH(T) 在临界点趋零(Watson 型), 对 T 的幂律只在中段近似——已知非幂律形状。",
+    "columns": {
+      "temp_k": "K",
+      "dvaph_kJ/mol": "kJ/mol (target)"
+    },
+    "n_rows": 10,
+    "candidate_relations": [
+      {
+        "target": "dvaph_kJ/mol",
+        "features": [
+          "temp_k"
+        ],
+        "note": "蒸发焓~温度: 已知非幂律(临界趋零)"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\ethylene_phase.html",
+        "sha256": "0a5f3d9421d626a8de3b7797be8152ce79836d3a05ce93f4dd0a65ef8c3d2ae3"
+      }
+    ],
+    "notes": [
+      "同温度多来源测量点全部保留(重复测量是真实数据的一部分)",
+      "含 '±' 不确定度的取中心值"
+    ]
+  },
+  "webbook_heptane_dvaph": {
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "description": "heptane: 相变 ΔvapH vs 温度逐点测量值 (NIST Chemistry WebBook/TRC 汇编)。ΔvapH(T) 在临界点趋零(Watson 型), 对 T 的幂律只在中段近似——已知非幂律形状。",
+    "columns": {
+      "temp_k": "K",
+      "dvaph_kJ/mol": "kJ/mol (target)"
+    },
+    "n_rows": 16,
+    "candidate_relations": [
+      {
+        "target": "dvaph_kJ/mol",
+        "features": [
+          "temp_k"
+        ],
+        "note": "蒸发焓~温度: 已知非幂律(临界趋零)"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\heptane_phase.html",
+        "sha256": "a055fa923ea3d9b95e6714a1a30dec2242d45f3b3c81ddd97a031d5463955e95"
+      }
+    ],
+    "notes": [
+      "同温度多来源测量点全部保留(重复测量是真实数据的一部分)",
+      "含 '±' 不确定度的取中心值"
+    ]
+  },
+  "webbook_heptane_dfush": {
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "description": "heptane: 相变 ΔfusH vs 温度逐点测量值 (NIST Chemistry WebBook/TRC 汇编)。ΔvapH(T) 在临界点趋零(Watson 型), 对 T 的幂律只在中段近似——已知非幂律形状。",
+    "columns": {
+      "temp_k": "K",
+      "dfush_kJ/mol": "kJ/mol (target)"
+    },
+    "n_rows": 13,
+    "candidate_relations": [
+      {
+        "target": "dfush_kJ/mol",
+        "features": [
+          "temp_k"
+        ],
+        "note": "蒸发焓~温度: 已知非幂律(临界趋零)"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\heptane_phase.html",
+        "sha256": "a055fa923ea3d9b95e6714a1a30dec2242d45f3b3c81ddd97a031d5463955e95"
+      }
+    ],
+    "notes": [
+      "同温度多来源测量点全部保留(重复测量是真实数据的一部分)",
+      "含 '±' 不确定度的取中心值"
+    ]
+  },
+  "webbook_heptane_dfuss": {
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "description": "heptane: 相变 ΔfusS vs 温度逐点测量值 (NIST Chemistry WebBook/TRC 汇编)。ΔvapH(T) 在临界点趋零(Watson 型), 对 T 的幂律只在中段近似——已知非幂律形状。",
+    "columns": {
+      "temp_k": "K",
+      "dfuss_J/mol*K": "J/mol*K (target)"
+    },
+    "n_rows": 11,
+    "candidate_relations": [
+      {
+        "target": "dfuss_J/mol*K",
+        "features": [
+          "temp_k"
+        ],
+        "note": "蒸发焓~温度: 已知非幂律(临界趋零)"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\heptane_phase.html",
+        "sha256": "a055fa923ea3d9b95e6714a1a30dec2242d45f3b3c81ddd97a031d5463955e95"
+      }
+    ],
+    "notes": [
+      "同温度多来源测量点全部保留(重复测量是真实数据的一部分)",
+      "含 '±' 不确定度的取中心值"
+    ]
+  },
+  "webbook_hexane_dvaph": {
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "description": "hexane: 相变 ΔvapH vs 温度逐点测量值 (NIST Chemistry WebBook/TRC 汇编)。ΔvapH(T) 在临界点趋零(Watson 型), 对 T 的幂律只在中段近似——已知非幂律形状。",
+    "columns": {
+      "temp_k": "K",
+      "dvaph_kJ/mol": "kJ/mol (target)"
+    },
+    "n_rows": 23,
+    "candidate_relations": [
+      {
+        "target": "dvaph_kJ/mol",
+        "features": [
+          "temp_k"
+        ],
+        "note": "蒸发焓~温度: 已知非幂律(临界趋零)"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\hexane_phase.html",
+        "sha256": "0f6efa09c5edbcb9f556052030a7cca4cd079cafd76180e141dae34a706d6102"
+      }
+    ],
+    "notes": [
+      "同温度多来源测量点全部保留(重复测量是真实数据的一部分)",
+      "含 '±' 不确定度的取中心值"
+    ]
+  },
+  "webbook_isooctane_dvaph": {
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "description": "isooctane: 相变 ΔvapH vs 温度逐点测量值 (NIST Chemistry WebBook/TRC 汇编)。ΔvapH(T) 在临界点趋零(Watson 型), 对 T 的幂律只在中段近似——已知非幂律形状。",
+    "columns": {
+      "temp_k": "K",
+      "dvaph_kJ/mol": "kJ/mol (target)"
+    },
+    "n_rows": 18,
+    "candidate_relations": [
+      {
+        "target": "dvaph_kJ/mol",
+        "features": [
+          "temp_k"
+        ],
+        "note": "蒸发焓~温度: 已知非幂律(临界趋零)"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\isooctane_phase.html",
+        "sha256": "7d1c5ff64a8986d151ba3614d715a89a2a365d5ea242bccde3c996359a253af3"
+      }
+    ],
+    "notes": [
+      "同温度多来源测量点全部保留(重复测量是真实数据的一部分)",
+      "含 '±' 不确定度的取中心值"
+    ]
+  },
+  "webbook_methane_dvaph": {
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "description": "methane: 相变 ΔvapH vs 温度逐点测量值 (NIST Chemistry WebBook/TRC 汇编)。ΔvapH(T) 在临界点趋零(Watson 型), 对 T 的幂律只在中段近似——已知非幂律形状。",
+    "columns": {
+      "temp_k": "K",
+      "dvaph_kJ/mol": "kJ/mol (target)"
+    },
+    "n_rows": 16,
+    "candidate_relations": [
+      {
+        "target": "dvaph_kJ/mol",
+        "features": [
+          "temp_k"
+        ],
+        "note": "蒸发焓~温度: 已知非幂律(临界趋零)"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\methane_phase.html",
+        "sha256": "fbe0de409e7cd5885d24b79e67d1ee067c373024254239d917cbf2b7d60df550"
+      }
+    ],
+    "notes": [
+      "同温度多来源测量点全部保留(重复测量是真实数据的一部分)",
+      "含 '±' 不确定度的取中心值"
+    ]
+  },
+  "webbook_methanol_dvaph": {
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "description": "methanol: 相变 ΔvapH vs 温度逐点测量值 (NIST Chemistry WebBook/TRC 汇编)。ΔvapH(T) 在临界点趋零(Watson 型), 对 T 的幂律只在中段近似——已知非幂律形状。",
+    "columns": {
+      "temp_k": "K",
+      "dvaph_kJ/mol": "kJ/mol (target)"
+    },
+    "n_rows": 29,
+    "candidate_relations": [
+      {
+        "target": "dvaph_kJ/mol",
+        "features": [
+          "temp_k"
+        ],
+        "note": "蒸发焓~温度: 已知非幂律(临界趋零)"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\methanol_phase.html",
+        "sha256": "dd34feadbe653a56da4b76ddb368ca375699c5c5c3cf5ddf55b5fc66dd43a239"
+      }
+    ],
+    "notes": [
+      "同温度多来源测量点全部保留(重复测量是真实数据的一部分)",
+      "含 '±' 不确定度的取中心值"
+    ]
+  },
+  "webbook_methyl_chloride_dvaph": {
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "description": "methyl_chloride: 相变 ΔvapH vs 温度逐点测量值 (NIST Chemistry WebBook/TRC 汇编)。ΔvapH(T) 在临界点趋零(Watson 型), 对 T 的幂律只在中段近似——已知非幂律形状。",
+    "columns": {
+      "temp_k": "K",
+      "dvaph_kJ/mol": "kJ/mol (target)"
+    },
+    "n_rows": 10,
+    "candidate_relations": [
+      {
+        "target": "dvaph_kJ/mol",
+        "features": [
+          "temp_k"
+        ],
+        "note": "蒸发焓~温度: 已知非幂律(临界趋零)"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\methyl_chloride_phase.html",
+        "sha256": "560b4d7647552b1ed11e49da91741a41681b43a16214fe76c15bf1289898c508"
+      }
+    ],
+    "notes": [
+      "同温度多来源测量点全部保留(重复测量是真实数据的一部分)",
+      "含 '±' 不确定度的取中心值"
+    ]
+  },
+  "webbook_octane_dvaph": {
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "description": "octane: 相变 ΔvapH vs 温度逐点测量值 (NIST Chemistry WebBook/TRC 汇编)。ΔvapH(T) 在临界点趋零(Watson 型), 对 T 的幂律只在中段近似——已知非幂律形状。",
+    "columns": {
+      "temp_k": "K",
+      "dvaph_kJ/mol": "kJ/mol (target)"
+    },
+    "n_rows": 17,
+    "candidate_relations": [
+      {
+        "target": "dvaph_kJ/mol",
+        "features": [
+          "temp_k"
+        ],
+        "note": "蒸发焓~温度: 已知非幂律(临界趋零)"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\octane_phase.html",
+        "sha256": "059213b741e5d27af42d5fb187fecb92a1d20d33d0503dccd8aac44391ac5c2a"
+      }
+    ],
+    "notes": [
+      "同温度多来源测量点全部保留(重复测量是真实数据的一部分)",
+      "含 '±' 不确定度的取中心值"
+    ]
+  },
+  "webbook_pentane_dvaph": {
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "description": "pentane: 相变 ΔvapH vs 温度逐点测量值 (NIST Chemistry WebBook/TRC 汇编)。ΔvapH(T) 在临界点趋零(Watson 型), 对 T 的幂律只在中段近似——已知非幂律形状。",
+    "columns": {
+      "temp_k": "K",
+      "dvaph_kJ/mol": "kJ/mol (target)"
+    },
+    "n_rows": 13,
+    "candidate_relations": [
+      {
+        "target": "dvaph_kJ/mol",
+        "features": [
+          "temp_k"
+        ],
+        "note": "蒸发焓~温度: 已知非幂律(临界趋零)"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\pentane_phase.html",
+        "sha256": "3c997a4bcc50948ad3ede1559d3ade6811c015a40cbca92999e8696c131dac2f"
+      }
+    ],
+    "notes": [
+      "同温度多来源测量点全部保留(重复测量是真实数据的一部分)",
+      "含 '±' 不确定度的取中心值"
+    ]
+  },
+  "webbook_propane_dvaph": {
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "description": "propane: 相变 ΔvapH vs 温度逐点测量值 (NIST Chemistry WebBook/TRC 汇编)。ΔvapH(T) 在临界点趋零(Watson 型), 对 T 的幂律只在中段近似——已知非幂律形状。",
+    "columns": {
+      "temp_k": "K",
+      "dvaph_kJ/mol": "kJ/mol (target)"
+    },
+    "n_rows": 10,
+    "candidate_relations": [
+      {
+        "target": "dvaph_kJ/mol",
+        "features": [
+          "temp_k"
+        ],
+        "note": "蒸发焓~温度: 已知非幂律(临界趋零)"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\propane_phase.html",
+        "sha256": "237f64fc947c9fe3b0f8db04211191f6beca23967bbb717803541d1fa8e90b8f"
+      }
+    ],
+    "notes": [
+      "同温度多来源测量点全部保留(重复测量是真实数据的一部分)",
+      "含 '±' 不确定度的取中心值"
+    ]
+  },
+  "webbook_propylene_dvaph": {
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "description": "propylene: 相变 ΔvapH vs 温度逐点测量值 (NIST Chemistry WebBook/TRC 汇编)。ΔvapH(T) 在临界点趋零(Watson 型), 对 T 的幂律只在中段近似——已知非幂律形状。",
+    "columns": {
+      "temp_k": "K",
+      "dvaph_kJ/mol": "kJ/mol (target)"
+    },
+    "n_rows": 11,
+    "candidate_relations": [
+      {
+        "target": "dvaph_kJ/mol",
+        "features": [
+          "temp_k"
+        ],
+        "note": "蒸发焓~温度: 已知非幂律(临界趋零)"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\propylene_phase.html",
+        "sha256": "37b2cfae0a1b301bafd3a62ac5bf2bfb5f012b8eb6ea2238a2b5071b6af23005"
+      }
+    ],
+    "notes": [
+      "同温度多来源测量点全部保留(重复测量是真实数据的一部分)",
+      "含 '±' 不确定度的取中心值"
+    ]
+  },
+  "webbook_toluene_dvaph": {
+    "source": "webbook",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=&Units=SI&Mask=4#Phase-Change",
+    "description": "toluene: 相变 ΔvapH vs 温度逐点测量值 (NIST Chemistry WebBook/TRC 汇编)。ΔvapH(T) 在临界点趋零(Watson 型), 对 T 的幂律只在中段近似——已知非幂律形状。",
+    "columns": {
+      "temp_k": "K",
+      "dvaph_kJ/mol": "kJ/mol (target)"
+    },
+    "n_rows": 26,
+    "candidate_relations": [
+      {
+        "target": "dvaph_kJ/mol",
+        "features": [
+          "temp_k"
+        ],
+        "note": "蒸发焓~温度: 已知非幂律(临界趋零)"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\webbook\\toluene_phase.html",
+        "sha256": "04441fa5193b4c7a03205517b20a2278113aaacfadf6e1ebd407013713eeda9d"
+      }
+    ],
+    "notes": [
+      "同温度多来源测量点全部保留(重复测量是真实数据的一部分)",
+      "含 '±' 不确定度的取中心值"
+    ]
+  },
+  "usgs_07374000_rating": {
+    "source": "usgs",
+    "source_url": "https://waterservices.usgs.gov/nwis/iv/?sites=07374000&startDT=2023-01-01&endDT=2023-12-31&parameterCd=00060,00065&format=json",
+    "description": "USGS 站 07374000 (Mississippi River at Baton Rouge, LA) 2023 年瞬时值: 流量 Q vs 水位 h——教科书率定曲线 Q=C(h-h0)^n, n≈1.5-2.5, 是工程界最经典的幂律之一。h0>0 使纯幂律在低水位端系统性失配。",
+    "columns": {
+      "gage_height_ft": "ft (feature)",
+      "discharge_cfs": "ft**3/s (target)"
+    },
+    "n_rows": 21838,
+    "candidate_relations": [
+      {
+        "target": "discharge_cfs",
+        "features": [
+          "gage_height_ft"
+        ],
+        "note": "率定曲线幂律正例(带 h0 截距的轻微失配)"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\usgs\\iv_atchafalaya_simmesport_07374000_2023.json",
+        "sha256": "20e7c8c1613318c2bc385a11cec1cb21fa5a0d797646468c2c81f90b9424cc1b"
+      }
+    ],
+    "notes": [
+      "Q/h 按时间戳精确配对, 负值/缺失(冰封等)已丢行",
+      "时间自相关未处理: 排列检验独立性假设在此是近似"
+    ]
+  },
+  "usgs_09380000_rating": {
+    "source": "usgs",
+    "source_url": "https://waterservices.usgs.gov/nwis/iv/?sites=09380000&startDT=2023-01-01&endDT=2023-12-31&parameterCd=00060,00065&format=json",
+    "description": "USGS 站 09380000 (COLORADO RIVER AT LEES FERRY, AZ) 2023 年瞬时值: 流量 Q vs 水位 h——教科书率定曲线 Q=C(h-h0)^n, n≈1.5-2.5, 是工程界最经典的幂律之一。h0>0 使纯幂律在低水位端系统性失配。",
+    "columns": {
+      "gage_height_ft": "ft (feature)",
+      "discharge_cfs": "ft**3/s (target)"
+    },
+    "n_rows": 35034,
+    "candidate_relations": [
+      {
+        "target": "discharge_cfs",
+        "features": [
+          "gage_height_ft"
+        ],
+        "note": "率定曲线幂律正例(带 h0 截距的轻微失配)"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\usgs\\iv_colorado_leesferry_09380000_2023.json",
+        "sha256": "017cac43583560a04988516aa825d91001cd9c3e72b2c59335911d6b059fa43d"
+      }
+    ],
+    "notes": [
+      "Q/h 按时间戳精确配对, 负值/缺失(冰封等)已丢行",
+      "时间自相关未处理: 排列检验独立性假设在此是近似"
+    ]
+  },
+  "usgs_14105700_rating": {
+    "source": "usgs",
+    "source_url": "https://waterservices.usgs.gov/nwis/iv/?sites=14105700&startDT=2023-01-01&endDT=2023-12-31&parameterCd=00060,00065&format=json",
+    "description": "USGS 站 14105700 (COLUMBIA RIVER AT THE DALLES, OR) 2023 年瞬时值: 流量 Q vs 水位 h——教科书率定曲线 Q=C(h-h0)^n, n≈1.5-2.5, 是工程界最经典的幂律之一。h0>0 使纯幂律在低水位端系统性失配。",
+    "columns": {
+      "gage_height_ft": "ft (feature)",
+      "discharge_cfs": "ft**3/s (target)"
+    },
+    "n_rows": 47042,
+    "candidate_relations": [
+      {
+        "target": "discharge_cfs",
+        "features": [
+          "gage_height_ft"
+        ],
+        "note": "率定曲线幂律正例(带 h0 截距的轻微失配)"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\usgs\\iv_columbia_thedalles_14105700_2023.json",
+        "sha256": "f4923e3f904cfed19be868e1c906b8fc0a91ac6861779f4369c5d8dc3505d1fd"
+      }
+    ],
+    "notes": [
+      "Q/h 按时间戳精确配对, 负值/缺失(冰封等)已丢行",
+      "时间自相关未处理: 排列检验独立性假设在此是近似"
+    ]
+  },
+  "usgs_01184000_rating": {
+    "source": "usgs",
+    "source_url": "https://waterservices.usgs.gov/nwis/iv/?sites=01184000&startDT=2023-01-01&endDT=2023-12-31&parameterCd=00060,00065&format=json",
+    "description": "USGS 站 01184000 (CONNECTICUT RIVER AT THOMPSONVILLE, CT) 2023 年瞬时值: 流量 Q vs 水位 h——教科书率定曲线 Q=C(h-h0)^n, n≈1.5-2.5, 是工程界最经典的幂律之一。h0>0 使纯幂律在低水位端系统性失配。",
+    "columns": {
+      "gage_height_ft": "ft (feature)",
+      "discharge_cfs": "ft**3/s (target)"
+    },
+    "n_rows": 34523,
+    "candidate_relations": [
+      {
+        "target": "discharge_cfs",
+        "features": [
+          "gage_height_ft"
+        ],
+        "note": "率定曲线幂律正例(带 h0 截距的轻微失配)"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\usgs\\iv_connecticut_thompsonville_01184000_2023.json",
+        "sha256": "97badf5c7a2f765eba16729dac2f647160e1946c9f3aff7795babec3c1806039"
+      }
+    ],
+    "notes": [
+      "Q/h 按时间戳精确配对, 负值/缺失(冰封等)已丢行",
+      "时间自相关未处理: 排列检验独立性假设在此是近似"
+    ]
+  },
+  "usgs_01463500_rating": {
+    "source": "usgs",
+    "source_url": "https://waterservices.usgs.gov/nwis/iv/?sites=01463500&startDT=2023-01-01&endDT=2023-12-31&parameterCd=00060,00065&format=json",
+    "description": "USGS 站 01463500 (Delaware River at Trenton NJ) 2023 年瞬时值: 流量 Q vs 水位 h——教科书率定曲线 Q=C(h-h0)^n, n≈1.5-2.5, 是工程界最经典的幂律之一。h0>0 使纯幂律在低水位端系统性失配。",
+    "columns": {
+      "gage_height_ft": "ft (feature)",
+      "discharge_cfs": "ft**3/s (target)"
+    },
+    "n_rows": 34521,
+    "candidate_relations": [
+      {
+        "target": "discharge_cfs",
+        "features": [
+          "gage_height_ft"
+        ],
+        "note": "率定曲线幂律正例(带 h0 截距的轻微失配)"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\usgs\\iv_delaware_trenton_01463500_2023.json",
+        "sha256": "aa3f0c6b9bcb45f163717855d2c30dd36e4a43ae0d6bd1600ff945448a4b1360"
+      }
+    ],
+    "notes": [
+      "Q/h 按时间戳精确配对, 负值/缺失(冰封等)已丢行",
+      "时间自相关未处理: 排列检验独立性假设在此是近似"
+    ]
+  },
+  "usgs_08158000_rating": {
+    "source": "usgs",
+    "source_url": "https://waterservices.usgs.gov/nwis/iv/?sites=08158000&startDT=2023-01-01&endDT=2023-12-31&parameterCd=00060,00065&format=json",
+    "description": "USGS 站 08158000 (Colorado Rv at Austin, TX) 2023 年瞬时值: 流量 Q vs 水位 h——教科书率定曲线 Q=C(h-h0)^n, n≈1.5-2.5, 是工程界最经典的幂律之一。h0>0 使纯幂律在低水位端系统性失配。",
+    "columns": {
+      "gage_height_ft": "ft (feature)",
+      "discharge_cfs": "ft**3/s (target)"
+    },
+    "n_rows": 104889,
+    "candidate_relations": [
+      {
+        "target": "discharge_cfs",
+        "features": [
+          "gage_height_ft"
+        ],
+        "note": "率定曲线幂律正例(带 h0 截距的轻微失配)"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\usgs\\iv_guadalupe_08158000_2023.json",
+        "sha256": "3a8c306ceec9f8c1684e6bdbe2c8ff20b073c05ec5390ef3ba6fa47ceedd29dd"
+      }
+    ],
+    "notes": [
+      "Q/h 按时间戳精确配对, 负值/缺失(冰封等)已丢行",
+      "时间自相关未处理: 排列检验独立性假设在此是近似"
+    ]
+  },
+  "usgs_07010000_rating": {
+    "source": "usgs",
+    "source_url": "https://waterservices.usgs.gov/nwis/iv/?sites=07010000&startDT=2023-01-01&endDT=2023-12-31&parameterCd=00060,00065&format=json",
+    "description": "USGS 站 07010000 (Mississippi River at St. Louis, MO) 2023 年瞬时值: 流量 Q vs 水位 h——教科书率定曲线 Q=C(h-h0)^n, n≈1.5-2.5, 是工程界最经典的幂律之一。h0>0 使纯幂律在低水位端系统性失配。",
+    "columns": {
+      "gage_height_ft": "ft (feature)",
+      "discharge_cfs": "ft**3/s (target)"
+    },
+    "n_rows": 11575,
+    "candidate_relations": [
+      {
+        "target": "discharge_cfs",
+        "features": [
+          "gage_height_ft"
+        ],
+        "note": "率定曲线幂律正例(带 h0 截距的轻微失配)"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\usgs\\iv_mississippi_memphis_07010000_2023.json",
+        "sha256": "548f99c3d9b1b97e43f7412a24107c324cfd3f2281b4a4545e9a224f3706f18f"
+      }
+    ],
+    "notes": [
+      "Q/h 按时间戳精确配对, 负值/缺失(冰封等)已丢行",
+      "时间自相关未处理: 排列检验独立性假设在此是近似"
+    ]
+  },
+  "usgs_06934500_rating": {
+    "source": "usgs",
+    "source_url": "https://waterservices.usgs.gov/nwis/iv/?sites=06934500&startDT=2023-01-01&endDT=2023-12-31&parameterCd=00060,00065&format=json",
+    "description": "USGS 站 06934500 (Missouri River at Hermann, MO) 2023 年瞬时值: 流量 Q vs 水位 h——教科书率定曲线 Q=C(h-h0)^n, n≈1.5-2.5, 是工程界最经典的幂律之一。h0>0 使纯幂律在低水位端系统性失配。",
+    "columns": {
+      "gage_height_ft": "ft (feature)",
+      "discharge_cfs": "ft**3/s (target)"
+    },
+    "n_rows": 31143,
+    "candidate_relations": [
+      {
+        "target": "discharge_cfs",
+        "features": [
+          "gage_height_ft"
+        ],
+        "note": "率定曲线幂律正例(带 h0 截距的轻微失配)"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\usgs\\iv_missouri_hermann_06934500_2023.json",
+        "sha256": "0af753605f18f1012d1b4f123cbe43b8998b54b8e3d7e0d9aeb10b4f299bed57"
+      }
+    ],
+    "notes": [
+      "Q/h 按时间戳精确配对, 负值/缺失(冰封等)已丢行",
+      "时间自相关未处理: 排列检验独立性假设在此是近似"
+    ]
+  },
+  "usgs_12484500_rating": {
+    "source": "usgs",
+    "source_url": "https://waterservices.usgs.gov/nwis/iv/?sites=12484500&startDT=2023-01-01&endDT=2023-12-31&parameterCd=00060,00065&format=json",
+    "description": "USGS 站 12484500 (YAKIMA RIVER AT UMTANUM, WA) 2023 年瞬时值: 流量 Q vs 水位 h——教科书率定曲线 Q=C(h-h0)^n, n≈1.5-2.5, 是工程界最经典的幂律之一。h0>0 使纯幂律在低水位端系统性失配。",
+    "columns": {
+      "gage_height_ft": "ft (feature)",
+      "discharge_cfs": "ft**3/s (target)"
+    },
+    "n_rows": 34777,
+    "candidate_relations": [
+      {
+        "target": "discharge_cfs",
+        "features": [
+          "gage_height_ft"
+        ],
+        "note": "率定曲线幂律正例(带 h0 截距的轻微失配)"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\usgs\\iv_nooksack_12484500_2023.json",
+        "sha256": "77c56daf642acb73c3230c2e953c8200660bcc9859b800c666294860983b18bc"
+      }
+    ],
+    "notes": [
+      "Q/h 按时间戳精确配对, 负值/缺失(冰封等)已丢行",
+      "时间自相关未处理: 排列检验独立性假设在此是近似"
+    ]
+  },
+  "usgs_01646500_rating": {
+    "source": "usgs",
+    "source_url": "https://waterservices.usgs.gov/nwis/iv/?sites=01646500&startDT=2023-01-01&endDT=2023-12-31&parameterCd=00060,00065&format=json",
+    "description": "USGS 站 01646500 (POTOMAC RIVER NEAR WASH, DC LITTLE FALLS PUMP STA) 2023 年瞬时值: 流量 Q vs 水位 h——教科书率定曲线 Q=C(h-h0)^n, n≈1.5-2.5, 是工程界最经典的幂律之一。h0>0 使纯幂律在低水位端系统性失配。",
+    "columns": {
+      "gage_height_ft": "ft (feature)",
+      "discharge_cfs": "ft**3/s (target)"
+    },
+    "n_rows": 34761,
+    "candidate_relations": [
+      {
+        "target": "discharge_cfs",
+        "features": [
+          "gage_height_ft"
+        ],
+        "note": "率定曲线幂律正例(带 h0 截距的轻微失配)"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\usgs\\iv_potomac_01646500_2023.json",
+        "sha256": "2717c4b47abd481b778d62db5708424cc5e9408433f86d812893e42ee059a558"
+      }
+    ],
+    "notes": [
+      "Q/h 按时间戳精确配对, 负值/缺失(冰封等)已丢行",
+      "时间自相关未处理: 排列检验独立性假设在此是近似"
+    ]
+  },
+  "usgs_11447650_rating": {
+    "source": "usgs",
+    "source_url": "https://waterservices.usgs.gov/nwis/iv/?sites=11447650&startDT=2023-01-01&endDT=2023-12-31&parameterCd=00060,00065&format=json",
+    "description": "USGS 站 11447650 (SACRAMENTO R A FREEPORT CA) 2023 年瞬时值: 流量 Q vs 水位 h——教科书率定曲线 Q=C(h-h0)^n, n≈1.5-2.5, 是工程界最经典的幂律之一。h0>0 使纯幂律在低水位端系统性失配。",
+    "columns": {
+      "gage_height_ft": "ft (feature)",
+      "discharge_cfs": "ft**3/s (target)"
+    },
+    "n_rows": 34928,
+    "candidate_relations": [
+      {
+        "target": "discharge_cfs",
+        "features": [
+          "gage_height_ft"
+        ],
+        "note": "率定曲线幂律正例(带 h0 截距的轻微失配)"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\usgs\\iv_sacramento_freeport_11447650_2023.json",
+        "sha256": "89df1f888ad790e9ac92d5135e2c7b064a0f330326a728e960e046fea8454b43"
+      }
+    ],
+    "notes": [
+      "Q/h 按时间戳精确配对, 负值/缺失(冰封等)已丢行",
+      "时间自相关未处理: 排列检验独立性假设在此是近似"
+    ]
+  },
+  "usgs_01570500_rating": {
+    "source": "usgs",
+    "source_url": "https://waterservices.usgs.gov/nwis/iv/?sites=01570500&startDT=2023-01-01&endDT=2023-12-31&parameterCd=00060,00065&format=json",
+    "description": "USGS 站 01570500 (Susquehanna River at Harrisburg, PA) 2023 年瞬时值: 流量 Q vs 水位 h——教科书率定曲线 Q=C(h-h0)^n, n≈1.5-2.5, 是工程界最经典的幂律之一。h0>0 使纯幂律在低水位端系统性失配。",
+    "columns": {
+      "gage_height_ft": "ft (feature)",
+      "discharge_cfs": "ft**3/s (target)"
+    },
+    "n_rows": 17238,
+    "candidate_relations": [
+      {
+        "target": "discharge_cfs",
+        "features": [
+          "gage_height_ft"
+        ],
+        "note": "率定曲线幂律正例(带 h0 截距的轻微失配)"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\usgs\\iv_susquehanna_harrisburg_01570500_2023.json",
+        "sha256": "861c7871701d908b4b57a22e46a89bc62d09032ab5c526a84e67eb41b8c087bb"
+      }
+    ],
+    "notes": [
+      "Q/h 按时间戳精确配对, 负值/缺失(冰封等)已丢行",
+      "时间自相关未处理: 排列检验独立性假设在此是近似"
+    ]
+  },
+  "rdataset_pressure": {
+    "source": "rdatasets",
+    "source_url": "https://vincentarelbundock.github.io/Rdatasets/csv/datasets/pressure.csv",
+    "description": "汞蒸气压 vs 温度 (Weast 手册, n=19): log P 对 1/T 的 Clausius-Clapeyron 形状, 对 T 的幂律显著弯曲。小 n 名场面。",
+    "columns": {
+      "temperature": "degC",
+      "pressure": "mm Hg (target)"
+    },
+    "n_rows": 19,
+    "candidate_relations": [
+      {
+        "target": "pressure",
+        "features": [
+          "temperature"
+        ],
+        "note": "蒸气压曲线, 非幂律"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\rdatasets\\pressure.csv",
+        "sha256": "5ef371dc3f05836aab2f46025c5cc7574a460afbc6d31d875d73194ac1f157b5"
+      }
+    ],
+    "notes": [
+      "n=19, 小样本校准考场"
+    ]
+  },
+  "rdataset_cars": {
+    "source": "rdatasets",
+    "source_url": "https://vincentarelbundock.github.io/Rdatasets/csv/datasets/cars.csv",
+    "description": "1920 年代汽车: 制动距离 vs 车速 (Ezekiel 1930, n=50)。物理上 dist ≈ v²/2μg(动能项), 二次律是真结构。",
+    "columns": {
+      "speed": "mph",
+      "dist": "ft (target)"
+    },
+    "n_rows": 50,
+    "candidate_relations": [
+      {
+        "target": "dist",
+        "features": [
+          "speed"
+        ],
+        "note": "制动距离~速度, 理论指数 2"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\rdatasets\\cars.csv",
+        "sha256": "08e75516e5fd1377db316a3ed790545c942dcf905c69f49d0c6f16873a4a6242"
+      }
+    ],
+    "notes": []
+  },
+  "rdataset_rock": {
+    "source": "rdatasets",
+    "source_url": "https://vincentarelbundock.github.io/Rdatasets/csv/datasets/rock.csv",
+    "description": "石油工程岩芯: 渗透率 perm vs 面积 area/周长 peri (n=48)。",
+    "columns": {
+      "area": "px",
+      "peri": "px",
+      "perm": "millidarcy (target)"
+    },
+    "n_rows": 48,
+    "candidate_relations": [
+      {
+        "target": "perm",
+        "features": [
+          "area"
+        ],
+        "note": ""
+      },
+      {
+        "target": "perm",
+        "features": [
+          "peri"
+        ],
+        "note": ""
+      },
+      {
+        "target": "perm",
+        "features": [
+          "area",
+          "peri"
+        ],
+        "note": "双特征共线"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\rdatasets\\rock.csv",
+        "sha256": "6dfbd52bc247177469e716fdc8395e43f0f776f5c08f88ad275d3993f25da2fd"
+      }
+    ],
+    "notes": [
+      "area/peri 为图像像素单位"
+    ]
+  },
+  "rdataset_trees": {
+    "source": "rdatasets",
+    "source_url": "https://vincentarelbundock.github.io/Rdatasets/csv/datasets/trees.csv",
+    "description": "黑樱桃树: 材积 vs 胸径/树高 (n=31)。几何上 V ∝ D²·H, 接近真实幂律结构(正对照素材)。",
+    "columns": {
+      "Girth": "in (直径)",
+      "Height": "ft",
+      "Volume": "ft**3 (target)"
+    },
+    "n_rows": 31,
+    "candidate_relations": [
+      {
+        "target": "Volume",
+        "features": [
+          "Girth"
+        ],
+        "note": "材积~胸径, 理论指数≈2"
+      },
+      {
+        "target": "Volume",
+        "features": [
+          "Height"
+        ],
+        "note": "材积~树高, 理论指数≈1"
+      },
+      {
+        "target": "Volume",
+        "features": [
+          "Girth",
+          "Height"
+        ],
+        "note": "双特征, 接近精确幂律"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\rdatasets\\trees.csv",
+        "sha256": "7547a8a919872cf39d2e77db7a2945e1abe258e0c40e3f2482586103fa2f7948"
+      }
+    ],
+    "notes": []
+  },
+  "rdataset_attenu": {
+    "source": "rdatasets",
+    "source_url": "https://vincentarelbundock.github.io/Rdatasets/csv/datasets/attenu.csv",
+    "description": "加州大地震强震记录 (Joyner-Boore 1981, n=182): 峰值地面加速度 vs 震级/震中距。GMPE 类关系的真实样本, 距离衰减近似幂律。",
+    "columns": {
+      "mag": "Richter",
+      "dist": "km",
+      "accel": "g (target)"
+    },
+    "n_rows": 182,
+    "candidate_relations": [
+      {
+        "target": "accel",
+        "features": [
+          "dist"
+        ],
+        "note": "加速度~震中距, 衰减"
+      },
+      {
+        "target": "accel",
+        "features": [
+          "mag",
+          "dist"
+        ],
+        "note": "双特征 GMPE 类"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\rdatasets\\attenu.csv",
+        "sha256": "5ea8f236c21c775cf508128911628b95eac2bf8222464c369107e399244ce3da"
+      }
+    ],
+    "notes": [
+      "event/station 为分类列, 清洗期剔除"
+    ]
+  },
+  "rdataset_housing": {
+    "source": "rdatasets",
+    "source_url": "https://vincentarelbundock.github.io/Rdatasets/csv/Ecdat/Housing.csv",
+    "description": "House-sold-in-Windsor: 成交价 vs 地块/结构 (Anglin & Gencay 1996, n=546)。价格~地块面积是 hedonic 幂律候选。",
+    "columns": {
+      "price": "CAD (target)",
+      "lotsize": "ft**2",
+      "bedrooms": "count",
+      "bathrms": "count",
+      "stories": "count"
+    },
+    "n_rows": 546,
+    "candidate_relations": [
+      {
+        "target": "price",
+        "features": [
+          "lotsize"
+        ],
+        "note": ""
+      },
+      {
+        "target": "price",
+        "features": [
+          "lotsize",
+          "bedrooms",
+          "bathrms",
+          "stories"
+        ],
+        "note": "多特征 hedonic"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\rdatasets\\housing.csv",
+        "sha256": "8b2ae10b051d64d8f6bfc8aad588abdd9bcf18458e430ae0e515010215f65400"
+      }
+    ],
+    "notes": [
+      "driveway/recroom 等哑变量列已保留但不进关系"
+    ]
+  },
+  "rdataset_electricity": {
+    "source": "rdatasets",
+    "source_url": "https://vincentarelbundock.github.io/Rdatasets/csv/Ecdat/Electricity.csv",
+    "description": "美国电力公司横截面 (n=158): 总成本 vs 产出与要素价格, 成本函数 cost~q 是经典规模弹性考场。",
+    "columns": {
+      "cost": "total cost (target)",
+      "q": "output (kWh)",
+      "pl": "wage",
+      "pk": "capital price",
+      "pf": "fuel price"
+    },
+    "n_rows": 158,
+    "candidate_relations": [
+      {
+        "target": "cost",
+        "features": [
+          "q"
+        ],
+        "note": "成本~产出: 规模经济考题"
+      },
+      {
+        "target": "cost",
+        "features": [
+          "q",
+          "pf"
+        ],
+        "note": "双特征"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\rdatasets\\electricity.csv",
+        "sha256": "7331a074eac71f8592da91c81b6dad4298f60040634a8c0e0b45cad56e0287a3"
+      }
+    ],
+    "notes": [
+      "要素份额 sl/sk/sf 列已保留但不进关系"
+    ]
+  },
+  "rdataset_stormer": {
+    "source": "rdatasets",
+    "source_url": "https://vincentarelbundock.github.io/Rdatasets/csv/MASS/stormer.csv",
+    "description": "Stormer 旋转粘度计 (n=23): 流出时间 vs 液体粘度与驱动砝码重。粘度计量学经典小样本; time~viscosity 近过原点线性(幂律 p≈1)。",
+    "columns": {
+      "Viscosity": "poise",
+      "Wt": "g weight",
+      "Time": "s (target)"
+    },
+    "n_rows": 23,
+    "candidate_relations": [
+      {
+        "target": "Time",
+        "features": [
+          "Viscosity"
+        ],
+        "note": "流出时间~粘度"
+      },
+      {
+        "target": "Time",
+        "features": [
+          "Viscosity",
+          "Wt"
+        ],
+        "note": "双特征: 砝码重改变驱动力矩"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\rdatasets\\stormer.csv",
+        "sha256": "02832e5da13ad8b510c4bbe6fb020f02d04cecb2ebdf356caa4339380f179e02"
+      }
+    ],
+    "notes": [
+      "Williams 标定模型是 time·Wt = k·(viscosity + c), 幂律作对照"
+    ]
+  },
+  "rdataset_whiteside": {
+    "source": "rdatasets",
+    "source_url": "https://vincentarelbundock.github.io/Rdatasets/csv/MASS/whiteside.csv",
+    "description": "谢菲尔德住宅保温前后燃气消耗 vs 室外温度 (n=56, Whiteside 1965)。采暖需求~温差的工程能效关系; 绝对温标下近线性带截距。",
+    "columns": {
+      "temp_k": "K (converted from C)",
+      "Gas": "1000 ft3/week (target)",
+      "Insul": "Before/After"
+    },
+    "n_rows": 56,
+    "candidate_relations": [
+      {
+        "target": "Gas",
+        "features": [
+          "temp_k"
+        ],
+        "note": "采暖负荷~室外绝对温度, 近线性带截距"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\rdatasets\\whiteside.csv",
+        "sha256": "306930c8ea31835c768ab5657c8d5d6ef20102343dccbbf4f7010c5bbaa3762f"
+      }
+    ],
+    "notes": [
+      "Temp 原列单位 C 且含负值, 显式换算 temp_k=C+273.15 (本台架第二处单位换算, 留痕)",
+      "Insul 保温前/后混合在同一回归, 列保留供分组核查"
+    ]
+  },
+  "rdataset_cement_hald": {
+    "source": "rdatasets",
+    "source_url": "https://vincentarelbundock.github.io/Rdatasets/csv/MASS/cement.csv",
+    "description": "Hald 水泥数据 (n=13): 四种熟料组分 vs 水化热。多元回归最著名的强共线小样本之一。",
+    "columns": {
+      "x1": "% aluminate",
+      "x2": "% silicate",
+      "x3": "% ferrite",
+      "x4": "% dicalcium",
+      "y": "cal/g heat (target)"
+    },
+    "n_rows": 13,
+    "candidate_relations": [
+      {
+        "target": "y",
+        "features": [
+          "x1"
+        ],
+        "note": "水化热~铝酸钙"
+      },
+      {
+        "target": "y",
+        "features": [
+          "x1",
+          "x2",
+          "x3",
+          "x4"
+        ],
+        "note": "四组分全特征, 强共线考场"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\rdatasets\\cement_hald.csv",
+        "sha256": "1b91e175e9776f9ebda7bdd32b060bf661ce5cd33841c9f81033b56daafc6997"
+      }
+    ],
+    "notes": [
+      "n=13 低于多数检验的可用样本量, 小样本拒检留痕"
+    ]
+  },
+  "rdataset_petrol": {
+    "source": "rdatasets",
+    "source_url": "https://vincentarelbundock.github.io/Rdatasets/csv/MASS/petrol.csv",
+    "description": "Prater 汽油炼厂数据 (n=32): 汽油收率 Y vs 原油比重/蒸气压/ASTM 馏程。Daniel-Wood 同源, 分组结构(No 列)是场景变量。",
+    "columns": {
+      "SG": "specific gravity",
+      "VP": "lbf/in2 vapor pressure",
+      "V10": "F ASTM 10% point",
+      "EP": "F end point",
+      "Y": "% yield (target)"
+    },
+    "n_rows": 32,
+    "candidate_relations": [
+      {
+        "target": "Y",
+        "features": [
+          "EP"
+        ],
+        "note": "收率~终馏点"
+      },
+      {
+        "target": "Y",
+        "features": [
+          "SG",
+          "VP",
+          "V10",
+          "EP"
+        ],
+        "note": "四物性特征"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\rdatasets\\petrol.csv",
+        "sha256": "2c4e989ae4f7f5b7fc9ec294a9a11bddf47da0ba43f2c1f697bf9216d683eb15"
+      }
+    ],
+    "notes": [
+      "No 列为炼厂分组(A-E), 保留供 fit_scenarios 分组实验"
+    ]
+  },
+  "rdataset_women": {
+    "source": "rdatasets",
+    "source_url": "https://vincentarelbundock.github.io/Rdatasets/csv/datasets/women.csv",
+    "description": "美国 30-39 岁女性平均身高体重 (n=15): 体重~身高^p 的异速律小样本(工程人因/生物力学口径)。",
+    "columns": {
+      "height": "in",
+      "weight": "lb (target)"
+    },
+    "n_rows": 15,
+    "candidate_relations": [
+      {
+        "target": "weight",
+        "features": [
+          "height"
+        ],
+        "note": "体重~身高, 理论指数 2-3"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\rdatasets\\women.csv",
+        "sha256": "ff95dfaa417b2da885d08a1e9844a73ccf398263ac29b823e227437e590b361c"
+      }
+    ],
+    "notes": [
+      "n=15 小样本; 逐身高平均后的理想化数据, 方差被压缩"
+    ]
+  },
+  "rdataset_airquality": {
+    "source": "rdatasets",
+    "source_url": "https://vincentarelbundock.github.io/Rdatasets/csv/datasets/airquality.csv",
+    "description": "纽约 1973 年 5-9 月日均值 (n=153): 臭氧 vs 风/温/辐射。风速对地面臭氧是稀释扩散负幂律; 温度是光化学正相关。",
+    "columns": {
+      "Ozone": "ppb (target)",
+      "Solar.R": "langley",
+      "Wind": "mph",
+      "Temp": "F"
+    },
+    "n_rows": 153,
+    "candidate_relations": [
+      {
+        "target": "Ozone",
+        "features": [
+          "Wind"
+        ],
+        "note": "臭氧~风速: 稀释扩散负指数"
+      },
+      {
+        "target": "Ozone",
+        "features": [
+          "Temp"
+        ],
+        "note": "臭氧~温度: 光化学"
+      },
+      {
+        "target": "Ozone",
+        "features": [
+          "Wind",
+          "Temp",
+          "Solar.R"
+        ],
+        "note": "三特征多变量"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\rdatasets\\airquality.csv",
+        "sha256": "65d2c4afd976c169af9bb0bd97e9e78e1e8a185f1b52e2e3153e30f90c7fb5f8"
+      }
+    ],
+    "notes": [
+      "Ozone/Solar.R 含 NA, 运行时 dropna 不插值",
+      "Month/Day 列保留不进关系"
+    ]
+  },
+  "rdataset_puromycin": {
+    "source": "rdatasets",
+    "source_url": "https://vincentarelbundock.github.io/Rdatasets/csv/datasets/Puromycin.csv",
+    "description": "嘌呤霉素酶促反应 (n=23): 反应速率 vs 底物浓度。Michaelis-Menten 饱和曲线是幂律的教科书反例(低浓度近线性、高浓度趋平台)。",
+    "columns": {
+      "conc": "ppm",
+      "rate": "counts/min (target)",
+      "state": "treated factor"
+    },
+    "n_rows": 23,
+    "candidate_relations": [
+      {
+        "target": "rate",
+        "features": [
+          "conc"
+        ],
+        "note": "Michaelis-Menten 饱和, 已知非幂律"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\rdatasets\\puromycin.csv",
+        "sha256": "389be46927d2217b13d48b5b9ec56374007a87ea607c8e6f004c17683c427c70"
+      }
+    ],
+    "notes": [
+      "state(treated/untreated)混合在同一回归, 列保留供分组"
+    ]
+  },
+  "meteo_altamont_pass": {
+    "source": "open_meteo",
+    "source_url": "https://archive-api.open-meteo.com/v1/archive?latitude=37.71529&longitude=-121.64438&start_date=2023-01-01&end_date=2023-12-31&timezone=UTC",
+    "description": "Open-Meteo/ERA5 再分析 altamont_pass (37.71529, -121.64438) 2023 逐小时风速。风工程教科书幂律: v(z2)=v(z1)·(z2/z1)^α(α≈0.11 海上~0.2 陆上), 阵风系数 gust/v10 近常数。",
+    "columns": {
+      "wind_speed_10m": "km/h",
+      "wind_speed_100m": "km/h",
+      "wind_gusts_10m": "km/h (target)"
+    },
+    "n_rows": 8760,
+    "candidate_relations": [
+      {
+        "target": "wind_speed_100m",
+        "features": [
+          "wind_speed_10m"
+        ],
+        "note": "风速切变幂律 v100~v10 (H0 正考场)"
+      },
+      {
+        "target": "wind_gusts_10m",
+        "features": [
+          "wind_speed_10m"
+        ],
+        "note": "阵风~平均风速, 阵风系数近常数"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\open_meteo\\altamont_pass_2023.json",
+        "sha256": "06c06261d2780bd5091c0cbfaaa2b77cfa9bff9df32f9a64c08e72144ce88e54"
+      }
+    ],
+    "notes": [
+      "ERA5 是观测同化再分析, 非现场测风塔; 剪切指数系统性偏低是已知偏差, 不作现场标定用",
+      "静风 0 值行被运行时正值过滤; 单位 km/h 未换算",
+      "逐小时时间自相关, 排列检验独立性假设是近似"
+    ]
+  },
+  "meteo_baltic_ruegen": {
+    "source": "open_meteo",
+    "source_url": "https://archive-api.open-meteo.com/v1/archive?latitude=54.65729&longitude=13.313609&start_date=2023-01-01&end_date=2023-12-31&timezone=UTC",
+    "description": "Open-Meteo/ERA5 再分析 baltic_ruegen (54.65729, 13.313609) 2023 逐小时风速。风工程教科书幂律: v(z2)=v(z1)·(z2/z1)^α(α≈0.11 海上~0.2 陆上), 阵风系数 gust/v10 近常数。",
+    "columns": {
+      "wind_speed_10m": "km/h",
+      "wind_speed_100m": "km/h",
+      "wind_gusts_10m": "km/h (target)"
+    },
+    "n_rows": 8760,
+    "candidate_relations": [
+      {
+        "target": "wind_speed_100m",
+        "features": [
+          "wind_speed_10m"
+        ],
+        "note": "风速切变幂律 v100~v10 (H0 正考场)"
+      },
+      {
+        "target": "wind_gusts_10m",
+        "features": [
+          "wind_speed_10m"
+        ],
+        "note": "阵风~平均风速, 阵风系数近常数"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\open_meteo\\baltic_ruegen_2023.json",
+        "sha256": "984c724aa81d074321b4623e37da4e0c1e5d11fe16aa47b70688111314390e3a"
+      }
+    ],
+    "notes": [
+      "ERA5 是观测同化再分析, 非现场测风塔; 剪切指数系统性偏低是已知偏差, 不作现场标定用",
+      "静风 0 值行被运行时正值过滤; 单位 km/h 未换算",
+      "逐小时时间自相关, 排列检验独立性假设是近似"
+    ]
+  },
+  "meteo_german_bight": {
+    "source": "open_meteo",
+    "source_url": "https://archive-api.open-meteo.com/v1/archive?latitude=54.024605&longitude=7.4999995&start_date=2023-01-01&end_date=2023-12-31&timezone=UTC",
+    "description": "Open-Meteo/ERA5 再分析 german_bight (54.024605, 7.4999995) 2023 逐小时风速。风工程教科书幂律: v(z2)=v(z1)·(z2/z1)^α(α≈0.11 海上~0.2 陆上), 阵风系数 gust/v10 近常数。",
+    "columns": {
+      "wind_speed_10m": "km/h",
+      "wind_speed_100m": "km/h",
+      "wind_gusts_10m": "km/h (target)"
+    },
+    "n_rows": 8760,
+    "candidate_relations": [
+      {
+        "target": "wind_speed_100m",
+        "features": [
+          "wind_speed_10m"
+        ],
+        "note": "风速切变幂律 v100~v10 (H0 正考场)"
+      },
+      {
+        "target": "wind_gusts_10m",
+        "features": [
+          "wind_speed_10m"
+        ],
+        "note": "阵风~平均风速, 阵风系数近常数"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\open_meteo\\german_bight_2023.json",
+        "sha256": "9e1e637e8a64b51376095e03a03e83318c5d3fb4047c91b8615e1f98e8919053"
+      }
+    ],
+    "notes": [
+      "ERA5 是观测同化再分析, 非现场测风塔; 剪切指数系统性偏低是已知偏差, 不作现场标定用",
+      "静风 0 值行被运行时正值过滤; 单位 km/h 未换算",
+      "逐小时时间自相关, 排列检验独立性假设是近似"
+    ]
+  },
+  "meteo_inner_mongolia": {
+    "source": "open_meteo",
+    "source_url": "https://archive-api.open-meteo.com/v1/archive?latitude=43.971878&longitude=113.490135&start_date=2023-01-01&end_date=2023-12-31&timezone=UTC",
+    "description": "Open-Meteo/ERA5 再分析 inner_mongolia (43.971878, 113.490135) 2023 逐小时风速。风工程教科书幂律: v(z2)=v(z1)·(z2/z1)^α(α≈0.11 海上~0.2 陆上), 阵风系数 gust/v10 近常数。",
+    "columns": {
+      "wind_speed_10m": "km/h",
+      "wind_speed_100m": "km/h",
+      "wind_gusts_10m": "km/h (target)"
+    },
+    "n_rows": 8760,
+    "candidate_relations": [
+      {
+        "target": "wind_speed_100m",
+        "features": [
+          "wind_speed_10m"
+        ],
+        "note": "风速切变幂律 v100~v10 (H0 正考场)"
+      },
+      {
+        "target": "wind_gusts_10m",
+        "features": [
+          "wind_speed_10m"
+        ],
+        "note": "阵风~平均风速, 阵风系数近常数"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\open_meteo\\inner_mongolia_2023.json",
+        "sha256": "6997165c4368630850dc874b77d0d397183a390eae849bf74d677f12b6d7ed89"
+      }
+    ],
+    "notes": [
+      "ERA5 是观测同化再分析, 非现场测风塔; 剪切指数系统性偏低是已知偏差, 不作现场标定用",
+      "静风 0 值行被运行时正值过滤; 单位 km/h 未换算",
+      "逐小时时间自相关, 排列检验独立性假设是近似"
+    ]
+  },
+  "meteo_iowa_fields": {
+    "source": "open_meteo",
+    "source_url": "https://archive-api.open-meteo.com/v1/archive?latitude=42.003513&longitude=-93.53714&start_date=2023-01-01&end_date=2023-12-31&timezone=UTC",
+    "description": "Open-Meteo/ERA5 再分析 iowa_fields (42.003513, -93.53714) 2023 逐小时风速。风工程教科书幂律: v(z2)=v(z1)·(z2/z1)^α(α≈0.11 海上~0.2 陆上), 阵风系数 gust/v10 近常数。",
+    "columns": {
+      "wind_speed_10m": "km/h",
+      "wind_speed_100m": "km/h",
+      "wind_gusts_10m": "km/h (target)"
+    },
+    "n_rows": 8760,
+    "candidate_relations": [
+      {
+        "target": "wind_speed_100m",
+        "features": [
+          "wind_speed_10m"
+        ],
+        "note": "风速切变幂律 v100~v10 (H0 正考场)"
+      },
+      {
+        "target": "wind_gusts_10m",
+        "features": [
+          "wind_speed_10m"
+        ],
+        "note": "阵风~平均风速, 阵风系数近常数"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\open_meteo\\iowa_fields_2023.json",
+        "sha256": "596a597298c76149548ae6f87bef5aefc97e59ed403378606e42d4a13a0baf9c"
+      }
+    ],
+    "notes": [
+      "ERA5 是观测同化再分析, 非现场测风塔; 剪切指数系统性偏低是已知偏差, 不作现场标定用",
+      "静风 0 值行被运行时正值过滤; 单位 km/h 未换算",
+      "逐小时时间自相关, 排列检验独立性假设是近似"
+    ]
+  },
+  "meteo_kansas_plains": {
+    "source": "open_meteo",
+    "source_url": "https://archive-api.open-meteo.com/v1/archive?latitude=38.488575&longitude=-98.54816&start_date=2023-01-01&end_date=2023-12-31&timezone=UTC",
+    "description": "Open-Meteo/ERA5 再分析 kansas_plains (38.488575, -98.54816) 2023 逐小时风速。风工程教科书幂律: v(z2)=v(z1)·(z2/z1)^α(α≈0.11 海上~0.2 陆上), 阵风系数 gust/v10 近常数。",
+    "columns": {
+      "wind_speed_10m": "km/h",
+      "wind_speed_100m": "km/h",
+      "wind_gusts_10m": "km/h (target)"
+    },
+    "n_rows": 8760,
+    "candidate_relations": [
+      {
+        "target": "wind_speed_100m",
+        "features": [
+          "wind_speed_10m"
+        ],
+        "note": "风速切变幂律 v100~v10 (H0 正考场)"
+      },
+      {
+        "target": "wind_gusts_10m",
+        "features": [
+          "wind_speed_10m"
+        ],
+        "note": "阵风~平均风速, 阵风系数近常数"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\open_meteo\\kansas_plains_2023.json",
+        "sha256": "c66d57de88a822c76efe62d518608f7530df3d9fe47063ad2058db3488fc1d53"
+      }
+    ],
+    "notes": [
+      "ERA5 是观测同化再分析, 非现场测风塔; 剪切指数系统性偏低是已知偏差, 不作现场标定用",
+      "静风 0 值行被运行时正值过滤; 单位 km/h 未换算",
+      "逐小时时间自相关, 排列检验独立性假设是近似"
+    ]
+  },
+  "meteo_north_sea": {
+    "source": "open_meteo",
+    "source_url": "https://archive-api.open-meteo.com/v1/archive?latitude=56.48506&longitude=2.993763&start_date=2023-01-01&end_date=2023-12-31&timezone=UTC",
+    "description": "Open-Meteo/ERA5 再分析 north_sea (56.48506, 2.993763) 2023 逐小时风速。风工程教科书幂律: v(z2)=v(z1)·(z2/z1)^α(α≈0.11 海上~0.2 陆上), 阵风系数 gust/v10 近常数。",
+    "columns": {
+      "wind_speed_10m": "km/h",
+      "wind_speed_100m": "km/h",
+      "wind_gusts_10m": "km/h (target)"
+    },
+    "n_rows": 8760,
+    "candidate_relations": [
+      {
+        "target": "wind_speed_100m",
+        "features": [
+          "wind_speed_10m"
+        ],
+        "note": "风速切变幂律 v100~v10 (H0 正考场)"
+      },
+      {
+        "target": "wind_gusts_10m",
+        "features": [
+          "wind_speed_10m"
+        ],
+        "note": "阵风~平均风速, 阵风系数近常数"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\open_meteo\\north_sea_2023.json",
+        "sha256": "dbc98071da6781c1fdb1a61a5091b764e4e8aa6525a3a586532a6d2f4ecc0d3f"
+      }
+    ],
+    "notes": [
+      "ERA5 是观测同化再分析, 非现场测风塔; 剪切指数系统性偏低是已知偏差, 不作现场标定用",
+      "静风 0 值行被运行时正值过滤; 单位 km/h 未换算",
+      "逐小时时间自相关, 排列检验独立性假设是近似"
+    ]
+  },
+  "meteo_patagonia": {
+    "source": "open_meteo",
+    "source_url": "https://archive-api.open-meteo.com/v1/archive?latitude=-46.994728&longitude=-68.522736&start_date=2023-01-01&end_date=2023-12-31&timezone=UTC",
+    "description": "Open-Meteo/ERA5 再分析 patagonia (-46.994728, -68.522736) 2023 逐小时风速。风工程教科书幂律: v(z2)=v(z1)·(z2/z1)^α(α≈0.11 海上~0.2 陆上), 阵风系数 gust/v10 近常数。",
+    "columns": {
+      "wind_speed_10m": "km/h",
+      "wind_speed_100m": "km/h",
+      "wind_gusts_10m": "km/h (target)"
+    },
+    "n_rows": 8760,
+    "candidate_relations": [
+      {
+        "target": "wind_speed_100m",
+        "features": [
+          "wind_speed_10m"
+        ],
+        "note": "风速切变幂律 v100~v10 (H0 正考场)"
+      },
+      {
+        "target": "wind_gusts_10m",
+        "features": [
+          "wind_speed_10m"
+        ],
+        "note": "阵风~平均风速, 阵风系数近常数"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\open_meteo\\patagonia_2023.json",
+        "sha256": "c66d05d359478127da21d3fefb9e753ef340d599ec1b3cbe3ddee6d124902c10"
+      }
+    ],
+    "notes": [
+      "ERA5 是观测同化再分析, 非现场测风塔; 剪切指数系统性偏低是已知偏差, 不作现场标定用",
+      "静风 0 值行被运行时正值过滤; 单位 km/h 未换算",
+      "逐小时时间自相关, 排列检验独立性假设是近似"
+    ]
+  },
+  "meteo_qingdao_offshore": {
+    "source": "open_meteo",
+    "source_url": "https://archive-api.open-meteo.com/v1/archive?latitude=35.88752&longitude=120.81396&start_date=2023-01-01&end_date=2023-12-31&timezone=UTC",
+    "description": "Open-Meteo/ERA5 再分析 qingdao_offshore (35.88752, 120.81396) 2023 逐小时风速。风工程教科书幂律: v(z2)=v(z1)·(z2/z1)^α(α≈0.11 海上~0.2 陆上), 阵风系数 gust/v10 近常数。",
+    "columns": {
+      "wind_speed_10m": "km/h",
+      "wind_speed_100m": "km/h",
+      "wind_gusts_10m": "km/h (target)"
+    },
+    "n_rows": 8760,
+    "candidate_relations": [
+      {
+        "target": "wind_speed_100m",
+        "features": [
+          "wind_speed_10m"
+        ],
+        "note": "风速切变幂律 v100~v10 (H0 正考场)"
+      },
+      {
+        "target": "wind_gusts_10m",
+        "features": [
+          "wind_speed_10m"
+        ],
+        "note": "阵风~平均风速, 阵风系数近常数"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\open_meteo\\qingdao_offshore_2023.json",
+        "sha256": "eac2bac2a19766f05b75e9aa8c14c583d9dade2fa0c8e9f070429eb04df8a46e"
+      }
+    ],
+    "notes": [
+      "ERA5 是观测同化再分析, 非现场测风塔; 剪切指数系统性偏低是已知偏差, 不作现场标定用",
+      "静风 0 值行被运行时正值过滤; 单位 km/h 未换算",
+      "逐小时时间自相关, 排列检验独立性假设是近似"
+    ]
+  },
+  "meteo_texas_panhandle": {
+    "source": "open_meteo",
+    "source_url": "https://archive-api.open-meteo.com/v1/archive?latitude=35.184532&longitude=-101.823975&start_date=2023-01-01&end_date=2023-12-31&timezone=UTC",
+    "description": "Open-Meteo/ERA5 再分析 texas_panhandle (35.184532, -101.823975) 2023 逐小时风速。风工程教科书幂律: v(z2)=v(z1)·(z2/z1)^α(α≈0.11 海上~0.2 陆上), 阵风系数 gust/v10 近常数。",
+    "columns": {
+      "wind_speed_10m": "km/h",
+      "wind_speed_100m": "km/h",
+      "wind_gusts_10m": "km/h (target)"
+    },
+    "n_rows": 8760,
+    "candidate_relations": [
+      {
+        "target": "wind_speed_100m",
+        "features": [
+          "wind_speed_10m"
+        ],
+        "note": "风速切变幂律 v100~v10 (H0 正考场)"
+      },
+      {
+        "target": "wind_gusts_10m",
+        "features": [
+          "wind_speed_10m"
+        ],
+        "note": "阵风~平均风速, 阵风系数近常数"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\open_meteo\\texas_panhandle_2023.json",
+        "sha256": "a2e3addf0336532cb231ae3ee5f77fa47e6212232c38759f4b99c2ae1a9d75af"
+      }
+    ],
+    "notes": [
+      "ERA5 是观测同化再分析, 非现场测风塔; 剪切指数系统性偏低是已知偏差, 不作现场标定用",
+      "静风 0 值行被运行时正值过滤; 单位 km/h 未换算",
+      "逐小时时间自相关, 排列检验独立性假设是近似"
+    ]
+  },
+  "usgs_eq_global": {
+    "source": "usgs_eq",
+    "source_url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2000-01-01&endtime=2024-12-31&minmagnitude=5.5&orderby=time-asc",
+    "description": "USGS FDSN 全球 M≥5.5 地震目录 2000-2024 (12336 事件): 震级/深度/有感报告数/社区烈度/定位台站数。有感报告~震级是感知人数×烈度放大的超线性标度; 台站数~震级是检测能力标度。",
+    "columns": {
+      "mag": "magnitude (feature)",
+      "depth_km": "km",
+      "felt": "DYFI report count (target)",
+      "cdi": "MMI-like (target)",
+      "nst": "station count (target)",
+      "rms": "s"
+    },
+    "n_rows": 12334,
+    "candidate_relations": [
+      {
+        "target": "felt",
+        "features": [
+          "mag"
+        ],
+        "note": "有感报告数~震级: 人口暴露×烈度超线性"
+      },
+      {
+        "target": "nst",
+        "features": [
+          "mag"
+        ],
+        "note": "定位台站数~震级: 检测能力标度"
+      },
+      {
+        "target": "cdi",
+        "features": [
+          "mag"
+        ],
+        "note": "社区烈度~震级: 能量-烈度换算(指数型)"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\usgs_eq\\global_m55_2000_2024.geojson",
+        "sha256": "b1b55b9d3ad31e0511b098f3eeb08b8cdf083cb8acfaa71804bfa2bf399688b8"
+      }
+    ],
+    "notes": [
+      "felt/cdi 仅有人报告的事件非空(NaN 行保留, 运行时按关系 dropna)",
+      "目录完整性随年代/区域变化, 检测阈值下截断",
+      "事件间独立假设对余震序列是近似"
+    ]
+  },
+  "openml_ailerons": {
+    "source": "openml",
+    "source_url": "https://www.openml.org/d/296",
+    "description": "F-16 飞控横向通道 13750 条记录 (同 elevators 域): 攻角 alpha 与舵面位置 se_pos 为正量级。se_pos~alpha 是纵向配平的真实气动/控制关系。",
+    "columns": {
+      "curPitch": "pitch (mostly positive)",
+      "alpha": "AoA (rad-ish)",
+      "se_pos": "control surface position (target)",
+      "se_t1": "position t-1",
+      "goal": "roll goal (signed, archive)"
+    },
+    "n_rows": 13750,
+    "candidate_relations": [
+      {
+        "target": "se_pos",
+        "features": [
+          "alpha"
+        ],
+        "note": "舵面偏度~攻角: 配平关系"
+      },
+      {
+        "target": "se_pos",
+        "features": [
+          "se_t1"
+        ],
+        "note": "舵位一阶自相关(伺服速率限制)"
+      },
+      {
+        "target": "se_pos",
+        "features": [
+          "alpha",
+          "se_t1"
+        ],
+        "note": "双特征"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\openml\\ailerons.arff",
+        "sha256": "4aecc3e23a49a9a6300cb72c7dd57d6412fb16a0843c5aeb20508604e4fbb3f1"
+      }
+    ],
+    "notes": [
+      "归一化量级, 单位不可恢复(同 elevators)",
+      "goal 列全负(符号约定), 仅存档不进关系"
+    ]
+  },
+  "openml_cpu_act": {
+    "source": "openml",
+    "source_url": "https://www.openml.org/d/197",
+    "description": "Unix 服务器系统遥测 8192 条 (每 5s, CMU statlib 系): CPU 用户态利用率 vs 系统调用/IO 流量/内存/运行队列。利用率~负载是排队论型饱和曲线, 幂律只在中段近似。",
+    "columns": {
+      "lread": "reads/s",
+      "scall": "syscalls/s",
+      "rchar": "chars read/s",
+      "freemem": "pages",
+      "runqsz": "run queue size",
+      "usr_pct": "% CPU user (target)"
+    },
+    "n_rows": 8192,
+    "candidate_relations": [
+      {
+        "target": "usr_pct",
+        "features": [
+          "scall"
+        ],
+        "note": "利用率~系统调用强度: 饱和曲线"
+      },
+      {
+        "target": "usr_pct",
+        "features": [
+          "rchar"
+        ],
+        "note": "利用率~读流量"
+      },
+      {
+        "target": "usr_pct",
+        "features": [
+          "scall",
+          "freemem",
+          "runqsz"
+        ],
+        "note": "多特征: 调用/内存/运行队列"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\openml\\cpu_act.arff",
+        "sha256": "16ada2bd7088e92ac1cdc2c5285275a0bfd72dcafa7095ac3870f9943423c507"
+      }
+    ],
+    "notes": [
+      "usr=0 的空闲行约 3%, 运行时正值过滤",
+      "lread 含 0 值(8%), 该列不进关系"
+    ]
+  },
+  "openml_elusage": {
+    "source": "openml",
+    "source_url": "https://www.openml.org/d/228",
+    "description": "某住宅 55 个月平均电力用量 vs 月均气温 (CMU statlib elusage): 用电~气温呈冬夏双峰 U 形(采暖+制冷), 对幂律是连续弯曲考场。",
+    "columns": {
+      "temp_f": "F",
+      "month": "month index",
+      "usage": "kWh (target)"
+    },
+    "n_rows": 55,
+    "candidate_relations": [
+      {
+        "target": "usage",
+        "features": [
+          "temp_f"
+        ],
+        "note": "用电~气温: U 形非单调"
+      },
+      {
+        "target": "usage",
+        "features": [
+          "temp_f",
+          "month"
+        ],
+        "note": "加月份协变量(季节)"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\openml\\elusage.arff",
+        "sha256": "e6f9abbef35dcbe078723e8428cf7510a64c34daf495763b03db0206adff018d"
+      }
+    ],
+    "notes": [
+      "n=55 小样本; 用量单位原文未明示, 按 kWh 记",
+      "elevators/delta_elevators/delta_ailerons/puma8NH/cloud/pol 已抓取留档但不注册: 全符号关节量/舵面历史负符号约定/退化归一化特征(f1-f48 多常数列)/名义列主导, log 空间不可用(见 README)"
+    ]
+  },
+  "epa_vehicles": {
+    "source": "epa_fueleconomy",
+    "source_url": "https://www.fueleconomy.gov/feg/download.shtml",
+    "description": "EPA/DOE 全美车辆数据库 1984-2025 燃料车主样本 (48624 行): 油耗经济性/尾气 CO2 vs 排量与缸数。comb_mpg~displ 是道路负载(滚阻+气动)负幂律; co2~mpg 由燃烧化学计量近精确反比(指数≈-1)——少有的已知指数真实大样本。",
+    "columns": {
+      "year": "model year",
+      "displ_l": "L",
+      "cylinders": "count",
+      "city_mpg": "MPG",
+      "hwy_mpg": "MPG",
+      "comb_mpg": "MPG (target)",
+      "co2_g_per_mi": "g/mi (target)"
+    },
+    "n_rows": 48624,
+    "candidate_relations": [
+      {
+        "target": "comb_mpg",
+        "features": [
+          "displ_l"
+        ],
+        "note": "油耗经济性~排量: 负幂律"
+      },
+      {
+        "target": "co2_g_per_mi",
+        "features": [
+          "displ_l"
+        ],
+        "note": "尾气 CO2~排量: 正幂律"
+      },
+      {
+        "target": "co2_g_per_mi",
+        "features": [
+          "comb_mpg"
+        ],
+        "note": "CO2~MPG: 化学计量近精确反比, 理论指数 -1"
+      },
+      {
+        "target": "comb_mpg",
+        "features": [
+          "displ_l",
+          "cylinders"
+        ],
+        "note": "排量+缸数(缸数离散 2-16)"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\epa_fueleconomy\\vehicles.csv.zip",
+        "sha256": "66a2948c425c3cf8ad61a184a12296099ef368217d3012b3f7531dcc9c5e2649"
+      }
+    ],
+    "notes": [
+      "EV/PHEV/双燃料行(无 fuelType1 主燃料排量口径)剔除",
+      "displ=0 的占位错误行剔除留痕; 少数 co2=0 行运行时正值过滤",
+      "同一动力总成多年复测, 行间非独立(同型重复)"
+    ]
+  },
+  "uci_automobile": {
+    "source": "uci",
+    "source_url": "https://archive.ics.uci.edu/dataset/10/automobile",
+    "description": "1985 年款进口轿车 205 辆 (Schlimmer): 价格/马力/油耗 vs 尺寸与整备质量。马力~排量近比例(进气量上限); 油耗~车重负指数(道路负载)。",
+    "columns": {
+      "wheel_base_in": "in",
+      "length_in": "in",
+      "width_in": "in",
+      "height_in": "in",
+      "curb_weight_lb": "lb",
+      "engine_size_cc": "cc",
+      "bore": "in",
+      "stroke": "in",
+      "compression_ratio": "-",
+      "horsepower": "hp",
+      "peak_rpm": "rpm",
+      "city_mpg": "MPG (target)",
+      "hwy_mpg": "MPG",
+      "price_usd": "USD (target)"
+    },
+    "n_rows": 205,
+    "candidate_relations": [
+      {
+        "target": "price_usd",
+        "features": [
+          "curb_weight_lb"
+        ],
+        "note": "价格~整备质量"
+      },
+      {
+        "target": "price_usd",
+        "features": [
+          "engine_size_cc"
+        ],
+        "note": "价格~排量"
+      },
+      {
+        "target": "city_mpg",
+        "features": [
+          "curb_weight_lb"
+        ],
+        "note": "城市油耗~车重: 负指数(滚阻+惯量)"
+      },
+      {
+        "target": "horsepower",
+        "features": [
+          "engine_size_cc"
+        ],
+        "note": "马力~排量: 近比例"
+      }
+    ],
+    "raw_files": [
+      {
+        "path": "raw\\uci\\10_automobile\\data.csv",
+        "sha256": "fe36b5dcd1a8603ce46d80dae5682765d3671613622840602d748e4cadeda6b9"
+      }
+    ],
+    "notes": [
+      "'?' 缺失读为 NaN(原格式), 运行时按关系 dropna 不插值",
+      "make/车身形式等分类列清洗期剔除"
+    ]
+  }
+}

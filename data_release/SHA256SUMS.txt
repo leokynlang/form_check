@@ -1,0 +1,3 @@
+33a424e5577ebb548d1e8debcb4dfbf2cd778f23d996c6da73386a339247ee6a  experiment-records.zip
+5d1e713ccbbdf1d1a32d1133181cd344858dee6b4c385537f40531b19631cd18  engineering-data.zip
+72adee22d49e98e48dca5e6ee0d99b7efc6a6c3a9f3e16c2e4940f910224f297  pysr-search.zip
