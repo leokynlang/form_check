@@ -1,0 +1,2018 @@
+{
+  "schema_version": 1,
+  "generated_at_utc": "2026-10-18T03:33:42.901181+00:00",
+  "audit_script": {
+    "path": "D:\\form_check\\paper\\research_R2\\audit_task_intervals.py",
+    "sha256": "e23fb26cd01519db411a1c54887328b1064cebaf57ff657819eea0803195694f"
+  },
+  "inputs": {
+    "raw_s2": {
+      "path": "D:\\form_check\\runs\\srsd_full\\raw_srsd.parquet",
+      "sha256": "62df25df55c48a95ab7670a62da829ef8295740be7c469e4af40241b76385943",
+      "bytes": 34563229
+    },
+    "quality_s2": {
+      "path": "D:\\form_check\\runs\\srsd_full\\quality_recompute.parquet",
+      "sha256": "fad89cf33a43824029e444eb288f92617c8670b5f4ff129188371f128c5046c2",
+      "bytes": 26236629
+    },
+    "svd_s2": {
+      "path": "D:\\form_check\\runs\\cd_svd\\s2_cd_svd.csv",
+      "sha256": "7f3965b27c2e8729715fc4e46c7db74865e45c15c57e9aad6a2eecd8a0e7d47c",
+      "bytes": 44554701
+    },
+    "s2_config": {
+      "path": "D:\\form_check\\runs\\srsd_full\\config.json",
+      "sha256": "48e688639e521674a8b37c934b1719a4721d153599507402b43f34e1933140d6",
+      "bytes": 16156
+    }
+  },
+  "runtime": {
+    "python": "3.13.15",
+    "numpy": "2.5.2",
+    "pandas": "3.0.5"
+  },
+  "method": "Task-level bootstrap: the 17 eligible H1 equations are resampled with replacement (B=10000); S/Sd/Ld/Da are summed over the drawn tasks and the pooled ratios recomputed. Leave-one-task-out ranges omit one equation at a time. This measures between-equation heterogeneity, not record-level binomial precision; the task bootstrap does not include threshold-estimation uncertainty.",
+  "definitions": {
+    "S": "screened wrong models (finite r2 >= .99)",
+    "Sd": "dangerous screened wrong models (extrap_far_relerr > .10)",
+    "Ld": "dangerous records passing the screen and all four valid gates",
+    "Da": "all dangerous eligible H1 records"
+  },
+  "by_n": {
+    "50": {
+      "tasks": [
+        "feynman-bonus.15",
+        "feynman-bonus.20",
+        "feynman-bonus.5",
+        "feynman-i.10.7",
+        "feynman-i.27.6",
+        "feynman-i.37.4",
+        "feynman-i.39.11",
+        "feynman-i.41.16",
+        "feynman-i.43.43",
+        "feynman-i.48.2",
+        "feynman-ii.11.27",
+        "feynman-ii.11.28",
+        "feynman-ii.13.23",
+        "feynman-ii.13.34",
+        "feynman-ii.38.14",
+        "feynman-iii.4.32",
+        "feynman-iii.4.33"
+      ],
+      "counts": [
+        {
+          "task": "feynman-bonus.15",
+          "N": 2000,
+          "S": 2000,
+          "Sd": 144,
+          "Ld": 111,
+          "Da": 144
+        },
+        {
+          "task": "feynman-bonus.20",
+          "N": 2000,
+          "S": 0,
+          "Sd": 0,
+          "Ld": 0,
+          "Da": 2000
+        },
+        {
+          "task": "feynman-bonus.5",
+          "N": 2000,
+          "S": 1746,
+          "Sd": 1339,
+          "Ld": 239,
+          "Da": 1560
+        },
+        {
+          "task": "feynman-i.10.7",
+          "N": 2000,
+          "S": 2000,
+          "Sd": 0,
+          "Ld": 0,
+          "Da": 0
+        },
+        {
+          "task": "feynman-i.27.6",
+          "N": 2000,
+          "S": 0,
+          "Sd": 0,
+          "Ld": 0,
+          "Da": 1957
+        },
+        {
+          "task": "feynman-i.37.4",
+          "N": 2000,
+          "S": 0,
+          "Sd": 0,
+          "Ld": 0,
+          "Da": 1850
+        },
+        {
+          "task": "feynman-i.39.11",
+          "N": 2000,
+          "S": 158,
+          "Sd": 158,
+          "Ld": 0,
+          "Da": 2000
+        },
+        {
+          "task": "feynman-i.41.16",
+          "N": 2000,
+          "S": 2000,
+          "Sd": 0,
+          "Ld": 0,
+          "Da": 0
+        },
+        {
+          "task": "feynman-i.43.43",
+          "N": 2000,
+          "S": 156,
+          "Sd": 156,
+          "Ld": 0,
+          "Da": 2000
+        },
+        {
+          "task": "feynman-i.48.2",
+          "N": 2000,
+          "S": 2000,
+          "Sd": 0,
+          "Ld": 0,
+          "Da": 0
+        },
+        {
+          "task": "feynman-ii.11.27",
+          "N": 2000,
+          "S": 2000,
+          "Sd": 0,
+          "Ld": 0,
+          "Da": 0
+        },
+        {
+          "task": "feynman-ii.11.28",
+          "N": 2000,
+          "S": 0,
+          "Sd": 0,
+          "Ld": 0,
+          "Da": 0
+        },
+        {
+          "task": "feynman-ii.13.23",
+          "N": 2000,
+          "S": 2000,
+          "Sd": 0,
+          "Ld": 0,
+          "Da": 0
+        },
+        {
+          "task": "feynman-ii.13.34",
+          "N": 2000,
+          "S": 2000,
+          "Sd": 0,
+          "Ld": 0,
+          "Da": 0
+        },
+        {
+          "task": "feynman-ii.38.14",
+          "N": 2000,
+          "S": 2000,
+          "Sd": 411,
+          "Ld": 0,
+          "Da": 411
+        },
+        {
+          "task": "feynman-iii.4.32",
+          "N": 2000,
+          "S": 2000,
+          "Sd": 0,
+          "Ld": 0,
+          "Da": 0
+        },
+        {
+          "task": "feynman-iii.4.33",
+          "N": 2000,
+          "S": 2000,
+          "Sd": 0,
+          "Ld": 0,
+          "Da": 0
+        }
+      ],
+      "pooled": {
+        "Ld_over_S": 0.01586582048957389,
+        "Ld_over_Sd": 0.1585144927536232,
+        "Ld_over_Da": 0.029357490353967456
+      },
+      "task_bootstrap_ci95": {
+        "Ld_over_S": {
+          "mean": 0.015964429032176073,
+          "ci95": [
+            0.0,
+            0.04159415245388096
+          ],
+          "share_exact_zero": 0.1198
+        },
+        "Ld_over_Sd": {
+          "mean": 0.15983789073339963,
+          "ci95": [
+            0.0,
+            0.37
+          ],
+          "share_exact_zero": 0.11794769014931356
+        },
+        "Ld_over_Da": {
+          "mean": 0.03178875638798111,
+          "ci95": [
+            0.0,
+            0.09194094679818039
+          ],
+          "share_exact_zero": 0.1198
+        }
+      },
+      "leave_one_task_out": {
+        "Ld_over_S": {
+          "min": 0.00546421187358472,
+          "max": 0.01744765702891326,
+          "values": [
+            {
+              "omitted": "feynman-bonus.15",
+              "value": 0.011914257228315055
+            },
+            {
+              "omitted": "feynman-bonus.20",
+              "value": 0.01586582048957389
+            },
+            {
+              "omitted": "feynman-bonus.5",
+              "value": 0.00546421187358472
+            },
+            {
+              "omitted": "feynman-i.10.7",
+              "value": 0.01744765702891326
+            },
+            {
+              "omitted": "feynman-i.27.6",
+              "value": 0.01586582048957389
+            },
+            {
+              "omitted": "feynman-i.37.4",
+              "value": 0.01586582048957389
+            },
+            {
+              "omitted": "feynman-i.39.11",
+              "value": 0.015980275773901927
+            },
+            {
+              "omitted": "feynman-i.41.16",
+              "value": 0.01744765702891326
+            },
+            {
+              "omitted": "feynman-i.43.43",
+              "value": 0.01597881665449233
+            },
+            {
+              "omitted": "feynman-i.48.2",
+              "value": 0.01744765702891326
+            },
+            {
+              "omitted": "feynman-ii.11.27",
+              "value": 0.01744765702891326
+            },
+            {
+              "omitted": "feynman-ii.11.28",
+              "value": 0.01586582048957389
+            },
+            {
+              "omitted": "feynman-ii.13.23",
+              "value": 0.01744765702891326
+            },
+            {
+              "omitted": "feynman-ii.13.34",
+              "value": 0.01744765702891326
+            },
+            {
+              "omitted": "feynman-ii.38.14",
+              "value": 0.01744765702891326
+            },
+            {
+              "omitted": "feynman-iii.4.32",
+              "value": 0.01744765702891326
+            },
+            {
+              "omitted": "feynman-iii.4.33",
+              "value": 0.01744765702891326
+            }
+          ]
+        },
+        "Ld_over_Sd": {
+          "min": 0.11579457364341085,
+          "max": 0.19476905954368393,
+          "values": [
+            {
+              "omitted": "feynman-bonus.15",
+              "value": 0.11579457364341085
+            },
+            {
+              "omitted": "feynman-bonus.20",
+              "value": 0.1585144927536232
+            },
+            {
+              "omitted": "feynman-bonus.5",
+              "value": 0.1277330264672037
+            },
+            {
+              "omitted": "feynman-i.10.7",
+              "value": 0.1585144927536232
+            },
+            {
+              "omitted": "feynman-i.27.6",
+              "value": 0.1585144927536232
+            },
+            {
+              "omitted": "feynman-i.37.4",
+              "value": 0.1585144927536232
+            },
+            {
+              "omitted": "feynman-i.39.11",
+              "value": 0.17073170731707318
+            },
+            {
+              "omitted": "feynman-i.41.16",
+              "value": 0.1585144927536232
+            },
+            {
+              "omitted": "feynman-i.43.43",
+              "value": 0.1705653021442495
+            },
+            {
+              "omitted": "feynman-i.48.2",
+              "value": 0.1585144927536232
+            },
+            {
+              "omitted": "feynman-ii.11.27",
+              "value": 0.1585144927536232
+            },
+            {
+              "omitted": "feynman-ii.11.28",
+              "value": 0.1585144927536232
+            },
+            {
+              "omitted": "feynman-ii.13.23",
+              "value": 0.1585144927536232
+            },
+            {
+              "omitted": "feynman-ii.13.34",
+              "value": 0.1585144927536232
+            },
+            {
+              "omitted": "feynman-ii.38.14",
+              "value": 0.19476905954368393
+            },
+            {
+              "omitted": "feynman-iii.4.32",
+              "value": 0.1585144927536232
+            },
+            {
+              "omitted": "feynman-iii.4.33",
+              "value": 0.1585144927536232
+            }
+          ]
+        },
+        "Ld_over_Da": {
+          "min": 0.010712217718587146,
+          "max": 0.03527514613989115,
+          "values": [
+            {
+              "omitted": "feynman-bonus.15",
+              "value": 0.020292069960944133
+            },
+            {
+              "omitted": "feynman-bonus.20",
+              "value": 0.03527514613989115
+            },
+            {
+              "omitted": "feynman-bonus.5",
+              "value": 0.010712217718587146
+            },
+            {
+              "omitted": "feynman-i.10.7",
+              "value": 0.029357490353967456
+            },
+            {
+              "omitted": "feynman-i.27.6",
+              "value": 0.035122930255895635
+            },
+            {
+              "omitted": "feynman-i.37.4",
+              "value": 0.034749801429706115
+            },
+            {
+              "omitted": "feynman-i.39.11",
+              "value": 0.03527514613989115
+            },
+            {
+              "omitted": "feynman-i.41.16",
+              "value": 0.029357490353967456
+            },
+            {
+              "omitted": "feynman-i.43.43",
+              "value": 0.03527514613989115
+            },
+            {
+              "omitted": "feynman-i.48.2",
+              "value": 0.029357490353967456
+            },
+            {
+              "omitted": "feynman-ii.11.27",
+              "value": 0.029357490353967456
+            },
+            {
+              "omitted": "feynman-ii.11.28",
+              "value": 0.029357490353967456
+            },
+            {
+              "omitted": "feynman-ii.13.23",
+              "value": 0.029357490353967456
+            },
+            {
+              "omitted": "feynman-ii.13.34",
+              "value": 0.029357490353967456
+            },
+            {
+              "omitted": "feynman-ii.38.14",
+              "value": 0.0304056988967075
+            },
+            {
+              "omitted": "feynman-iii.4.32",
+              "value": 0.029357490353967456
+            },
+            {
+              "omitted": "feynman-iii.4.33",
+              "value": 0.029357490353967456
+            }
+          ]
+        }
+      },
+      "per_task": [
+        {
+          "task": "feynman-bonus.15",
+          "Sd": 144,
+          "Ld": 111,
+          "Ld_over_Sd": 0.7708333333333334
+        },
+        {
+          "task": "feynman-bonus.20",
+          "Sd": 0,
+          "Ld": 0,
+          "Ld_over_Sd": null
+        },
+        {
+          "task": "feynman-bonus.5",
+          "Sd": 1339,
+          "Ld": 239,
+          "Ld_over_Sd": 0.17849141150112025
+        },
+        {
+          "task": "feynman-i.10.7",
+          "Sd": 0,
+          "Ld": 0,
+          "Ld_over_Sd": null
+        },
+        {
+          "task": "feynman-i.27.6",
+          "Sd": 0,
+          "Ld": 0,
+          "Ld_over_Sd": null
+        },
+        {
+          "task": "feynman-i.37.4",
+          "Sd": 0,
+          "Ld": 0,
+          "Ld_over_Sd": null
+        },
+        {
+          "task": "feynman-i.39.11",
+          "Sd": 158,
+          "Ld": 0,
+          "Ld_over_Sd": 0.0
+        },
+        {
+          "task": "feynman-i.41.16",
+          "Sd": 0,
+          "Ld": 0,
+          "Ld_over_Sd": null
+        },
+        {
+          "task": "feynman-i.43.43",
+          "Sd": 156,
+          "Ld": 0,
+          "Ld_over_Sd": 0.0
+        },
+        {
+          "task": "feynman-i.48.2",
+          "Sd": 0,
+          "Ld": 0,
+          "Ld_over_Sd": null
+        },
+        {
+          "task": "feynman-ii.11.27",
+          "Sd": 0,
+          "Ld": 0,
+          "Ld_over_Sd": null
+        },
+        {
+          "task": "feynman-ii.11.28",
+          "Sd": 0,
+          "Ld": 0,
+          "Ld_over_Sd": null
+        },
+        {
+          "task": "feynman-ii.13.23",
+          "Sd": 0,
+          "Ld": 0,
+          "Ld_over_Sd": null
+        },
+        {
+          "task": "feynman-ii.13.34",
+          "Sd": 0,
+          "Ld": 0,
+          "Ld_over_Sd": null
+        },
+        {
+          "task": "feynman-ii.38.14",
+          "Sd": 411,
+          "Ld": 0,
+          "Ld_over_Sd": 0.0
+        },
+        {
+          "task": "feynman-iii.4.32",
+          "Sd": 0,
+          "Ld": 0,
+          "Ld_over_Sd": null
+        },
+        {
+          "task": "feynman-iii.4.33",
+          "Sd": 0,
+          "Ld": 0,
+          "Ld_over_Sd": null
+        }
+      ]
+    },
+    "200": {
+      "tasks": [
+        "feynman-bonus.15",
+        "feynman-bonus.20",
+        "feynman-bonus.5",
+        "feynman-i.10.7",
+        "feynman-i.27.6",
+        "feynman-i.37.4",
+        "feynman-i.39.11",
+        "feynman-i.41.16",
+        "feynman-i.43.43",
+        "feynman-i.48.2",
+        "feynman-ii.11.27",
+        "feynman-ii.11.28",
+        "feynman-ii.13.23",
+        "feynman-ii.13.34",
+        "feynman-ii.38.14",
+        "feynman-iii.4.32",
+        "feynman-iii.4.33"
+      ],
+      "counts": [
+        {
+          "task": "feynman-bonus.15",
+          "N": 2000,
+          "S": 2000,
+          "Sd": 139,
+          "Ld": 106,
+          "Da": 139
+        },
+        {
+          "task": "feynman-bonus.20",
+          "N": 2000,
+          "S": 0,
+          "Sd": 0,
+          "Ld": 0,
+          "Da": 2000
+        },
+        {
+          "task": "feynman-bonus.5",
+          "N": 2000,
+          "S": 1929,
+          "Sd": 1863,
+          "Ld": 0,
+          "Da": 1931
+        },
+        {
+          "task": "feynman-i.10.7",
+          "N": 2000,
+          "S": 2000,
+          "Sd": 0,
+          "Ld": 0,
+          "Da": 0
+        },
+        {
+          "task": "feynman-i.27.6",
+          "N": 2000,
+          "S": 0,
+          "Sd": 0,
+          "Ld": 0,
+          "Da": 1999
+        },
+        {
+          "task": "feynman-i.37.4",
+          "N": 2000,
+          "S": 0,
+          "Sd": 0,
+          "Ld": 0,
+          "Da": 1988
+        },
+        {
+          "task": "feynman-i.39.11",
+          "N": 2000,
+          "S": 1,
+          "Sd": 1,
+          "Ld": 0,
+          "Da": 2000
+        },
+        {
+          "task": "feynman-i.41.16",
+          "N": 2000,
+          "S": 2000,
+          "Sd": 0,
+          "Ld": 0,
+          "Da": 0
+        },
+        {
+          "task": "feynman-i.43.43",
+          "N": 2000,
+          "S": 2,
+          "Sd": 2,
+          "Ld": 0,
+          "Da": 2000
+        },
+        {
+          "task": "feynman-i.48.2",
+          "N": 2000,
+          "S": 2000,
+          "Sd": 0,
+          "Ld": 0,
+          "Da": 0
+        },
+        {
+          "task": "feynman-ii.11.27",
+          "N": 2000,
+          "S": 2000,
+          "Sd": 0,
+          "Ld": 0,
+          "Da": 0
+        },
+        {
+          "task": "feynman-ii.11.28",
+          "N": 2000,
+          "S": 0,
+          "Sd": 0,
+          "Ld": 0,
+          "Da": 0
+        },
+        {
+          "task": "feynman-ii.13.23",
+          "N": 2000,
+          "S": 2000,
+          "Sd": 0,
+          "Ld": 0,
+          "Da": 0
+        },
+        {
+          "task": "feynman-ii.13.34",
+          "N": 2000,
+          "S": 2000,
+          "Sd": 0,
+          "Ld": 0,
+          "Da": 0
+        },
+        {
+          "task": "feynman-ii.38.14",
+          "N": 2000,
+          "S": 2000,
+          "Sd": 145,
+          "Ld": 0,
+          "Da": 145
+        },
+        {
+          "task": "feynman-iii.4.32",
+          "N": 2000,
+          "S": 2000,
+          "Sd": 0,
+          "Ld": 0,
+          "Da": 0
+        },
+        {
+          "task": "feynman-iii.4.33",
+          "N": 2000,
+          "S": 2000,
+          "Sd": 0,
+          "Ld": 0,
+          "Da": 0
+        }
+      ],
+      "pooled": {
+        "Ld_over_S": 0.004833120554441,
+        "Ld_over_Sd": 0.04930232558139535,
+        "Ld_over_Da": 0.008687100475331912
+      },
+      "task_bootstrap_ci95": {
+        "Ld_over_S": {
+          "mean": 0.004787670598176319,
+          "ci95": [
+            0.0,
+            0.015897615357696345
+          ],
+          "share_exact_zero": 0.3614
+        },
+        "Ld_over_Sd": {
+          "mean": 0.14193666788307024,
+          "ci95": [
+            0.0,
+            0.7571428571428571
+          ],
+          "share_exact_zero": 0.3600561178474797
+        },
+        "Ld_over_Da": {
+          "mean": 0.010518967184947376,
+          "ci95": [
+            0.0,
+            0.04498220343470738
+          ],
+          "share_exact_zero": 0.3614
+        }
+      },
+      "leave_one_task_out": {
+        "Ld_over_S": {
+          "min": 0.0,
+          "max": 0.005318081477021875,
+          "values": [
+            {
+              "omitted": "feynman-bonus.15",
+              "value": 0.0
+            },
+            {
+              "omitted": "feynman-bonus.20",
+              "value": 0.004833120554441
+            },
+            {
+              "omitted": "feynman-bonus.5",
+              "value": 0.005299205119232115
+            },
+            {
+              "omitted": "feynman-i.10.7",
+              "value": 0.005318081477021875
+            },
+            {
+              "omitted": "feynman-i.27.6",
+              "value": 0.004833120554441
+            },
+            {
+              "omitted": "feynman-i.37.4",
+              "value": 0.004833120554441
+            },
+            {
+              "omitted": "feynman-i.39.11",
+              "value": 0.004833340932925995
+            },
+            {
+              "omitted": "feynman-i.41.16",
+              "value": 0.005318081477021875
+            },
+            {
+              "omitted": "feynman-i.43.43",
+              "value": 0.004833561331509348
+            },
+            {
+              "omitted": "feynman-i.48.2",
+              "value": 0.005318081477021875
+            },
+            {
+              "omitted": "feynman-ii.11.27",
+              "value": 0.005318081477021875
+            },
+            {
+              "omitted": "feynman-ii.11.28",
+              "value": 0.004833120554441
+            },
+            {
+              "omitted": "feynman-ii.13.23",
+              "value": 0.005318081477021875
+            },
+            {
+              "omitted": "feynman-ii.13.34",
+              "value": 0.005318081477021875
+            },
+            {
+              "omitted": "feynman-ii.38.14",
+              "value": 0.005318081477021875
+            },
+            {
+              "omitted": "feynman-iii.4.32",
+              "value": 0.005318081477021875
+            },
+            {
+              "omitted": "feynman-iii.4.33",
+              "value": 0.005318081477021875
+            }
+          ]
+        },
+        "Ld_over_Sd": {
+          "min": 0.0,
+          "max": 0.3693379790940767,
+          "values": [
+            {
+              "omitted": "feynman-bonus.15",
+              "value": 0.0
+            },
+            {
+              "omitted": "feynman-bonus.20",
+              "value": 0.04930232558139535
+            },
+            {
+              "omitted": "feynman-bonus.5",
+              "value": 0.3693379790940767
+            },
+            {
+              "omitted": "feynman-i.10.7",
+              "value": 0.04930232558139535
+            },
+            {
+              "omitted": "feynman-i.27.6",
+              "value": 0.04930232558139535
+            },
+            {
+              "omitted": "feynman-i.37.4",
+              "value": 0.04930232558139535
+            },
+            {
+              "omitted": "feynman-i.39.11",
+              "value": 0.049325267566309915
+            },
+            {
+              "omitted": "feynman-i.41.16",
+              "value": 0.04930232558139535
+            },
+            {
+              "omitted": "feynman-i.43.43",
+              "value": 0.049348230912476726
+            },
+            {
+              "omitted": "feynman-i.48.2",
+              "value": 0.04930232558139535
+            },
+            {
+              "omitted": "feynman-ii.11.27",
+              "value": 0.04930232558139535
+            },
+            {
+              "omitted": "feynman-ii.11.28",
+              "value": 0.04930232558139535
+            },
+            {
+              "omitted": "feynman-ii.13.23",
+              "value": 0.04930232558139535
+            },
+            {
+              "omitted": "feynman-ii.13.34",
+              "value": 0.04930232558139535
+            },
+            {
+              "omitted": "feynman-ii.38.14",
+              "value": 0.05286783042394015
+            },
+            {
+              "omitted": "feynman-iii.4.32",
+              "value": 0.04930232558139535
+            },
+            {
+              "omitted": "feynman-iii.4.33",
+              "value": 0.04930232558139535
+            }
+          ]
+        },
+        "Ld_over_Da": {
+          "min": 0.0,
+          "max": 0.010390119584395216,
+          "values": [
+            {
+              "omitted": "feynman-bonus.15",
+              "value": 0.0
+            },
+            {
+              "omitted": "feynman-bonus.20",
+              "value": 0.010390119584395216
+            },
+            {
+              "omitted": "feynman-bonus.5",
+              "value": 0.010320319345730697
+            },
+            {
+              "omitted": "feynman-i.10.7",
+              "value": 0.008687100475331912
+            },
+            {
+              "omitted": "feynman-i.27.6",
+              "value": 0.01038910124473194
+            },
+            {
+              "omitted": "feynman-i.37.4",
+              "value": 0.010377912668885842
+            },
+            {
+              "omitted": "feynman-i.39.11",
+              "value": 0.010390119584395216
+            },
+            {
+              "omitted": "feynman-i.41.16",
+              "value": 0.008687100475331912
+            },
+            {
+              "omitted": "feynman-i.43.43",
+              "value": 0.010390119584395216
+            },
+            {
+              "omitted": "feynman-i.48.2",
+              "value": 0.008687100475331912
+            },
+            {
+              "omitted": "feynman-ii.11.27",
+              "value": 0.008687100475331912
+            },
+            {
+              "omitted": "feynman-ii.11.28",
+              "value": 0.008687100475331912
+            },
+            {
+              "omitted": "feynman-ii.13.23",
+              "value": 0.008687100475331912
+            },
+            {
+              "omitted": "feynman-ii.13.34",
+              "value": 0.008687100475331912
+            },
+            {
+              "omitted": "feynman-ii.38.14",
+              "value": 0.008791573359873931
+            },
+            {
+              "omitted": "feynman-iii.4.32",
+              "value": 0.008687100475331912
+            },
+            {
+              "omitted": "feynman-iii.4.33",
+              "value": 0.008687100475331912
+            }
+          ]
+        }
+      },
+      "per_task": [
+        {
+          "task": "feynman-bonus.15",
+          "Sd": 139,
+          "Ld": 106,
+          "Ld_over_Sd": 0.762589928057554
+        },
+        {
+          "task": "feynman-bonus.20",
+          "Sd": 0,
+          "Ld": 0,
+          "Ld_over_Sd": null
+        },
+        {
+          "task": "feynman-bonus.5",
+          "Sd": 1863,
+          "Ld": 0,
+          "Ld_over_Sd": 0.0
+        },
+        {
+          "task": "feynman-i.10.7",
+          "Sd": 0,
+          "Ld": 0,
+          "Ld_over_Sd": null
+        },
+        {
+          "task": "feynman-i.27.6",
+          "Sd": 0,
+          "Ld": 0,
+          "Ld_over_Sd": null
+        },
+        {
+          "task": "feynman-i.37.4",
+          "Sd": 0,
+          "Ld": 0,
+          "Ld_over_Sd": null
+        },
+        {
+          "task": "feynman-i.39.11",
+          "Sd": 1,
+          "Ld": 0,
+          "Ld_over_Sd": 0.0
+        },
+        {
+          "task": "feynman-i.41.16",
+          "Sd": 0,
+          "Ld": 0,
+          "Ld_over_Sd": null
+        },
+        {
+          "task": "feynman-i.43.43",
+          "Sd": 2,
+          "Ld": 0,
+          "Ld_over_Sd": 0.0
+        },
+        {
+          "task": "feynman-i.48.2",
+          "Sd": 0,
+          "Ld": 0,
+          "Ld_over_Sd": null
+        },
+        {
+          "task": "feynman-ii.11.27",
+          "Sd": 0,
+          "Ld": 0,
+          "Ld_over_Sd": null
+        },
+        {
+          "task": "feynman-ii.11.28",
+          "Sd": 0,
+          "Ld": 0,
+          "Ld_over_Sd": null
+        },
+        {
+          "task": "feynman-ii.13.23",
+          "Sd": 0,
+          "Ld": 0,
+          "Ld_over_Sd": null
+        },
+        {
+          "task": "feynman-ii.13.34",
+          "Sd": 0,
+          "Ld": 0,
+          "Ld_over_Sd": null
+        },
+        {
+          "task": "feynman-ii.38.14",
+          "Sd": 145,
+          "Ld": 0,
+          "Ld_over_Sd": 0.0
+        },
+        {
+          "task": "feynman-iii.4.32",
+          "Sd": 0,
+          "Ld": 0,
+          "Ld_over_Sd": null
+        },
+        {
+          "task": "feynman-iii.4.33",
+          "Sd": 0,
+          "Ld": 0,
+          "Ld_over_Sd": null
+        }
+      ]
+    },
+    "1000": {
+      "tasks": [
+        "feynman-bonus.15",
+        "feynman-bonus.20",
+        "feynman-bonus.5",
+        "feynman-i.10.7",
+        "feynman-i.27.6",
+        "feynman-i.37.4",
+        "feynman-i.39.11",
+        "feynman-i.41.16",
+        "feynman-i.43.43",
+        "feynman-i.48.2",
+        "feynman-ii.11.27",
+        "feynman-ii.11.28",
+        "feynman-ii.13.23",
+        "feynman-ii.13.34",
+        "feynman-ii.38.14",
+        "feynman-iii.4.32",
+        "feynman-iii.4.33"
+      ],
+      "counts": [
+        {
+          "task": "feynman-bonus.15",
+          "N": 2000,
+          "S": 2000,
+          "Sd": 44,
+          "Ld": 25,
+          "Da": 44
+        },
+        {
+          "task": "feynman-bonus.20",
+          "N": 2000,
+          "S": 0,
+          "Sd": 0,
+          "Ld": 0,
+          "Da": 2000
+        },
+        {
+          "task": "feynman-bonus.5",
+          "N": 2000,
+          "S": 2000,
+          "Sd": 2000,
+          "Ld": 0,
+          "Da": 2000
+        },
+        {
+          "task": "feynman-i.10.7",
+          "N": 2000,
+          "S": 2000,
+          "Sd": 0,
+          "Ld": 0,
+          "Da": 0
+        },
+        {
+          "task": "feynman-i.27.6",
+          "N": 2000,
+          "S": 0,
+          "Sd": 0,
+          "Ld": 0,
+          "Da": 2000
+        },
+        {
+          "task": "feynman-i.37.4",
+          "N": 2000,
+          "S": 0,
+          "Sd": 0,
+          "Ld": 0,
+          "Da": 2000
+        },
+        {
+          "task": "feynman-i.39.11",
+          "N": 2000,
+          "S": 0,
+          "Sd": 0,
+          "Ld": 0,
+          "Da": 2000
+        },
+        {
+          "task": "feynman-i.41.16",
+          "N": 2000,
+          "S": 2000,
+          "Sd": 0,
+          "Ld": 0,
+          "Da": 0
+        },
+        {
+          "task": "feynman-i.43.43",
+          "N": 2000,
+          "S": 0,
+          "Sd": 0,
+          "Ld": 0,
+          "Da": 2000
+        },
+        {
+          "task": "feynman-i.48.2",
+          "N": 2000,
+          "S": 2000,
+          "Sd": 0,
+          "Ld": 0,
+          "Da": 0
+        },
+        {
+          "task": "feynman-ii.11.27",
+          "N": 2000,
+          "S": 2000,
+          "Sd": 0,
+          "Ld": 0,
+          "Da": 0
+        },
+        {
+          "task": "feynman-ii.11.28",
+          "N": 2000,
+          "S": 0,
+          "Sd": 0,
+          "Ld": 0,
+          "Da": 0
+        },
+        {
+          "task": "feynman-ii.13.23",
+          "N": 2000,
+          "S": 2000,
+          "Sd": 0,
+          "Ld": 0,
+          "Da": 0
+        },
+        {
+          "task": "feynman-ii.13.34",
+          "N": 2000,
+          "S": 2000,
+          "Sd": 0,
+          "Ld": 0,
+          "Da": 0
+        },
+        {
+          "task": "feynman-ii.38.14",
+          "N": 2000,
+          "S": 2000,
+          "Sd": 1,
+          "Ld": 0,
+          "Da": 1
+        },
+        {
+          "task": "feynman-iii.4.32",
+          "N": 2000,
+          "S": 2000,
+          "Sd": 0,
+          "Ld": 0,
+          "Da": 0
+        },
+        {
+          "task": "feynman-iii.4.33",
+          "N": 2000,
+          "S": 2000,
+          "Sd": 0,
+          "Ld": 0,
+          "Da": 0
+        }
+      ],
+      "pooled": {
+        "Ld_over_S": 0.0011363636363636363,
+        "Ld_over_Sd": 0.012224938875305624,
+        "Ld_over_Da": 0.0020755500207555004
+      },
+      "task_bootstrap_ci95": {
+        "Ld_over_S": {
+          "mean": 0.001126025341590599,
+          "ci95": [
+            0.0,
+            0.00375
+          ],
+          "share_exact_zero": 0.3614
+        },
+        "Ld_over_Sd": {
+          "mean": 0.14305133098464995,
+          "ci95": [
+            0.0,
+            0.5681818181818182
+          ],
+          "share_exact_zero": 0.33603659804533165
+        },
+        "Ld_over_Da": {
+          "mean": 0.0026527001647246857,
+          "ci95": [
+            0.0,
+            0.012221950623319482
+          ],
+          "share_exact_zero": 0.3614
+        }
+      },
+      "leave_one_task_out": {
+        "Ld_over_S": {
+          "min": 0.0,
+          "max": 0.00125,
+          "values": [
+            {
+              "omitted": "feynman-bonus.15",
+              "value": 0.0
+            },
+            {
+              "omitted": "feynman-bonus.20",
+              "value": 0.0011363636363636363
+            },
+            {
+              "omitted": "feynman-bonus.5",
+              "value": 0.00125
+            },
+            {
+              "omitted": "feynman-i.10.7",
+              "value": 0.00125
+            },
+            {
+              "omitted": "feynman-i.27.6",
+              "value": 0.0011363636363636363
+            },
+            {
+              "omitted": "feynman-i.37.4",
+              "value": 0.0011363636363636363
+            },
+            {
+              "omitted": "feynman-i.39.11",
+              "value": 0.0011363636363636363
+            },
+            {
+              "omitted": "feynman-i.41.16",
+              "value": 0.00125
+            },
+            {
+              "omitted": "feynman-i.43.43",
+              "value": 0.0011363636363636363
+            },
+            {
+              "omitted": "feynman-i.48.2",
+              "value": 0.00125
+            },
+            {
+              "omitted": "feynman-ii.11.27",
+              "value": 0.00125
+            },
+            {
+              "omitted": "feynman-ii.11.28",
+              "value": 0.0011363636363636363
+            },
+            {
+              "omitted": "feynman-ii.13.23",
+              "value": 0.00125
+            },
+            {
+              "omitted": "feynman-ii.13.34",
+              "value": 0.00125
+            },
+            {
+              "omitted": "feynman-ii.38.14",
+              "value": 0.00125
+            },
+            {
+              "omitted": "feynman-iii.4.32",
+              "value": 0.00125
+            },
+            {
+              "omitted": "feynman-iii.4.33",
+              "value": 0.00125
+            }
+          ]
+        },
+        "Ld_over_Sd": {
+          "min": 0.0,
+          "max": 0.5555555555555556,
+          "values": [
+            {
+              "omitted": "feynman-bonus.15",
+              "value": 0.0
+            },
+            {
+              "omitted": "feynman-bonus.20",
+              "value": 0.012224938875305624
+            },
+            {
+              "omitted": "feynman-bonus.5",
+              "value": 0.5555555555555556
+            },
+            {
+              "omitted": "feynman-i.10.7",
+              "value": 0.012224938875305624
+            },
+            {
+              "omitted": "feynman-i.27.6",
+              "value": 0.012224938875305624
+            },
+            {
+              "omitted": "feynman-i.37.4",
+              "value": 0.012224938875305624
+            },
+            {
+              "omitted": "feynman-i.39.11",
+              "value": 0.012224938875305624
+            },
+            {
+              "omitted": "feynman-i.41.16",
+              "value": 0.012224938875305624
+            },
+            {
+              "omitted": "feynman-i.43.43",
+              "value": 0.012224938875305624
+            },
+            {
+              "omitted": "feynman-i.48.2",
+              "value": 0.012224938875305624
+            },
+            {
+              "omitted": "feynman-ii.11.27",
+              "value": 0.012224938875305624
+            },
+            {
+              "omitted": "feynman-ii.11.28",
+              "value": 0.012224938875305624
+            },
+            {
+              "omitted": "feynman-ii.13.23",
+              "value": 0.012224938875305624
+            },
+            {
+              "omitted": "feynman-ii.13.34",
+              "value": 0.012224938875305624
+            },
+            {
+              "omitted": "feynman-ii.38.14",
+              "value": 0.01223091976516634
+            },
+            {
+              "omitted": "feynman-iii.4.32",
+              "value": 0.012224938875305624
+            },
+            {
+              "omitted": "feynman-iii.4.33",
+              "value": 0.012224938875305624
+            }
+          ]
+        },
+        "Ld_over_Da": {
+          "min": 0.0,
+          "max": 0.0024888003982080635,
+          "values": [
+            {
+              "omitted": "feynman-bonus.15",
+              "value": 0.0
+            },
+            {
+              "omitted": "feynman-bonus.20",
+              "value": 0.0024888003982080635
+            },
+            {
+              "omitted": "feynman-bonus.5",
+              "value": 0.0024888003982080635
+            },
+            {
+              "omitted": "feynman-i.10.7",
+              "value": 0.0020755500207555004
+            },
+            {
+              "omitted": "feynman-i.27.6",
+              "value": 0.0024888003982080635
+            },
+            {
+              "omitted": "feynman-i.37.4",
+              "value": 0.0024888003982080635
+            },
+            {
+              "omitted": "feynman-i.39.11",
+              "value": 0.0024888003982080635
+            },
+            {
+              "omitted": "feynman-i.41.16",
+              "value": 0.0020755500207555004
+            },
+            {
+              "omitted": "feynman-i.43.43",
+              "value": 0.0024888003982080635
+            },
+            {
+              "omitted": "feynman-i.48.2",
+              "value": 0.0020755500207555004
+            },
+            {
+              "omitted": "feynman-ii.11.27",
+              "value": 0.0020755500207555004
+            },
+            {
+              "omitted": "feynman-ii.11.28",
+              "value": 0.0020755500207555004
+            },
+            {
+              "omitted": "feynman-ii.13.23",
+              "value": 0.0020755500207555004
+            },
+            {
+              "omitted": "feynman-ii.13.34",
+              "value": 0.0020755500207555004
+            },
+            {
+              "omitted": "feynman-ii.38.14",
+              "value": 0.0020757223513782797
+            },
+            {
+              "omitted": "feynman-iii.4.32",
+              "value": 0.0020755500207555004
+            },
+            {
+              "omitted": "feynman-iii.4.33",
+              "value": 0.0020755500207555004
+            }
+          ]
+        }
+      },
+      "per_task": [
+        {
+          "task": "feynman-bonus.15",
+          "Sd": 44,
+          "Ld": 25,
+          "Ld_over_Sd": 0.5681818181818182
+        },
+        {
+          "task": "feynman-bonus.20",
+          "Sd": 0,
+          "Ld": 0,
+          "Ld_over_Sd": null
+        },
+        {
+          "task": "feynman-bonus.5",
+          "Sd": 2000,
+          "Ld": 0,
+          "Ld_over_Sd": 0.0
+        },
+        {
+          "task": "feynman-i.10.7",
+          "Sd": 0,
+          "Ld": 0,
+          "Ld_over_Sd": null
+        },
+        {
+          "task": "feynman-i.27.6",
+          "Sd": 0,
+          "Ld": 0,
+          "Ld_over_Sd": null
+        },
+        {
+          "task": "feynman-i.37.4",
+          "Sd": 0,
+          "Ld": 0,
+          "Ld_over_Sd": null
+        },
+        {
+          "task": "feynman-i.39.11",
+          "Sd": 0,
+          "Ld": 0,
+          "Ld_over_Sd": null
+        },
+        {
+          "task": "feynman-i.41.16",
+          "Sd": 0,
+          "Ld": 0,
+          "Ld_over_Sd": null
+        },
+        {
+          "task": "feynman-i.43.43",
+          "Sd": 0,
+          "Ld": 0,
+          "Ld_over_Sd": null
+        },
+        {
+          "task": "feynman-i.48.2",
+          "Sd": 0,
+          "Ld": 0,
+          "Ld_over_Sd": null
+        },
+        {
+          "task": "feynman-ii.11.27",
+          "Sd": 0,
+          "Ld": 0,
+          "Ld_over_Sd": null
+        },
+        {
+          "task": "feynman-ii.11.28",
+          "Sd": 0,
+          "Ld": 0,
+          "Ld_over_Sd": null
+        },
+        {
+          "task": "feynman-ii.13.23",
+          "Sd": 0,
+          "Ld": 0,
+          "Ld_over_Sd": null
+        },
+        {
+          "task": "feynman-ii.13.34",
+          "Sd": 0,
+          "Ld": 0,
+          "Ld_over_Sd": null
+        },
+        {
+          "task": "feynman-ii.38.14",
+          "Sd": 1,
+          "Ld": 0,
+          "Ld_over_Sd": 0.0
+        },
+        {
+          "task": "feynman-iii.4.32",
+          "Sd": 0,
+          "Ld": 0,
+          "Ld_over_Sd": null
+        },
+        {
+          "task": "feynman-iii.4.33",
+          "Sd": 0,
+          "Ld": 0,
+          "Ld_over_Sd": null
+        }
+      ]
+    }
+  },
+  "pooled": {
+    "tasks": [
+      "feynman-bonus.15",
+      "feynman-bonus.20",
+      "feynman-bonus.5",
+      "feynman-i.10.7",
+      "feynman-i.27.6",
+      "feynman-i.37.4",
+      "feynman-i.39.11",
+      "feynman-i.41.16",
+      "feynman-i.43.43",
+      "feynman-i.48.2",
+      "feynman-ii.11.27",
+      "feynman-ii.11.28",
+      "feynman-ii.13.23",
+      "feynman-ii.13.34",
+      "feynman-ii.38.14",
+      "feynman-iii.4.32",
+      "feynman-iii.4.33"
+    ],
+    "counts": [
+      {
+        "task": "feynman-bonus.15",
+        "N": 6000,
+        "S": 6000,
+        "Sd": 327,
+        "Ld": 242,
+        "Da": 327
+      },
+      {
+        "task": "feynman-bonus.20",
+        "N": 6000,
+        "S": 0,
+        "Sd": 0,
+        "Ld": 0,
+        "Da": 6000
+      },
+      {
+        "task": "feynman-bonus.5",
+        "N": 6000,
+        "S": 5675,
+        "Sd": 5202,
+        "Ld": 239,
+        "Da": 5491
+      },
+      {
+        "task": "feynman-i.10.7",
+        "N": 6000,
+        "S": 6000,
+        "Sd": 0,
+        "Ld": 0,
+        "Da": 0
+      },
+      {
+        "task": "feynman-i.27.6",
+        "N": 6000,
+        "S": 0,
+        "Sd": 0,
+        "Ld": 0,
+        "Da": 5956
+      },
+      {
+        "task": "feynman-i.37.4",
+        "N": 6000,
+        "S": 0,
+        "Sd": 0,
+        "Ld": 0,
+        "Da": 5838
+      },
+      {
+        "task": "feynman-i.39.11",
+        "N": 6000,
+        "S": 159,
+        "Sd": 159,
+        "Ld": 0,
+        "Da": 6000
+      },
+      {
+        "task": "feynman-i.41.16",
+        "N": 6000,
+        "S": 6000,
+        "Sd": 0,
+        "Ld": 0,
+        "Da": 0
+      },
+      {
+        "task": "feynman-i.43.43",
+        "N": 6000,
+        "S": 158,
+        "Sd": 158,
+        "Ld": 0,
+        "Da": 6000
+      },
+      {
+        "task": "feynman-i.48.2",
+        "N": 6000,
+        "S": 6000,
+        "Sd": 0,
+        "Ld": 0,
+        "Da": 0
+      },
+      {
+        "task": "feynman-ii.11.27",
+        "N": 6000,
+        "S": 6000,
+        "Sd": 0,
+        "Ld": 0,
+        "Da": 0
+      },
+      {
+        "task": "feynman-ii.11.28",
+        "N": 6000,
+        "S": 0,
+        "Sd": 0,
+        "Ld": 0,
+        "Da": 0
+      },
+      {
+        "task": "feynman-ii.13.23",
+        "N": 6000,
+        "S": 6000,
+        "Sd": 0,
+        "Ld": 0,
+        "Da": 0
+      },
+      {
+        "task": "feynman-ii.13.34",
+        "N": 6000,
+        "S": 6000,
+        "Sd": 0,
+        "Ld": 0,
+        "Da": 0
+      },
+      {
+        "task": "feynman-ii.38.14",
+        "N": 6000,
+        "S": 6000,
+        "Sd": 557,
+        "Ld": 0,
+        "Da": 557
+      },
+      {
+        "task": "feynman-iii.4.32",
+        "N": 6000,
+        "S": 6000,
+        "Sd": 0,
+        "Ld": 0,
+        "Da": 0
+      },
+      {
+        "task": "feynman-iii.4.33",
+        "N": 6000,
+        "S": 6000,
+        "Sd": 0,
+        "Ld": 0,
+        "Da": 0
+      }
+    ],
+    "pooled": {
+      "Ld_over_S": 0.007288762274215057,
+      "Ld_over_Sd": 0.07512103701389973,
+      "Ld_over_Da": 0.01329868119107523
+    },
+    "task_bootstrap_ci95": {
+      "Ld_over_S": {
+        "mean": 0.00728356963190071,
+        "ci95": [
+          0.0,
+          0.017820427796468762
+        ],
+        "share_exact_zero": 0.1198
+      },
+      "Ld_over_Sd": {
+        "mean": 0.11677852155183371,
+        "ci95": [
+          0.0,
+          0.49896907216494846
+        ],
+        "share_exact_zero": 0.11794769014931356
+      },
+      "Ld_over_Da": {
+        "mean": 0.014833466429960737,
+        "ci95": [
+          0.0,
+          0.04040132881446931
+        ],
+        "share_exact_zero": 0.1198
+      }
+    },
+    "leave_one_task_out": {
+      "Ld_over_S": {
+        "min": 0.003983864515268703,
+        "max": 0.00801773569809308,
+        "values": [
+          {
+            "omitted": "feynman-bonus.15",
+            "value": 0.003983864515268703
+          },
+          {
+            "omitted": "feynman-bonus.20",
+            "value": 0.007288762274215057
+          },
+          {
+            "omitted": "feynman-bonus.5",
+            "value": 0.004012135882089626
+          },
+          {
+            "omitted": "feynman-i.10.7",
+            "value": 0.00801773569809308
+          },
+          {
+            "omitted": "feynman-i.27.6",
+            "value": 0.007288762274215057
+          },
+          {
+            "omitted": "feynman-i.37.4",
+            "value": 0.007288762274215057
+          },
+          {
+            "omitted": "feynman-i.39.11",
+            "value": 0.007306366108182826
+          },
+          {
+            "omitted": "feynman-i.41.16",
+            "value": 0.00801773569809308
+          },
+          {
+            "omitted": "feynman-i.43.43",
+            "value": 0.0073062551265303645
+          },
+          {
+            "omitted": "feynman-i.48.2",
+            "value": 0.00801773569809308
+          },
+          {
+            "omitted": "feynman-ii.11.27",
+            "value": 0.00801773569809308
+          },
+          {
+            "omitted": "feynman-ii.11.28",
+            "value": 0.007288762274215057
+          },
+          {
+            "omitted": "feynman-ii.13.23",
+            "value": 0.00801773569809308
+          },
+          {
+            "omitted": "feynman-ii.13.34",
+            "value": 0.00801773569809308
+          },
+          {
+            "omitted": "feynman-ii.38.14",
+            "value": 0.00801773569809308
+          },
+          {
+            "omitted": "feynman-iii.4.32",
+            "value": 0.00801773569809308
+          },
+          {
+            "omitted": "feynman-iii.4.33",
+            "value": 0.00801773569809308
+          }
+        ]
+      },
+      "Ld_over_Sd": {
+        "min": 0.039335088874259384,
+        "max": 0.20149875104079934,
+        "values": [
+          {
+            "omitted": "feynman-bonus.15",
+            "value": 0.039335088874259384
+          },
+          {
+            "omitted": "feynman-bonus.20",
+            "value": 0.07512103701389973
+          },
+          {
+            "omitted": "feynman-bonus.5",
+            "value": 0.20149875104079934
+          },
+          {
+            "omitted": "feynman-i.10.7",
+            "value": 0.07512103701389973
+          },
+          {
+            "omitted": "feynman-i.27.6",
+            "value": 0.07512103701389973
+          },
+          {
+            "omitted": "feynman-i.37.4",
+            "value": 0.07512103701389973
+          },
+          {
+            "omitted": "feynman-i.39.11",
+            "value": 0.07703395259449071
+          },
+          {
+            "omitted": "feynman-i.41.16",
+            "value": 0.07512103701389973
+          },
+          {
+            "omitted": "feynman-i.43.43",
+            "value": 0.07702161729383507
+          },
+          {
+            "omitted": "feynman-i.48.2",
+            "value": 0.07512103701389973
+          },
+          {
+            "omitted": "feynman-ii.11.27",
+            "value": 0.07512103701389973
+          },
+          {
+            "omitted": "feynman-ii.11.28",
+            "value": 0.07512103701389973
+          },
+          {
+            "omitted": "feynman-ii.13.23",
+            "value": 0.07512103701389973
+          },
+          {
+            "omitted": "feynman-ii.13.34",
+            "value": 0.07512103701389973
+          },
+          {
+            "omitted": "feynman-ii.38.14",
+            "value": 0.08227848101265822
+          },
+          {
+            "omitted": "feynman-iii.4.32",
+            "value": 0.07512103701389973
+          },
+          {
+            "omitted": "feynman-iii.4.33",
+            "value": 0.07512103701389973
+          }
+        ]
+      },
+      "Ld_over_Da": {
+        "min": 0.006668154678868367,
+        "max": 0.015943518180914183,
+        "values": [
+          {
+            "omitted": "feynman-bonus.15",
+            "value": 0.006668154678868367
+          },
+          {
+            "omitted": "feynman-bonus.20",
+            "value": 0.015943518180914183
+          },
+          {
+            "omitted": "feynman-bonus.5",
+            "value": 0.007888389073603234
+          },
+          {
+            "omitted": "feynman-i.10.7",
+            "value": 0.01329868119107523
+          },
+          {
+            "omitted": "feynman-i.27.6",
+            "value": 0.01592029920894979
+          },
+          {
+            "omitted": "feynman-i.37.4",
+            "value": 0.015858362731199102
+          },
+          {
+            "omitted": "feynman-i.39.11",
+            "value": 0.015943518180914183
+          },
+          {
+            "omitted": "feynman-i.41.16",
+            "value": 0.01329868119107523
+          },
+          {
+            "omitted": "feynman-i.43.43",
+            "value": 0.015943518180914183
+          },
+          {
+            "omitted": "feynman-i.48.2",
+            "value": 0.01329868119107523
+          },
+          {
+            "omitted": "feynman-ii.11.27",
+            "value": 0.01329868119107523
+          },
+          {
+            "omitted": "feynman-ii.11.28",
+            "value": 0.01329868119107523
+          },
+          {
+            "omitted": "feynman-ii.13.23",
+            "value": 0.01329868119107523
+          },
+          {
+            "omitted": "feynman-ii.13.34",
+            "value": 0.01329868119107523
+          },
+          {
+            "omitted": "feynman-ii.38.14",
+            "value": 0.013506683140514434
+          },
+          {
+            "omitted": "feynman-iii.4.32",
+            "value": 0.01329868119107523
+          },
+          {
+            "omitted": "feynman-iii.4.33",
+            "value": 0.01329868119107523
+          }
+        ]
+      }
+    },
+    "tasks_with_zero_Ld": 15,
+    "tasks_with_positive_Ld": [
+      "feynman-bonus.15",
+      "feynman-bonus.5"
+    ],
+    "share_of_Ld_top_two_tasks": 1.0
+  }
+}

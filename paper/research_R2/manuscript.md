@@ -935,6 +935,22 @@ form and task identity do not change. The decreasing pattern
 combines a panel effect with the position of one task's error
 distribution relative to a fixed cutoff.
 
+**Task-level uncertainty.** The record-level ratios treat simulation
+replicates as independent observations. A task bootstrap instead
+resamples the 17 eligible equations with replacement (B=10,000),
+carrying each task's S/Sd/Ld/Da and recomputing the pooled ratios.
+Pooled over n, Ld/Sd is 7.5% with a 95% interval of [0%, 49.9%];
+12% of resamples contain no released dangerous record, and 15 of the
+17 tasks contribute Ld=0. Leave-one-task-out values span
+[3.9%, 20.1%]: omitting bonus.5 raises Ld/Sd to 20.1%, while omitting
+bonus.15 lowers it to 3.9%, because the remaining task's own release
+fraction then dominates. At n=200 and 1000 the interval reaches
+[0%, 75.7%] and [0%, 56.8%], since only bonus.15 contributes releases.
+This interval measures between-equation heterogeneity, not binomial
+precision, and the record-level 7.5% describes the sampled task pool
+rather than a task-uniform rate. Counts and intervals are reproduced by
+audit_task_intervals.py and recorded in evidence/task_intervals.json.
+
 **Information in a clean diagnostic record.** The corresponding
 180,000-record H0/H1 pool has three states: true H0
 (78,000 records; 65,934 releases), dangerous wrong H1
@@ -1072,8 +1088,11 @@ Conditional rates retain their populations. The 7.5% screened-dangerous
 release rate measures failure to intercept dangerous candidates
 that already meet the fit screen, but it is a pooled figure driven by
 two tasks; excluding the threshold-borderline task bonus.15, the
-release fraction is 0% at n=200 and 1000. The 0.73% rate measures
-their frequency among all screened wrong forms. Deployment risk
+release fraction is 0% at n=200 and 1000. A task-level bootstrap over
+the 17 equations gives a 95% interval of [0%, 49.9%] for the pooled
+7.5%, so the pooled figure is descriptive rather than precision-
+estimated. The 0.73% rate measures their frequency among all screened
+wrong forms. Deployment risk
 additionally depends on task prevalence and on the population of
 correct candidates, as the three-state accounting in Section 4.10
 demonstrates.
@@ -1204,7 +1223,7 @@ SHA-256, and SHA256SUMS.txt covers the archive. The repository README
 gives the clone, install, data-restoration, and aggregation commands,
 including audit_size.py, audit_results.py, audit_s7.py,
 reproduce_r2.py, verify_composition.py, threshold_decomposition.py,
-and deep_analysis.py.
+deep_analysis.py, and audit_task_intervals.py.
 
 Third-party data are not uniformly redistributed:
 data_release/THIRD_PARTY_DATA.md and dataset_sources.json record
@@ -1340,6 +1359,15 @@ The paired D-A intervals in Section 4.2 instead resample
 They must not be substituted for fit-level binomial intervals,
 or for results on a 19-task pool. Pointwise Figure D.3 intervals
 and paired differences address different quantities.
+
+The joint-release ratios have a separate task-level analysis.
+audit_task_intervals.py resamples the 17 eligible H1 equations
+(B=10,000) and recomputes pooled Ld/S, Ld/Sd, and Ld/Da from each
+task's counts. With releases confined to two equations, the pooled
+Ld/Sd of 7.5% has a 95% interval of [0%, 49.9%], and 12% of
+resamples contain no release. This interval describes between-
+equation heterogeneity; it is not a binomial interval on 34,000
+records and does not include threshold-estimation uncertainty.
 
 Seeded computational repeats within one equation do not create
 additional independent laws. Macro and record-weighted averages
