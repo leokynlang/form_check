@@ -16,7 +16,8 @@ the models released by a fit screen plus diagnostic panel.
 - [Revision notes](paper/research_R3/REVISION_NOTES.txt)
 - [Preserved manuscript R2](paper/research_R2/Silent_Acceptance_research_R2_2026-10-18.pdf)
 - [Public artifact and licensing corrections](docs/PUBLICATION_NOTES.md)
-- [Data snapshot](https://github.com/leokynlang/form_check/releases/tag/data-2026-10-18)
+- [Data snapshot (R1)](https://github.com/leokynlang/form_check/releases/tag/data-2026-10-18)
+- [R3 record-level data](https://github.com/leokynlang/form_check/releases/tag/r3-2026-10-18)
 
 The current manuscript is a working research paper. R3 preserves the historical
 R2 evidence (18 eligible H1 equations for S2 power and 17 with finite legacy
@@ -99,6 +100,35 @@ python tools/download_data.py --verify-only --bundle experiment-records
 The [manifest](data_release/manifest.json) records the snapshot time, exact member
 paths, sizes, and hashes. It includes historical runs and pilot outputs; their
 presence does not imply that they belong to the final paper's analysis pool.
+
+### R3 record-level data
+
+The `runs/**/*.parquet` ignore rule keeps record-level data out of Git, so the R3
+parquet files ship as a second release. Without them the R3 summaries, protocols,
+source snapshots and audit scripts can be re-aggregated and checked, but the
+A-G statistics cannot be recomputed from the original training observations.
+
+```bash
+python tools/download_data.py --manifest data_release/manifest_r3.json --list
+python tools/download_data.py --manifest data_release/manifest_r3.json
+python tools/download_data.py --manifest data_release/manifest_r3.json --verify-only
+```
+
+- `p01-v2-records` - P0-1 v2 decisions and raw policy records (58,112 datasets).
+- `p02-fixed-domain-records` - P0-2 records for the full n x log-noise grid
+  (246,240 datasets). The largest single member is
+  `runs/p02_fixed_domain/stage2/decisions.parquet`, about 540 MiB.
+
+The [R3 manifest](data_release/manifest_r3.json) lists every member path, size and
+hash. Repackage or re-verify a built archive with:
+
+```bash
+python tools/build_r3_data_release.py --output tmp/r3_publication_2026-10-18 --store
+python tools/build_r3_data_release.py --output tmp/r3_publication_2026-10-18 --store --verify-only
+```
+
+That tool packages only files Git reports as *untracked and ignored*, so it can
+never duplicate content already committed.
 
 ## Reproduce the paper's aggregation
 

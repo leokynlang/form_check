@@ -20,8 +20,13 @@ def main():
     parser.add_argument("--list",action="store_true")
     parser.add_argument("--verify-only",action="store_true")
     parser.add_argument("--overwrite",action="store_true",help="Explicitly allow replacement of different local data.")
+    parser.add_argument("--manifest",default="data_release/manifest.json",
+                        help="Release manifest to restore from; use data_release/manifest_r3.json for the "
+                             "R3 record-level bundles.")
     args=parser.parse_args()
-    manifest=json.loads((ROOT/"data_release/manifest.json").read_text(encoding="utf-8"))
+    manifest_path=Path(args.manifest)
+    if not manifest_path.is_absolute():manifest_path=ROOT/manifest_path
+    manifest=json.loads(manifest_path.read_text(encoding="utf-8"))
     available={a["name"]:a for a in manifest["assets"]}
     names=args.bundle or list(available)
     if set(names)-set(available):parser.error("Unknown bundle: "+", ".join(set(names)-set(available)))
