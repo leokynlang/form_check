@@ -1,0 +1,118 @@
+{
+  "all120_minimum_exposure": "metadata_only",
+  "prospective_definition": "absence of prior study outcomes/design overlap; not an unseen-formula claim",
+  "P02_physical_sources": [
+    "feynman-bonus.15",
+    "feynman-bonus.20",
+    "feynman-bonus.5",
+    "feynman-i.10.7",
+    "feynman-i.12.1",
+    "feynman-i.26.2",
+    "feynman-i.27.6",
+    "feynman-i.29.4",
+    "feynman-i.30.5",
+    "feynman-i.34.27",
+    "feynman-i.37.4",
+    "feynman-i.38.12",
+    "feynman-i.39.10",
+    "feynman-i.39.11",
+    "feynman-i.39.22",
+    "feynman-i.41.16",
+    "feynman-i.43.31",
+    "feynman-i.43.43",
+    "feynman-i.47.23",
+    "feynman-i.48.2",
+    "feynman-ii.11.27",
+    "feynman-ii.11.28",
+    "feynman-ii.13.23",
+    "feynman-ii.13.34",
+    "feynman-ii.27.16",
+    "feynman-ii.27.18",
+    "feynman-ii.38.14",
+    "feynman-ii.8.31",
+    "feynman-iii.12.43",
+    "feynman-iii.15.14",
+    "feynman-iii.4.32",
+    "feynman-iii.4.33",
+    "feynman-i.6.20",
+    "feynman-i.6.20a",
+    "feynman-i.6.20b",
+    "feynman-i.44.4",
+    "feynman-ii.35.18",
+    "feynman-ii.35.21"
+  ],
+  "P02_designed_mechanisms": [
+    {
+      "family": "erf",
+      "registered_role": "confirmation",
+      "exposure_level": "prior_study_outcomes",
+      "evidence_scope": "identity and registered role, not read diagnostic/prediction outcomes"
+    },
+    {
+      "family": "atan",
+      "registered_role": "confirmation",
+      "exposure_level": "prior_study_outcomes",
+      "evidence_scope": "identity and registered role, not read diagnostic/prediction outcomes"
+    },
+    {
+      "family": "asinh",
+      "registered_role": "reserve",
+      "exposure_level": "mechanism_design_only",
+      "evidence_scope": "identity and registered role, not read diagnostic/prediction outcomes"
+    },
+    {
+      "family": "lambertw",
+      "registered_role": "reserve",
+      "exposure_level": "mechanism_design_only",
+      "evidence_scope": "identity and registered role, not read diagnostic/prediction outcomes"
+    },
+    {
+      "family": "ellipk",
+      "registered_role": "confirmation",
+      "exposure_level": "prior_study_outcomes",
+      "evidence_scope": "identity and registered role, not read diagnostic/prediction outcomes"
+    },
+    {
+      "family": "besseli0",
+      "registered_role": "confirmation",
+      "exposure_level": "prior_study_outcomes",
+      "evidence_scope": "identity and registered role, not read diagnostic/prediction outcomes"
+    },
+    {
+      "family": "threshold",
+      "registered_role": "stress",
+      "exposure_level": "prior_study_outcomes",
+      "evidence_scope": "identity and registered role, not read diagnostic/prediction outcomes"
+    },
+    {
+      "family": "resonance",
+      "registered_role": "confirmation",
+      "exposure_level": "prior_study_outcomes",
+      "evidence_scope": "identity and registered role, not read diagnostic/prediction outcomes"
+    },
+    {
+      "family": "gompertz",
+      "registered_role": "confirmation",
+      "exposure_level": "prior_study_outcomes",
+      "evidence_scope": "identity and registered role, not read diagnostic/prediction outcomes"
+    },
+    {
+      "family": "damped_oscillation",
+      "registered_role": "development",
+      "exposure_level": "prior_study_outcomes",
+      "evidence_scope": "identity and registered role, not read diagnostic/prediction outcomes"
+    },
+    {
+      "family": "softplus",
+      "registered_role": "confirmation",
+      "exposure_level": "prior_study_outcomes",
+      "evidence_scope": "identity and registered role, not read diagnostic/prediction outcomes"
+    },
+    {
+      "family": "sech",
+      "registered_role": "confirmation",
+      "exposure_level": "prior_study_outcomes",
+      "evidence_scope": "identity and registered role, not read diagnostic/prediction outcomes"
+    }
+  ]
+}

@@ -1,0 +1,1353 @@
+{
+  "rows": 64,
+  "checked_seed": 0,
+  "noise": 0.03,
+  "sentinel_valid_replay_mismatches": [],
+  "sentinel_invalid_records_are_diagnostic_only": true,
+  "checks": [
+    {
+      "task": "feynman-i.10.7",
+      "n": 50,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 3.3251125377414814e-17,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.0,
+        "D": 1.3877787807814457e-17
+      }
+    },
+    {
+      "task": "feynman-i.10.7",
+      "n": 200,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 5.941427905220564e-17,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 8.326672684688674e-17,
+        "D": 0.0
+      }
+    },
+    {
+      "task": "feynman-i.12.1",
+      "n": 50,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 8.716985466783456e-17,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.0,
+        "D": 0.0
+      }
+    },
+    {
+      "task": "feynman-i.12.1",
+      "n": 200,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 2.187919984075748e-16,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.0,
+        "D": 0.0
+      }
+    },
+    {
+      "task": "feynman-i.26.2",
+      "n": 50,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": null,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 8.744090521095593e-17,
+        "D": 0.0
+      }
+    },
+    {
+      "task": "feynman-i.26.2",
+      "n": 200,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": null,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 2.7755575615628914e-17,
+        "D": 0.0
+      }
+    },
+    {
+      "task": "feynman-i.27.6",
+      "n": 50,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 8.881784197001252e-16,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 8.326672684688674e-17,
+        "D": 0.0
+      }
+    },
+    {
+      "task": "feynman-i.27.6",
+      "n": 200,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 0.0,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 8.326672684688674e-17,
+        "D": 0.0
+      }
+    },
+    {
+      "task": "feynman-i.29.4",
+      "n": 50,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 6.938893903907228e-18,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 5.551115123125783e-17,
+        "D": 0.0
+      }
+    },
+    {
+      "task": "feynman-i.29.4",
+      "n": 200,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 4.163336342344337e-17,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.0,
+        "D": 0.0
+      }
+    },
+    {
+      "task": "feynman-i.30.5",
+      "n": 50,
+      "historical_sentinel_valid": false,
+      "parity": {
+        "r2": true,
+        "endpoint": false,
+        "A": false,
+        "B": false,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 0.07912863691785645,
+        "A": 0.051,
+        "B": 0.010590764870052671,
+        "C": 0.0,
+        "D": 5.169878828456423e-26
+      }
+    },
+    {
+      "task": "feynman-i.30.5",
+      "n": 200,
+      "historical_sentinel_valid": false,
+      "parity": {
+        "r2": true,
+        "endpoint": false,
+        "A": true,
+        "B": false,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 0.06776404787673142,
+        "A": 0.0,
+        "B": 0.0001320474393732373,
+        "C": 1.3877787807814457e-17,
+        "D": 0.0
+      }
+    },
+    {
+      "task": "feynman-i.34.27",
+      "n": 50,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 2.0816681711721685e-17,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 2.7755575615628914e-17,
+        "D": 2.7755575615628914e-17
+      }
+    },
+    {
+      "task": "feynman-i.34.27",
+      "n": 200,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 1.3877787807814457e-17,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.0,
+        "D": 0.0
+      }
+    },
+    {
+      "task": "feynman-i.37.4",
+      "n": 50,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 2.220446049250313e-16,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.0,
+        "D": 0.0
+      }
+    },
+    {
+      "task": "feynman-i.37.4",
+      "n": 200,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 0.0,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 2.3852447794681098e-17,
+        "D": 8.470329472543003e-22
+      }
+    },
+    {
+      "task": "feynman-i.38.12",
+      "n": 50,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 1.6479873021779667e-17,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.0,
+        "D": 0.0
+      }
+    },
+    {
+      "task": "feynman-i.38.12",
+      "n": 200,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 1.4191772756966259e-14,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 8.326672684688674e-17,
+        "D": 5.551115123125783e-17
+      }
+    },
+    {
+      "task": "feynman-i.39.10",
+      "n": 50,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 8.777700788442644e-16,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.0,
+        "D": 0.0
+      }
+    },
+    {
+      "task": "feynman-i.39.10",
+      "n": 200,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 6.505213034913027e-19,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 2.7755575615628914e-17,
+        "D": 0.0
+      }
+    },
+    {
+      "task": "feynman-i.39.11",
+      "n": 50,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 0.0,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.0,
+        "D": 0.0
+      }
+    },
+    {
+      "task": "feynman-i.39.11",
+      "n": 200,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 0.0,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.0,
+        "D": 4.6816763546921983e-97
+      }
+    },
+    {
+      "task": "feynman-i.39.22",
+      "n": 50,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 3.52062129449493e-15,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.0,
+        "D": 0.0
+      }
+    },
+    {
+      "task": "feynman-i.39.22",
+      "n": 200,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 3.5561831257524545e-17,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.0,
+        "D": 5.551115123125783e-17
+      }
+    },
+    {
+      "task": "feynman-i.41.16",
+      "n": 50,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 8.673617379884035e-18,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.0,
+        "D": 5.551115123125783e-17
+      }
+    },
+    {
+      "task": "feynman-i.41.16",
+      "n": 200,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 3.165870343657673e-17,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.0,
+        "D": 5.551115123125783e-17
+      }
+    },
+    {
+      "task": "feynman-i.43.31",
+      "n": 50,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 1.7871988611251055e-15,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.0,
+        "D": 0.0
+      }
+    },
+    {
+      "task": "feynman-i.43.31",
+      "n": 200,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 1.8153881176097286e-15,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 2.7755575615628914e-17,
+        "D": 0.0
+      }
+    },
+    {
+      "task": "feynman-i.43.43",
+      "n": 50,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 0.0,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.0,
+        "D": 0.0
+      }
+    },
+    {
+      "task": "feynman-i.43.43",
+      "n": 200,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 0.0,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.0,
+        "D": 0.0
+      }
+    },
+    {
+      "task": "feynman-i.47.23",
+      "n": 50,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 4.683753385137379e-17,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.0,
+        "D": 0.0
+      }
+    },
+    {
+      "task": "feynman-i.47.23",
+      "n": 200,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 5.551115123125783e-17,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.0,
+        "D": 0.0
+      }
+    },
+    {
+      "task": "feynman-i.48.2",
+      "n": 50,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 6.288372600415926e-17,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 5.551115123125783e-17,
+        "D": 2.0816681711721685e-17
+      }
+    },
+    {
+      "task": "feynman-i.48.2",
+      "n": 200,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 2.862293735361732e-17,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 5.551115123125783e-17,
+        "D": 2.168404344971009e-19
+      }
+    },
+    {
+      "task": "feynman-ii.8.31",
+      "n": 50,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 3.8163916471489756e-17,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 1.3877787807814457e-17,
+        "D": 4.163336342344337e-17
+      }
+    },
+    {
+      "task": "feynman-ii.8.31",
+      "n": 200,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 2.7755575615628914e-17,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.0,
+        "D": 0.0
+      }
+    },
+    {
+      "task": "feynman-ii.11.27",
+      "n": 50,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 1.4138863690948966e-14,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 5.551115123125783e-17,
+        "D": 0.0
+      }
+    },
+    {
+      "task": "feynman-ii.11.27",
+      "n": 200,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 1.5612511283791264e-17,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 1.1102230246251565e-16,
+        "D": 5.551115123125783e-17
+      }
+    },
+    {
+      "task": "feynman-ii.11.28",
+      "n": 50,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 2.7321894746634712e-17,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.0,
+        "D": 0.0
+      }
+    },
+    {
+      "task": "feynman-ii.11.28",
+      "n": 200,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 5.312590645178972e-17,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.0,
+        "D": 0.0
+      }
+    },
+    {
+      "task": "feynman-ii.13.23",
+      "n": 50,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 3.859759734048396e-17,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 5.551115123125783e-17,
+        "D": 8.326672684688674e-17
+      }
+    },
+    {
+      "task": "feynman-ii.13.23",
+      "n": 200,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 5.811323644522304e-17,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.0,
+        "D": 6.223320470066795e-17
+      }
+    },
+    {
+      "task": "feynman-ii.13.34",
+      "n": 50,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 1.0625181290357943e-16,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 5.551115123125783e-17,
+        "D": 2.0816681711721685e-17
+      }
+    },
+    {
+      "task": "feynman-ii.13.34",
+      "n": 200,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 1.0321604682062002e-16,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.0,
+        "D": 2.3201926491189795e-17
+      }
+    },
+    {
+      "task": "feynman-ii.27.16",
+      "n": 50,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 5.0306980803327406e-17,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 1.3877787807814457e-17,
+        "D": 0.0
+      }
+    },
+    {
+      "task": "feynman-ii.27.16",
+      "n": 200,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 8.673617379884035e-18,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.0,
+        "D": 0.0
+      }
+    },
+    {
+      "task": "feynman-ii.27.18",
+      "n": 50,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 2.0816681711721685e-17,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 4.163336342344337e-17,
+        "D": 2.7755575615628914e-17
+      }
+    },
+    {
+      "task": "feynman-ii.27.18",
+      "n": 200,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 4.683753385137379e-17,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.0,
+        "D": 0.0
+      }
+    },
+    {
+      "task": "feynman-ii.38.14",
+      "n": 50,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 2.7755575615628914e-17,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.0,
+        "D": 0.0
+      }
+    },
+    {
+      "task": "feynman-ii.38.14",
+      "n": 200,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 0.0,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.0,
+        "D": 0.0
+      }
+    },
+    {
+      "task": "feynman-iii.4.32",
+      "n": 50,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 6.938893903907228e-18,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.0,
+        "D": 0.0
+      }
+    },
+    {
+      "task": "feynman-iii.4.32",
+      "n": 200,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 1.431146867680866e-17,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.0,
+        "D": 5.551115123125783e-17
+      }
+    },
+    {
+      "task": "feynman-iii.4.33",
+      "n": 50,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 7.069431845474483e-15,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.0,
+        "D": 0.0
+      }
+    },
+    {
+      "task": "feynman-iii.4.33",
+      "n": 200,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 2.4069288229178198e-17,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 5.551115123125783e-17,
+        "D": 0.0
+      }
+    },
+    {
+      "task": "feynman-iii.12.43",
+      "n": 50,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 3.469446951953614e-17,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 7.632783294297951e-17,
+        "D": 3.9898639947466563e-17
+      }
+    },
+    {
+      "task": "feynman-iii.12.43",
+      "n": 200,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 3.8163916471489756e-17,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.0,
+        "D": 1.1102230246251565e-16
+      }
+    },
+    {
+      "task": "feynman-iii.15.14",
+      "n": 50,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 1.734723475976807e-18,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.0,
+        "D": 0.0
+      }
+    },
+    {
+      "task": "feynman-iii.15.14",
+      "n": 200,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 1.431146867680866e-17,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 5.551115123125783e-17,
+        "D": 5.551115123125783e-17
+      }
+    },
+    {
+      "task": "feynman-bonus.5",
+      "n": 50,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 0.0,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 5.551115123125783e-17,
+        "D": 0.0
+      }
+    },
+    {
+      "task": "feynman-bonus.5",
+      "n": 200,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 2.7755575615628914e-17,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.0,
+        "D": 9.310586156219269e-17
+      }
+    },
+    {
+      "task": "feynman-bonus.15",
+      "n": 50,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 4.163336342344337e-17,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.0,
+        "D": 0.0
+      }
+    },
+    {
+      "task": "feynman-bonus.15",
+      "n": 200,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 0.0,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.0,
+        "D": 0.0
+      }
+    },
+    {
+      "task": "feynman-bonus.20",
+      "n": 50,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 1.2212453270876722e-15,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.0,
+        "D": 0.0
+      }
+    },
+    {
+      "task": "feynman-bonus.20",
+      "n": 200,
+      "historical_sentinel_valid": true,
+      "parity": {
+        "r2": true,
+        "endpoint": true,
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "absolute_differences": {
+        "r2": 0.0,
+        "endpoint": 0.0,
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.0,
+        "D": 6.591949208711867e-17
+      }
+    }
+  ]
+}

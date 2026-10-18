@@ -1,0 +1,189 @@
+{
+  "audit": "independent_p02_complete_grid",
+  "audit_source_sha256": "b37d4ed24615f73b85c0b9acc9aebc8b9d7c56651096ca15c75c37788ca9fb03",
+  "imports_experimental_implementation": false,
+  "preservation": {
+    "stage1_files": 676,
+    "paper_R2_files": 31,
+    "p01": {
+      "runs/p01_pilot_v1": 150,
+      "runs/p01_v2": 1146
+    }
+  },
+  "stage_certificates": {
+    "stage1": {
+      "raw_sha256": "49f4b059854530a01f8879b857ffda1e767c2fe7d9e677e0f5a321882a5e37ba",
+      "summary_sha256": "5ea52eb1c71fe3cfa8c935797b3bcb8d6f9ad353630712a2eaccdd4f7791ba04",
+      "independent_audit_sha256": "2e74e2eabf6b8968e5574bff9690c4b9598c5f27f1b26d4a225089627f345083",
+      "raw_rows": 41040,
+      "strata": 2,
+      "analysis_checks": {
+        "status": "passed",
+        "policy_configurations": 300,
+        "decisions": 2700000,
+        "independent_group_count_rows": 113400,
+        "primary_metric_uncertainty_summaries": 1950,
+        "paired_uncertainty_summaries": 450,
+        "reconstructed": [
+          "H0 reference transforms/scales",
+          "budgeted thresholds",
+          "all decisions",
+          "all outcomes/thresholds/pools group event counts",
+          "primary points and calibration sensitivity",
+          "conditional-group/round/crossed intervals",
+          "equal-group risks",
+          "paired points and intervals"
+        ],
+        "not_independently_recomputed": [
+          "Individual A-G test-statistic numerical implementations from full sampled data",
+          "secondary CSV flattening/formatting; underlying secondary group event counts verified"
+        ]
+      }
+    },
+    "stage2": {
+      "raw_sha256": "8bff73e76661c7f220655fe1ad2f1702f57b96a4ed9d3bd214e63e7d44fbc9ae",
+      "summary_sha256": "0c1db450f288d4fc5b36cdfbcb4a841f42ad489c1728ebb969cc3c9d80dd4f71",
+      "independent_audit_sha256": "80e1ecb21cc6f01ae74d16e18f1dd080947d98aa00db69adcb35fcf11e9aa1f2",
+      "raw_rows": 205200,
+      "strata": 10,
+      "analysis_checks": {
+        "status": "passed",
+        "policy_configurations": 1500,
+        "decisions": 13500000,
+        "independent_group_count_rows": 567000,
+        "primary_metric_uncertainty_summaries": 9750,
+        "paired_uncertainty_summaries": 2250,
+        "reconstructed": [
+          "H0 reference transforms/scales",
+          "budgeted thresholds",
+          "all decisions",
+          "all outcomes/thresholds/pools group event counts",
+          "primary points and calibration sensitivity",
+          "conditional-group/round/crossed intervals",
+          "equal-group risks",
+          "paired points and intervals"
+        ],
+        "not_independently_recomputed": [
+          "Individual A-G test-statistic numerical implementations from full sampled data",
+          "secondary CSV flattening/formatting; underlying secondary group event counts verified"
+        ]
+      }
+    }
+  },
+  "raw_disjointness": {
+    "raw_rows": 246240,
+    "test_rows": 108000,
+    "strata": 12,
+    "stage_strata": {
+      "stage1": [
+        [
+          50,
+          0.03
+        ],
+        [
+          200,
+          0.03
+        ]
+      ],
+      "stage2": [
+        [
+          50,
+          0.005
+        ],
+        [
+          50,
+          0.01
+        ],
+        [
+          50,
+          0.05
+        ],
+        [
+          200,
+          0.005
+        ],
+        [
+          200,
+          0.01
+        ],
+        [
+          200,
+          0.05
+        ],
+        [
+          1000,
+          0.005
+        ],
+        [
+          1000,
+          0.01
+        ],
+        [
+          1000,
+          0.03
+        ],
+        [
+          1000,
+          0.05
+        ]
+      ]
+    },
+    "stage_seed_overlap": 0,
+    "stage_dataset_hash_overlap": 0,
+    "unique_seeds": 246240,
+    "unique_nonmissing_dataset_hashes": 246240,
+    "registered_test_tasks": 90,
+    "global_test_H1_structural_groups": 14,
+    "confirmation_H1_structural_groups": 8,
+    "interpretation": "One fixed library evaluated in 12 separate sample-size/noise strata; stages are execution partitions, not independent replications."
+  },
+  "summary": {
+    "exact_source_strata": 12,
+    "per_stratum_estimates_preserved": true,
+    "cross_stratum_reestimation_performed": false
+  },
+  "csv_concatenation": {
+    "primary_metrics.csv": {
+      "rows": 11700,
+      "sha256": "c3cd930cc865bb15db9c9d48df82aa37e35f91be0964e314330412651a12d261",
+      "source_rows_preserved": true
+    },
+    "sensitivity_metrics.csv": {
+      "rows": 27000,
+      "sha256": "3ccf9d40d52d123d61eeff4085f7e94ddf583227e01d46417e6475b991ae9c63",
+      "source_rows_preserved": true
+    },
+    "round_metrics.csv": {
+      "rows": 9000,
+      "sha256": "3cf0d001251d9a038b0510bd9e95ef8a3e29840e6a9bd0860f8d4d8243346b29",
+      "source_rows_preserved": true
+    },
+    "reference_scales.csv": {
+      "rows": 840,
+      "sha256": "333d543a4a74cfd7f524ef6802d40083a2db6dfbd0fb3dc8b887046793364a82",
+      "source_rows_preserved": true
+    }
+  },
+  "policies": {
+    "policy_configurations": 1800,
+    "exact_source_equality": true
+  },
+  "manuscript_tables": {
+    "primary_confirmation.csv": 60,
+    "paired_confirmation.csv": 60,
+    "coverage.csv": 12
+  },
+  "manifest": {
+    "manifest_sha256": "0b87bc58060fe8f205f2927fcab174195a8a64a54ace00549f7c70480e512c26",
+    "root_frozen_manifest_sha256": "f028da89b6f2d23d237a8382a7ef40d965239ed62220dfe85ec9d4ad482ac33e",
+    "critical_source_and_output_hashes_checked": 12,
+    "all_referenced_source_files": 22,
+    "all_hashed_reporting_outputs": 15
+  },
+  "boundaries": [
+    "No A-G single-gate statistic is recomputed from sampled observations.",
+    "Per-stage independent audits reconstruct policy calibration, fixed-grid errors, group event counts, primary/equal-group and paired uncertainty.",
+    "The complete-grid audit preserves separate stratum estimates; no meta-analysis or new independent experiment is implied."
+  ],
+  "passed": true
+}

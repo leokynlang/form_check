@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "scope": "Independent anti-selection, source-fidelity, domain-rule and exposure-metadata review only",
+  "rules_sha256": "fe45d32684e852880096206dcef109c49787b8a0951d9b108f90b197a8bcdd53",
+  "equations": 120,
+  "complete_original_rule_domains": 118,
+  "scientific_status_counts": {
+    "eligible_analytic": 86,
+    "exclusion_unresolved": 31,
+    "excluded_nonpositive_target": 2,
+    "excluded_no_positive_input_support": 1
+  },
+  "primary_groups": 13,
+  "eligible_uncontested_prospective_H1_groups": 0,
+  "disputed_fine_candidates": [
+    "feynman-bonus.16"
+  ],
+  "not_an_execution_freeze": true,
+  "not_verified_here": [
+    "Independent interval-arithmetic reevaluation of every source constraint and target bound",
+    "Float64/log-truth/high-precision adapters",
+    "High-dimensional diagnostics and frozen grids",
+    "Future null controls, seed namespaces and execution roles",
+    "Absence of unlogged human information exposure cannot be established by saved metadata alone"
+  ],
+  "selection_evidence": "All120 source rows retained; expressions/constants/original coordinates unchanged; common positive-support quantiles and centered widths independently reconstructed; admission rules have no fit or diagnostic outcomes; primary/fine grouping uncertainty explicitly retained.",
+  "audit_source_sha256": "822a64cbcb60941ef7aeff78058da983bc474a1713a89c222650e2cacf7c1cbe"
+}

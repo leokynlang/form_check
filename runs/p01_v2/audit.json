@@ -1,0 +1,51 @@
+{
+  "complete": true,
+  "raw_rows": 58112,
+  "decision_rows": 2457600,
+  "checked_policy_strata_rounds": 600,
+  "infeasible_policy_strata_rounds": 0,
+  "calibration_rounds": 20,
+  "raw_sha256": "23aab947f0dd1b436c121e0f845be7c3e2e87edf3846776a60cb85d574803e12",
+  "auditor_sha256": "2bb5951114abf805e5c14b0d001413ec3a46457ac84c8c3eab7111a4a7f2dfe2",
+  "provenance": {
+    "historical_inputs_checked": [
+      "D:\\form_check\\runs\\srsd_full\\raw_srsd.parquet",
+      "D:\\form_check\\runs\\srsd_full\\quality_recompute.parquet",
+      "D:\\form_check\\runs\\cd_svd\\s2_cd_svd.csv",
+      "D:\\form_check\\runs\\gate_cmp\\results.csv"
+    ],
+    "v1_preserved_files": 150,
+    "legacy_seed_overlap": 0,
+    "available_historical_dataset_hash_overlap": 0,
+    "legacy_content_limit": "Legacy tables without dataset hashes are checked by frozen input digests and disjoint generator seeds; their dataset bytes are not exhaustively regenerated."
+  },
+  "uncertainty_audit": {
+    "policy_metric_summaries": 390,
+    "paired_metric_summaries": 90,
+    "bootstrap_repetitions": 2000,
+    "independently_recreated_intervals": [
+      "conditional_task",
+      "round_mean",
+      "crossed"
+    ]
+  },
+  "tail_diagnostics_summed_over_fitted_policy_uses": {
+    "test_rows_above_member_reference_max": 975717,
+    "distinct_transformed_tail_values": 872985,
+    "zero_p_uses_clipped_to_float64_tiny": 0
+  },
+  "checks": [
+    "raw/cell integrity",
+    "v1 recursive preservation",
+    "legacy input integrity",
+    "phase/round seed and dataset separation",
+    "H0-only reference/calibration",
+    "independent robust affine transformation",
+    "strict threshold, ties and declines",
+    "shared independent test bank",
+    "all decisions",
+    "all per-task accounting",
+    "round metrics and calibration sensitivity",
+    "three paired bootstrap distributions"
+  ]
+}

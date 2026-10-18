@@ -1,0 +1,8 @@
+{
+  "event": "checkpoint_resume_with_more_workers",
+  "previous_workers": 3,
+  "new_workers": 8,
+  "reason": "Host has22 logical processors; BLAS remains1 thread/worker",
+  "completed_cells_at_resume": 180,
+  "protocol_and_seeds_unchanged": true
+}

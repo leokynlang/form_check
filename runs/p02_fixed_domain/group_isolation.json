@@ -1,0 +1,160 @@
+{
+  "passed": true,
+  "n_tasks": 110,
+  "class_counts": {
+    "H1": 73,
+    "H0": 37
+  },
+  "splits": {
+    "calibration": {
+      "H0": 12,
+      "H1": 0,
+      "n_units": 4,
+      "units": [
+        "design:calibration_log_uniform_p1",
+        "design:calibration_log_uniform_p2",
+        "design:calibration_log_uniform_p3",
+        "design:calibration_log_uniform_p4"
+      ]
+    },
+    "confirmation": {
+      "H0": 12,
+      "H1": 38,
+      "n_units": 12,
+      "units": [
+        "design:confirmation_log_beta_p1",
+        "design:confirmation_log_beta_p2",
+        "design:confirmation_log_beta_p3",
+        "design:confirmation_log_beta_p4",
+        "structure:bessel_integral",
+        "structure:damped_resonance",
+        "structure:elliptic_integral",
+        "structure:gaussian",
+        "structure:hyperbolic_response",
+        "structure:inverse_trig_phase",
+        "structure:nested_exponential",
+        "structure:positive_log"
+      ]
+    },
+    "development": {
+      "H0": 13,
+      "H1": 23,
+      "n_units": 18,
+      "units": [
+        "design:legacy_development_feynman-i.12.1",
+        "design:legacy_development_feynman-i.29.4",
+        "design:legacy_development_feynman-i.34.27",
+        "design:legacy_development_feynman-i.38.12",
+        "design:legacy_development_feynman-i.39.10",
+        "design:legacy_development_feynman-i.39.22",
+        "design:legacy_development_feynman-i.43.31",
+        "design:legacy_development_feynman-i.47.23",
+        "design:legacy_development_feynman-ii.27.16",
+        "design:legacy_development_feynman-ii.27.18",
+        "design:legacy_development_feynman-ii.8.31",
+        "design:legacy_development_feynman-iii.12.43",
+        "design:legacy_development_feynman-iii.15.14",
+        "structure:bose_planck",
+        "structure:lorentz_radical",
+        "structure:oscillatory_interference",
+        "structure:rational_denominator",
+        "structure:sum_radical"
+      ]
+    },
+    "reserve": {
+      "H0": 0,
+      "H1": 8,
+      "n_units": 2,
+      "units": [
+        "structure:inverse_exponential",
+        "structure:inverse_hyperbolic"
+      ]
+    },
+    "stress": {
+      "H0": 0,
+      "H1": 4,
+      "n_units": 1,
+      "units": [
+        "structure:threshold_response"
+      ]
+    }
+  },
+  "historical32_identities_included": [
+    "feynman-bonus.15",
+    "feynman-bonus.20",
+    "feynman-bonus.5",
+    "feynman-i.10.7",
+    "feynman-i.12.1",
+    "feynman-i.26.2",
+    "feynman-i.27.6",
+    "feynman-i.29.4",
+    "feynman-i.30.5",
+    "feynman-i.34.27",
+    "feynman-i.37.4",
+    "feynman-i.38.12",
+    "feynman-i.39.10",
+    "feynman-i.39.11",
+    "feynman-i.39.22",
+    "feynman-i.41.16",
+    "feynman-i.43.31",
+    "feynman-i.43.43",
+    "feynman-i.47.23",
+    "feynman-i.48.2",
+    "feynman-ii.11.27",
+    "feynman-ii.11.28",
+    "feynman-ii.13.23",
+    "feynman-ii.13.34",
+    "feynman-ii.27.16",
+    "feynman-ii.27.18",
+    "feynman-ii.38.14",
+    "feynman-ii.8.31",
+    "feynman-iii.12.43",
+    "feynman-iii.15.14",
+    "feynman-iii.4.32",
+    "feynman-iii.4.33"
+  ],
+  "historically_tainted_source_aliases": [
+    "feynman-bonus.15",
+    "feynman-bonus.20",
+    "feynman-bonus.5",
+    "feynman-i.10.7",
+    "feynman-i.12.1",
+    "feynman-i.26.2",
+    "feynman-i.27.6",
+    "feynman-i.29.4",
+    "feynman-i.30.5",
+    "feynman-i.34.27",
+    "feynman-i.37.4",
+    "feynman-i.38.12",
+    "feynman-i.39.10",
+    "feynman-i.39.11",
+    "feynman-i.39.22",
+    "feynman-i.41.16",
+    "feynman-i.43.31",
+    "feynman-i.43.43",
+    "feynman-i.47.23",
+    "feynman-i.48.2",
+    "feynman-ii.11.27",
+    "feynman-ii.11.28",
+    "feynman-ii.13.23",
+    "feynman-ii.13.34",
+    "feynman-ii.27.16",
+    "feynman-ii.27.18",
+    "feynman-ii.38.14",
+    "feynman-ii.8.31",
+    "feynman-iii.12.43",
+    "feynman-iii.15.14",
+    "feynman-iii.4.32",
+    "feynman-iii.4.33"
+  ],
+  "h1_canonical_cross_split_collisions": [],
+  "h1_nonlinear_core_cross_split_collisions": [],
+  "h0_exact_slope_cross_split_collisions": [],
+  "h0_function_family_exception": "H0 tasks intentionally share the monomial/log-linear hypothesis family; design_group is their independent unit.",
+  "h0_exact_structure_exception": null,
+  "limitations": [
+    "Canonical syntax/nonlinear cores are conservative checks, not complete algebraic equivalence tests.",
+    "Manual structural_group assignments are primary and may merge additional source or mechanism near-twins.",
+    "Parameter-window, coordinate-scale or prefactor changes do not create an independent structural family."
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "protocol_id": "p03-physical-coverage-source-census-v1",
+  "registration_status": "pre_execution_registration_incomplete",
+  "purpose": "Census all120 source equations and freeze outcome-independent admission rules before any new physical sampling or fitting. This metadata registration is not an executable experiment freeze.",
+  "selection_information": {
+    "allowed": ["pinned upstream expressions and constants", "source variable descriptions and explicit constraints", "original sampling support and positive-branch semantics", "historical source identities and structural exposure metadata", "analytic or interval domain certificates", "dimension/rank requirements derived from fixed adapters"],
+    "forbidden": ["P01/P02 raw or aggregated fit R2", "prediction/extrapolation errors", "gate statistics or alarms", "method rankings", "screen passing rates", "danger labels", "trial samples used to select support"]
+  },
+  "source_census": {"expected_equations": 120, "maximum_features_scientific": 8, "preserve_original_expression": true, "preserve_physical_prefactors": true, "preserve_source_coordinates": true, "unreported_units": "evidence_missing; never infer SI units from a variable name"},
+  "outer_domain_rule": {
+    "policy_id": "official-positive-branch-central90-v1",
+    "positive_branch": "Condition the ORIGINAL source sampling distribution on every input being strictly positive. DefaultSampling uses its positive log-magnitude branch; SimpleSampling uses the positive support of all permitted sign branches; IntegerSampling preserves its original half-open integer support before positive conditioning.",
+    "continuous_bounds": "Take the5th and95th percentiles of the positive support in the source sampling coordinate: log for DefaultSampling, linear for SimpleSampling. These are the one fixed outer box; no equation-specific numeric shrinking is permitted.",
+    "integer_bounds": "Enumerate the union of originally permitted signed integer supports, condition on positive integers, then take empirical inverse-CDF5th/95th integer quantiles. Preserve every retained integer, inclusive at the declared derived endpoints. Fewer than2 retained values is excluded_unresolved_design_degenerate.",
+    "physical_constraints": "The ENTIRE derived outer box must satisfy source denominators, root/log domains, explicit source constraints and source physical assumptions. Named physical velocities must remain subluminal. If these cannot be proved, mark exclusion_unresolved and list the obligations; do not fix it with random point deletion or manual narrowing.",
+    "signed_outputs": "The signed source target must be strictly positive on the whole outer box; taking abs, flipping sign, shifting outputs or changing the law is forbidden.",
+    "finite_truth": "Require a real, finite mathematical target over the complete compact box. Mathematical positivity is separate from float64 representability.",
+    "no_rescue": "No source-specific change of units, constants, support scale, positive lobe, algebraic target or domain after outcomes. A different scientifically sourced domain policy requires a new registration, complete120-row recensus and fresh future study streams."
+  },
+  "scientific_decisions": {
+    "eligible_analytic": "Whole-box strictly positive finite mathematical truth certified, with recorded physical/source obligations discharged.",
+    "excluded_nonpositive_target": "A source-law proof establishes a nonpositive signed target throughout the positive-input box.",
+    "excluded_no_positive_input_support": "The original permitted source branches contain no strictly positive support for at least one log-input feature; taking its absolute value or changing the source coordinate is forbidden.",
+    "exclusion_unresolved": "Whole-box validity/positivity, source metadata consistency or nondegenerate input support is not established. This is a conservative pending exclusion, not a proof that no physically valid domain exists.",
+    "excluded_dimension_limit": "Source dimension exceeds the preregistered scientific maximum8."
+  },
+  "execution_gates": {
+    "float64": "A positive mathematical law that underflows or suffers cancellation stays scientifically eligible; mark stable_log_truth_adapter_pending and require a source-equivalent log-target evaluator plus high-precision audit.",
+    "dimension": "Scientifically eligible p5-8 tasks require diagnostic_and_grid_adapter_pending; never exclude a law simply because current software supports p<=4.",
+    "source_metadata": "Ambiguous or out-of-range source constraint indices require source_contract_review_pending; no silent interpretation.",
+    "integer": "Original half-open source support and derived positive integer quantiles require explicit adapter parity checks; singleton designs cannot be sampled as if continuous.",
+    "pre_execution": "Exact candidate/task roles, complete source/domain certificates, width-dependent external grids/weights/log truths, all adapter checks, source snapshots, hashes and the final sample seed namespaces must be frozen before new study sampling. No new physical samples or fitted outcomes are generated by this registration."
+  },
+  "structure_and_exposure": {
+    "equivalence_checks": ["variable renaming", "global nonzero constant prefactors", "separable monomial prefactors", "fixed nonzero output powers and reciprocals: log targets differ only by sign/scale", "source equation variants", "explicit conservative mechanism families"],
+    "group_rule": "Connected components of the registered equivalence edges and conservative family labels; exposure propagates to the entire component.",
+    "grouping_limit": "Connected components are deliberately conservative and may overmerge; automatic syntax checks are not a complete proof of algebraic independence. Raw formula and fine-structure tags are retained separately from the primary exposure superfamilies.",
+    "positive_sum_grammar": "For EVERY source formula, test whether removing separable monomial factors and a single whole-output nonzero constant power/reciprocal leaves a finite sum of positive-coefficient Laurent monomials. This fine tag excludes nested nonlinear summands and expanded negative cross terms; it is computed for all120, not a hand-selected list.",
+    "nested_sum_norm_primary_policy": "For primary conservative exposure, source expressions containing an additive nonlinear radical together with another monomial summand are linked to the wider positive-sum/norm superfamily. The fine distinction between a single power of a positive Laurent sum and a nested relativistic energy combination remains disputed metadata, not an established new independent mechanism.",
+    "disputed_structure": "A fine unexposed combination inside a previously exposed primary superfamily is development_conservative and candidate_pending_structural_review. A uniform expert review of ALL120 structure rules is needed before any future sampling; do not adjudicate only a single promising candidate or use future outcomes.",
+    "direct_exposure": "Historical32 source identities plus the6 additional physical-source equations registered in P02 have prior_study_outcomes exposure. All120 equations have metadata_only exposure at minimum. P02 mechanism identities/roles are read without any performance file; previously reserved mechanisms carry mechanism_design_only rather than a claim of study evaluation.",
+    "exposure_levels": ["prior_study_outcomes", "mechanism_design_only", "metadata_only"],
+    "exposure_reporting": "Record direct source exposure and inherited group exposure separately. Prior study outcomes can propagate through a conservative family link while the individual source itself has only metadata exposure. A design-only overlap may conservatively remain development as protection against shared selection, without claiming it was evaluated.",
+    "development": "Any component with prior source/mechanism exposure is development, irrespective of new dimensionality, constants or sampling width.",
+    "prospective_candidate": "A group without prior study outcomes or registered mechanism-design overlap is only a prospective candidate, subject to domain and adapter completion. Prospective means no prior study outcome in this research process, NOT that its formula or metadata has never been seen. Source count is not independent group count.",
+    "null_exception": "All H0 laws share the monomial hypothesis family. New H0s validate sampling-design transfer only, never unseen null functional families."
+  },
+  "common_factorial_design": {
+    "training_width_fractions": [0.25, 0.50, 0.75],
+    "training_center": "Midpoint of the fixed outer box in each registered source coordinate; width is a fraction of the outer coordinate span, applied uniformly to every admitted group.",
+    "integer_training": "Use all integer values inside each centered training interval; require at least2 values per feature and nonempty external support for every registered width, otherwise the design obligation remains unresolved.",
+    "noise_grid": [0.005, 0.01, 0.03, 0.05],
+    "n_grid": [200, 1000],
+    "n_rationale": "With up to8 features the full quadratic has45 columns; five-fold training at n=200 has160 rows. This is a structural feasibility choice, not a result-based power calculation.",
+    "test_replicates_per_cell": 100,
+    "complete_crossing": "Every scientifically admitted group/variant is crossed with all3 widths,4 noise levels and2 sample sizes. Retain failed screens and numerical declines in operational denominators; do not drop poorly fitting or difficult cells.",
+    "noise_law": "Independent Gaussian noise in log target with sd=rel; target is noiseless log-location/conditional median, not lognormal arithmetic mean.",
+    "fit_screen": {"log_space_r2": 0.99, "role": "A registered downstream release condition ONLY; never equation inclusion, exclusion, domain selection or stopping."}
+  },
+  "fixed_outcomes": {
+    "primary": "weighted mean pointwise relative error on the pre-sampling fixed external region",
+    "primary_danger_threshold": 0.10,
+    "secondary": ["weighted p95 relative error", "maximum relative error", "continuous error distribution", "danger thresholds0.02,0.05,0.20", "all/screened release and decline counts"],
+    "grid_design": "Predefine per width: all valid axial lower/upper directions plus fixed Sobol/corner external support, equal0.5 total axial and0.5 joint weight; p5-8 geometry and coverage must pass an adapter audit before the grid recipe is finalized. No truth-based point pruning.",
+    "truth_scale": "Compute source-equivalent log truths where necessary; positive compact-domain truth means no arbitrary relative-error denominator floor.",
+    "unavailable": "An unavailable whole-region outcome is reported separately; never remove bad points or redefine scientific admission."
+  },
+  "calibration_and_inference": {
+    "methods": ["A", "B", "C", "D", "E", "F", "G"],
+    "policies": ["D", "F", "AD_panel", "AEF_panel", "G_rbf_cv"],
+    "budget_grid": [0.01, 0.05, 0.10],
+    "primary_budget": 0.05,
+    "calibration_rounds": 10,
+    "reference_replicates_per_null_design": 32,
+    "calibration_replicates_per_null_design": 64,
+    "mapping": "Reuse P01v2 H0-only unbounded robust score mapping and whole-panel budget calibration; all future physical reference/calibration/test streams fresh and mutually disjoint.",
+    "null_design_obligation": "Before execution, register dimension/scale-matched synthetic monomial calibration controls for every admitted source design, with positive dimensionless coordinate ratios relative to fixed source-box centers. These are calibration controls, not additional physical equations. Freeze exponents, pooled-stratum rules and held-out null-design definitions; no ad hoc calibration after performance.",
+    "uncertainty": "Paired cross-resampling of calibration rounds and whole H1 structure/H0 design groups. Report raw source count, independent group count, denominator-contributing groups and development/prospective pools separately.",
+    "pool_ranking": "Only prospectively allocated complete groups support a prospective physical comparison; development coverage remains descriptive."
+  },
+  "stop_and_change_rule": "Execute no new physical samples in this metadata task. Future experiments use the complete frozen grid with a fixed repeat count; no optional stopping, source replacement, manual domain rescue or post-result threshold tuning. Incomplete registration is reported plainly rather than represented as a runnable freeze.",
+  "coverage_goals": {
+    "within_catalog": "Use every scientifically admitted source law to expand source/dimension/training-width coverage, with development results explicitly separate. Increased source count is not increased independent new-mechanism count.",
+    "new_mechanism_confirmation": "If this catalog has no undisputed eligible unexposed primary H1 group, it cannot support multi-mechanism prospective confirmation. A disputed single fine combination is not a substitute.",
+    "additional_catalog_obligation": "Before any broader new-mechanism study, choose and register an additional independent physical source catalog as a whole: pin its version/source evidence and conduct a complete inclusion/exclusion census under uniform domain rules before seeing new data. No external catalog has been selected in this registration. Do not choose individual formulas according to P02 risk/omissions and do not count synthetic parameter variants as independent physical groups."
+  },
+  "preservation": ["runs/p01_pilot_v1", "runs/p01_v2", "runs/p02_fixed_domain", "paper/research_R2"],
+  "metadata_output_root": "runs/p03_physical_protocol"
+}

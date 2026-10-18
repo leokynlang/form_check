@@ -68,6 +68,9 @@ real_data/**/__pycache__/
 # [可再生] 中间目录:一次性补丁脚本、渲染中间件
 tmp/
 
+# [可再生] 测试运行时写入的临时注册产物
+runs/**/*_test_tmp/
+
 # Large research data and generated search traces are published as Release assets.
 outputs/
 runs/pysr_gate/

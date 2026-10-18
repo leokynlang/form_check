@@ -1,0 +1,476 @@
+{
+  "status": "Review proposals only, not a frozen protocol or final split.",
+  "selection_basis": "Source formula, physical variable descriptions, positive official branches and analytic bounds only; no fits/outcomes.",
+  "candidates": [
+    {
+      "eq_name": "feynman-i.6.20a",
+      "outer_box": [
+        [
+          0.1,
+          3.0
+        ]
+      ],
+      "proof": "exp(-theta^2/2)/sqrt(2*pi)>0 for finite theta; bounded exponent avoids underflow.",
+      "merge_note": "All Gaussian variants together.",
+      "expression": "sqrt(2)*exp(-x0**2/2)/(2*sqrt(pi))",
+      "suggested_group": "structural-045",
+      "historically_tainted_group": false
+    },
+    {
+      "eq_name": "feynman-i.6.20",
+      "outer_box": [
+        [
+          0.1,
+          2.0
+        ],
+        [
+          1.0,
+          10.0
+        ]
+      ],
+      "proof": "sigma>=1, |theta/sigma|<=2, positive Gaussian density without underflow.",
+      "merge_note": "All Gaussian variants together.",
+      "expression": "sqrt(2)*exp(-x0**2/(2*x1**2))/(2*sqrt(pi)*x1)",
+      "suggested_group": "structural-045",
+      "historically_tainted_group": false
+    },
+    {
+      "eq_name": "feynman-i.6.20b",
+      "outer_box": [
+        [
+          0.1,
+          2.0
+        ],
+        [
+          0.1,
+          2.0
+        ],
+        [
+          1.0,
+          10.0
+        ]
+      ],
+      "proof": "sigma>=1, |(theta-theta1)/sigma|<=1.9, positive Gaussian density.",
+      "merge_note": "All Gaussian variants together.",
+      "expression": "sqrt(2)*exp(-(x0 - x1)**2/(2*x2**2))/(2*sqrt(pi)*x2)",
+      "suggested_group": "structural-045",
+      "historically_tainted_group": false
+    },
+    {
+      "eq_name": "feynman-i.15.3t",
+      "outer_box": [
+        [
+          5e-05,
+          0.0001
+        ],
+        [
+          100000.0,
+          10000000.0
+        ],
+        [
+          1.0,
+          100.0
+        ]
+      ],
+      "proof": "v<c and t-v*x/c^2 >=5e-5-1.12e-8>0.",
+      "merge_note": "Conservatively merge with all historical Lorentz/Doppler structures; development only.",
+      "expression": "(x0 - 1.11265005605362e-17*x1*x2)/sqrt(1 - 1.11265005605362e-17*x1**2)",
+      "suggested_group": "structural-026",
+      "historically_tainted_group": false
+    },
+    {
+      "eq_name": "feynman-i.15.3x",
+      "outer_box": [
+        [
+          60.0,
+          100.0
+        ],
+        [
+          1000000.0,
+          10000000.0
+        ],
+        [
+          1e-06,
+          5e-06
+        ]
+      ],
+      "proof": "v<c and x-v*t>=60-50>0.",
+      "merge_note": "Conservatively merge with all historical Lorentz/Doppler structures; development only.",
+      "expression": "(x0 - x1*x2)/sqrt(1 - 1.11265005605362e-17*x1**2)",
+      "suggested_group": "structural-026",
+      "historically_tainted_group": false
+    },
+    {
+      "eq_name": "feynman-i.16.6",
+      "outer_box": [
+        [
+          1000000.0,
+          100000000.0
+        ],
+        [
+          1000000.0,
+          100000000.0
+        ]
+      ],
+      "proof": "Both velocities positive and below c; denominator 1+v*w/c^2>1 and composed speed<c.",
+      "merge_note": "Relativistic family; conservatively merge historical Lorentz/Doppler group.",
+      "expression": "(x0 + x1)/(1.11265005605362e-17*x0*x1 + 1)",
+      "suggested_group": "structural-027",
+      "historically_tainted_group": false
+    },
+    {
+      "eq_name": "feynman-i.18.12",
+      "outer_box": [
+        [
+          0.1,
+          10.0
+        ],
+        [
+          0.1,
+          10.0
+        ],
+        [
+          0.5235987755982988,
+          2.6179938779914944
+        ]
+      ],
+      "proof": "All factors positive and sin(theta)>=1/2.",
+      "merge_note": "Merge positive sine/cosine phase shifts; historical trigonometric group may taint.",
+      "expression": "x0*x1*sin(x2)",
+      "suggested_group": "structural-028",
+      "historically_tainted_group": false
+    },
+    {
+      "eq_name": "feynman-i.30.3",
+      "outer_box": [
+        [
+          10.0,
+          1000.0
+        ],
+        [
+          10,
+          20
+        ],
+        [
+          0.005,
+          0.02
+        ]
+      ],
+      "proof": "Integer N in [10,20], phi/2 in [.0025,.01], N*phi/2 in [.025,.2]; neither sine vanishes.",
+      "sampling_note": "Retain integer sampling for N; do not silently turn slit count into continuous feature.",
+      "merge_note": "Trigonometric ratio/diffraction family; possible old sine-ratio overlap.",
+      "expression": "x0*sin(x1*x2/2)**2/sin(x2/2)**2",
+      "suggested_group": "structural-034",
+      "historically_tainted_group": false
+    },
+    {
+      "eq_name": "feynman-i.34.10",
+      "outer_box": [
+        [
+          1000000000.0,
+          100000000000.0
+        ],
+        [
+          100000.0,
+          10000000.0
+        ]
+      ],
+      "proof": "nu>0 and 1-v/c>=1-1e7/c>0.",
+      "merge_note": "Merge Doppler/Lorentz family for conservative historical exposure.",
+      "expression": "x0/(1 - 3.33564095198152e-9*x1)",
+      "suggested_group": "structural-037",
+      "historically_tainted_group": false
+    },
+    {
+      "eq_name": "feynman-i.34.14",
+      "outer_box": [
+        [
+          1000000.0,
+          100000000.0
+        ],
+        [
+          1000000000.0,
+          100000000000.0
+        ]
+      ],
+      "proof": "v<c, nu>0; both (1+v/c) and sqrt(1-v^2/c^2) positive.",
+      "merge_note": "Merge Doppler/Lorentz family for conservative historical exposure.",
+      "expression": "x1*(3.33564095198152e-9*x0 + 1)/sqrt(1 - 1.11265005605362e-17*x0**2)",
+      "suggested_group": "structural-038",
+      "historically_tainted_group": false
+    },
+    {
+      "eq_name": "feynman-ii.6.11",
+      "outer_box": [
+        [
+          1e-22,
+          1e-20
+        ],
+        [
+          0.2617993877991494,
+          1.3089969389957472
+        ],
+        [
+          1e-10,
+          1e-08
+        ]
+      ],
+      "proof": "Positive charge/radius and cos(theta)>=cos(5*pi/12)>0.",
+      "merge_note": "Positive sine/cosine phase-shift family.",
+      "expression": "28235825615.541*x0*cos(x1)/(pi*x2**2)",
+      "suggested_group": "structural-052",
+      "historically_tainted_group": false
+    },
+    {
+      "eq_name": "feynman-ii.6.15b",
+      "outer_box": [
+        [
+          1e-22,
+          1e-20
+        ],
+        [
+          0.2617993877991494,
+          1.3089969389957472
+        ],
+        [
+          1e-10,
+          1e-08
+        ]
+      ],
+      "proof": "Positive charge/radius, theta in (0,pi/2), so sin(theta)*cos(theta)>0.",
+      "merge_note": "sin(theta)cos(theta)=sin(2theta)/2; merge sine/cosine family.",
+      "expression": "84707476846.623*x0*sin(x1)*cos(x1)/(pi*x2**3)",
+      "suggested_group": "structural-059",
+      "historically_tainted_group": false
+    },
+    {
+      "eq_name": "feynman-ii.15.4",
+      "outer_box": [
+        [
+          1e-25,
+          1e-23
+        ],
+        [
+          0.001,
+          0.1
+        ],
+        [
+          2.0943951023931953,
+          2.6179938779914944
+        ]
+      ],
+      "proof": "Positive dipole/field and cos(theta)<0 imply -p*E*cos(theta)>0.",
+      "merge_note": "Exact formula twin II.15.5; positive phase-shift sine/cosine family.",
+      "expression": "-x0*x1*cos(x2)",
+      "suggested_group": "structural-052",
+      "historically_tainted_group": false
+    },
+    {
+      "eq_name": "feynman-ii.15.5",
+      "outer_box": [
+        [
+          1e-22,
+          1e-20
+        ],
+        [
+          10.0,
+          1000.0
+        ],
+        [
+          2.0943951023931953,
+          2.6179938779914944
+        ]
+      ],
+      "proof": "Positive factors and cos(theta)<0 imply positive product with leading minus.",
+      "merge_note": "Exact formula twin II.15.4; positive phase-shift sine/cosine family.",
+      "expression": "-x0*x1*cos(x2)",
+      "suggested_group": "structural-052",
+      "historically_tainted_group": false
+    },
+    {
+      "eq_name": "feynman-ii.21.32",
+      "outer_box": [
+        [
+          0.001,
+          0.1
+        ],
+        [
+          1.0,
+          100.0
+        ],
+        [
+          1000000.0,
+          100000000.0
+        ]
+      ],
+      "proof": "All factors positive and v<c keeps Doppler denominator positive.",
+      "merge_note": "Same nonlinear core as I.34.10; merge Doppler/Lorentz historical family.",
+      "expression": "28235825615.541*x0/(pi*x1*(1 - 3.33564095198152e-9*x2))",
+      "suggested_group": "structural-037",
+      "historically_tainted_group": false
+    },
+    {
+      "eq_name": "feynman-ii.24.17",
+      "outer_box": [
+        [
+          30000000000.0,
+          100000000000.0
+        ],
+        [
+          0.05,
+          0.1
+        ]
+      ],
+      "proof": "omega^2/c^2-pi^2/d^2>=1.11265e-17*(3e10)^2-pi^2/.05^2>6000.",
+      "merge_note": "Difference-of-squares square-root; review alongside bonus.7.",
+      "expression": "sqrt(1.11265005605362e-17*x0**2 - pi**2/x1**2)",
+      "suggested_group": "structural-054",
+      "historically_tainted_group": false
+    },
+    {
+      "eq_name": "feynman-ii.37.1",
+      "outer_box": [
+        [
+          1e-25,
+          1e-23
+        ],
+        [
+          10000.0,
+          1000000.0
+        ],
+        [
+          0.001,
+          0.1
+        ]
+      ],
+      "proof": "All factors positive, 1+x1>1.",
+      "merge_note": "Affine-shift numerator versus historical shifted denominator differs mainly by sign in log space; conservative merge.",
+      "expression": "x0*x2*(x1 + 1)",
+      "suggested_group": "structural-058",
+      "historically_tainted_group": false
+    },
+    {
+      "eq_name": "feynman-iii.8.54",
+      "outer_box": [
+        [
+          1e-18,
+          1e-17
+        ],
+        [
+          1e-18,
+          1e-17
+        ]
+      ],
+      "proof": "Phase is in approximately [.00948,.9483], inside (0,pi), so sin^2>0.",
+      "merge_note": "sin^2(theta)=(1-cos(2theta))/2; merge III.15.12, diffraction and other phase-shift trig if broad grouping.",
+      "expression": "sin(3018412315122245888053292650463232*pi*x0*x1)**2",
+      "suggested_group": "structural-064",
+      "historically_tainted_group": false
+    },
+    {
+      "eq_name": "feynman-iii.15.12",
+      "outer_box": [
+        [
+          1e-18,
+          1e-16
+        ],
+        [
+          0.1,
+          10.0
+        ],
+        [
+          1e-10,
+          1e-08
+        ]
+      ],
+      "proof": "Analytically phase is in [1e-11,1e-7], so 1-cos(phase)>0.",
+      "numerical_caveat": "Original numpy 1-cos rounds to zero at small phase. Requires frozen algebraically equivalent 2*sin(phase/2)^2 evaluator before reuse; do not silently sample-reject.",
+      "merge_note": "Exact trig identity twin of squared sine up to phase mapping.",
+      "expression": "2*x0*(1 - cos(x1*x2))",
+      "suggested_group": "structural-062",
+      "historically_tainted_group": false
+    },
+    {
+      "eq_name": "feynman-iii.17.37",
+      "outer_box": [
+        [
+          1e-18,
+          1e-16
+        ],
+        [
+          1e-18,
+          1e-16
+        ],
+        [
+          0.2617993877991494,
+          1.3089969389957472
+        ]
+      ],
+      "proof": "1+a*cos(theta)>0.",
+      "numerical_caveat": "a<=1e-16 makes nonlinearity at/below double precision relative to the constant. Not a meaningful new H1 at original ranges in float64; keep inventory only unless explicitly changing physical design.",
+      "merge_note": "Affine cosine family; do not call computationally collapsed curve a substantive H1.",
+      "expression": "x0*(x1*cos(x2) + 1)",
+      "suggested_group": "structural-063",
+      "historically_tainted_group": false
+    },
+    {
+      "eq_name": "feynman-bonus.8",
+      "outer_box": [
+        [
+          1e-24,
+          1e-22
+        ],
+        [
+          0.2617993877991494,
+          2.8797932657906435
+        ]
+      ],
+      "proof": "lambda>0 and 1+positive*(1-cos(theta))>=1.",
+      "numerical_caveat": "Within original lambda range nonlinear denominator correction is <=2.45e-9; physically valid but close to monomial.",
+      "merge_note": "Compton/trig-rational family; not guaranteed independent of trigonometric pool.",
+      "expression": "x0/(12214328760283.5*x0*(1 - cos(x1)) + 1)",
+      "suggested_group": "structural-018",
+      "historically_tainted_group": false
+    },
+    {
+      "eq_name": "feynman-bonus.10",
+      "outer_box": [
+        [
+          0.2617993877991494,
+          1.0471975511965976
+        ],
+        [
+          1000000.0,
+          100000000.0
+        ]
+      ],
+      "proof": "cos(theta)>=.5 and beta<=.334 imply numerator>.166; denominator>=1-.334>0.",
+      "merge_note": "Relativistic aberration; merge historical Doppler/Lorentz family conservatively.",
+      "expression": "(-3.33564095198152e-9*x1 + cos(x0))/(-3.33564095198152e-9*x1*cos(x0) + 1)",
+      "suggested_group": "structural-001",
+      "historically_tainted_group": false
+    },
+    {
+      "eq_name": "feynman-bonus.18",
+      "outer_box": [
+        [
+          10.0,
+          1000.0
+        ],
+        [
+          100000000.0,
+          10000000000.0
+        ],
+        [
+          1.0,
+          100.0
+        ]
+      ],
+      "proof": "Both c^2*x0/x1^2 and x2^2 strictly positive.",
+      "merge_note": "Positive sum-of-monomials family; compare with old bonus.5 and new synthetic sum/mixture group before split.",
+      "expression": "5618566741.08146*(8.98755178736818e+16*x0/x1**2 + x2**2)/pi",
+      "suggested_group": "structural-009",
+      "historically_tainted_group": false
+    }
+  ]
+}

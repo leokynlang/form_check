@@ -1,0 +1,100 @@
+{
+  "protocol": {
+    "protocol_id": "p01-independent-recalibration-v2",
+    "protocol_version": 2,
+    "status": "frozen_known_equation_validation",
+    "master_seed": 2026101802,
+    "calibration_rounds": 20,
+    "n_grid": [
+      50,
+      200
+    ],
+    "noise_grid": [
+      0.03
+    ],
+    "replicates": {
+      "reference": 32,
+      "calibration": 64,
+      "test": 128
+    },
+    "expected_datasets": 58112,
+    "expected_test_datasets": 8192,
+    "budgets": [
+      0.01,
+      0.05,
+      0.1
+    ],
+    "primary_budget": 0.05,
+    "screen_r2": 0.99,
+    "danger_threshold": 0.1,
+    "methods": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G"
+    ],
+    "policies": {
+      "D": [
+        "D"
+      ],
+      "F": [
+        "F"
+      ],
+      "AD_panel": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "AEF_panel": [
+        "A",
+        "E",
+        "F"
+      ],
+      "G_rbf_cv": [
+        "G"
+      ]
+    },
+    "score_mapping": {
+      "p_methods": "A-D stored raw score=-p; use -log10(max(p,float64.tiny)); invalid p outside [0,1] declines",
+      "comparison_methods": "E/F/G identity raw higher-is-anomalous score",
+      "center": "H0 reference median after registered fit screen",
+      "scale_order": [
+        "IQR(linear quantiles)/1.3489795003921634",
+        "MAD*1.482602218505602",
+        "population SD (ddof=0)"
+      ],
+      "scale_validity": "first strictly positive finite candidate; otherwise reference unusable and every evaluation of member declines",
+      "panel": "max of member (transformed score-center)/scale; no clipping, no CDF, no jitter",
+      "intrinsic_limits": "A retains B=999 permutation p resolution; floating-point p<=tiny are clamped and counted separately"
+    },
+    "budget_event": "alarm OR member decline conditional on H0 passing finite training log-space R2 >=0.99",
+    "threshold_rule": "smallest finite observed calibration score with (strict exceedances+declines)/screened_N <=budget; no test outcome used; infeasible if declines alone exceed floor(budget*N)",
+    "calibration_design": "20 mutually independent H0 reference/calibration pairs per stratum on fixed13 H0 tasks; H1 only generated for test; a single fresh independent test bank is shared across rounds and policies",
+    "point_estimator": "equal mean of round-specific ratios; primary aggregate undefined unless all20 policy rounds are feasible and ratio defined; feasible/defined-only sensitivity labelled separately",
+    "uncertainty": {
+      "round_sensitivity": "sample SD(ddof=1), min/max and empirical linear2.5/97.5 percentile RANGE across fitted calibration rounds conditional on fixed test bank; range is not a confidence interval",
+      "bootstrap_repetitions": 2000,
+      "conditional_task": "stratified paired test-task bootstrap keeping13 H0/19 H1 task counts; all20 fitted calibration policies fixed",
+      "round_only": "bootstrap20 rounds with replacement and fixed original test-task weights, interval for empirical mean",
+      "crossed": "one shared bootstrap round-index vector and one shared H0/H1-stratified test-task weight vector per draw; same vectors across all policies and rounds; average within-round ratios",
+      "scope": "Conditional on fixed H0 calibration task identities, empirical calibration-round bank and realized shared test samples. Does not refit/calibrate unseen H0 equation sets, include record-level test resampling, or establish unseen-equation generalization."
+    },
+    "permutations": 999,
+    "cv_folds": 5,
+    "rbf": {
+      "landmarks": 32,
+      "bandwidth_squared": "number_of_features",
+      "ridge_per_observation": 0.01
+    },
+    "outcome": "legacy upper endpoint from v1: first feature3*observed training max; others training log medians; unknown outcomes retained operationally and excluded only from labelled-risk denominator",
+    "preservation": "Keep every v1 file byte-for-byte; write all v2 artifacts to runs/p01_v2; verify all v1 recursive hashes and new seed/data-hash disjointness",
+    "stop_rule": "One frozen grid. No tuning or stopping based on new test results. Statistical changes require a new protocol and fresh streams."
+  },
+  "protocol_sha256": "994aced95507deca503180a11572a1cb3798dd1395069cbb7175fc088c28de4d",
+  "fingerprint": "936c97f96c77ae1e040e9f0fd1fdbc8bc9f5f76317688857b6ee10c3a9f4a1c7",
+  "generation_started_after_freeze": true
+}

@@ -1,0 +1,139 @@
+{
+  "protocol_id": "p02-fixed-domain-structure-groups-v1",
+  "master_seed": 2026101803,
+  "status": "freeze_before_sampling",
+  "stages": {
+    "stage1": {
+      "n_grid": [
+        50,
+        200
+      ],
+      "noise_grid": [
+        0.03
+      ]
+    },
+    "stage2": {
+      "n_grid": [
+        50,
+        200,
+        1000
+      ],
+      "noise_grid": [
+        0.005,
+        0.01,
+        0.03,
+        0.05
+      ],
+      "exclude_stage1_cells": true
+    }
+  },
+  "test_replicates": 100,
+  "calibration_rounds": 10,
+  "reference_replicates": 32,
+  "calibration_replicates": 64,
+  "budgets": [
+    0.01,
+    0.05,
+    0.1
+  ],
+  "primary_budget": 0.05,
+  "screen_r2": 0.99,
+  "danger_thresholds": [
+    0.02,
+    0.05,
+    0.1,
+    0.2
+  ],
+  "primary_danger_threshold": 0.1,
+  "methods": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G"
+  ],
+  "policies": {
+    "D": [
+      "D"
+    ],
+    "F": [
+      "F"
+    ],
+    "AD_panel": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "AEF_panel": [
+      "A",
+      "E",
+      "F"
+    ],
+    "G_rbf_cv": [
+      "G"
+    ]
+  },
+  "score_mapping": "Reuse frozen P0-1 v2 negative-log-p / robust affine H0-only mapping and joint threshold; no tuning on P0-2 outcomes",
+  "diagnostics": {
+    "permutations_A": 999,
+    "A_bootstrap": 200,
+    "cv_folds": 5,
+    "G_rbf_landmarks": 32,
+    "G_ridge_per_observation": 0.01,
+    "G_bandwidth_squared": "number_of_features"
+  },
+  "truth_numerics": "Exact source formulas and physical prefactors retained. exp(t)-1 is evaluated using expm1(t). Preflight I.41.16 stable truth agrees with 65-digit math to 1.68e-15 relative; cancellation-prone upstream callback differs by up to 3.42%. This is a disclosed numerical correction; v1/v2 files remain unchanged.",
+  "training_sampling": "Independent Gaussian noise of sd rel in log target. Domain log/linear/integer scales fixed per task, no rejection sampling. Calibration nulls are log-uniform; confirmation nulls Beta(2,2) in log coordinates. Debug seeds are reserved for domain and deterministic software regression checks; those can exercise fitting/adapter code but are excluded from study records. No outcome-based task/domain/window selection.",
+  "sample_split": "All historically evaluated source tasks and algebraic near-twins remain development. New H1 structure groups assigned as whole groups. H0 all share the monomial family; independently assigned design groups test sampling-design transfer, not unseen null functional families.",
+  "role_generation": {
+    "reference": "H0 split=calibration only",
+    "calibration": "H0 split=calibration only",
+    "test": "development,confirmation,stress",
+    "reserve": "No noisy samples, candidate fits or gate outcomes"
+  },
+  "grid": {
+    "seed": 2026101803,
+    "axial_points_per_direction": 8,
+    "joint_sobol_candidates": 256,
+    "include_outer_corners": true,
+    "axial_mass": 0.5,
+    "joint_mass": 0.5,
+    "duplicate_rule": "merge coordinates and sum component weights",
+    "truth_rule": "No truth-based point pruning; fail before sampling if any coordinate invalid or nonpositive"
+  },
+  "outcome": {
+    "primary": "weighted_mean_relative_error",
+    "secondary": [
+      "weighted_p95_relative_error",
+      "max_relative_error",
+      "legacy_endpoint_error"
+    ],
+    "target": "fixed noiseless positive truth/log-location, not lognormal arithmetic mean",
+    "pointwise_relative_error": "abs(exp(pred_log-log(truth))-1), no hidden denominator floor or finite-point removal"
+  },
+  "group_inference": {
+    "bootstrap_repetitions": 2000,
+    "primary_point": "mean of round-specific pooled-record ratios within each named evaluation pool",
+    "resampling": "calibration rounds crossed with class-stratified structure/design groups; shared group weights across methods and rounds",
+    "secondary_point": "equal mean of defined group-specific dangerous-release ratios, report omitted/undefined group counts",
+    "scope": "Conditional on fixed calibration-design pool and registered library; not universal physics/population validity; no within-record test bootstrap"
+  },
+  "evaluation_pools": [
+    "confirmation_all",
+    "confirmation_physical_sources",
+    "confirmation_designed_controls",
+    "development",
+    "stress"
+  ],
+  "pool_control_rule": "Physical-source and designed-control subpools both include all confirmation H0 controls. Stress includes the same confirmation H0 controls plus stress H1; development uses development H0/H1. Shared controls are not independent replications. Main ranking is confirmation_all, not stress or development.",
+  "legacy_endpoint_rule": "Compatibility-only sample-dependent 3x-first-coordinate endpoint is evaluated only if inside registered outer box and integer support. Otherwise unavailable with explicit reason; never substitutes for fixed-grid primary outcome.",
+  "preservation": [
+    "runs/p01_pilot_v1",
+    "runs/p01_v2"
+  ],
+  "output_root": "runs/p02_fixed_domain",
+  "stop_rule": "Freeze tasks, structural splits, complete grids/weights/truths and sources before any noisy training draw. Execute fixed stage1 now. Stage2 remains registered, unrun until explicitly launched; do not imply full grid completion. No outcome-driven domain revision, task replacement, threshold tuning or optional stopping. Changes require a new protocol/run."
+}

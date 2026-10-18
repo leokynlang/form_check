@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "pdf_sha256": "5f1fd1afd6e1ec06a81590f067779020c0c052a6fe3ca5bc08d2bf5891a01433",
+  "manuscript_sha256": "51d9b2ae58794337a58a9fe2029e3740525de27f9d2e699ac8b774f00bfeda91",
+  "pages": 51,
+  "preserved_legacy_table_rows": 150,
+  "evidence_source_hashes_verified": 35,
+  "audits": {
+    "runs/p02_fixed_domain/stage1/independent_audit.json": "2e74e2eabf6b8968e5574bff9690c4b9598c5f27f1b26d4a225089627f345083",
+    "runs/p02_fixed_domain/stage2/independent_audit.json": "80e1ecb21cc6f01ae74d16e18f1dd080947d98aa00db69adcb35fcf11e9aa1f2",
+    "runs/p02_fixed_domain/complete_grid/independent_audit.json": "61c0f161c4c52d91e4d7774a8759a67eeb08652577ff9d63bac3d3780e9375af",
+    "runs/p03_physical_protocol/independent_selection_review.json": "c113dd3dce1d2c54e747977332da5d220b469233e0389e46121822b88760b91f"
+  },
+  "preserved_trees": {
+    "stage1_files": 676,
+    "paper_R2_files": 31
+  },
+  "page_bounds_and_glyphs": "passed",
+  "unresolved_markers": 0,
+  "visual_review_sha256": "ed080bb869549701fafa6a1937463be5b6a2678285d1e2e09542e970c42226c0"
+}

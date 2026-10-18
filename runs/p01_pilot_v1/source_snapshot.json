@@ -1,0 +1,85 @@
+{
+  "purpose": "Exact sources used to generate pilot records, preserved before non-statistical maintenance.",
+  "files": {
+    "D:\\form_check\\experiments\\release_validation\\analyze.py": {
+      "snapshot": "source_snapshot\\experiments\\release_validation\\analyze.py",
+      "sha256": "e15d9fa874381dc337dfc4c61e12fea335c1f7fbdd336eb4d62ea80b5d3fc7c7"
+    },
+    "D:\\form_check\\experiments\\release_validation\\calibration.py": {
+      "snapshot": "source_snapshot\\experiments\\release_validation\\calibration.py",
+      "sha256": "87196c6a0e74adaffd695233e36d52c3e8a7ede953222b86cc16d092a11a5d61"
+    },
+    "D:\\form_check\\experiments\\release_validation\\gates.py": {
+      "snapshot": "source_snapshot\\experiments\\release_validation\\gates.py",
+      "sha256": "cac193a887e04a8edb33e1053b38d4212cb2ef12d1ae8cb179cc86598edbce5b"
+    },
+    "D:\\form_check\\experiments\\release_validation\\inventory.py": {
+      "snapshot": "source_snapshot\\experiments\\release_validation\\inventory.py",
+      "sha256": "e8fb9238f55fbc233f376412d7e86716b631f6735cbc927bb22acc9901a2cac8"
+    },
+    "D:\\form_check\\experiments\\release_validation\\runner.py": {
+      "snapshot": "source_snapshot\\experiments\\release_validation\\runner.py",
+      "sha256": "a3b55dc3dcc10160175329be565964c9fa5b39bddcfd59d3bc594c0011b15655"
+    },
+    "D:\\form_check\\experiments\\release_validation\\__init__.py": {
+      "snapshot": "source_snapshot\\experiments\\release_validation\\__init__.py",
+      "sha256": "da3a04da34370c90e6b1bd96a545c604bd0a1d3c209d0b275372a29ad511c376"
+    },
+    "D:\\form_check\\common.py": {
+      "snapshot": "source_snapshot\\common.py",
+      "sha256": "1cef8a33ff8c7f6f31618efde13b45740e45bb3f6161c8a686b291d2932fba0a"
+    },
+    "D:\\form_check\\gate_compare.py": {
+      "snapshot": "source_snapshot\\gate_compare.py",
+      "sha256": "171bdbb3c0a98b33d8b9599960464a8484136c24ef62d8ba9a58bc6115022837"
+    },
+    "D:\\form_check\\srsd_data.py": {
+      "snapshot": "source_snapshot\\srsd_data.py",
+      "sha256": "c78ffc297912bd52e372b6710e805932f6203da929e25ce6fbfb73a168939e7f"
+    },
+    "D:\\form_check\\_bootstrap.py": {
+      "snapshot": "source_snapshot\\_bootstrap.py",
+      "sha256": "aa858a55c9b0df7528408b64fed778e0ab3a769efc5aa2a058acb456b48c2aa7"
+    },
+    "D:\\form_check\\dimreflex\\discover.py": {
+      "snapshot": "source_snapshot\\dimreflex\\discover.py",
+      "sha256": "bdf7b06978f2e1d39b81698974a56f0a6fccf9acb929edaa9a2c46bf6735e281"
+    },
+    "D:\\form_check\\dimreflex\\_ols.py": {
+      "snapshot": "source_snapshot\\dimreflex\\_ols.py",
+      "sha256": "082609bf0481525d95c665ca3617cf315466a01ef98e484069c8fbdbcaacda7c"
+    },
+    "D:\\form_check\\paper\\revision_loc\\rerun_cd_svd.py": {
+      "snapshot": "source_snapshot\\paper\\revision_loc\\rerun_cd_svd.py",
+      "sha256": "94b41865e36a81cd6f4e7285d75109cde48b1668afb323b044f7b13585f768b9"
+    },
+    "D:\\form_check\\runs\\srsd_full\\config.json": {
+      "snapshot": "source_snapshot\\runs\\srsd_full\\config.json",
+      "sha256": "48e688639e521674a8b37c934b1719a4721d153599507402b43f34e1933140d6"
+    },
+    "C:\\Users\\16910\\AppData\\Local\\Temp\\srsd-benchmark\\datasets\\__init__.py": {
+      "snapshot": "source_snapshot\\_upstream\\14\\__init__.py",
+      "sha256": "a70db20ab22a74bced17ea0569ca9fdd28bab14ef2968b109a09366cdb52aef7"
+    },
+    "C:\\Users\\16910\\AppData\\Local\\Temp\\srsd-benchmark\\datasets\\base.py": {
+      "snapshot": "source_snapshot\\_upstream\\15\\base.py",
+      "sha256": "eab9c582a4dcf787e3ce7748ab9dacd8c83baa6dfd70ffa763da0eb88fa69993"
+    },
+    "C:\\Users\\16910\\AppData\\Local\\Temp\\srsd-benchmark\\datasets\\feynman.py": {
+      "snapshot": "source_snapshot\\_upstream\\16\\feynman.py",
+      "sha256": "6a77ebd956f9add9646b148574e22526bbfbbee79a991b31f69d8c124b0d58bf"
+    },
+    "C:\\Users\\16910\\AppData\\Local\\Temp\\srsd-benchmark\\datasets\\registry.py": {
+      "snapshot": "source_snapshot\\_upstream\\17\\registry.py",
+      "sha256": "774a9c1c106e655b59194b5036c8f821c2cfbfbd8f90c6d2ab9f8ec9195dcde8"
+    },
+    "C:\\Users\\16910\\AppData\\Local\\Temp\\srsd-benchmark\\datasets\\sampling.py": {
+      "snapshot": "source_snapshot\\_upstream\\18\\sampling.py",
+      "sha256": "00d7d2a544776cb8043c754d56a3868484eb0fa034ad53f7f366969f37f93f7b"
+    }
+  },
+  "upstream_license": {
+    "snapshot": "source_snapshot\\_upstream\\LICENSE",
+    "sha256": "325bd0c2d0206e9d560a648b36dacc1b6f831e65f13c6bb7be0788d2fbaf3a5a"
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "stage1": {
+    "manifest.json": {
+      "path": "runs/p02_fixed_domain/stage1/manifest.json",
+      "sha256": "33bec2aac9735b341a4e7da9c8f64639298a23351e9b1a3c0f3709e7fa1be2de"
+    },
+    "summary.json": {
+      "path": "runs/p02_fixed_domain/stage1/summary.json",
+      "sha256": "5ea52eb1c71fe3cfa8c935797b3bcb8d6f9ad353630712a2eaccdd4f7791ba04"
+    },
+    "raw.parquet": {
+      "path": "runs/p02_fixed_domain/stage1/raw.parquet",
+      "sha256": "49f4b059854530a01f8879b857ffda1e767c2fe7d9e677e0f5a321882a5e37ba"
+    },
+    "independent_audit.json": {
+      "path": "runs/p02_fixed_domain/stage1/independent_audit.json",
+      "sha256": "2e74e2eabf6b8968e5574bff9690c4b9598c5f27f1b26d4a225089627f345083"
+    },
+    "decisions.parquet": {
+      "path": "runs/p02_fixed_domain/stage1/decisions.parquet",
+      "sha256": "2a6c4085030eaa057d0bd6dd2319a02fbced7a87ed23be2eff2604da02280ae8"
+    },
+    "group_counts.parquet": {
+      "path": "runs/p02_fixed_domain/stage1/group_counts.parquet",
+      "sha256": "a855505407c396c4cbcb71909c9aac42e1402812b5f69dc992d9e1c6fb7f2f5a"
+    },
+    "policies.json": {
+      "path": "runs/p02_fixed_domain/stage1/policies.json",
+      "sha256": "8ab9676aad5605a30d3694d73b31ab1effc61ce516a7bd84727a406170c3eadc"
+    },
+    "primary_metrics.csv": {
+      "path": "runs/p02_fixed_domain/stage1/primary_metrics.csv",
+      "sha256": "dfbb0370d031efa7fbd73682d19f60b2301de364e17dbff6c1f44f2b58a8e9e7"
+    },
+    "sensitivity_metrics.csv": {
+      "path": "runs/p02_fixed_domain/stage1/sensitivity_metrics.csv",
+      "sha256": "712b9900a16fb9d7924f62bb9b9868406fa49b387189dfa588d320d8d2d489a1"
+    },
+    "round_metrics.csv": {
+      "path": "runs/p02_fixed_domain/stage1/round_metrics.csv",
+      "sha256": "b79d3abac3e13d825122296929ee88ac097e84f5ce69bb925fcf2e095fbefc86"
+    },
+    "reference_scales.csv": {
+      "path": "runs/p02_fixed_domain/stage1/reference_scales.csv",
+      "sha256": "13d87e1c271c1d7489c8cff4a5bcddf66b0a18ba40b31c815369b1b5b16b03da"
+    }
+  },
+  "stage2": {
+    "manifest.json": {
+      "path": "runs/p02_fixed_domain/stage2/manifest.json",
+      "sha256": "148ae92bf82d3b7154d3ff6cedf2e742a01b1264a5887fc118bb5170cf8c1fcd"
+    },
+    "summary.json": {
+      "path": "runs/p02_fixed_domain/stage2/summary.json",
+      "sha256": "0c1db450f288d4fc5b36cdfbcb4a841f42ad489c1728ebb969cc3c9d80dd4f71"
+    },
+    "raw.parquet": {
+      "path": "runs/p02_fixed_domain/stage2/raw.parquet",
+      "sha256": "8bff73e76661c7f220655fe1ad2f1702f57b96a4ed9d3bd214e63e7d44fbc9ae"
+    },
+    "independent_audit.json": {
+      "path": "runs/p02_fixed_domain/stage2/independent_audit.json",
+      "sha256": "80e1ecb21cc6f01ae74d16e18f1dd080947d98aa00db69adcb35fcf11e9aa1f2"
+    },
+    "decisions.parquet": {
+      "path": "runs/p02_fixed_domain/stage2/decisions.parquet",
+      "sha256": "8d4246a9d8827a961123acb8e8a30b54a43669432cf612b7e2140d0f1302bb10"
+    },
+    "group_counts.parquet": {
+      "path": "runs/p02_fixed_domain/stage2/group_counts.parquet",
+      "sha256": "551ed00ba2e2cd84ba84f53b6757b890bbb3480fe35c66ead507a50bc2cd39cf"
+    },
+    "policies.json": {
+      "path": "runs/p02_fixed_domain/stage2/policies.json",
+      "sha256": "cd33b903cec54979daa2a0d1591ef227721b19571123d9bafc60a2839b526816"
+    },
+    "primary_metrics.csv": {
+      "path": "runs/p02_fixed_domain/stage2/primary_metrics.csv",
+      "sha256": "2696a42dca4723c441c44d664a914dbd2eb6327d9cda7151cdc117b6ce09bc07"
+    },
+    "sensitivity_metrics.csv": {
+      "path": "runs/p02_fixed_domain/stage2/sensitivity_metrics.csv",
+      "sha256": "f9563f24691e9003e60a94d8c08e86a5e9d32308fb4629ffd891883ff7c0749e"
+    },
+    "round_metrics.csv": {
+      "path": "runs/p02_fixed_domain/stage2/round_metrics.csv",
+      "sha256": "25f4e7e6e029971b7da011e8952da9a266794f8e7391514e4610c056c12a2498"
+    },
+    "reference_scales.csv": {
+      "path": "runs/p02_fixed_domain/stage2/reference_scales.csv",
+      "sha256": "5ca2cf75ea8f0ad04d575a878ed8c3434d1baeb01ead10ec781143c7cffd6ecf"
+    }
+  }
+}

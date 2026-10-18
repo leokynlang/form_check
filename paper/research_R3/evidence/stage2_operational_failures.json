@@ -1,0 +1,105 @@
+{
+  "stage2_rows": 205200,
+  "failure_counts": {
+    "data_failure": 0,
+    "fit_failure": 0,
+    "outcome_failure": 0,
+    "fail_A": 0,
+    "fail_B": 513,
+    "fail_C": 513,
+    "fail_D": 0,
+    "fail_E": 0,
+    "fail_F": 0,
+    "fail_G": 0
+  },
+  "B_C_same_dataset_rows": true,
+  "affected_unique_datasets": 513,
+  "phases": [
+    "test"
+  ],
+  "splits": [
+    "development"
+  ],
+  "by_cell": [
+    {
+      "task": "feynman-ii.11.28",
+      "n": 200,
+      "rel": 0.005,
+      "fail_B": "rank_deficient",
+      "fail_C": "rank_deficient",
+      "rows": 6
+    },
+    {
+      "task": "feynman-ii.11.28",
+      "n": 200,
+      "rel": 0.01,
+      "fail_B": "rank_deficient",
+      "fail_C": "rank_deficient",
+      "rows": 3
+    },
+    {
+      "task": "feynman-ii.11.28",
+      "n": 1000,
+      "rel": 0.005,
+      "fail_B": "rank_deficient",
+      "fail_C": "rank_deficient",
+      "rows": 74
+    },
+    {
+      "task": "feynman-ii.11.28",
+      "n": 1000,
+      "rel": 0.01,
+      "fail_B": "rank_deficient",
+      "fail_C": "rank_deficient",
+      "rows": 25
+    },
+    {
+      "task": "feynman-ii.11.28",
+      "n": 1000,
+      "rel": 0.03,
+      "fail_B": "rank_deficient",
+      "fail_C": "rank_deficient",
+      "rows": 4
+    },
+    {
+      "task": "feynman-ii.11.28",
+      "n": 1000,
+      "rel": 0.05,
+      "fail_B": "rank_deficient",
+      "fail_C": "rank_deficient",
+      "rows": 1
+    },
+    {
+      "task": "feynman-iii.12.43",
+      "n": 1000,
+      "rel": 0.005,
+      "fail_B": "rank_deficient",
+      "fail_C": "rank_deficient",
+      "rows": 100
+    },
+    {
+      "task": "feynman-iii.12.43",
+      "n": 1000,
+      "rel": 0.01,
+      "fail_B": "rank_deficient",
+      "fail_C": "rank_deficient",
+      "rows": 100
+    },
+    {
+      "task": "feynman-iii.12.43",
+      "n": 1000,
+      "rel": 0.03,
+      "fail_B": "rank_deficient",
+      "fail_C": "rank_deficient",
+      "rows": 100
+    },
+    {
+      "task": "feynman-iii.12.43",
+      "n": 1000,
+      "rel": 0.05,
+      "fail_B": "rank_deficient",
+      "fail_C": "rank_deficient",
+      "rows": 100
+    }
+  ]
+}

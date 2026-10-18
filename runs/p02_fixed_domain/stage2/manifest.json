@@ -1,0 +1,13 @@
+{
+  "fingerprint": "f33f3f7bad2c30a5a4b22b6ee1f5e28b6c9f87ddf89308ce3a201d44ab7f10b7",
+  "stage": "stage2",
+  "complete": true,
+  "expected_cells": 3300,
+  "expected_datasets": 205200,
+  "raw_sha256": "8bff73e76661c7f220655fe1ad2f1702f57b96a4ed9d3bd214e63e7d44fbc9ae",
+  "raw_rows": 205200,
+  "elapsed_seconds": 1763.5429206000008,
+  "data_failures": 0,
+  "fit_failures": 0,
+  "outcome_failures": 0
+}

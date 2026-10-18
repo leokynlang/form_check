@@ -1,0 +1,25 @@
+{
+  "complete": true,
+  "frozen_protocol_fingerprint": "f33f3f7bad2c30a5a4b22b6ee1f5e28b6c9f87ddf89308ce3a201d44ab7f10b7",
+  "analysis_source_sha256": "422034ca55d5556792deed7e8b88a8ef367b6ac15302f8a9ccbb1ee9c4bd01ee",
+  "files": {
+    "summary.json": "5ea52eb1c71fe3cfa8c935797b3bcb8d6f9ad353630712a2eaccdd4f7791ba04",
+    "policies.json": "8ab9676aad5605a30d3694d73b31ab1effc61ce516a7bd84727a406170c3eadc",
+    "decisions.parquet": "2a6c4085030eaa057d0bd6dd2319a02fbced7a87ed23be2eff2604da02280ae8",
+    "group_counts.parquet": "a855505407c396c4cbcb71909c9aac42e1402812b5f69dc992d9e1c6fb7f2f5a",
+    "reference_scales.csv": "13d87e1c271c1d7489c8cff4a5bcddf66b0a18ba40b31c815369b1b5b16b03da",
+    "primary_metrics.csv": "dfbb0370d031efa7fbd73682d19f60b2301de364e17dbff6c1f44f2b58a8e9e7",
+    "sensitivity_metrics.csv": "712b9900a16fb9d7924f62bb9b9868406fa49b387189dfa588d320d8d2d489a1",
+    "round_metrics.csv": "b79d3abac3e13d825122296929ee88ac097e84f5ce69bb925fcf2e095fbefc86",
+    "report.md": "b94411d8d2e12b825ba0bbe212a2947a517f7ec193c0e69cf89c506b3b0585bd",
+    "RUN_NOTES.md": "9d7a1ebb474eca8783a36b3fa84b1f5e80759599d7b4dfa2b55f2a927b7a4620",
+    "coverage_diagnostics.csv": "49f0cde033ec06055bc78e188e2c2eaa5dbdafbdff33a3eb2bf163f90ff566b3",
+    "independent_audit.json": "2e74e2eabf6b8968e5574bff9690c4b9598c5f27f1b26d4a225089627f345083",
+    "raw.parquet": "49f4b059854530a01f8879b857ffda1e767c2fe7d9e677e0f5a321882a5e37ba",
+    "manifest.json": "33bec2aac9735b341a4e7da9c8f64639298a23351e9b1a3c0f3709e7fa1be2de"
+  },
+  "independent_audit_passed": true,
+  "prior_v1_v2_tree_hashes_verified": true,
+  "stage2_status": "registered_unrun",
+  "scope": "Stage1 only; primary physical-source risk undefined. Do not claim completed full P0-2."
+}

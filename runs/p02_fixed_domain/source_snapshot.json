@@ -1,0 +1,140 @@
+{
+  "files": {
+    "D:\\form_check\\experiments\\release_validation\\analyze.py": {
+      "snapshot": "source_snapshot/experiments/release_validation/analyze.py",
+      "sha256": "16cf6b79797b97600e681ee65f8a12a9c2ddc938abc81032af42a2f7665a5888"
+    },
+    "D:\\form_check\\experiments\\release_validation\\analyze_v2.py": {
+      "snapshot": "source_snapshot/experiments/release_validation/analyze_v2.py",
+      "sha256": "49f227e7f5669ae75dba389c21c66ac54f22c9d3b95ce7197e7dcd628e6ddac8"
+    },
+    "D:\\form_check\\experiments\\release_validation\\calibration.py": {
+      "snapshot": "source_snapshot/experiments/release_validation/calibration.py",
+      "sha256": "87196c6a0e74adaffd695233e36d52c3e8a7ede953222b86cc16d092a11a5d61"
+    },
+    "D:\\form_check\\experiments\\release_validation\\calibration_v2.py": {
+      "snapshot": "source_snapshot/experiments/release_validation/calibration_v2.py",
+      "sha256": "23e3a6ae5c12ecd072c247ef0afe049bc8d8ca88cd6a15621b12820a91391572"
+    },
+    "D:\\form_check\\experiments\\release_validation\\gates.py": {
+      "snapshot": "source_snapshot/experiments/release_validation/gates.py",
+      "sha256": "f44cbb881cc6929c8f903cf2e1a919f5cdecdd5b5fc0116afdc453152819a492"
+    },
+    "D:\\form_check\\experiments\\release_validation\\inventory.py": {
+      "snapshot": "source_snapshot/experiments/release_validation/inventory.py",
+      "sha256": "e8fb9238f55fbc233f376412d7e86716b631f6735cbc927bb22acc9901a2cac8"
+    },
+    "D:\\form_check\\experiments\\release_validation\\runner.py": {
+      "snapshot": "source_snapshot/experiments/release_validation/runner.py",
+      "sha256": "cb423674c262fdfbebd494e7cd0c218d76ae47a44b76076c4975327c28d8c081"
+    },
+    "D:\\form_check\\experiments\\release_validation\\runner_v2.py": {
+      "snapshot": "source_snapshot/experiments/release_validation/runner_v2.py",
+      "sha256": "388343ebada41dc5f63023ed81520e8fc8b6770936eb8f1ac8cb2495ebdb8296"
+    },
+    "D:\\form_check\\experiments\\release_validation\\__init__.py": {
+      "snapshot": "source_snapshot/experiments/release_validation/__init__.py",
+      "sha256": "da3a04da34370c90e6b1bd96a545c604bd0a1d3c209d0b275372a29ad511c376"
+    },
+    "D:\\form_check\\experiments\\release_validation\\protocol_v2.json": {
+      "snapshot": "source_snapshot/experiments/release_validation/protocol_v2.json",
+      "sha256": "91a2d14094869ce1c53dcafc4600b31ffc5615460faef30083086bc5ff59b525"
+    },
+    "D:\\form_check\\common.py": {
+      "snapshot": "source_snapshot/common.py",
+      "sha256": "1cef8a33ff8c7f6f31618efde13b45740e45bb3f6161c8a686b291d2932fba0a"
+    },
+    "D:\\form_check\\gate_compare.py": {
+      "snapshot": "source_snapshot/gate_compare.py",
+      "sha256": "171bdbb3c0a98b33d8b9599960464a8484136c24ef62d8ba9a58bc6115022837"
+    },
+    "D:\\form_check\\srsd_data.py": {
+      "snapshot": "source_snapshot/srsd_data.py",
+      "sha256": "c78ffc297912bd52e372b6710e805932f6203da929e25ce6fbfb73a168939e7f"
+    },
+    "D:\\form_check\\_bootstrap.py": {
+      "snapshot": "source_snapshot/_bootstrap.py",
+      "sha256": "aa858a55c9b0df7528408b64fed778e0ab3a769efc5aa2a058acb456b48c2aa7"
+    },
+    "D:\\form_check\\dimreflex\\discover.py": {
+      "snapshot": "source_snapshot/dimreflex/discover.py",
+      "sha256": "bdf7b06978f2e1d39b81698974a56f0a6fccf9acb929edaa9a2c46bf6735e281"
+    },
+    "D:\\form_check\\dimreflex\\_ols.py": {
+      "snapshot": "source_snapshot/dimreflex/_ols.py",
+      "sha256": "082609bf0481525d95c665ca3617cf315466a01ef98e484069c8fbdbcaacda7c"
+    },
+    "D:\\form_check\\paper\\revision_loc\\rerun_cd_svd.py": {
+      "snapshot": "source_snapshot/paper/revision_loc/rerun_cd_svd.py",
+      "sha256": "94b41865e36a81cd6f4e7285d75109cde48b1668afb323b044f7b13585f768b9"
+    },
+    "D:\\form_check\\runs\\srsd_full\\config.json": {
+      "snapshot": "source_snapshot/runs/srsd_full/config.json",
+      "sha256": "48e688639e521674a8b37c934b1719a4721d153599507402b43f34e1933140d6"
+    },
+    "C:\\Users\\16910\\AppData\\Local\\Temp\\srsd-benchmark\\datasets\\__init__.py": {
+      "snapshot": "source_snapshot/_upstream/datasets/__init__.py",
+      "sha256": "a70db20ab22a74bced17ea0569ca9fdd28bab14ef2968b109a09366cdb52aef7"
+    },
+    "C:\\Users\\16910\\AppData\\Local\\Temp\\srsd-benchmark\\datasets\\base.py": {
+      "snapshot": "source_snapshot/_upstream/datasets/base.py",
+      "sha256": "eab9c582a4dcf787e3ce7748ab9dacd8c83baa6dfd70ffa763da0eb88fa69993"
+    },
+    "C:\\Users\\16910\\AppData\\Local\\Temp\\srsd-benchmark\\datasets\\feynman.py": {
+      "snapshot": "source_snapshot/_upstream/datasets/feynman.py",
+      "sha256": "6a77ebd956f9add9646b148574e22526bbfbbee79a991b31f69d8c124b0d58bf"
+    },
+    "C:\\Users\\16910\\AppData\\Local\\Temp\\srsd-benchmark\\datasets\\registry.py": {
+      "snapshot": "source_snapshot/_upstream/datasets/registry.py",
+      "sha256": "774a9c1c106e655b59194b5036c8f821c2cfbfbd8f90c6d2ab9f8ec9195dcde8"
+    },
+    "C:\\Users\\16910\\AppData\\Local\\Temp\\srsd-benchmark\\datasets\\sampling.py": {
+      "snapshot": "source_snapshot/_upstream/datasets/sampling.py",
+      "sha256": "00d7d2a544776cb8043c754d56a3868484eb0fa034ad53f7f366969f37f93f7b"
+    },
+    "D:\\form_check\\experiments\\fixed_domain\\analyze.py": {
+      "snapshot": "source_snapshot/experiments/fixed_domain/analyze.py",
+      "sha256": "422034ca55d5556792deed7e8b88a8ef367b6ac15302f8a9ccbb1ee9c4bd01ee"
+    },
+    "D:\\form_check\\experiments\\fixed_domain\\freeze.py": {
+      "snapshot": "source_snapshot/experiments/fixed_domain/freeze.py",
+      "sha256": "58d3dc252e2febb5ea39e00932e57132e1ff9e40303e776bcc820097ed7a5841"
+    },
+    "D:\\form_check\\experiments\\fixed_domain\\grids.py": {
+      "snapshot": "source_snapshot/experiments/fixed_domain/grids.py",
+      "sha256": "65985713e09973426cc26f7d97d5e5c8d5d56a1c251013988eebe63c44e3a77c"
+    },
+    "D:\\form_check\\experiments\\fixed_domain\\grouping.py": {
+      "snapshot": "source_snapshot/experiments/fixed_domain/grouping.py",
+      "sha256": "e61e4172dc480a4bbbccdab30caeabc962198ed32dcbb778a05df826a99407bc"
+    },
+    "D:\\form_check\\experiments\\fixed_domain\\inventory.py": {
+      "snapshot": "source_snapshot/experiments/fixed_domain/inventory.py",
+      "sha256": "7fc84929cb52058d4421ba05186ac0714431c97165736974ad2cd10dd3cacc90"
+    },
+    "D:\\form_check\\experiments\\fixed_domain\\runner.py": {
+      "snapshot": "source_snapshot/experiments/fixed_domain/runner.py",
+      "sha256": "4c4db0eaa11cef35ae4070f5152009ffc99c7b83d6047044484803c675e4c850"
+    },
+    "D:\\form_check\\experiments\\fixed_domain\\tasks.py": {
+      "snapshot": "source_snapshot/experiments/fixed_domain/tasks.py",
+      "sha256": "b1b436dd52e7ffc495350edde1144814c97a6c3651b88ad201093f9da072493a"
+    },
+    "D:\\form_check\\experiments\\fixed_domain\\__init__.py": {
+      "snapshot": "source_snapshot/experiments/fixed_domain/__init__.py",
+      "sha256": "2bfb3de63471e2eb837f629b8d3815dbf88648af4b860ecd5266d18ffe59788a"
+    },
+    "D:\\form_check\\experiments\\fixed_domain\\protocol.json": {
+      "snapshot": "source_snapshot/experiments/fixed_domain/protocol.json",
+      "sha256": "4eb003c0f9287e00bfc08cba05350ed05d5983bf3426128fb786d8f2b46e382a"
+    },
+    "D:\\form_check\\runs\\p02_inventory\\inventory.json": {
+      "snapshot": "source_snapshot/runs/p02_inventory/inventory.json",
+      "sha256": "b41f7a1844b4a3e76567d9703891f29917658ba3e102c6842ec35b77374edfcb"
+    },
+    "D:\\form_check\\runs\\p02_inventory\\source_domain_review.json": {
+      "snapshot": "source_snapshot/runs/p02_inventory/source_domain_review.json",
+      "sha256": "787063cb6333a0f5b996d6fdfe9ab8f2e4e0ba9ac355762bde32905beba9d632"
+    }
+  }
+}

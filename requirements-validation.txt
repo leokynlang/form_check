@@ -1,0 +1,5 @@
+# New independent validation and its statsmodels numerical-reference checks.
+-r requirements-benchmark.txt
+statsmodels>=0.14,<1
+# Whole-box interval certificates for the source-only physical census.
+mpmath>=1.3,<1.4

@@ -1,0 +1,349 @@
+{
+  "scope": "Inventory only; no regenerated data or performance estimates.",
+  "inputs": {
+    "runs/srsd_full/raw_srsd.parquet": {
+      "sha256": "62df25df55c48a95ab7670a62da829ef8295740be7c469e4af40241b76385943",
+      "bytes": 34563229,
+      "rows": 240000,
+      "tasks": 32,
+      "columns": [
+        "task",
+        "klass",
+        "n",
+        "rel",
+        "seed",
+        "base_seed",
+        "data_fail",
+        "p_fc",
+        "rej_fc",
+        "fc_t_native",
+        "fc_alarm_native",
+        "curvature",
+        "fail_fc",
+        "time_fc",
+        "fc_t_emp",
+        "p_fitted_f",
+        "rej_fitted_f",
+        "stat_fitted_f",
+        "fail_fitted_f",
+        "cond_fitted_f",
+        "time_fitted_f",
+        "p_fitted_hc3",
+        "rej_fitted_hc3",
+        "stat_fitted_hc3",
+        "fail_fitted_hc3",
+        "cond_fitted_hc3",
+        "time_fitted_hc3",
+        "p_exog_hc3",
+        "rej_exog_hc3",
+        "stat_exog_hc3",
+        "fail_exog_hc3",
+        "cond_exog_hc3",
+        "time_exog_hc3",
+        "test_log_rmse",
+        "extrap_med_relerr",
+        "extrap_far_relerr"
+      ],
+      "keys": [
+        "task",
+        "n",
+        "rel",
+        "seed"
+      ],
+      "duplicate_keys": 0,
+      "n_grid": [
+        50,
+        200,
+        1000
+      ],
+      "noise_grid": [
+        0.0,
+        0.005,
+        0.01,
+        0.03,
+        0.05
+      ]
+    },
+    "runs/srsd_full/quality_recompute.parquet": {
+      "sha256": "fad89cf33a43824029e444eb288f92617c8670b5f4ff129188371f128c5046c2",
+      "bytes": 26236629,
+      "rows": 240000,
+      "tasks": 32,
+      "columns": [
+        "task",
+        "n",
+        "rel",
+        "seed",
+        "gen_fail",
+        "r2",
+        "r2_adj",
+        "aic",
+        "bic",
+        "rmse_log",
+        "sigma2",
+        "quality_cond",
+        "n_par",
+        "yhat_sd",
+        "resid_sd",
+        "aug_r2_yhat2",
+        "aug_r2_yhat3",
+        "corr_yhat2_resid",
+        "corr_yhat3_resid",
+        "fail_quality"
+      ],
+      "keys": [
+        "task",
+        "n",
+        "rel",
+        "seed"
+      ],
+      "duplicate_keys": 0,
+      "n_grid": [
+        50,
+        200,
+        1000
+      ],
+      "noise_grid": [
+        0.0,
+        0.005,
+        0.01,
+        0.03,
+        0.05
+      ]
+    },
+    "runs/cd_svd/s2_cd_svd.csv": {
+      "sha256": "7f3965b27c2e8729715fc4e46c7db74865e45c15c57e9aad6a2eecd8a0e7d47c",
+      "bytes": 44554701,
+      "rows": 240000,
+      "tasks": 32,
+      "columns": [
+        "task",
+        "n",
+        "rel",
+        "seed",
+        "base_seed",
+        "sentinel_ok",
+        "stat_F_recheck",
+        "p_C_svd",
+        "rej_C_svd",
+        "stat_C_svd",
+        "fail_C_svd",
+        "cond_C_svd",
+        "p_D_svd",
+        "rej_D_svd",
+        "stat_D_svd",
+        "fail_D_svd",
+        "cond_D_svd"
+      ],
+      "keys": [
+        "task",
+        "n",
+        "rel",
+        "seed"
+      ],
+      "duplicate_keys": 0,
+      "n_grid": [
+        50,
+        200,
+        1000
+      ],
+      "noise_grid": [
+        0.0,
+        0.005,
+        0.01,
+        0.03,
+        0.05
+      ]
+    },
+    "runs/gate_cmp/results.csv": {
+      "sha256": "b53b5354cfce3ba6e5bcde79c0696a2d63c9b9484b34115b9270ab5ae1a25c8c",
+      "bytes": 2214461,
+      "rows": 20400,
+      "tasks": 51,
+      "columns": [
+        "bench",
+        "task",
+        "klass",
+        "group",
+        "n",
+        "seed",
+        "p_fc",
+        "rej_fc",
+        "fail_fc",
+        "D_cv",
+        "d0_fire",
+        "delta_aicc",
+        "m0_fire",
+        "fail_mc"
+      ],
+      "keys": [
+        "bench",
+        "task",
+        "n",
+        "seed"
+      ],
+      "duplicate_keys": 0,
+      "n_grid": [
+        50,
+        200
+      ],
+      "noise_grid": [
+        0.03
+      ]
+    }
+  },
+  "s2_one_to_one_joins": {
+    "quality": {
+      "both": 240000,
+      "left_only": 0,
+      "right_only": 0
+    },
+    "svd": {
+      "both": 240000,
+      "left_only": 0,
+      "right_only": 0
+    }
+  },
+  "s2_s5_dataset_seed_overlap": 0,
+  "s2_positive_noise_rows": 192000,
+  "s2_task_classes": [
+    {
+      "task": "feynman-i.10.7",
+      "klass": "H1"
+    },
+    {
+      "task": "feynman-i.12.1",
+      "klass": "H0"
+    },
+    {
+      "task": "feynman-i.26.2",
+      "klass": "H1"
+    },
+    {
+      "task": "feynman-i.27.6",
+      "klass": "H1"
+    },
+    {
+      "task": "feynman-i.29.4",
+      "klass": "H0"
+    },
+    {
+      "task": "feynman-i.30.5",
+      "klass": "H1"
+    },
+    {
+      "task": "feynman-i.34.27",
+      "klass": "H0"
+    },
+    {
+      "task": "feynman-i.37.4",
+      "klass": "H1"
+    },
+    {
+      "task": "feynman-i.38.12",
+      "klass": "H0"
+    },
+    {
+      "task": "feynman-i.39.10",
+      "klass": "H0"
+    },
+    {
+      "task": "feynman-i.39.11",
+      "klass": "H1"
+    },
+    {
+      "task": "feynman-i.39.22",
+      "klass": "H0"
+    },
+    {
+      "task": "feynman-i.41.16",
+      "klass": "H1"
+    },
+    {
+      "task": "feynman-i.43.31",
+      "klass": "H0"
+    },
+    {
+      "task": "feynman-i.43.43",
+      "klass": "H1"
+    },
+    {
+      "task": "feynman-i.47.23",
+      "klass": "H0"
+    },
+    {
+      "task": "feynman-i.48.2",
+      "klass": "H1"
+    },
+    {
+      "task": "feynman-ii.8.31",
+      "klass": "H0"
+    },
+    {
+      "task": "feynman-ii.11.27",
+      "klass": "H1"
+    },
+    {
+      "task": "feynman-ii.11.28",
+      "klass": "H1"
+    },
+    {
+      "task": "feynman-ii.13.23",
+      "klass": "H1"
+    },
+    {
+      "task": "feynman-ii.13.34",
+      "klass": "H1"
+    },
+    {
+      "task": "feynman-ii.27.16",
+      "klass": "H0"
+    },
+    {
+      "task": "feynman-ii.27.18",
+      "klass": "H0"
+    },
+    {
+      "task": "feynman-ii.38.14",
+      "klass": "H1"
+    },
+    {
+      "task": "feynman-iii.4.32",
+      "klass": "H1"
+    },
+    {
+      "task": "feynman-iii.4.33",
+      "klass": "H1"
+    },
+    {
+      "task": "feynman-iii.12.43",
+      "klass": "H0"
+    },
+    {
+      "task": "feynman-iii.15.14",
+      "klass": "H0"
+    },
+    {
+      "task": "feynman-bonus.5",
+      "klass": "H1"
+    },
+    {
+      "task": "feynman-bonus.15",
+      "klass": "H1"
+    },
+    {
+      "task": "feynman-bonus.20",
+      "klass": "H1"
+    }
+  ],
+  "svd_false_sentinel_rows": 7500,
+  "svd_false_sentinel_tasks": [
+    "feynman-i.30.5"
+  ],
+  "warnings": [
+    "S5 cannot be joined to S2 on dataset identity: different actual seeds.",
+    "S2 cached C/D original columns are historical Gram-path results.",
+    "Old sample-dependent endpoint is not a fixed extrapolation domain.",
+    "Already studied equations are not untouched confirmation tasks."
+  ]
+}

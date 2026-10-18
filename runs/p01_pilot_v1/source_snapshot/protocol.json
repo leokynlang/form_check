@@ -1,0 +1,70 @@
+{
+  "protocol_id": "p01-fresh-sample-pilot-v1",
+  "status": "development_pilot_not_confirmatory",
+  "master_seed": 20261018,
+  "n_grid": [
+    50,
+    200
+  ],
+  "noise_grid": [
+    0.03
+  ],
+  "replicates": {
+    "reference": 32,
+    "calibration": 64,
+    "test": 64
+  },
+  "budgets": [
+    0.01,
+    0.05,
+    0.1
+  ],
+  "screen_r2": 0.99,
+  "danger_threshold": 0.1,
+  "methods": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G"
+  ],
+  "policies": {
+    "D": [
+      "D"
+    ],
+    "F": [
+      "F"
+    ],
+    "AD_panel": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "AEF_panel": [
+      "A",
+      "E",
+      "F"
+    ],
+    "G_rbf_cv": [
+      "G"
+    ]
+  },
+  "permutations": 999,
+  "cv_folds": 5,
+  "rbf": {
+    "landmarks": 32,
+    "bandwidth_squared": "number_of_features",
+    "ridge_per_observation": 0.01
+  },
+  "bootstrap_repetitions": 2000,
+  "scope": "Fresh mutually independent reference/calibration/test samples on the 32 already studied SRSD tasks. NOT unseen-equation confirmation. H1 is generated ONLY for test.",
+  "budget_event": "rejection OR any member decline, conditional on H0 and finite training log-space R2 >= 0.99",
+  "panel_score": "maximum of member empirical CDF anomaly scores; CDFs from valid screened H0 reference records only; ties use strict greater-than rejection",
+  "threshold_rule": "smallest observed finite calibration score with (strict exceedances + declines)/N_screened <= budget; infeasible when declines alone exceed floor(budget*N)",
+  "outcome": "legacy upper endpoint: first feature 3*observed training maximum, others training log medians; incomplete outcome is explicitly unavailable, not safe",
+  "inference": "paired task bootstrap with frozen thresholds; conditional on fitted calibration policy; does not include calibration estimation uncertainty",
+  "stop_rule": "Run the fixed grid once. No selection or tuning using test outcomes. Protocol changes require a new ID and independent confirmation."
+}

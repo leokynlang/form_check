@@ -1,0 +1,1942 @@
+{
+  "groups": [
+    {
+      "structural_group": "physical-family-000",
+      "members": [
+        "feynman-bonus.1",
+        "feynman-bonus.10",
+        "feynman-bonus.11",
+        "feynman-bonus.13",
+        "feynman-bonus.14",
+        "feynman-bonus.15",
+        "feynman-bonus.16",
+        "feynman-bonus.17",
+        "feynman-bonus.18",
+        "feynman-bonus.2",
+        "feynman-bonus.20",
+        "feynman-bonus.3",
+        "feynman-bonus.5",
+        "feynman-bonus.6",
+        "feynman-bonus.8",
+        "feynman-bonus.9",
+        "feynman-i.10.7",
+        "feynman-i.11.19",
+        "feynman-i.12.11",
+        "feynman-i.13.4",
+        "feynman-i.15.10",
+        "feynman-i.15.3t",
+        "feynman-i.15.3x",
+        "feynman-i.16.6",
+        "feynman-i.18.12",
+        "feynman-i.18.16",
+        "feynman-i.18.4",
+        "feynman-i.24.6",
+        "feynman-i.26.2",
+        "feynman-i.27.6",
+        "feynman-i.29.16",
+        "feynman-i.30.3",
+        "feynman-i.30.5",
+        "feynman-i.34.10",
+        "feynman-i.34.14",
+        "feynman-i.37.4",
+        "feynman-i.39.11",
+        "feynman-i.43.43",
+        "feynman-i.48.2",
+        "feynman-i.50.26",
+        "feynman-ii.10.9",
+        "feynman-ii.11.17",
+        "feynman-ii.11.27",
+        "feynman-ii.11.28",
+        "feynman-ii.13.23",
+        "feynman-ii.13.34",
+        "feynman-ii.15.4",
+        "feynman-ii.15.5",
+        "feynman-ii.21.32",
+        "feynman-ii.24.17",
+        "feynman-ii.36.38",
+        "feynman-ii.37.1",
+        "feynman-ii.38.14",
+        "feynman-ii.6.11",
+        "feynman-ii.6.15a",
+        "feynman-ii.6.15b",
+        "feynman-iii.10.19",
+        "feynman-iii.15.12",
+        "feynman-iii.17.37",
+        "feynman-iii.8.54",
+        "feynman-iii.9.52"
+      ],
+      "exposure": "development",
+      "group_exposure_level": "prior_study_outcomes",
+      "prior_source_members": [
+        "feynman-bonus.15",
+        "feynman-bonus.20",
+        "feynman-bonus.5",
+        "feynman-i.10.7",
+        "feynman-i.26.2",
+        "feynman-i.27.6",
+        "feynman-i.30.5",
+        "feynman-i.37.4",
+        "feynman-i.39.11",
+        "feynman-i.43.43",
+        "feynman-i.48.2",
+        "feynman-ii.11.27",
+        "feynman-ii.11.28",
+        "feynman-ii.13.23",
+        "feynman-ii.13.34",
+        "feynman-ii.38.14"
+      ],
+      "prior_designed_mechanisms": [],
+      "scientifically_eligible_members": [
+        "feynman-bonus.1",
+        "feynman-bonus.11",
+        "feynman-bonus.13",
+        "feynman-bonus.15",
+        "feynman-bonus.16",
+        "feynman-bonus.17",
+        "feynman-bonus.18",
+        "feynman-bonus.20",
+        "feynman-bonus.3",
+        "feynman-bonus.6",
+        "feynman-bonus.8",
+        "feynman-i.10.7",
+        "feynman-i.11.19",
+        "feynman-i.12.11",
+        "feynman-i.13.4",
+        "feynman-i.15.10",
+        "feynman-i.15.3t",
+        "feynman-i.16.6",
+        "feynman-i.18.4",
+        "feynman-i.24.6",
+        "feynman-i.26.2",
+        "feynman-i.27.6",
+        "feynman-i.30.5",
+        "feynman-i.34.10",
+        "feynman-i.34.14",
+        "feynman-i.39.11",
+        "feynman-i.43.43",
+        "feynman-i.48.2",
+        "feynman-ii.10.9",
+        "feynman-ii.11.27",
+        "feynman-ii.11.28",
+        "feynman-ii.13.23",
+        "feynman-ii.13.34",
+        "feynman-ii.21.32",
+        "feynman-ii.36.38",
+        "feynman-ii.37.1",
+        "feynman-ii.38.14",
+        "feynman-ii.6.15a",
+        "feynman-iii.10.19",
+        "feynman-iii.15.12",
+        "feynman-iii.17.37"
+      ],
+      "H1_eligible_members": [
+        "feynman-bonus.1",
+        "feynman-bonus.11",
+        "feynman-bonus.13",
+        "feynman-bonus.15",
+        "feynman-bonus.16",
+        "feynman-bonus.17",
+        "feynman-bonus.18",
+        "feynman-bonus.20",
+        "feynman-bonus.3",
+        "feynman-bonus.6",
+        "feynman-bonus.8",
+        "feynman-i.10.7",
+        "feynman-i.11.19",
+        "feynman-i.12.11",
+        "feynman-i.13.4",
+        "feynman-i.15.10",
+        "feynman-i.15.3t",
+        "feynman-i.16.6",
+        "feynman-i.18.4",
+        "feynman-i.24.6",
+        "feynman-i.26.2",
+        "feynman-i.27.6",
+        "feynman-i.30.5",
+        "feynman-i.34.10",
+        "feynman-i.34.14",
+        "feynman-i.39.11",
+        "feynman-i.43.43",
+        "feynman-i.48.2",
+        "feynman-ii.10.9",
+        "feynman-ii.11.27",
+        "feynman-ii.11.28",
+        "feynman-ii.13.23",
+        "feynman-ii.13.34",
+        "feynman-ii.21.32",
+        "feynman-ii.36.38",
+        "feynman-ii.37.1",
+        "feynman-ii.38.14",
+        "feynman-ii.6.15a",
+        "feynman-iii.10.19",
+        "feynman-iii.15.12",
+        "feynman-iii.17.37"
+      ]
+    },
+    {
+      "structural_group": "physical-family-001",
+      "members": [
+        "feynman-bonus.12"
+      ],
+      "exposure": "prospective_candidate",
+      "group_exposure_level": "metadata_only",
+      "prior_source_members": [],
+      "prior_designed_mechanisms": [],
+      "scientifically_eligible_members": [],
+      "H1_eligible_members": []
+    },
+    {
+      "structural_group": "physical-family-002",
+      "members": [
+        "feynman-bonus.19"
+      ],
+      "exposure": "prospective_candidate",
+      "group_exposure_level": "metadata_only",
+      "prior_source_members": [],
+      "prior_designed_mechanisms": [],
+      "scientifically_eligible_members": [],
+      "H1_eligible_members": []
+    },
+    {
+      "structural_group": "physical-family-003",
+      "members": [
+        "feynman-bonus.4"
+      ],
+      "exposure": "prospective_candidate",
+      "group_exposure_level": "metadata_only",
+      "prior_source_members": [],
+      "prior_designed_mechanisms": [],
+      "scientifically_eligible_members": [],
+      "H1_eligible_members": []
+    },
+    {
+      "structural_group": "physical-family-004",
+      "members": [
+        "feynman-bonus.7"
+      ],
+      "exposure": "prospective_candidate",
+      "group_exposure_level": "metadata_only",
+      "prior_source_members": [],
+      "prior_designed_mechanisms": [],
+      "scientifically_eligible_members": [],
+      "H1_eligible_members": []
+    },
+    {
+      "structural_group": "physical-family-005",
+      "members": [
+        "feynman-i.12.1",
+        "feynman-i.12.2",
+        "feynman-i.12.4",
+        "feynman-i.12.5",
+        "feynman-i.14.3",
+        "feynman-i.14.4",
+        "feynman-i.25.13",
+        "feynman-i.29.4",
+        "feynman-i.32.5",
+        "feynman-i.34.27",
+        "feynman-i.34.8",
+        "feynman-i.38.12",
+        "feynman-i.39.10",
+        "feynman-i.39.22",
+        "feynman-i.43.16",
+        "feynman-i.43.31",
+        "feynman-i.47.23",
+        "feynman-ii.11.20",
+        "feynman-ii.13.17",
+        "feynman-ii.27.16",
+        "feynman-ii.27.18",
+        "feynman-ii.3.24",
+        "feynman-ii.34.11",
+        "feynman-ii.34.2",
+        "feynman-ii.34.29a",
+        "feynman-ii.34.29b",
+        "feynman-ii.34.2a",
+        "feynman-ii.38.3",
+        "feynman-ii.4.23",
+        "feynman-ii.8.31",
+        "feynman-ii.8.7",
+        "feynman-iii.12.43",
+        "feynman-iii.13.18",
+        "feynman-iii.15.14",
+        "feynman-iii.15.27",
+        "feynman-iii.19.51",
+        "feynman-iii.21.20",
+        "feynman-iii.7.38"
+      ],
+      "exposure": "development",
+      "group_exposure_level": "prior_study_outcomes",
+      "prior_source_members": [
+        "feynman-i.12.1",
+        "feynman-i.29.4",
+        "feynman-i.34.27",
+        "feynman-i.38.12",
+        "feynman-i.39.10",
+        "feynman-i.39.22",
+        "feynman-i.43.31",
+        "feynman-i.47.23",
+        "feynman-ii.27.16",
+        "feynman-ii.27.18",
+        "feynman-ii.8.31",
+        "feynman-iii.12.43",
+        "feynman-iii.15.14"
+      ],
+      "prior_designed_mechanisms": [],
+      "scientifically_eligible_members": [
+        "feynman-i.12.1",
+        "feynman-i.12.2",
+        "feynman-i.12.4",
+        "feynman-i.12.5",
+        "feynman-i.14.3",
+        "feynman-i.14.4",
+        "feynman-i.25.13",
+        "feynman-i.29.4",
+        "feynman-i.34.27",
+        "feynman-i.34.8",
+        "feynman-i.38.12",
+        "feynman-i.39.10",
+        "feynman-i.39.22",
+        "feynman-i.43.16",
+        "feynman-i.43.31",
+        "feynman-i.47.23",
+        "feynman-ii.11.20",
+        "feynman-ii.13.17",
+        "feynman-ii.27.16",
+        "feynman-ii.27.18",
+        "feynman-ii.3.24",
+        "feynman-ii.34.11",
+        "feynman-ii.34.2",
+        "feynman-ii.34.29a",
+        "feynman-ii.34.29b",
+        "feynman-ii.34.2a",
+        "feynman-ii.38.3",
+        "feynman-ii.4.23",
+        "feynman-ii.8.31",
+        "feynman-ii.8.7",
+        "feynman-iii.12.43",
+        "feynman-iii.13.18",
+        "feynman-iii.15.14",
+        "feynman-iii.15.27",
+        "feynman-iii.7.38"
+      ],
+      "H1_eligible_members": []
+    },
+    {
+      "structural_group": "physical-family-006",
+      "members": [
+        "feynman-i.13.12",
+        "feynman-ii.2.42"
+      ],
+      "exposure": "prospective_candidate",
+      "group_exposure_level": "metadata_only",
+      "prior_source_members": [],
+      "prior_designed_mechanisms": [],
+      "scientifically_eligible_members": [],
+      "H1_eligible_members": []
+    },
+    {
+      "structural_group": "physical-family-007",
+      "members": [
+        "feynman-i.32.17",
+        "feynman-ii.11.3"
+      ],
+      "exposure": "development",
+      "group_exposure_level": "prior_study_outcomes",
+      "prior_source_members": [],
+      "prior_designed_mechanisms": [
+        {
+          "mechanism": "P02 designed damped_resonance",
+          "registered_role": "confirmation",
+          "exposure_level": "prior_study_outcomes",
+          "evidence": "prior P02 registry identity/role only; no performance read",
+          "reason": "source frequency-difference resonance is a nearby mechanism"
+        }
+      ],
+      "scientifically_eligible_members": [],
+      "H1_eligible_members": []
+    },
+    {
+      "structural_group": "physical-family-008",
+      "members": [
+        "feynman-i.40.1",
+        "feynman-i.6.20",
+        "feynman-i.6.20a",
+        "feynman-i.6.20b"
+      ],
+      "exposure": "development",
+      "group_exposure_level": "prior_study_outcomes",
+      "prior_source_members": [
+        "feynman-i.6.20",
+        "feynman-i.6.20a",
+        "feynman-i.6.20b"
+      ],
+      "prior_designed_mechanisms": [],
+      "scientifically_eligible_members": [
+        "feynman-i.40.1",
+        "feynman-i.6.20",
+        "feynman-i.6.20a",
+        "feynman-i.6.20b"
+      ],
+      "H1_eligible_members": [
+        "feynman-i.40.1",
+        "feynman-i.6.20",
+        "feynman-i.6.20a",
+        "feynman-i.6.20b"
+      ]
+    },
+    {
+      "structural_group": "physical-family-009",
+      "members": [
+        "feynman-i.41.16",
+        "feynman-iii.14.14",
+        "feynman-iii.4.32",
+        "feynman-iii.4.33"
+      ],
+      "exposure": "development",
+      "group_exposure_level": "prior_study_outcomes",
+      "prior_source_members": [
+        "feynman-i.41.16",
+        "feynman-iii.4.32",
+        "feynman-iii.4.33"
+      ],
+      "prior_designed_mechanisms": [],
+      "scientifically_eligible_members": [
+        "feynman-i.41.16",
+        "feynman-iii.14.14",
+        "feynman-iii.4.32",
+        "feynman-iii.4.33"
+      ],
+      "H1_eligible_members": [
+        "feynman-i.41.16",
+        "feynman-iii.14.14",
+        "feynman-iii.4.32",
+        "feynman-iii.4.33"
+      ]
+    },
+    {
+      "structural_group": "physical-family-010",
+      "members": [
+        "feynman-i.44.4"
+      ],
+      "exposure": "development",
+      "group_exposure_level": "prior_study_outcomes",
+      "prior_source_members": [
+        "feynman-i.44.4"
+      ],
+      "prior_designed_mechanisms": [],
+      "scientifically_eligible_members": [],
+      "H1_eligible_members": []
+    },
+    {
+      "structural_group": "physical-family-011",
+      "members": [
+        "feynman-i.8.14",
+        "feynman-i.9.18"
+      ],
+      "exposure": "prospective_candidate",
+      "group_exposure_level": "metadata_only",
+      "prior_source_members": [],
+      "prior_designed_mechanisms": [],
+      "scientifically_eligible_members": [],
+      "H1_eligible_members": []
+    },
+    {
+      "structural_group": "physical-family-012",
+      "members": [
+        "feynman-ii.35.18",
+        "feynman-ii.35.21"
+      ],
+      "exposure": "development",
+      "group_exposure_level": "prior_study_outcomes",
+      "prior_source_members": [
+        "feynman-ii.35.18",
+        "feynman-ii.35.21"
+      ],
+      "prior_designed_mechanisms": [],
+      "scientifically_eligible_members": [
+        "feynman-ii.35.18",
+        "feynman-ii.35.21"
+      ],
+      "H1_eligible_members": [
+        "feynman-ii.35.18",
+        "feynman-ii.35.21"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "a": "feynman-i.10.7",
+      "b": "feynman-i.48.2",
+      "reason": "canonical_structure"
+    },
+    {
+      "a": "feynman-i.10.7",
+      "b": "feynman-ii.13.23",
+      "reason": "canonical_structure"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-i.12.5",
+      "reason": "canonical_structure"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-i.14.3",
+      "reason": "canonical_structure"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-i.39.10",
+      "reason": "canonical_structure"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-i.43.31",
+      "reason": "canonical_structure"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-iii.7.38",
+      "reason": "canonical_structure"
+    },
+    {
+      "a": "feynman-i.12.4",
+      "b": "feynman-ii.3.24",
+      "reason": "canonical_structure"
+    },
+    {
+      "a": "feynman-i.15.10",
+      "b": "feynman-ii.13.34",
+      "reason": "canonical_structure"
+    },
+    {
+      "a": "feynman-i.25.13",
+      "b": "feynman-ii.4.23",
+      "reason": "canonical_structure"
+    },
+    {
+      "a": "feynman-i.25.13",
+      "b": "feynman-ii.13.17",
+      "reason": "canonical_structure"
+    },
+    {
+      "a": "feynman-i.25.13",
+      "b": "feynman-ii.34.29a",
+      "reason": "canonical_structure"
+    },
+    {
+      "a": "feynman-i.29.4",
+      "b": "feynman-i.34.27",
+      "reason": "canonical_structure"
+    },
+    {
+      "a": "feynman-i.29.4",
+      "b": "feynman-iii.12.43",
+      "reason": "canonical_structure"
+    },
+    {
+      "a": "feynman-i.34.8",
+      "b": "feynman-i.43.16",
+      "reason": "canonical_structure"
+    },
+    {
+      "a": "feynman-i.34.8",
+      "b": "feynman-ii.34.11",
+      "reason": "canonical_structure"
+    },
+    {
+      "a": "feynman-i.34.8",
+      "b": "feynman-ii.38.3",
+      "reason": "canonical_structure"
+    },
+    {
+      "a": "feynman-i.34.8",
+      "b": "feynman-iii.21.20",
+      "reason": "canonical_structure"
+    },
+    {
+      "a": "feynman-i.38.12",
+      "b": "feynman-iii.15.14",
+      "reason": "canonical_structure"
+    },
+    {
+      "a": "feynman-i.39.22",
+      "b": "feynman-ii.34.2a",
+      "reason": "canonical_structure"
+    },
+    {
+      "a": "feynman-ii.8.31",
+      "b": "feynman-ii.27.16",
+      "reason": "canonical_structure"
+    },
+    {
+      "a": "feynman-ii.8.31",
+      "b": "feynman-ii.27.18",
+      "reason": "canonical_structure"
+    },
+    {
+      "a": "feynman-ii.10.9",
+      "b": "feynman-ii.38.14",
+      "reason": "canonical_structure"
+    },
+    {
+      "a": "feynman-ii.15.4",
+      "b": "feynman-ii.15.5",
+      "reason": "canonical_structure"
+    },
+    {
+      "a": "feynman-ii.34.2",
+      "b": "feynman-ii.34.29b",
+      "reason": "canonical_structure"
+    },
+    {
+      "a": "feynman-i.10.7",
+      "b": "feynman-i.48.2",
+      "reason": "constant_masked_structure"
+    },
+    {
+      "a": "feynman-i.10.7",
+      "b": "feynman-ii.13.23",
+      "reason": "constant_masked_structure"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-i.12.5",
+      "reason": "constant_masked_structure"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-i.14.3",
+      "reason": "constant_masked_structure"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-i.39.10",
+      "reason": "constant_masked_structure"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-i.43.31",
+      "reason": "constant_masked_structure"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-iii.7.38",
+      "reason": "constant_masked_structure"
+    },
+    {
+      "a": "feynman-i.12.4",
+      "b": "feynman-ii.3.24",
+      "reason": "constant_masked_structure"
+    },
+    {
+      "a": "feynman-i.15.10",
+      "b": "feynman-ii.13.34",
+      "reason": "constant_masked_structure"
+    },
+    {
+      "a": "feynman-i.15.3t",
+      "b": "feynman-i.15.3x",
+      "reason": "constant_masked_structure"
+    },
+    {
+      "a": "feynman-i.25.13",
+      "b": "feynman-ii.4.23",
+      "reason": "constant_masked_structure"
+    },
+    {
+      "a": "feynman-i.25.13",
+      "b": "feynman-ii.13.17",
+      "reason": "constant_masked_structure"
+    },
+    {
+      "a": "feynman-i.25.13",
+      "b": "feynman-ii.34.29a",
+      "reason": "constant_masked_structure"
+    },
+    {
+      "a": "feynman-i.29.4",
+      "b": "feynman-i.34.27",
+      "reason": "constant_masked_structure"
+    },
+    {
+      "a": "feynman-i.29.4",
+      "b": "feynman-iii.12.43",
+      "reason": "constant_masked_structure"
+    },
+    {
+      "a": "feynman-i.34.8",
+      "b": "feynman-i.43.16",
+      "reason": "constant_masked_structure"
+    },
+    {
+      "a": "feynman-i.34.8",
+      "b": "feynman-ii.34.11",
+      "reason": "constant_masked_structure"
+    },
+    {
+      "a": "feynman-i.34.8",
+      "b": "feynman-ii.38.3",
+      "reason": "constant_masked_structure"
+    },
+    {
+      "a": "feynman-i.34.8",
+      "b": "feynman-iii.21.20",
+      "reason": "constant_masked_structure"
+    },
+    {
+      "a": "feynman-i.38.12",
+      "b": "feynman-iii.15.14",
+      "reason": "constant_masked_structure"
+    },
+    {
+      "a": "feynman-i.39.22",
+      "b": "feynman-ii.34.2a",
+      "reason": "constant_masked_structure"
+    },
+    {
+      "a": "feynman-ii.8.31",
+      "b": "feynman-ii.27.16",
+      "reason": "constant_masked_structure"
+    },
+    {
+      "a": "feynman-ii.8.31",
+      "b": "feynman-ii.27.18",
+      "reason": "constant_masked_structure"
+    },
+    {
+      "a": "feynman-ii.10.9",
+      "b": "feynman-ii.38.14",
+      "reason": "constant_masked_structure"
+    },
+    {
+      "a": "feynman-ii.15.4",
+      "b": "feynman-ii.15.5",
+      "reason": "constant_masked_structure"
+    },
+    {
+      "a": "feynman-ii.34.2",
+      "b": "feynman-ii.34.29b",
+      "reason": "constant_masked_structure"
+    },
+    {
+      "a": "feynman-i.10.7",
+      "b": "feynman-i.15.10",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-i.10.7",
+      "b": "feynman-i.48.2",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-i.10.7",
+      "b": "feynman-ii.13.23",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-i.10.7",
+      "b": "feynman-ii.13.34",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-i.12.2",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-i.12.4",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-i.12.5",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-i.14.3",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-i.14.4",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-i.25.13",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-i.29.4",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-i.32.5",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-i.34.8",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-i.34.27",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-i.38.12",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-i.39.10",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-i.39.22",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-i.43.16",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-i.43.31",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-i.47.23",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-ii.3.24",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-ii.4.23",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-ii.8.7",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-ii.8.31",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-ii.11.20",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-ii.13.17",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-ii.27.16",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-ii.27.18",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-ii.34.2a",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-ii.34.2",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-ii.34.11",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-ii.34.29a",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-ii.34.29b",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-ii.38.3",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-iii.7.38",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-iii.12.43",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-iii.13.18",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-iii.15.14",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-iii.15.27",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-iii.19.51",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-iii.21.20",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-i.15.3t",
+      "b": "feynman-i.15.3x",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-i.18.12",
+      "b": "feynman-i.18.16",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-i.34.10",
+      "b": "feynman-ii.21.32",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-i.39.11",
+      "b": "feynman-i.43.43",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-i.39.11",
+      "b": "feynman-ii.10.9",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-i.39.11",
+      "b": "feynman-ii.38.14",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-i.41.16",
+      "b": "feynman-iii.4.32",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-i.41.16",
+      "b": "feynman-iii.4.33",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-ii.6.11",
+      "b": "feynman-ii.15.4",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-ii.6.11",
+      "b": "feynman-ii.15.5",
+      "reason": "nonlinear_core"
+    },
+    {
+      "a": "feynman-i.6.20",
+      "b": "feynman-i.6.20a",
+      "reason": "source_family"
+    },
+    {
+      "a": "feynman-i.6.20",
+      "b": "feynman-i.6.20b",
+      "reason": "source_family"
+    },
+    {
+      "a": "feynman-i.15.3t",
+      "b": "feynman-i.15.3x",
+      "reason": "source_family"
+    },
+    {
+      "a": "feynman-ii.6.15a",
+      "b": "feynman-ii.6.15b",
+      "reason": "source_family"
+    },
+    {
+      "a": "feynman-ii.34.2a",
+      "b": "feynman-ii.34.2",
+      "reason": "source_family"
+    },
+    {
+      "a": "feynman-ii.34.29a",
+      "b": "feynman-ii.34.29b",
+      "reason": "source_family"
+    },
+    {
+      "a": "feynman-i.10.7",
+      "b": "feynman-i.15.10",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.10.7",
+      "b": "feynman-i.48.2",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.10.7",
+      "b": "feynman-ii.13.23",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.10.7",
+      "b": "feynman-ii.13.34",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-i.12.2",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-i.12.4",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-i.12.5",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-i.14.3",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-i.14.4",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-i.25.13",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-i.29.4",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-i.32.5",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-i.34.8",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-i.34.27",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-i.38.12",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-i.39.10",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-i.39.22",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-i.43.16",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-i.43.31",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-i.47.23",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-ii.3.24",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-ii.4.23",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-ii.8.7",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-ii.8.31",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-ii.11.20",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-ii.13.17",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-ii.27.16",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-ii.27.18",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-ii.34.2a",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-ii.34.2",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-ii.34.11",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-ii.34.29a",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-ii.34.29b",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-ii.38.3",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-iii.7.38",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-iii.12.43",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-iii.13.18",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-iii.15.14",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-iii.15.27",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-iii.19.51",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-iii.21.20",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.13.4",
+      "b": "feynman-iii.10.19",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.15.3t",
+      "b": "feynman-i.15.3x",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.18.12",
+      "b": "feynman-i.18.16",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.18.12",
+      "b": "feynman-i.30.5",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.24.6",
+      "b": "feynman-ii.6.15a",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.32.17",
+      "b": "feynman-ii.11.3",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.34.10",
+      "b": "feynman-ii.21.32",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.39.11",
+      "b": "feynman-i.43.43",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.39.11",
+      "b": "feynman-ii.10.9",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.39.11",
+      "b": "feynman-ii.37.1",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.39.11",
+      "b": "feynman-ii.38.14",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.41.16",
+      "b": "feynman-iii.4.32",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.41.16",
+      "b": "feynman-iii.4.33",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-ii.6.11",
+      "b": "feynman-ii.15.4",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-ii.6.11",
+      "b": "feynman-ii.15.5",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-bonus.5",
+      "b": "feynman-bonus.9",
+      "reason": "power_stripped_core"
+    },
+    {
+      "a": "feynman-i.6.20",
+      "b": "feynman-i.6.20a",
+      "reason": "manual_conservative_family:gaussian_activation"
+    },
+    {
+      "a": "feynman-i.6.20",
+      "b": "feynman-i.6.20b",
+      "reason": "manual_conservative_family:gaussian_activation"
+    },
+    {
+      "a": "feynman-i.6.20",
+      "b": "feynman-i.40.1",
+      "reason": "manual_conservative_family:gaussian_activation"
+    },
+    {
+      "a": "feynman-i.10.7",
+      "b": "feynman-i.15.10",
+      "reason": "manual_conservative_family:relativistic_or_offset_radical"
+    },
+    {
+      "a": "feynman-i.10.7",
+      "b": "feynman-i.15.3t",
+      "reason": "manual_conservative_family:relativistic_or_offset_radical"
+    },
+    {
+      "a": "feynman-i.10.7",
+      "b": "feynman-i.15.3x",
+      "reason": "manual_conservative_family:relativistic_or_offset_radical"
+    },
+    {
+      "a": "feynman-i.10.7",
+      "b": "feynman-i.16.6",
+      "reason": "manual_conservative_family:relativistic_or_offset_radical"
+    },
+    {
+      "a": "feynman-i.10.7",
+      "b": "feynman-i.34.10",
+      "reason": "manual_conservative_family:relativistic_or_offset_radical"
+    },
+    {
+      "a": "feynman-i.10.7",
+      "b": "feynman-i.34.14",
+      "reason": "manual_conservative_family:relativistic_or_offset_radical"
+    },
+    {
+      "a": "feynman-i.10.7",
+      "b": "feynman-i.48.2",
+      "reason": "manual_conservative_family:relativistic_or_offset_radical"
+    },
+    {
+      "a": "feynman-i.10.7",
+      "b": "feynman-ii.13.23",
+      "reason": "manual_conservative_family:relativistic_or_offset_radical"
+    },
+    {
+      "a": "feynman-i.10.7",
+      "b": "feynman-ii.13.34",
+      "reason": "manual_conservative_family:relativistic_or_offset_radical"
+    },
+    {
+      "a": "feynman-i.10.7",
+      "b": "feynman-ii.21.32",
+      "reason": "manual_conservative_family:relativistic_or_offset_radical"
+    },
+    {
+      "a": "feynman-i.10.7",
+      "b": "feynman-ii.24.17",
+      "reason": "manual_conservative_family:relativistic_or_offset_radical"
+    },
+    {
+      "a": "feynman-i.10.7",
+      "b": "feynman-bonus.6",
+      "reason": "manual_conservative_family:relativistic_or_offset_radical"
+    },
+    {
+      "a": "feynman-i.10.7",
+      "b": "feynman-bonus.10",
+      "reason": "manual_conservative_family:relativistic_or_offset_radical"
+    },
+    {
+      "a": "feynman-i.10.7",
+      "b": "feynman-bonus.15",
+      "reason": "manual_conservative_family:relativistic_or_offset_radical"
+    },
+    {
+      "a": "feynman-i.11.19",
+      "b": "feynman-i.13.4",
+      "reason": "manual_conservative_family:positive_sum_or_norm"
+    },
+    {
+      "a": "feynman-i.11.19",
+      "b": "feynman-i.24.6",
+      "reason": "manual_conservative_family:positive_sum_or_norm"
+    },
+    {
+      "a": "feynman-i.11.19",
+      "b": "feynman-ii.6.15a",
+      "reason": "manual_conservative_family:positive_sum_or_norm"
+    },
+    {
+      "a": "feynman-i.11.19",
+      "b": "feynman-ii.36.38",
+      "reason": "manual_conservative_family:positive_sum_or_norm"
+    },
+    {
+      "a": "feynman-i.11.19",
+      "b": "feynman-iii.10.19",
+      "reason": "manual_conservative_family:positive_sum_or_norm"
+    },
+    {
+      "a": "feynman-i.11.19",
+      "b": "feynman-bonus.5",
+      "reason": "manual_conservative_family:positive_sum_or_norm"
+    },
+    {
+      "a": "feynman-i.11.19",
+      "b": "feynman-bonus.17",
+      "reason": "manual_conservative_family:positive_sum_or_norm"
+    },
+    {
+      "a": "feynman-i.11.19",
+      "b": "feynman-bonus.18",
+      "reason": "manual_conservative_family:positive_sum_or_norm"
+    },
+    {
+      "a": "feynman-i.18.4",
+      "b": "feynman-i.27.6",
+      "reason": "manual_conservative_family:affine_or_additive_rational"
+    },
+    {
+      "a": "feynman-i.18.4",
+      "b": "feynman-i.39.11",
+      "reason": "manual_conservative_family:affine_or_additive_rational"
+    },
+    {
+      "a": "feynman-i.18.4",
+      "b": "feynman-i.43.43",
+      "reason": "manual_conservative_family:affine_or_additive_rational"
+    },
+    {
+      "a": "feynman-i.18.4",
+      "b": "feynman-ii.10.9",
+      "reason": "manual_conservative_family:affine_or_additive_rational"
+    },
+    {
+      "a": "feynman-i.18.4",
+      "b": "feynman-ii.11.27",
+      "reason": "manual_conservative_family:affine_or_additive_rational"
+    },
+    {
+      "a": "feynman-i.18.4",
+      "b": "feynman-ii.11.28",
+      "reason": "manual_conservative_family:affine_or_additive_rational"
+    },
+    {
+      "a": "feynman-i.18.4",
+      "b": "feynman-ii.37.1",
+      "reason": "manual_conservative_family:affine_or_additive_rational"
+    },
+    {
+      "a": "feynman-i.18.4",
+      "b": "feynman-ii.38.14",
+      "reason": "manual_conservative_family:affine_or_additive_rational"
+    },
+    {
+      "a": "feynman-i.41.16",
+      "b": "feynman-iii.4.32",
+      "reason": "manual_conservative_family:bose_exponential_difference"
+    },
+    {
+      "a": "feynman-i.41.16",
+      "b": "feynman-iii.4.33",
+      "reason": "manual_conservative_family:bose_exponential_difference"
+    },
+    {
+      "a": "feynman-i.41.16",
+      "b": "feynman-iii.14.14",
+      "reason": "manual_conservative_family:bose_exponential_difference"
+    },
+    {
+      "a": "feynman-ii.35.18",
+      "b": "feynman-ii.35.21",
+      "reason": "manual_conservative_family:hyperbolic_response"
+    },
+    {
+      "a": "feynman-i.8.14",
+      "b": "feynman-i.9.18",
+      "reason": "manual_conservative_family:geometric_separation"
+    },
+    {
+      "a": "feynman-i.32.17",
+      "b": "feynman-ii.11.3",
+      "reason": "manual_conservative_family:frequency_difference_resonance"
+    },
+    {
+      "a": "feynman-i.13.12",
+      "b": "feynman-ii.2.42",
+      "reason": "manual_conservative_family:positive_source_difference"
+    },
+    {
+      "a": "feynman-i.12.11",
+      "b": "feynman-i.18.12",
+      "reason": "manual_conservative_family:all_source_angular_interference"
+    },
+    {
+      "a": "feynman-i.12.11",
+      "b": "feynman-i.18.16",
+      "reason": "manual_conservative_family:all_source_angular_interference"
+    },
+    {
+      "a": "feynman-i.12.11",
+      "b": "feynman-i.26.2",
+      "reason": "manual_conservative_family:all_source_angular_interference"
+    },
+    {
+      "a": "feynman-i.12.11",
+      "b": "feynman-i.29.16",
+      "reason": "manual_conservative_family:all_source_angular_interference"
+    },
+    {
+      "a": "feynman-i.12.11",
+      "b": "feynman-i.30.3",
+      "reason": "manual_conservative_family:all_source_angular_interference"
+    },
+    {
+      "a": "feynman-i.12.11",
+      "b": "feynman-i.30.5",
+      "reason": "manual_conservative_family:all_source_angular_interference"
+    },
+    {
+      "a": "feynman-i.12.11",
+      "b": "feynman-i.37.4",
+      "reason": "manual_conservative_family:all_source_angular_interference"
+    },
+    {
+      "a": "feynman-i.12.11",
+      "b": "feynman-i.50.26",
+      "reason": "manual_conservative_family:all_source_angular_interference"
+    },
+    {
+      "a": "feynman-i.12.11",
+      "b": "feynman-ii.6.11",
+      "reason": "manual_conservative_family:all_source_angular_interference"
+    },
+    {
+      "a": "feynman-i.12.11",
+      "b": "feynman-ii.6.15b",
+      "reason": "manual_conservative_family:all_source_angular_interference"
+    },
+    {
+      "a": "feynman-i.12.11",
+      "b": "feynman-ii.11.17",
+      "reason": "manual_conservative_family:all_source_angular_interference"
+    },
+    {
+      "a": "feynman-i.12.11",
+      "b": "feynman-ii.15.4",
+      "reason": "manual_conservative_family:all_source_angular_interference"
+    },
+    {
+      "a": "feynman-i.12.11",
+      "b": "feynman-ii.15.5",
+      "reason": "manual_conservative_family:all_source_angular_interference"
+    },
+    {
+      "a": "feynman-i.12.11",
+      "b": "feynman-iii.8.54",
+      "reason": "manual_conservative_family:all_source_angular_interference"
+    },
+    {
+      "a": "feynman-i.12.11",
+      "b": "feynman-iii.9.52",
+      "reason": "manual_conservative_family:all_source_angular_interference"
+    },
+    {
+      "a": "feynman-i.12.11",
+      "b": "feynman-iii.15.12",
+      "reason": "manual_conservative_family:all_source_angular_interference"
+    },
+    {
+      "a": "feynman-i.12.11",
+      "b": "feynman-iii.17.37",
+      "reason": "manual_conservative_family:all_source_angular_interference"
+    },
+    {
+      "a": "feynman-i.12.11",
+      "b": "feynman-bonus.1",
+      "reason": "manual_conservative_family:all_source_angular_interference"
+    },
+    {
+      "a": "feynman-i.12.11",
+      "b": "feynman-bonus.2",
+      "reason": "manual_conservative_family:all_source_angular_interference"
+    },
+    {
+      "a": "feynman-i.12.11",
+      "b": "feynman-bonus.3",
+      "reason": "manual_conservative_family:all_source_angular_interference"
+    },
+    {
+      "a": "feynman-i.12.11",
+      "b": "feynman-bonus.8",
+      "reason": "manual_conservative_family:all_source_angular_interference"
+    },
+    {
+      "a": "feynman-i.12.11",
+      "b": "feynman-bonus.10",
+      "reason": "manual_conservative_family:all_source_angular_interference"
+    },
+    {
+      "a": "feynman-i.12.11",
+      "b": "feynman-bonus.11",
+      "reason": "manual_conservative_family:all_source_angular_interference"
+    },
+    {
+      "a": "feynman-i.12.11",
+      "b": "feynman-bonus.13",
+      "reason": "manual_conservative_family:all_source_angular_interference"
+    },
+    {
+      "a": "feynman-i.12.11",
+      "b": "feynman-bonus.14",
+      "reason": "manual_conservative_family:all_source_angular_interference"
+    },
+    {
+      "a": "feynman-i.12.11",
+      "b": "feynman-bonus.15",
+      "reason": "manual_conservative_family:all_source_angular_interference"
+    },
+    {
+      "a": "feynman-i.12.11",
+      "b": "feynman-bonus.20",
+      "reason": "manual_conservative_family:all_source_angular_interference"
+    },
+    {
+      "a": "feynman-bonus.15",
+      "b": "feynman-bonus.20",
+      "reason": "prior_P02_group:oscillatory_interference"
+    },
+    {
+      "a": "feynman-bonus.15",
+      "b": "feynman-i.26.2",
+      "reason": "prior_P02_group:oscillatory_interference"
+    },
+    {
+      "a": "feynman-bonus.15",
+      "b": "feynman-i.30.5",
+      "reason": "prior_P02_group:oscillatory_interference"
+    },
+    {
+      "a": "feynman-bonus.15",
+      "b": "feynman-i.37.4",
+      "reason": "prior_P02_group:oscillatory_interference"
+    },
+    {
+      "a": "feynman-i.10.7",
+      "b": "feynman-i.48.2",
+      "reason": "prior_P02_group:lorentz_radical"
+    },
+    {
+      "a": "feynman-i.10.7",
+      "b": "feynman-ii.13.23",
+      "reason": "prior_P02_group:lorentz_radical"
+    },
+    {
+      "a": "feynman-i.10.7",
+      "b": "feynman-ii.13.34",
+      "reason": "prior_P02_group:lorentz_radical"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-i.29.4",
+      "reason": "prior_P02_group:H0_null_family"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-i.34.27",
+      "reason": "prior_P02_group:H0_null_family"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-i.38.12",
+      "reason": "prior_P02_group:H0_null_family"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-i.39.10",
+      "reason": "prior_P02_group:H0_null_family"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-i.39.22",
+      "reason": "prior_P02_group:H0_null_family"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-i.43.31",
+      "reason": "prior_P02_group:H0_null_family"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-i.47.23",
+      "reason": "prior_P02_group:H0_null_family"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-ii.27.16",
+      "reason": "prior_P02_group:H0_null_family"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-ii.27.18",
+      "reason": "prior_P02_group:H0_null_family"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-ii.8.31",
+      "reason": "prior_P02_group:H0_null_family"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-iii.12.43",
+      "reason": "prior_P02_group:H0_null_family"
+    },
+    {
+      "a": "feynman-i.12.1",
+      "b": "feynman-iii.15.14",
+      "reason": "prior_P02_group:H0_null_family"
+    },
+    {
+      "a": "feynman-i.27.6",
+      "b": "feynman-i.39.11",
+      "reason": "prior_P02_group:rational_denominator"
+    },
+    {
+      "a": "feynman-i.27.6",
+      "b": "feynman-i.43.43",
+      "reason": "prior_P02_group:rational_denominator"
+    },
+    {
+      "a": "feynman-i.27.6",
+      "b": "feynman-ii.11.27",
+      "reason": "prior_P02_group:rational_denominator"
+    },
+    {
+      "a": "feynman-i.27.6",
+      "b": "feynman-ii.11.28",
+      "reason": "prior_P02_group:rational_denominator"
+    },
+    {
+      "a": "feynman-i.27.6",
+      "b": "feynman-ii.38.14",
+      "reason": "prior_P02_group:rational_denominator"
+    },
+    {
+      "a": "feynman-i.41.16",
+      "b": "feynman-iii.4.32",
+      "reason": "prior_P02_group:bose_planck"
+    },
+    {
+      "a": "feynman-i.41.16",
+      "b": "feynman-iii.4.33",
+      "reason": "prior_P02_group:bose_planck"
+    },
+    {
+      "a": "feynman-i.6.20",
+      "b": "feynman-i.6.20a",
+      "reason": "prior_P02_group:gaussian"
+    },
+    {
+      "a": "feynman-i.6.20",
+      "b": "feynman-i.6.20b",
+      "reason": "prior_P02_group:gaussian"
+    },
+    {
+      "a": "feynman-ii.35.18",
+      "b": "feynman-ii.35.21",
+      "reason": "prior_P02_group:hyperbolic_response"
+    },
+    {
+      "a": "feynman-i.11.19",
+      "b": "feynman-i.13.4",
+      "reason": "automatic_all120_positive_Laurent_sum_grammar"
+    },
+    {
+      "a": "feynman-i.11.19",
+      "b": "feynman-i.16.6",
+      "reason": "automatic_all120_positive_Laurent_sum_grammar"
+    },
+    {
+      "a": "feynman-i.11.19",
+      "b": "feynman-i.18.4",
+      "reason": "automatic_all120_positive_Laurent_sum_grammar"
+    },
+    {
+      "a": "feynman-i.11.19",
+      "b": "feynman-i.24.6",
+      "reason": "automatic_all120_positive_Laurent_sum_grammar"
+    },
+    {
+      "a": "feynman-i.11.19",
+      "b": "feynman-i.27.6",
+      "reason": "automatic_all120_positive_Laurent_sum_grammar"
+    },
+    {
+      "a": "feynman-i.11.19",
+      "b": "feynman-ii.6.15a",
+      "reason": "automatic_all120_positive_Laurent_sum_grammar"
+    },
+    {
+      "a": "feynman-i.11.19",
+      "b": "feynman-ii.10.9",
+      "reason": "automatic_all120_positive_Laurent_sum_grammar"
+    },
+    {
+      "a": "feynman-i.11.19",
+      "b": "feynman-ii.36.38",
+      "reason": "automatic_all120_positive_Laurent_sum_grammar"
+    },
+    {
+      "a": "feynman-i.11.19",
+      "b": "feynman-ii.37.1",
+      "reason": "automatic_all120_positive_Laurent_sum_grammar"
+    },
+    {
+      "a": "feynman-i.11.19",
+      "b": "feynman-ii.38.14",
+      "reason": "automatic_all120_positive_Laurent_sum_grammar"
+    },
+    {
+      "a": "feynman-i.11.19",
+      "b": "feynman-iii.10.19",
+      "reason": "automatic_all120_positive_Laurent_sum_grammar"
+    },
+    {
+      "a": "feynman-i.11.19",
+      "b": "feynman-bonus.5",
+      "reason": "automatic_all120_positive_Laurent_sum_grammar"
+    },
+    {
+      "a": "feynman-i.11.19",
+      "b": "feynman-bonus.6",
+      "reason": "automatic_all120_positive_Laurent_sum_grammar"
+    },
+    {
+      "a": "feynman-i.11.19",
+      "b": "feynman-bonus.9",
+      "reason": "automatic_all120_positive_Laurent_sum_grammar"
+    },
+    {
+      "a": "feynman-i.11.19",
+      "b": "feynman-bonus.17",
+      "reason": "automatic_all120_positive_Laurent_sum_grammar"
+    },
+    {
+      "a": "feynman-i.11.19",
+      "b": "feynman-bonus.18",
+      "reason": "automatic_all120_positive_Laurent_sum_grammar"
+    },
+    {
+      "a": "feynman-i.11.19",
+      "b": "feynman-i.13.4",
+      "reason": "primary_conservative_sum_norm_nested_combination;fine_structure_assignment_disputed_not_algebraic_equality"
+    },
+    {
+      "a": "feynman-i.11.19",
+      "b": "feynman-i.16.6",
+      "reason": "primary_conservative_sum_norm_nested_combination;fine_structure_assignment_disputed_not_algebraic_equality"
+    },
+    {
+      "a": "feynman-i.11.19",
+      "b": "feynman-i.18.4",
+      "reason": "primary_conservative_sum_norm_nested_combination;fine_structure_assignment_disputed_not_algebraic_equality"
+    },
+    {
+      "a": "feynman-i.11.19",
+      "b": "feynman-i.24.6",
+      "reason": "primary_conservative_sum_norm_nested_combination;fine_structure_assignment_disputed_not_algebraic_equality"
+    },
+    {
+      "a": "feynman-i.11.19",
+      "b": "feynman-i.27.6",
+      "reason": "primary_conservative_sum_norm_nested_combination;fine_structure_assignment_disputed_not_algebraic_equality"
+    },
+    {
+      "a": "feynman-i.11.19",
+      "b": "feynman-ii.6.15a",
+      "reason": "primary_conservative_sum_norm_nested_combination;fine_structure_assignment_disputed_not_algebraic_equality"
+    },
+    {
+      "a": "feynman-i.11.19",
+      "b": "feynman-ii.10.9",
+      "reason": "primary_conservative_sum_norm_nested_combination;fine_structure_assignment_disputed_not_algebraic_equality"
+    },
+    {
+      "a": "feynman-i.11.19",
+      "b": "feynman-ii.36.38",
+      "reason": "primary_conservative_sum_norm_nested_combination;fine_structure_assignment_disputed_not_algebraic_equality"
+    },
+    {
+      "a": "feynman-i.11.19",
+      "b": "feynman-ii.37.1",
+      "reason": "primary_conservative_sum_norm_nested_combination;fine_structure_assignment_disputed_not_algebraic_equality"
+    },
+    {
+      "a": "feynman-i.11.19",
+      "b": "feynman-ii.38.14",
+      "reason": "primary_conservative_sum_norm_nested_combination;fine_structure_assignment_disputed_not_algebraic_equality"
+    },
+    {
+      "a": "feynman-i.11.19",
+      "b": "feynman-iii.10.19",
+      "reason": "primary_conservative_sum_norm_nested_combination;fine_structure_assignment_disputed_not_algebraic_equality"
+    },
+    {
+      "a": "feynman-i.11.19",
+      "b": "feynman-bonus.5",
+      "reason": "primary_conservative_sum_norm_nested_combination;fine_structure_assignment_disputed_not_algebraic_equality"
+    },
+    {
+      "a": "feynman-i.11.19",
+      "b": "feynman-bonus.6",
+      "reason": "primary_conservative_sum_norm_nested_combination;fine_structure_assignment_disputed_not_algebraic_equality"
+    },
+    {
+      "a": "feynman-i.11.19",
+      "b": "feynman-bonus.9",
+      "reason": "primary_conservative_sum_norm_nested_combination;fine_structure_assignment_disputed_not_algebraic_equality"
+    },
+    {
+      "a": "feynman-i.11.19",
+      "b": "feynman-bonus.17",
+      "reason": "primary_conservative_sum_norm_nested_combination;fine_structure_assignment_disputed_not_algebraic_equality"
+    },
+    {
+      "a": "feynman-i.11.19",
+      "b": "feynman-bonus.18",
+      "reason": "primary_conservative_sum_norm_nested_combination;fine_structure_assignment_disputed_not_algebraic_equality"
+    },
+    {
+      "a": "feynman-i.11.19",
+      "b": "feynman-bonus.2",
+      "reason": "primary_conservative_sum_norm_nested_combination;fine_structure_assignment_disputed_not_algebraic_equality"
+    },
+    {
+      "a": "feynman-i.11.19",
+      "b": "feynman-bonus.16",
+      "reason": "primary_conservative_sum_norm_nested_combination;fine_structure_assignment_disputed_not_algebraic_equality"
+    }
+  ]
+}

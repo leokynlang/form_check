@@ -1,0 +1,937 @@
+{
+  "protocol": {
+    "protocol_id": "p01-fresh-sample-pilot-v1",
+    "status": "development_pilot_not_confirmatory",
+    "master_seed": 20261018,
+    "n_grid": [
+      50,
+      200
+    ],
+    "noise_grid": [
+      0.03
+    ],
+    "replicates": {
+      "reference": 32,
+      "calibration": 64,
+      "test": 64
+    },
+    "budgets": [
+      0.01,
+      0.05,
+      0.1
+    ],
+    "screen_r2": 0.99,
+    "danger_threshold": 0.1,
+    "methods": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G"
+    ],
+    "policies": {
+      "D": [
+        "D"
+      ],
+      "F": [
+        "F"
+      ],
+      "AD_panel": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "AEF_panel": [
+        "A",
+        "E",
+        "F"
+      ],
+      "G_rbf_cv": [
+        "G"
+      ]
+    },
+    "permutations": 999,
+    "cv_folds": 5,
+    "rbf": {
+      "landmarks": 32,
+      "bandwidth_squared": "number_of_features",
+      "ridge_per_observation": 0.01
+    },
+    "bootstrap_repetitions": 2000,
+    "scope": "Fresh mutually independent reference/calibration/test samples on the 32 already studied SRSD tasks. NOT unseen-equation confirmation. H1 is generated ONLY for test.",
+    "budget_event": "rejection OR any member decline, conditional on H0 and finite training log-space R2 >= 0.99",
+    "panel_score": "maximum of member empirical CDF anomaly scores; CDFs from valid screened H0 reference records only; ties use strict greater-than rejection",
+    "threshold_rule": "smallest observed finite calibration score with (strict exceedances + declines)/N_screened <= budget; infeasible when declines alone exceed floor(budget*N)",
+    "outcome": "legacy upper endpoint: first feature 3*observed training maximum, others training log medians; incomplete outcome is explicitly unavailable, not safe",
+    "inference": "paired task bootstrap with frozen thresholds; conditional on fitted calibration policy; does not include calibration estimation uncertainty",
+    "stop_rule": "Run the fixed grid once. No selection or tuning using test outcomes. Protocol changes require a new ID and independent confirmation."
+  },
+  "source_sha256": {
+    "D:\\form_check\\experiments\\release_validation\\analyze.py": "e15d9fa874381dc337dfc4c61e12fea335c1f7fbdd336eb4d62ea80b5d3fc7c7",
+    "D:\\form_check\\experiments\\release_validation\\calibration.py": "87196c6a0e74adaffd695233e36d52c3e8a7ede953222b86cc16d092a11a5d61",
+    "D:\\form_check\\experiments\\release_validation\\gates.py": "cac193a887e04a8edb33e1053b38d4212cb2ef12d1ae8cb179cc86598edbce5b",
+    "D:\\form_check\\experiments\\release_validation\\inventory.py": "e8fb9238f55fbc233f376412d7e86716b631f6735cbc927bb22acc9901a2cac8",
+    "D:\\form_check\\experiments\\release_validation\\runner.py": "a3b55dc3dcc10160175329be565964c9fa5b39bddcfd59d3bc594c0011b15655",
+    "D:\\form_check\\experiments\\release_validation\\__init__.py": "da3a04da34370c90e6b1bd96a545c604bd0a1d3c209d0b275372a29ad511c376",
+    "D:\\form_check\\common.py": "1cef8a33ff8c7f6f31618efde13b45740e45bb3f6161c8a686b291d2932fba0a",
+    "D:\\form_check\\gate_compare.py": "171bdbb3c0a98b33d8b9599960464a8484136c24ef62d8ba9a58bc6115022837",
+    "D:\\form_check\\srsd_data.py": "c78ffc297912bd52e372b6710e805932f6203da929e25ce6fbfb73a168939e7f",
+    "D:\\form_check\\_bootstrap.py": "aa858a55c9b0df7528408b64fed778e0ab3a769efc5aa2a058acb456b48c2aa7",
+    "D:\\form_check\\dimreflex\\discover.py": "bdf7b06978f2e1d39b81698974a56f0a6fccf9acb929edaa9a2c46bf6735e281",
+    "D:\\form_check\\dimreflex\\_ols.py": "082609bf0481525d95c665ca3617cf315466a01ef98e484069c8fbdbcaacda7c",
+    "D:\\form_check\\paper\\revision_loc\\rerun_cd_svd.py": "94b41865e36a81cd6f4e7285d75109cde48b1668afb323b044f7b13585f768b9",
+    "D:\\form_check\\runs\\srsd_full\\config.json": "48e688639e521674a8b37c934b1719a4721d153599507402b43f34e1933140d6",
+    "C:\\Users\\16910\\AppData\\Local\\Temp\\srsd-benchmark\\datasets\\__init__.py": "a70db20ab22a74bced17ea0569ca9fdd28bab14ef2968b109a09366cdb52aef7",
+    "C:\\Users\\16910\\AppData\\Local\\Temp\\srsd-benchmark\\datasets\\base.py": "eab9c582a4dcf787e3ce7748ab9dacd8c83baa6dfd70ffa763da0eb88fa69993",
+    "C:\\Users\\16910\\AppData\\Local\\Temp\\srsd-benchmark\\datasets\\feynman.py": "6a77ebd956f9add9646b148574e22526bbfbbee79a991b31f69d8c124b0d58bf",
+    "C:\\Users\\16910\\AppData\\Local\\Temp\\srsd-benchmark\\datasets\\registry.py": "774a9c1c106e655b59194b5036c8f821c2cfbfbd8f90c6d2ab9f8ec9195dcde8",
+    "C:\\Users\\16910\\AppData\\Local\\Temp\\srsd-benchmark\\datasets\\sampling.py": "00d7d2a544776cb8043c754d56a3868484eb0fa034ad53f7f366969f37f93f7b"
+  },
+  "environment": {
+    "python": "3.13.15",
+    "numpy": "2.5.2",
+    "pandas": "3.0.5",
+    "scipy": "1.18.1"
+  },
+  "registry": [
+    {
+      "task": "feynman-bonus.15",
+      "klass": "H1",
+      "formula": "x1*sqrt(1 - 1.11265005605362e-17*x0**2)/(3.33564095198152e-9*x0*cos(x2) + 1)",
+      "sampling": [
+        [
+          100000.0,
+          10000000.0,
+          "DefaultSampling",
+          true,
+          false
+        ],
+        [
+          1000000000.0,
+          100000000000.0,
+          "DefaultSampling",
+          true,
+          false
+        ],
+        [
+          0.0,
+          6.283185307179586,
+          "SimpleSampling",
+          true,
+          false
+        ]
+      ]
+    },
+    {
+      "task": "feynman-bonus.20",
+      "klass": "H1",
+      "formula": "7.83707760458308e-29*x0**2*(x0/x1 - sin(x2)**2 + x1/x0)/(pi*x1**2)",
+      "sampling": [
+        [
+          1000000000.0,
+          100000000000.0,
+          "DefaultSampling",
+          true,
+          false
+        ],
+        [
+          1000000000.0,
+          100000000000.0,
+          "DefaultSampling",
+          true,
+          false
+        ],
+        [
+          0.0,
+          6.283185307179586,
+          "SimpleSampling",
+          true,
+          false
+        ]
+      ]
+    },
+    {
+      "task": "feynman-bonus.5",
+      "klass": "H1",
+      "formula": "2*pi*x0**1.5/sqrt(6.6743e-11*x1 + 6.6743e-11*x2)",
+      "sampling": [
+        [
+          100000000.0,
+          10000000000.0,
+          "DefaultSampling",
+          true,
+          false
+        ],
+        [
+          1e+23,
+          1e+25,
+          "DefaultSampling",
+          true,
+          false
+        ],
+        [
+          1e+23,
+          1e+25,
+          "DefaultSampling",
+          true,
+          false
+        ]
+      ]
+    },
+    {
+      "task": "feynman-i.10.7",
+      "klass": "H1",
+      "formula": "x0/sqrt(1 - 1.11265005605362e-17*x1**2)",
+      "sampling": [
+        [
+          0.1,
+          10.0,
+          "DefaultSampling",
+          true,
+          false
+        ],
+        [
+          100000.0,
+          100000000.0,
+          "DefaultSampling",
+          true,
+          false
+        ]
+      ]
+    },
+    {
+      "task": "feynman-i.12.1",
+      "klass": "H0",
+      "formula": "x0*x1",
+      "sampling": [
+        [
+          0.01,
+          1.0,
+          "DefaultSampling",
+          true,
+          false
+        ],
+        [
+          0.01,
+          1.0,
+          "DefaultSampling",
+          true,
+          false
+        ]
+      ]
+    },
+    {
+      "task": "feynman-i.26.2",
+      "klass": "H1",
+      "formula": "sin(x0)/sin(x1)",
+      "sampling": [
+        [
+          0.0,
+          1.5707963267948966,
+          "SimpleSampling",
+          true,
+          false
+        ],
+        [
+          0.0,
+          1.5707963267948966,
+          "SimpleSampling",
+          true,
+          false
+        ]
+      ]
+    },
+    {
+      "task": "feynman-i.27.6",
+      "klass": "H1",
+      "formula": "1/(x1/x2 + 1/x0)",
+      "sampling": [
+        [
+          0.001,
+          0.1,
+          "DefaultSampling",
+          true,
+          false
+        ],
+        [
+          0.1,
+          10.0,
+          "DefaultSampling",
+          true,
+          false
+        ],
+        [
+          0.001,
+          0.1,
+          "DefaultSampling",
+          true,
+          false
+        ]
+      ]
+    },
+    {
+      "task": "feynman-i.29.4",
+      "klass": "H0",
+      "formula": "3.33564095198152e-9*x0",
+      "sampling": [
+        [
+          1000000000.0,
+          100000000000.0,
+          "DefaultSampling",
+          true,
+          false
+        ]
+      ]
+    },
+    {
+      "task": "feynman-i.30.5",
+      "klass": "H1",
+      "formula": "x0/(x1*sin(x2))",
+      "sampling": [
+        [
+          1e-11,
+          1e-09,
+          "DefaultSampling",
+          true,
+          false
+        ],
+        [
+          1.0,
+          100.0,
+          "IntegerSampling",
+          true,
+          false
+        ],
+        [
+          0.0,
+          1.5707963267948966,
+          "SimpleSampling",
+          true,
+          false
+        ]
+      ]
+    },
+    {
+      "task": "feynman-i.34.27",
+      "klass": "H0",
+      "formula": "3.313e-34*x0/pi",
+      "sampling": [
+        [
+          1000000000.0,
+          100000000000.0,
+          "DefaultSampling",
+          true,
+          false
+        ]
+      ]
+    },
+    {
+      "task": "feynman-i.37.4",
+      "klass": "H1",
+      "formula": "x0 + x1 + 2*sqrt(x0*x1)*cos(x2)",
+      "sampling": [
+        [
+          0.001,
+          0.1,
+          "DefaultSampling",
+          true,
+          false
+        ],
+        [
+          0.001,
+          0.1,
+          "DefaultSampling",
+          true,
+          false
+        ],
+        [
+          0.0,
+          6.283185307179586,
+          "SimpleSampling",
+          true,
+          false
+        ]
+      ]
+    },
+    {
+      "task": "feynman-i.38.12",
+      "klass": "H0",
+      "formula": "3.88724918104e-78/(pi*x0*x1**2)",
+      "sampling": [
+        [
+          1e-28,
+          1e-26,
+          "DefaultSampling",
+          true,
+          false
+        ],
+        [
+          1e-11,
+          1e-09,
+          "DefaultSampling",
+          true,
+          false
+        ]
+      ]
+    },
+    {
+      "task": "feynman-i.39.10",
+      "klass": "H0",
+      "formula": "1.5*x0*x1",
+      "sampling": [
+        [
+          10000.0,
+          1000000.0,
+          "DefaultSampling",
+          true,
+          false
+        ],
+        [
+          1e-05,
+          0.001,
+          "DefaultSampling",
+          true,
+          false
+        ]
+      ]
+    },
+    {
+      "task": "feynman-i.39.11",
+      "klass": "H1",
+      "formula": "x1*x2/(x0 - 1)",
+      "sampling": [
+        [
+          1.0,
+          2.0,
+          "SimpleSampling",
+          true,
+          false
+        ],
+        [
+          10000.0,
+          1000000.0,
+          "DefaultSampling",
+          true,
+          false
+        ],
+        [
+          1e-05,
+          0.001,
+          "DefaultSampling",
+          true,
+          false
+        ]
+      ]
+    },
+    {
+      "task": "feynman-i.39.22",
+      "klass": "H0",
+      "formula": "1.380649e-23*x0*x1/x2",
+      "sampling": [
+        [
+          1e+23,
+          1e+25,
+          "DefaultSampling",
+          true,
+          false
+        ],
+        [
+          10.0,
+          1000.0,
+          "DefaultSampling",
+          true,
+          false
+        ],
+        [
+          1e-05,
+          0.001,
+          "DefaultSampling",
+          true,
+          false
+        ]
+      ]
+    },
+    {
+      "task": "feynman-i.41.16",
+      "klass": "H1",
+      "formula": "3.68620963570564e-51*x0**3/(pi**3*(exp(2.39959613196403e-11*x0/(pi*x1)) - 1))",
+      "sampling": [
+        [
+          0.1,
+          10.0,
+          "DefaultSampling",
+          true,
+          false
+        ],
+        [
+          10.0,
+          1000.0,
+          "DefaultSampling",
+          true,
+          false
+        ]
+      ]
+    },
+    {
+      "task": "feynman-i.43.31",
+      "klass": "H0",
+      "formula": "1.380649e-23*x0*x1",
+      "sampling": [
+        [
+          10000000000000.0,
+          1000000000000000.0,
+          "DefaultSampling",
+          true,
+          false
+        ],
+        [
+          10.0,
+          1000.0,
+          "DefaultSampling",
+          true,
+          false
+        ]
+      ]
+    },
+    {
+      "task": "feynman-i.43.43",
+      "klass": "H1",
+      "formula": "1.380649e-23*x1/(x2*(x0 - 1))",
+      "sampling": [
+        [
+          1.0,
+          2.0,
+          "SimpleSampling",
+          true,
+          false
+        ],
+        [
+          100.0,
+          10000.0,
+          "DefaultSampling",
+          true,
+          false
+        ],
+        [
+          1e-21,
+          1e-19,
+          "DefaultSampling",
+          true,
+          false
+        ]
+      ]
+    },
+    {
+      "task": "feynman-i.47.23",
+      "klass": "H0",
+      "formula": "sqrt(x0*x1/x2)",
+      "sampling": [
+        [
+          1.0,
+          2.0,
+          "SimpleSampling",
+          true,
+          false
+        ],
+        [
+          5e-06,
+          1.5e-05,
+          "SimpleSampling",
+          true,
+          false
+        ],
+        [
+          1.0,
+          2.0,
+          "SimpleSampling",
+          true,
+          false
+        ]
+      ]
+    },
+    {
+      "task": "feynman-i.48.2",
+      "klass": "H1",
+      "formula": "8.98755178736818e+16*x0/sqrt(1 - 1.11265005605362e-17*x1**2)",
+      "sampling": [
+        [
+          1e-29,
+          1e-27,
+          "DefaultSampling",
+          true,
+          false
+        ],
+        [
+          1000000.0,
+          100000000.0,
+          "DefaultSampling",
+          true,
+          false
+        ]
+      ]
+    },
+    {
+      "task": "feynman-ii.11.27",
+      "klass": "H1",
+      "formula": "8.854e-12*x0*x1*x2/(-x0*x1/3 + 1)",
+      "sampling": [
+        [
+          1e+23,
+          1e+25,
+          "DefaultSampling",
+          true,
+          false
+        ],
+        [
+          1e-33,
+          1e-31,
+          "DefaultSampling",
+          true,
+          false
+        ],
+        [
+          10.0,
+          1000.0,
+          "DefaultSampling",
+          true,
+          false
+        ]
+      ]
+    },
+    {
+      "task": "feynman-ii.11.28",
+      "klass": "H1",
+      "formula": "x0*x1/(-x0*x1/3 + 1) + 1",
+      "sampling": [
+        [
+          1e+23,
+          1e+25,
+          "DefaultSampling",
+          true,
+          false
+        ],
+        [
+          1e-33,
+          1e-31,
+          "DefaultSampling",
+          true,
+          false
+        ]
+      ]
+    },
+    {
+      "task": "feynman-ii.13.23",
+      "klass": "H1",
+      "formula": "x0/sqrt(1 - 1.11265005605362e-17*x1**2)",
+      "sampling": [
+        [
+          1e+27,
+          1e+29,
+          "DefaultSampling",
+          true,
+          false
+        ],
+        [
+          1000000.0,
+          100000000.0,
+          "DefaultSampling",
+          true,
+          false
+        ]
+      ]
+    },
+    {
+      "task": "feynman-ii.13.34",
+      "klass": "H1",
+      "formula": "x0*x1/sqrt(1 - 1.11265005605362e-17*x1**2)",
+      "sampling": [
+        [
+          1e+27,
+          1e+29,
+          "DefaultSampling",
+          true,
+          false
+        ],
+        [
+          1000000.0,
+          100000000.0,
+          "DefaultSampling",
+          true,
+          false
+        ]
+      ]
+    },
+    {
+      "task": "feynman-ii.27.16",
+      "klass": "H0",
+      "formula": "0.002654362423132*x0**2",
+      "sampling": [
+        [
+          0.1,
+          10.0,
+          "DefaultSampling",
+          true,
+          false
+        ]
+      ]
+    },
+    {
+      "task": "feynman-ii.27.18",
+      "klass": "H0",
+      "formula": "8.854e-12*x0**2",
+      "sampling": [
+        [
+          0.1,
+          10.0,
+          "DefaultSampling",
+          true,
+          false
+        ]
+      ]
+    },
+    {
+      "task": "feynman-ii.38.14",
+      "klass": "H1",
+      "formula": "x0/(2*x1 + 2)",
+      "sampling": [
+        [
+          0.1,
+          10.0,
+          "DefaultSampling",
+          true,
+          false
+        ],
+        [
+          0.01,
+          1.0,
+          "DefaultSampling",
+          true,
+          false
+        ]
+      ]
+    },
+    {
+      "task": "feynman-ii.8.31",
+      "klass": "H0",
+      "formula": "4.427e-12*x0**2",
+      "sampling": [
+        [
+          10.0,
+          1000.0,
+          "DefaultSampling",
+          true,
+          false
+        ]
+      ]
+    },
+    {
+      "task": "feynman-iii.12.43",
+      "klass": "H0",
+      "formula": "3.313e-34*x0/pi",
+      "sampling": [
+        [
+          1.0,
+          100.0,
+          "IntegerSampling",
+          true,
+          false
+        ]
+      ]
+    },
+    {
+      "task": "feynman-iii.15.14",
+      "klass": "H0",
+      "formula": "5.4879845e-68/(pi**2*x0*x1**2)",
+      "sampling": [
+        [
+          1e-18,
+          1e-16,
+          "DefaultSampling",
+          true,
+          false
+        ],
+        [
+          1e-10,
+          1e-08,
+          "DefaultSampling",
+          true,
+          false
+        ]
+      ]
+    },
+    {
+      "task": "feynman-iii.4.32",
+      "klass": "H1",
+      "formula": "1/(exp(2.39959613196403e-11*x0/(pi*x1)) - 1)",
+      "sampling": [
+        [
+          100000000.0,
+          10000000000.0,
+          "DefaultSampling",
+          true,
+          false
+        ],
+        [
+          10.0,
+          1000.0,
+          "DefaultSampling",
+          true,
+          false
+        ]
+      ]
+    },
+    {
+      "task": "feynman-iii.4.33",
+      "klass": "H1",
+      "formula": "3.313e-34*x0/(pi*(exp(2.39959613196403e-11*x0/(pi*x1)) - 1))",
+      "sampling": [
+        [
+          100000000.0,
+          10000000000.0,
+          "DefaultSampling",
+          true,
+          false
+        ],
+        [
+          10.0,
+          1000.0,
+          "DefaultSampling",
+          true,
+          false
+        ]
+      ]
+    }
+  ],
+  "fingerprint": "c7c285d32cfa0f255b7189fee0155876da06aa611c5d0184c8f604992ceb5e8b",
+  "complete": true,
+  "rows": 6592,
+  "raw_sha256": "78dc2ad49aceff4365f2b4ac7ba319514f776ad927f1ed3641d35cf085c2ed77",
+  "cells": {
+    "cells\\calibration_004_n200_r30000.parquet": "4252111fc1c3f6d97bd2b57099adb381e57fdf4e587b3a0583207481a4449830",
+    "cells\\calibration_004_n50_r30000.parquet": "93e805415114c25536a520af0dafe154eed4c5d828fc2645db26d5ed1b9c4c75",
+    "cells\\calibration_007_n200_r30000.parquet": "606e528782b6dc84040bf69175dc9456a2f657c06749c47e0054570bcfacfae0",
+    "cells\\calibration_007_n50_r30000.parquet": "31a94733ec1c7377f926c20160d31f38619153522a6ad8669ff4ffe581229ff2",
+    "cells\\calibration_009_n200_r30000.parquet": "4051c36125ed9125f6ccaed151eb09963247fc6caca037912e9ecb6b0f270d8f",
+    "cells\\calibration_009_n50_r30000.parquet": "ad1698e6a0d49b5272e2c3a9757d65a18a0c3ca25164796298b1b030388934f1",
+    "cells\\calibration_011_n200_r30000.parquet": "61cc984b9deea6bb0713d29a7dc6f25d306d1dc163f0e2560f2450d035f1180a",
+    "cells\\calibration_011_n50_r30000.parquet": "1c6246fe3b7f9f3c4368b7523bc229707c67eafbd7eb15f2b4acec168cf41a84",
+    "cells\\calibration_012_n200_r30000.parquet": "8d33dce7606bf63475c1177db3bf438257f9e2988427fa73cf1b616a34674a1e",
+    "cells\\calibration_012_n50_r30000.parquet": "c73fb98ea85c53830745a38998139c78646faba8517532cbbbfd386397806f06",
+    "cells\\calibration_014_n200_r30000.parquet": "6295d78df5c739291c6bd730d2ddf22bdcf338a392a32eb24751385e25d802f1",
+    "cells\\calibration_014_n50_r30000.parquet": "3a1fad146d32a7154f0a8e3b114f3f7d237a68940ee02d6348df38992ae04e0d",
+    "cells\\calibration_016_n200_r30000.parquet": "db1325d2b06fa2b303b690b1f90f066dcb4844e4b8489d9f355738f041c6e6f4",
+    "cells\\calibration_016_n50_r30000.parquet": "bb8425d7a5e4f0d8361a0b2fd3a9771e66d3a66cb33298a776b57d68d2185137",
+    "cells\\calibration_018_n200_r30000.parquet": "6df0997565366e28bdda6a2064d9ace5e1fbb15c163552aace61e2e43f8531e1",
+    "cells\\calibration_018_n50_r30000.parquet": "de4a916927b59a6993f556c40495c149e12bb450f0ad534f4353327a3315a09f",
+    "cells\\calibration_024_n200_r30000.parquet": "97a9285bc135a48b1eb86ffdc33b804931b3e57f1b4818883aeeb273b4e22162",
+    "cells\\calibration_024_n50_r30000.parquet": "5bab8f60475c4ffc320a746d0698b7bc15f3d87705e83bbac2eec0b308dca152",
+    "cells\\calibration_025_n200_r30000.parquet": "59294bd0d69b646c490035ebedc334d0d50f111800d4e8d2fa2dcab81b4ed9e3",
+    "cells\\calibration_025_n50_r30000.parquet": "de2361c23f1d50c6f652033468077fcfeece536e752b47fb924b68eaf53266ed",
+    "cells\\calibration_027_n200_r30000.parquet": "65489cf8512132b7b43c0353f0b9af912a4e358ec1c9b30b890a893fb5bf1fe8",
+    "cells\\calibration_027_n50_r30000.parquet": "9d547f34ba4f2afb6ede56ddabe6c4d0bc6ac0271a51f83780fcaf33671d4b1b",
+    "cells\\calibration_028_n200_r30000.parquet": "f0d70f312f9dae8f02848082f4c57ef2bcc10df510b5e4da11281719bbac1cf0",
+    "cells\\calibration_028_n50_r30000.parquet": "d6389fd3b533856840e7374ebf538a42e1acfe88c2d57c44f2ac4ab1ae596572",
+    "cells\\calibration_029_n200_r30000.parquet": "73b15a30ab45805ecac2f87cc8759fa02ace49ee5a145f87f6084409a5588d90",
+    "cells\\calibration_029_n50_r30000.parquet": "1d7ce3ba2f0716a39a8d5f76f03cf3b8a42f6e5e44e3f5d4fac2f0473f74723e",
+    "cells\\reference_004_n200_r30000.parquet": "06acdf0ab373e1c10784f30e214531a29eb9357356ae5cb283d301e33b319410",
+    "cells\\reference_004_n50_r30000.parquet": "76057fce33bedfff3eda230a0213911b7f76e6d14537fa709ffa68f6e03112d6",
+    "cells\\reference_007_n200_r30000.parquet": "5b84bb8667ade9ee22acd4f842066e34bfc95ba1385aeebaff73df977cf0df26",
+    "cells\\reference_007_n50_r30000.parquet": "1172f1e159cb2de606db8e2e14e9f55b329595fc31f564af9482fd77cb8302c2",
+    "cells\\reference_009_n200_r30000.parquet": "7500df417e51e34c66396a91210172e6d30f0af767e27214293ac9b558fc1969",
+    "cells\\reference_009_n50_r30000.parquet": "e00dbeb68c7f70399106700341360d998fc94920f42e7718354b3841bff9df4f",
+    "cells\\reference_011_n200_r30000.parquet": "b9c19f0c4b23927b7510ca3aa9a21faad867dd914f77bff39cc27eedf5a0d004",
+    "cells\\reference_011_n50_r30000.parquet": "833995d639b6a9ddd06f77901a0fd871bd1ec85c9c5594eb0afc04be523a2847",
+    "cells\\reference_012_n200_r30000.parquet": "bea59062c6d8ec98c1cbbc5d5576a53dcc569935f691bed9d29b153d84986555",
+    "cells\\reference_012_n50_r30000.parquet": "361d42f17a2257b0f711b7fd0e3e458946b70dc62eb0056afcb2f4ca1b54ccf8",
+    "cells\\reference_014_n200_r30000.parquet": "0fa0abe4e7f83e5a4037afef28130c46b766e796346aebb896dfe8b89e6eba41",
+    "cells\\reference_014_n50_r30000.parquet": "7780283a512e639f585b7fa2a1812628f0f0418ce23d8afb601dad94ccbbcaf2",
+    "cells\\reference_016_n200_r30000.parquet": "f77c605e8c41afaed78fc367ee8ba21b68fe7b13d8bc5095122f4fccf3ec4591",
+    "cells\\reference_016_n50_r30000.parquet": "08eb2bea4fb86a70036ed562bdff6e130f32976a81be99e6eef49f2830cbfadf",
+    "cells\\reference_018_n200_r30000.parquet": "0366f9e468b19725a58f0878642b5ff5ec64ce97bde18e4370efde9dc1fe5b10",
+    "cells\\reference_018_n50_r30000.parquet": "4a6ccdd5398105195fc801e72b45e01c03fe04b87c8a5126065388658ed1de2a",
+    "cells\\reference_024_n200_r30000.parquet": "2250e5342c64f8053f0d57edfe96a07040bfdc66bf7c25dae38a9d8949a1b086",
+    "cells\\reference_024_n50_r30000.parquet": "93d77fd93214dda4fa328d9def19d4447f1d7e97e806358eeee1b1ec48ce9487",
+    "cells\\reference_025_n200_r30000.parquet": "d9d92c1d822a715c9da2c6565e4ade83903731a08629868ff725917551a205ee",
+    "cells\\reference_025_n50_r30000.parquet": "ffc7a4f0284b708e1ffa59b61f8132679d9066f2c97620e0a67c495b9af9b365",
+    "cells\\reference_027_n200_r30000.parquet": "e8ad60f51b6617f688fcfe3c3b9992c41080cbfa678e5043e55affc39f86daba",
+    "cells\\reference_027_n50_r30000.parquet": "6fbcbfbabc714f9cdc77ce011858a9169e7e92d1646080db3ea8d1294ef5c0b4",
+    "cells\\reference_028_n200_r30000.parquet": "6939673ec770e33c06597850e39e2a4416d00d1ed8deac1fa5b49016092a2c7b",
+    "cells\\reference_028_n50_r30000.parquet": "65b6f5cb18b89b5fd7e46223d499eedab26def9f88e16d53203193147d0ef905",
+    "cells\\reference_029_n200_r30000.parquet": "e24897a74335ddb8fb28b7cae3220390bae6b51fe79e4457ab615a060ba1eb58",
+    "cells\\reference_029_n50_r30000.parquet": "de218d399826f287d1143f5d03a3e7539ff890c2452f9ffe56cd90674cf2eb65",
+    "cells\\test_000_n200_r30000.parquet": "8655cfc76c6dff6c2ec89ef45590aa8d909c56a082ed40e5fe62d04db17e8d25",
+    "cells\\test_000_n50_r30000.parquet": "ca5eb78ae87502dfc9650e31d6578f49b39d1112cdb5eb8975aaa4c2b1ab6ba0",
+    "cells\\test_001_n200_r30000.parquet": "65ace4837c91a5cc1e8fb9155ed4029dc4fe44d4ec2b3f29b1afe6ed67354518",
+    "cells\\test_001_n50_r30000.parquet": "75396580db041ff88d5f34179d7bec8785ed7e936bc694c2799b9f648179b137",
+    "cells\\test_002_n200_r30000.parquet": "90766f47be3e2b675974f6d0abe8d45b9997ce58b06a6a1ebbc5e106e6d68389",
+    "cells\\test_002_n50_r30000.parquet": "e35c156c314bfbed244d838aff5151e403e5c4bfb0f6322e8cba0e622b9590d2",
+    "cells\\test_003_n200_r30000.parquet": "14a6b94310340903713dd25587195c528f7016a4750140e4d389d157de4d3877",
+    "cells\\test_003_n50_r30000.parquet": "e9d3f822fbd115fd03bf02ac605509b13d903f52fe9ef433ab43f22b7cd60cfb",
+    "cells\\test_004_n200_r30000.parquet": "e6f05d63ebccefcfd06c36330c4c712d72e794d6f03f270165c7b30a67a9df0b",
+    "cells\\test_004_n50_r30000.parquet": "53aed1e048a2a5c42644546287504cd7953b13c56a45dbf29c22669d37ea9d17",
+    "cells\\test_005_n200_r30000.parquet": "51d99ae2ebd26e31358a8a7622698906318d9694b0c51f289e571d243fc3bfd5",
+    "cells\\test_005_n50_r30000.parquet": "a476bf93f5e7f7c0a31d84e324024d3ae0f6a39868324af2541c59787e3ee0f7",
+    "cells\\test_006_n200_r30000.parquet": "9f59d11f17c7f4e1e694003feb26d46744cf84d1b453f78d17ae088ec04e82fe",
+    "cells\\test_006_n50_r30000.parquet": "482ded8a5169f33f27cf12a8b98d1fca83139f06b087d012d25a563b4238d1db",
+    "cells\\test_007_n200_r30000.parquet": "8b8f71bd17d9688a7b216e33b17415c40630260191c6ca4dc3c707ea791baa8a",
+    "cells\\test_007_n50_r30000.parquet": "8b8f773603c72905ad837f0fa74dbe6f3017c8383eda9d6b621000d360f74b3e",
+    "cells\\test_008_n200_r30000.parquet": "aad6d72f06d0cc84f06eafd1d315a9737011972f49788a581437b3ca0b384dbf",
+    "cells\\test_008_n50_r30000.parquet": "8ad940cff08caa3fb18141b3b0c5d29091d6f5a03200561b02cf4f141881c063",
+    "cells\\test_009_n200_r30000.parquet": "7eadb2c33783d166ef2ac6df460b2ed56c95463ffbc8f4099740447a0b44a385",
+    "cells\\test_009_n50_r30000.parquet": "27549405c872921f1874f08649921f2cb7c90f245c692c811c7fa62cadc5cca9",
+    "cells\\test_010_n200_r30000.parquet": "cbe2e9dba42f691a7f54f7ca41fbc3b849070614adc951fbcd2bf9f2d7d7d22b",
+    "cells\\test_010_n50_r30000.parquet": "768f858b95340b6a15ddc82e6ce9ccff94d7002fa32530424ef515556b3e6d52",
+    "cells\\test_011_n200_r30000.parquet": "79794d131fae45d503dc396528329cfd9cf5c0aa993e5ee09b2c0d76e6bc1d44",
+    "cells\\test_011_n50_r30000.parquet": "8f550b6512655f59588faf2a829db7b320202ff1658de82d4e7df5978f5f74c8",
+    "cells\\test_012_n200_r30000.parquet": "30724571b4e1dd3136be9da8d3eb0b70f6b1bac46fca1b7884d95e92fdbb7a09",
+    "cells\\test_012_n50_r30000.parquet": "7f7ada787a6443846a3269f765faa21620c4fc6ac7e131b8e3faf08edb1e8565",
+    "cells\\test_013_n200_r30000.parquet": "0b390ee0d0c5daabff55246f676d701c90ecc87fc5f2c8b539ee5bbd749a476f",
+    "cells\\test_013_n50_r30000.parquet": "eb2101ff8b482b0b67a7a522d15561f0f279310cd07e7ba4fb0b9532dd2d5e31",
+    "cells\\test_014_n200_r30000.parquet": "8b07b422997df8f60da94a7c203e589d9704e0fd77272e02d12850425d0c4374",
+    "cells\\test_014_n50_r30000.parquet": "429a216bd631a66477c7ec6284b995183134b0452a9cddd515a69c7740cc348c",
+    "cells\\test_015_n200_r30000.parquet": "f90b02e62009d6879f7a4c009f177705559b7892b14f06acafa8162a6e1f82ea",
+    "cells\\test_015_n50_r30000.parquet": "6c20db0f36bf798532477199c28990171de6d258b8be18206d6b0165a914520f",
+    "cells\\test_016_n200_r30000.parquet": "7ca910082b6e99b4b1781acae866dd864bfb650be76053c3154aaa9f55e8c488",
+    "cells\\test_016_n50_r30000.parquet": "fbcbc215376666d4bd97a7ad3dab32eb9dc9e9753436fb774da82b129895d1ce",
+    "cells\\test_017_n200_r30000.parquet": "5b0540709aca599d2d5547ec989dfe8e711db4e7977a990e2096d1cc2e389567",
+    "cells\\test_017_n50_r30000.parquet": "7088783dde52f95fa13090c66b35cd833e7015108f3db8c3c46633806055a916",
+    "cells\\test_018_n200_r30000.parquet": "f9fd794016ca08fe38318597873d8bed468577d862bcbccd9a79ba6123afea49",
+    "cells\\test_018_n50_r30000.parquet": "8ef9b22023d606a160ee5054e1c1bfe6dd265113950c3a4894d951f325abdaa1",
+    "cells\\test_019_n200_r30000.parquet": "307ff34a28b9db1a4cbbbe32a1f2b32f396468ae947f26018f867267efbf4255",
+    "cells\\test_019_n50_r30000.parquet": "79107211dc0d3d66cbac67b8258ebe274e2f18d536bea35dfdc5b354d209ff42",
+    "cells\\test_020_n200_r30000.parquet": "326fa8b71b2b452957d2c473490975843a9ccf86f008f1dfe53245875fedb3db",
+    "cells\\test_020_n50_r30000.parquet": "5c72e564313c89399d1d7c7801a9f9251a22ed197184697f56d97c4959ceaf66",
+    "cells\\test_021_n200_r30000.parquet": "b6c17f78705a521afcf3d5d91eb254387c00974f907294f2c98bf08439350db7",
+    "cells\\test_021_n50_r30000.parquet": "1c4afa978533ff9e51a5417d65f8ffbac75006558406fa0abdf76ab9e6977c7b",
+    "cells\\test_022_n200_r30000.parquet": "128e02a605c894532eef11cf38991553b8cf96754b7ee704e6b8b5aed82ada0e",
+    "cells\\test_022_n50_r30000.parquet": "6225ab14058182fc63b707504158511c511027c23dca766610af9fc5417a743c",
+    "cells\\test_023_n200_r30000.parquet": "e69ee8cf76061d8564d7484358a1af0c85625410baa2cc9bebdc80af38ff12fb",
+    "cells\\test_023_n50_r30000.parquet": "f06216485dd686f3520c29a2fd224fb7d67d5058a71dee8534c5f2734a96d326",
+    "cells\\test_024_n200_r30000.parquet": "963fecca7e4fea921c196914fc64a22edc4a65366c9f14c8142981dfe69fc217",
+    "cells\\test_024_n50_r30000.parquet": "e3096d0593f4b1c3f1bd1ff79b41db71ca8263b9461c9d4a8fbf9cd341d72fba",
+    "cells\\test_025_n200_r30000.parquet": "114dfbb9014db4f6687c1aa850b759dda3b146422f01b5a547c11ca0a6e43c04",
+    "cells\\test_025_n50_r30000.parquet": "a440098a0485d1876ec8369a67e051d957396efe38b00e91cec5a75564ca5cae",
+    "cells\\test_026_n200_r30000.parquet": "cf553bc0b3d1208a722d1fbc507fee15856d4b74c7ee03b418ea311568abae35",
+    "cells\\test_026_n50_r30000.parquet": "38a83410aa791cb2623b81c07f6e509419f00ebb156f4e4d0c1d18df4a9dd0ec",
+    "cells\\test_027_n200_r30000.parquet": "65770c8cf5f596831029b3ec6d8455961eeafda011da3a3cd95a183880875601",
+    "cells\\test_027_n50_r30000.parquet": "5a64b2eed606fa38c7da80e8999685e15b9bc86dcbd8a29ea4ab96525a931406",
+    "cells\\test_028_n200_r30000.parquet": "7edb765bd38ba7882bbca9a37a889ff916559e1ffe9565a4ef78eb3a12d3beed",
+    "cells\\test_028_n50_r30000.parquet": "3e47c1bca74e971bf92222dd4fa23831ad9a9f6ff3f2649587b97b38eb00b662",
+    "cells\\test_029_n200_r30000.parquet": "02bbf5db3075f98312b90925c383ef1e7e224b7a34e46e474862d51e4baf28bf",
+    "cells\\test_029_n50_r30000.parquet": "164d910b897865c6a842a9dacbbf84c3bb0ad01ef278e4bb92d9c140204927b7",
+    "cells\\test_030_n200_r30000.parquet": "f9a08e628dde541141cf658bef0b8b5e3691c05a009f4f68a3ad0d6fc841d3fd",
+    "cells\\test_030_n50_r30000.parquet": "db715a0b26e599664da6f737d1aa7d3ed11b340e59b73cdccf5813ceedb77fdb",
+    "cells\\test_031_n200_r30000.parquet": "b7809e459c5a4da3918e74647bbce7e4533f555cc79719c7eca40edde65584bd",
+    "cells\\test_031_n50_r30000.parquet": "8f459a7be6e5b46725ecf4767481298b0db1e38fb387b3f1d504e08bbc1f3e54"
+  },
+  "phase_rows": {
+    "test": 4096,
+    "calibration": 1664,
+    "reference": 832
+  },
+  "historical_seed_overlap": 0,
+  "elapsed_seconds_this_invocation": 11.12480770000002
+}

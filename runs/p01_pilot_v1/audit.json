@@ -1,0 +1,16 @@
+{
+  "complete": true,
+  "rows": 6592,
+  "decision_rows": 61440,
+  "checked_policy_strata": 30,
+  "raw_sha256": "78dc2ad49aceff4365f2b4ac7ba319514f776ad927f1ed3641d35cf085c2ed77",
+  "auditor_sha256": "ba569323f61c0bc03bc6438d7fb62c6bbfe7dc9ebc743551b055a351d1e27f0a",
+  "checks": [
+    "source input hash",
+    "phase/seed/dataset separation",
+    "reference H0 provenance",
+    "strict joint calibration including declines",
+    "release identity",
+    "risk denominators and missing outcome accounting"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "completed_cells": 116,
+  "total_cells": 116,
+  "last_cell": {
+    "phase": "test",
+    "task": "feynman-iii.4.33",
+    "n": 200,
+    "rel": 0.03
+  },
+  "elapsed_seconds_this_invocation": 10.79062200000044
+}

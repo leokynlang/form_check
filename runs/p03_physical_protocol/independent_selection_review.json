@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "scope": "Independent anti-selection, source-fidelity, domain-rule and exposure-metadata review only",
+  "rules_sha256": "966104c6bc159e8f3bca0655866110479399ab186f0fee3784d2686fd9b52653",
+  "equations": 120,
+  "complete_original_rule_domains": 118,
+  "scientific_status_counts": {
+    "eligible_analytic": 86,
+    "exclusion_unresolved": 31,
+    "excluded_nonpositive_target": 2,
+    "excluded_no_positive_input_support": 1
+  },
+  "primary_groups": 13,
+  "eligible_uncontested_prospective_H1_groups": 0,
+  "disputed_fine_candidates": [
+    "feynman-bonus.16"
+  ],
+  "source_type_pending_equations": [
+    "feynman-i.39.22"
+  ],
+  "documented_integer_to_real_relaxations": 7,
+  "physical_source_contract_certified_equations": 0,
+  "overwrite_guard": {
+    "review": "Independent static AST/source/test review; no study implementation imported or executed",
+    "same_snapshot": "verify then return without writes",
+    "drift": "reject",
+    "tests_present": [
+      "test_complete_census_keeps_math_and_execution_obligations_separate",
+      "test_disputed_fine_combination_is_not_a_primary_new_mechanism",
+      "test_saved_registration_is_read_only_and_rejects_artifact_or_input_drift"
+    ],
+    "compiler_sha256": "90ebdf84e4de868f97ec4ebaf0efd3e21784beb5369755ecaff67418ed5e647c"
+  },
+  "not_an_execution_freeze": true,
+  "not_verified_here": [
+    "Independent interval-arithmetic reevaluation of every source constraint and target bound",
+    "Independent physical/source/type/unit semantics certification",
+    "Float64/log-truth/high-precision adapters",
+    "High-dimensional diagnostics and frozen grids",
+    "Future null controls, seed namespaces and execution roles",
+    "Absence of unlogged human information exposure cannot be established by saved metadata alone"
+  ],
+  "selection_evidence": "All120 source rows retained; expressions/constants/original coordinates unchanged; common positive-support quantiles and centered widths independently reconstructed; admission rules have no fit or diagnostic outcomes; primary/fine grouping uncertainty explicitly retained.",
+  "audit_source_sha256": "b37d4ed24615f73b85c0b9acc9aebc8b9d7c56651096ca15c75c37788ca9fb03"
+}

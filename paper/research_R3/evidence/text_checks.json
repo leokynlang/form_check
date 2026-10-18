@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "preserved_R2_table_rows": 150,
+  "R2_table_order_preserved": true,
+  "R2_references_unchanged": true,
+  "table17_rows_checked": 10,
+  "table18_rows_checked": 12,
+  "table19_rows_checked": 12,
+  "formal_primary_point_checks": 180,
+  "formal_primary_point_max_difference": 1.1102230246251565e-16,
+  "unresolved_markers": 0,
+  "abstract_words": 286,
+  "manuscript_sha256": "dfa65bb6a20af3e5192c447082e892e44fb49c3ed76d1849921fd0b20a575438",
+  "source_hashes_refreshed": 35
+}

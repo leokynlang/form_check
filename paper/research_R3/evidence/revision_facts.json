@@ -1,0 +1,740 @@
+{
+  "status": "complete_audited",
+  "source_sha256": {
+    "runs/p01_v2/summary.json": "f031f299571eaade6f4307d0e420548ce6c30a84ec39643e10289ed05e5962e4",
+    "runs/p01_v2/RUN_NOTES.md": "3d579af8f71015206f69440f57cf1706e45c6e54f78dd0941e70eb3717dd9c93",
+    "runs/p02_fixed_domain/stage1/RUN_NOTES.md": "9d7a1ebb474eca8783a36b3fa84b1f5e80759599d7b4dfa2b55f2a927b7a4620",
+    "paper/research_R2/manuscript.md": "f335e0ebcefd5c0fce3b8d9c5556a881ed9e790bf432e14f1d9fb7d73bebd98c",
+    "experiments/physical_coverage_v1/protocol.json": "966104c6bc159e8f3bca0655866110479399ab186f0fee3784d2686fd9b52653",
+    "runs/p03_physical_protocol/summary.json": "ac7f50915917d89b1ce3db64579584661b0af92dbd648238b3b03562608e7a32",
+    "runs/p03_physical_protocol/candidates.json": "5e4376a3c6d898e239f0ffa74ab7834e1f8f19262889f5233c52636b71ccbc6f",
+    "runs/p03_physical_protocol/groups.json": "263d5223eef050c5c585b6c04c0a6c9f750c4fde71dafa00eff31719a77a463a",
+    "runs/p03_physical_protocol/review_manifest.json": "90de6d4e0445ffe6f896c33a583b4e922a21a33a467088491fa6d52871fc2967",
+    "runs/p02_fixed_domain/protocol_frozen.json": "ad440a6e59754905013b300b6f7b587e98f82ff8b36448b5c076279be26f4c66",
+    "runs/p02_fixed_domain/task_registry.json": "0a442be5b4fadb752079d2c9bd7451ca3871a7ebc3104f1e473b201bd408d0e1",
+    "runs/p02_fixed_domain/grid_manifest.json": "29ecdbb416c6cee90e6cc91b62d8adaf0e0e048c4d06f846bdd211dedea9e1c0",
+    "runs/p02_fixed_domain/group_isolation.json": "bb5f6b84f7a8874941bbc37428e4b41f93ac76b4026d2bf37280f4e98385a624",
+    "runs/p02_fixed_domain/stage1/summary.json": "5ea52eb1c71fe3cfa8c935797b3bcb8d6f9ad353630712a2eaccdd4f7791ba04",
+    "runs/p02_fixed_domain/stage2/summary.json": "0c1db450f288d4fc5b36cdfbcb4a841f42ad489c1728ebb969cc3c9d80dd4f71",
+    "runs/p02_fixed_domain/stage1/policies.json": "8ab9676aad5605a30d3694d73b31ab1effc61ce516a7bd84727a406170c3eadc",
+    "runs/p02_fixed_domain/stage2/policies.json": "cd33b903cec54979daa2a0d1591ef227721b19571123d9bafc60a2839b526816",
+    "runs/p03_physical_protocol/independent_selection_review.json": "c113dd3dce1d2c54e747977332da5d220b469233e0389e46121822b88760b91f",
+    "docs/PHYSICAL_COVERAGE_PROTOCOL.md": "ef494975214add31db47586e265eb372896dfb71f357cb11b4e4c7e32c6c10ed",
+    "runs/feynman_families/selection_table.csv": "c26f07cbd53c3ae27ded3105c1673f4688682e07585844bcc4b15dca72782c71",
+    "runs/p02_fixed_domain/stage1/independent_audit.json": "2e74e2eabf6b8968e5574bff9690c4b9598c5f27f1b26d4a225089627f345083",
+    "runs/p02_fixed_domain/stage2/independent_audit.json": "80e1ecb21cc6f01ae74d16e18f1dd080947d98aa00db69adcb35fcf11e9aa1f2",
+    "runs/p02_fixed_domain/stage2/analysis_manifest.json": "10f0a21c19ed798fb1e03c1500b760941aa29460894d2d1fb8f5a76bc54f2f80",
+    "runs/p02_fixed_domain/complete_grid/summary.json": "beaa9e840ebc6ac38cbead03bc0fdb8ab984d10ce0ed680f22b141263a425898",
+    "runs/p02_fixed_domain/complete_grid/manifest.json": "0b87bc58060fe8f205f2927fcab174195a8a64a54ace00549f7c70480e512c26",
+    "runs/p02_fixed_domain/complete_grid/source_records.json": "d72ae998c746d3345855c175e2b3934327dbf98713e13ee3538092f69aeb6d7c",
+    "runs/p02_fixed_domain/complete_grid/primary_confirmation.csv": "db5b4bc17e407326e942b372efeb7db62addd355100566f125af9195b3f6f519",
+    "runs/p02_fixed_domain/complete_grid/paired_confirmation.csv": "315587a89890afaf944f731dd285809b68e398fc93bfa033773b916ee979bee0",
+    "runs/p02_fixed_domain/complete_grid/coverage.csv": "a37173a422d0487b7c7017ca5fb8498c2a9b7297c78e1262684600451472d211",
+    "runs/p02_fixed_domain/complete_grid/policies.json": "0e23e422915dec8e4d05b44b128966cb6c094c5e9b80c2fd8221de244f175ebf",
+    "runs/p02_fixed_domain/complete_grid/independent_audit.json": "61c0f161c4c52d91e4d7774a8759a67eeb08652577ff9d63bac3d3780e9375af",
+    "runs/p02_fixed_domain/complete_grid/p02_full_grid.png": "ed7f403ee79f63d3c33eccde86e930c029635bac783b4ea4c7c921a028104a9b",
+    "runs/p02_fixed_domain/complete_grid/p02_coverage.png": "886d3f7fd288e91357a4d180b0d88a30b515c8f6e56ef2752319dee0b68488ab",
+    "paper/research_R3/figures/p02_full_grid.png": "ed7f403ee79f63d3c33eccde86e930c029635bac783b4ea4c7c921a028104a9b",
+    "paper/research_R3/figures/p02_coverage.png": "886d3f7fd288e91357a4d180b0d88a30b515c8f6e56ef2752319dee0b68488ab"
+  },
+  "p01_v2": [
+    {
+      "n": 50,
+      "policy": "D",
+      "H0_withheld": 0.041249186727391016,
+      "dangerous_release": 0.34723926380368103,
+      "dangerous_release_crossed": {
+        "ci95": [
+          0.0,
+          0.5641857379767827
+        ],
+        "defined_draws": 2000,
+        "total_draws": 2000
+      }
+    },
+    {
+      "n": 50,
+      "policy": "F",
+      "H0_withheld": 0.046811971372804156,
+      "dangerous_release": 0.07975460122699386,
+      "dangerous_release_crossed": {
+        "ci95": [
+          0.0,
+          0.4814814814814814
+        ],
+        "defined_draws": 2000,
+        "total_draws": 2000
+      }
+    },
+    {
+      "n": 50,
+      "policy": "AD_panel",
+      "H0_withheld": 0.04398178269355889,
+      "dangerous_release": 0.21349693251533738,
+      "dangerous_release_crossed": {
+        "ci95": [
+          0.0,
+          0.4814814814814814
+        ],
+        "defined_draws": 2000,
+        "total_draws": 2000
+      }
+    },
+    {
+      "n": 50,
+      "policy": "AEF_panel",
+      "H0_withheld": 0.04671437865972673,
+      "dangerous_release": 0.07975460122699386,
+      "dangerous_release_crossed": {
+        "ci95": [
+          0.0,
+          0.4814814814814814
+        ],
+        "defined_draws": 2000,
+        "total_draws": 2000
+      }
+    },
+    {
+      "n": 50,
+      "policy": "G_rbf_cv",
+      "H0_withheld": 0.054586857514638897,
+      "dangerous_release": 0.07975460122699386,
+      "dangerous_release_crossed": {
+        "ci95": [
+          0.0,
+          0.44595930893384766
+        ],
+        "defined_draws": 2000,
+        "total_draws": 2000
+      }
+    },
+    {
+      "n": 200,
+      "policy": "D",
+      "H0_withheld": 0.0505859375,
+      "dangerous_release": 0.05555555555555556,
+      "dangerous_release_crossed": {
+        "ci95": [
+          0.0,
+          0.875
+        ],
+        "defined_draws": 1981,
+        "total_draws": 2000
+      }
+    },
+    {
+      "n": 200,
+      "policy": "F",
+      "H0_withheld": 0.04785156249999999,
+      "dangerous_release": 0.05555555555555556,
+      "dangerous_release_crossed": {
+        "ci95": [
+          0.0,
+          1.0
+        ],
+        "defined_draws": 1981,
+        "total_draws": 2000
+      }
+    },
+    {
+      "n": 200,
+      "policy": "AD_panel",
+      "H0_withheld": 0.04694010416666667,
+      "dangerous_release": 0.044097222222222225,
+      "dangerous_release_crossed": {
+        "ci95": [
+          0.0,
+          0.778125
+        ],
+        "defined_draws": 1981,
+        "total_draws": 2000
+      }
+    },
+    {
+      "n": 200,
+      "policy": "AEF_panel",
+      "H0_withheld": 0.0421875,
+      "dangerous_release": 0.05416666666666666,
+      "dangerous_release_crossed": {
+        "ci95": [
+          0.0,
+          0.95625
+        ],
+        "defined_draws": 1981,
+        "total_draws": 2000
+      }
+    },
+    {
+      "n": 200,
+      "policy": "G_rbf_cv",
+      "H0_withheld": 0.05361328125,
+      "dangerous_release": 0.0482638888888889,
+      "dangerous_release_crossed": {
+        "ci95": [
+          0.0,
+          0.8625
+        ],
+        "defined_draws": 1981,
+        "total_draws": 2000
+      }
+    }
+  ],
+  "physical_planning": {
+    "all_equations": 120,
+    "scientific_status": {
+      "eligible_analytic": 86,
+      "exclusion_unresolved": 31,
+      "excluded_nonpositive_target": 2,
+      "excluded_no_positive_input_support": 1
+    },
+    "class_counts": {
+      "H1": 82,
+      "H0": 38
+    },
+    "all_groups": 13,
+    "eligible_source_equations": 86,
+    "eligible_H0_source_equations": 35,
+    "eligible_H1_source_equations": 51,
+    "eligible_H1_development_source_equations": 51,
+    "eligible_H1_prospective_source_equations": 0,
+    "eligible_H1_development_groups": 4,
+    "eligible_H1_prospective_groups": 0,
+    "eligible_H1_disputed_fine_structure_candidates": 1,
+    "fine_structure_groups_before_primary_superfamily_merge": 14,
+    "eligible_dimension_above4": 8,
+    "source_type_review_pending_equations": 1,
+    "study_samples_generated": 0,
+    "study_fits_generated": 0,
+    "diagnostic_outcomes_generated": 0,
+    "registration_status": "pre_execution_registration_incomplete",
+    "evidence_boundary": "Mathematical source census and rules snapshot only; all physical source-contract reviews remain pending and no new physical study sample, fit or diagnostic outcome exists."
+  },
+  "p02_stage2_operational_failures": {
+    "stage2_rows": 205200,
+    "failure_counts": {
+      "data_failure": 0,
+      "fit_failure": 0,
+      "outcome_failure": 0,
+      "fail_A": 0,
+      "fail_B": 513,
+      "fail_C": 513,
+      "fail_D": 0,
+      "fail_E": 0,
+      "fail_F": 0,
+      "fail_G": 0
+    },
+    "B_C_same_dataset_rows": true,
+    "affected_unique_datasets": 513,
+    "phases": [
+      "test"
+    ],
+    "splits": [
+      "development"
+    ],
+    "by_cell": [
+      {
+        "task": "feynman-ii.11.28",
+        "n": 200,
+        "rel": 0.005,
+        "fail_B": "rank_deficient",
+        "fail_C": "rank_deficient",
+        "rows": 6
+      },
+      {
+        "task": "feynman-ii.11.28",
+        "n": 200,
+        "rel": 0.01,
+        "fail_B": "rank_deficient",
+        "fail_C": "rank_deficient",
+        "rows": 3
+      },
+      {
+        "task": "feynman-ii.11.28",
+        "n": 1000,
+        "rel": 0.005,
+        "fail_B": "rank_deficient",
+        "fail_C": "rank_deficient",
+        "rows": 74
+      },
+      {
+        "task": "feynman-ii.11.28",
+        "n": 1000,
+        "rel": 0.01,
+        "fail_B": "rank_deficient",
+        "fail_C": "rank_deficient",
+        "rows": 25
+      },
+      {
+        "task": "feynman-ii.11.28",
+        "n": 1000,
+        "rel": 0.03,
+        "fail_B": "rank_deficient",
+        "fail_C": "rank_deficient",
+        "rows": 4
+      },
+      {
+        "task": "feynman-ii.11.28",
+        "n": 1000,
+        "rel": 0.05,
+        "fail_B": "rank_deficient",
+        "fail_C": "rank_deficient",
+        "rows": 1
+      },
+      {
+        "task": "feynman-iii.12.43",
+        "n": 1000,
+        "rel": 0.005,
+        "fail_B": "rank_deficient",
+        "fail_C": "rank_deficient",
+        "rows": 100
+      },
+      {
+        "task": "feynman-iii.12.43",
+        "n": 1000,
+        "rel": 0.01,
+        "fail_B": "rank_deficient",
+        "fail_C": "rank_deficient",
+        "rows": 100
+      },
+      {
+        "task": "feynman-iii.12.43",
+        "n": 1000,
+        "rel": 0.03,
+        "fail_B": "rank_deficient",
+        "fail_C": "rank_deficient",
+        "rows": 100
+      },
+      {
+        "task": "feynman-iii.12.43",
+        "n": 1000,
+        "rel": 0.05,
+        "fail_B": "rank_deficient",
+        "fail_C": "rank_deficient",
+        "rows": 100
+      }
+    ]
+  },
+  "p02_full_grid_coverage": [
+    {
+      "n": 50,
+      "rel": 0.005,
+      "h0_screen": 1.0,
+      "h0_screen_den": 1200,
+      "physical_primary_den": 0,
+      "physical_p95_den": 100,
+      "physical_primary_tasks": [],
+      "physical_p95_tasks": [
+        "feynman-i.44.4"
+      ],
+      "confirmation_primary_den": 2221,
+      "contributing_H1_groups": 6
+    },
+    {
+      "n": 50,
+      "rel": 0.01,
+      "h0_screen": 0.9766666666666667,
+      "h0_screen_den": 1172,
+      "physical_primary_den": 0,
+      "physical_p95_den": 100,
+      "physical_primary_tasks": [],
+      "physical_p95_tasks": [
+        "feynman-i.44.4"
+      ],
+      "confirmation_primary_den": 2219,
+      "contributing_H1_groups": 6
+    },
+    {
+      "n": 50,
+      "rel": 0.03,
+      "h0_screen": 0.7066666666666667,
+      "h0_screen_den": 848,
+      "physical_primary_den": 0,
+      "physical_p95_den": 100,
+      "physical_primary_tasks": [],
+      "physical_p95_tasks": [
+        "feynman-i.44.4"
+      ],
+      "confirmation_primary_den": 2202,
+      "contributing_H1_groups": 7
+    },
+    {
+      "n": 50,
+      "rel": 0.05,
+      "h0_screen": 0.49916666666666665,
+      "h0_screen_den": 599,
+      "physical_primary_den": 0,
+      "physical_p95_den": 102,
+      "physical_primary_tasks": [],
+      "physical_p95_tasks": [
+        "feynman-i.44.4",
+        "feynman-ii.35.21"
+      ],
+      "confirmation_primary_den": 2067,
+      "contributing_H1_groups": 7
+    },
+    {
+      "n": 200,
+      "rel": 0.005,
+      "h0_screen": 1.0,
+      "h0_screen_den": 1200,
+      "physical_primary_den": 0,
+      "physical_p95_den": 100,
+      "physical_primary_tasks": [],
+      "physical_p95_tasks": [
+        "feynman-i.44.4"
+      ],
+      "confirmation_primary_den": 2200,
+      "contributing_H1_groups": 6
+    },
+    {
+      "n": 200,
+      "rel": 0.01,
+      "h0_screen": 0.9933333333333333,
+      "h0_screen_den": 1192,
+      "physical_primary_den": 0,
+      "physical_p95_den": 100,
+      "physical_primary_tasks": [],
+      "physical_p95_tasks": [
+        "feynman-i.44.4"
+      ],
+      "confirmation_primary_den": 2200,
+      "contributing_H1_groups": 6
+    },
+    {
+      "n": 200,
+      "rel": 0.03,
+      "h0_screen": 0.6958333333333333,
+      "h0_screen_den": 835,
+      "physical_primary_den": 0,
+      "physical_p95_den": 100,
+      "physical_primary_tasks": [],
+      "physical_p95_tasks": [
+        "feynman-i.44.4"
+      ],
+      "confirmation_primary_den": 2200,
+      "contributing_H1_groups": 7
+    },
+    {
+      "n": 200,
+      "rel": 0.05,
+      "h0_screen": 0.48083333333333333,
+      "h0_screen_den": 577,
+      "physical_primary_den": 0,
+      "physical_p95_den": 100,
+      "physical_primary_tasks": [],
+      "physical_p95_tasks": [
+        "feynman-i.44.4"
+      ],
+      "confirmation_primary_den": 2009,
+      "contributing_H1_groups": 7
+    },
+    {
+      "n": 1000,
+      "rel": 0.005,
+      "h0_screen": 1.0,
+      "h0_screen_den": 1200,
+      "physical_primary_den": 0,
+      "physical_p95_den": 100,
+      "physical_primary_tasks": [],
+      "physical_p95_tasks": [
+        "feynman-i.44.4"
+      ],
+      "confirmation_primary_den": 2200,
+      "contributing_H1_groups": 6
+    },
+    {
+      "n": 1000,
+      "rel": 0.01,
+      "h0_screen": 0.9991666666666666,
+      "h0_screen_den": 1199,
+      "physical_primary_den": 0,
+      "physical_p95_den": 100,
+      "physical_primary_tasks": [],
+      "physical_p95_tasks": [
+        "feynman-i.44.4"
+      ],
+      "confirmation_primary_den": 2200,
+      "contributing_H1_groups": 6
+    },
+    {
+      "n": 1000,
+      "rel": 0.03,
+      "h0_screen": 0.6866666666666666,
+      "h0_screen_den": 824,
+      "physical_primary_den": 0,
+      "physical_p95_den": 100,
+      "physical_primary_tasks": [],
+      "physical_p95_tasks": [
+        "feynman-i.44.4"
+      ],
+      "confirmation_primary_den": 2200,
+      "contributing_H1_groups": 6
+    },
+    {
+      "n": 1000,
+      "rel": 0.05,
+      "h0_screen": 0.495,
+      "h0_screen_den": 594,
+      "physical_primary_den": 0,
+      "physical_p95_den": 100,
+      "physical_primary_tasks": [],
+      "physical_p95_tasks": [
+        "feynman-i.44.4"
+      ],
+      "confirmation_primary_den": 1942,
+      "contributing_H1_groups": 6
+    }
+  ],
+  "p02_complete_grid": {
+    "dataset_rows": 246240,
+    "reference_rows": 46080,
+    "calibration_rows": 92160,
+    "test_rows": 108000,
+    "confirmation_test_rows": 60000,
+    "policies": 1800,
+    "decisions": 16200000,
+    "point_comparisons": 180,
+    "physical_primary_dangerous_cases": 3600,
+    "physical_primary_overall_dangerous_releases": 0,
+    "physical_primary_screened_dangerous_cases": 0,
+    "all_stage_and_integration_audits_passed": true,
+    "complete_grid_audit": {
+      "audit": "independent_p02_complete_grid",
+      "audit_source_sha256": "b37d4ed24615f73b85c0b9acc9aebc8b9d7c56651096ca15c75c37788ca9fb03",
+      "imports_experimental_implementation": false,
+      "preservation": {
+        "stage1_files": 676,
+        "paper_R2_files": 31,
+        "p01": {
+          "runs/p01_pilot_v1": 150,
+          "runs/p01_v2": 1146
+        }
+      },
+      "stage_certificates": {
+        "stage1": {
+          "raw_sha256": "49f4b059854530a01f8879b857ffda1e767c2fe7d9e677e0f5a321882a5e37ba",
+          "summary_sha256": "5ea52eb1c71fe3cfa8c935797b3bcb8d6f9ad353630712a2eaccdd4f7791ba04",
+          "independent_audit_sha256": "2e74e2eabf6b8968e5574bff9690c4b9598c5f27f1b26d4a225089627f345083",
+          "raw_rows": 41040,
+          "strata": 2,
+          "analysis_checks": {
+            "status": "passed",
+            "policy_configurations": 300,
+            "decisions": 2700000,
+            "independent_group_count_rows": 113400,
+            "primary_metric_uncertainty_summaries": 1950,
+            "paired_uncertainty_summaries": 450,
+            "reconstructed": [
+              "H0 reference transforms/scales",
+              "budgeted thresholds",
+              "all decisions",
+              "all outcomes/thresholds/pools group event counts",
+              "primary points and calibration sensitivity",
+              "conditional-group/round/crossed intervals",
+              "equal-group risks",
+              "paired points and intervals"
+            ],
+            "not_independently_recomputed": [
+              "Individual A-G test-statistic numerical implementations from full sampled data",
+              "secondary CSV flattening/formatting; underlying secondary group event counts verified"
+            ]
+          }
+        },
+        "stage2": {
+          "raw_sha256": "8bff73e76661c7f220655fe1ad2f1702f57b96a4ed9d3bd214e63e7d44fbc9ae",
+          "summary_sha256": "0c1db450f288d4fc5b36cdfbcb4a841f42ad489c1728ebb969cc3c9d80dd4f71",
+          "independent_audit_sha256": "80e1ecb21cc6f01ae74d16e18f1dd080947d98aa00db69adcb35fcf11e9aa1f2",
+          "raw_rows": 205200,
+          "strata": 10,
+          "analysis_checks": {
+            "status": "passed",
+            "policy_configurations": 1500,
+            "decisions": 13500000,
+            "independent_group_count_rows": 567000,
+            "primary_metric_uncertainty_summaries": 9750,
+            "paired_uncertainty_summaries": 2250,
+            "reconstructed": [
+              "H0 reference transforms/scales",
+              "budgeted thresholds",
+              "all decisions",
+              "all outcomes/thresholds/pools group event counts",
+              "primary points and calibration sensitivity",
+              "conditional-group/round/crossed intervals",
+              "equal-group risks",
+              "paired points and intervals"
+            ],
+            "not_independently_recomputed": [
+              "Individual A-G test-statistic numerical implementations from full sampled data",
+              "secondary CSV flattening/formatting; underlying secondary group event counts verified"
+            ]
+          }
+        }
+      },
+      "raw_disjointness": {
+        "raw_rows": 246240,
+        "test_rows": 108000,
+        "strata": 12,
+        "stage_strata": {
+          "stage1": [
+            [
+              50,
+              0.03
+            ],
+            [
+              200,
+              0.03
+            ]
+          ],
+          "stage2": [
+            [
+              50,
+              0.005
+            ],
+            [
+              50,
+              0.01
+            ],
+            [
+              50,
+              0.05
+            ],
+            [
+              200,
+              0.005
+            ],
+            [
+              200,
+              0.01
+            ],
+            [
+              200,
+              0.05
+            ],
+            [
+              1000,
+              0.005
+            ],
+            [
+              1000,
+              0.01
+            ],
+            [
+              1000,
+              0.03
+            ],
+            [
+              1000,
+              0.05
+            ]
+          ]
+        },
+        "stage_seed_overlap": 0,
+        "stage_dataset_hash_overlap": 0,
+        "unique_seeds": 246240,
+        "unique_nonmissing_dataset_hashes": 246240,
+        "registered_test_tasks": 90,
+        "global_test_H1_structural_groups": 14,
+        "confirmation_H1_structural_groups": 8,
+        "interpretation": "One fixed library evaluated in 12 separate sample-size/noise strata; stages are execution partitions, not independent replications."
+      },
+      "summary": {
+        "exact_source_strata": 12,
+        "per_stratum_estimates_preserved": true,
+        "cross_stratum_reestimation_performed": false
+      },
+      "csv_concatenation": {
+        "primary_metrics.csv": {
+          "rows": 11700,
+          "sha256": "c3cd930cc865bb15db9c9d48df82aa37e35f91be0964e314330412651a12d261",
+          "source_rows_preserved": true
+        },
+        "sensitivity_metrics.csv": {
+          "rows": 27000,
+          "sha256": "3ccf9d40d52d123d61eeff4085f7e94ddf583227e01d46417e6475b991ae9c63",
+          "source_rows_preserved": true
+        },
+        "round_metrics.csv": {
+          "rows": 9000,
+          "sha256": "3cf0d001251d9a038b0510bd9e95ef8a3e29840e6a9bd0860f8d4d8243346b29",
+          "source_rows_preserved": true
+        },
+        "reference_scales.csv": {
+          "rows": 840,
+          "sha256": "333d543a4a74cfd7f524ef6802d40083a2db6dfbd0fb3dc8b887046793364a82",
+          "source_rows_preserved": true
+        }
+      },
+      "policies": {
+        "policy_configurations": 1800,
+        "exact_source_equality": true
+      },
+      "manuscript_tables": {
+        "primary_confirmation.csv": 60,
+        "paired_confirmation.csv": 60,
+        "coverage.csv": 12
+      },
+      "manifest": {
+        "manifest_sha256": "0b87bc58060fe8f205f2927fcab174195a8a64a54ace00549f7c70480e512c26",
+        "root_frozen_manifest_sha256": "f028da89b6f2d23d237a8382a7ef40d965239ed62220dfe85ec9d4ad482ac33e",
+        "critical_source_and_output_hashes_checked": 12,
+        "all_referenced_source_files": 22,
+        "all_hashed_reporting_outputs": 15
+      },
+      "boundaries": [
+        "No A-G single-gate statistic is recomputed from sampled observations.",
+        "Per-stage independent audits reconstruct policy calibration, fixed-grid errors, group event counts, primary/equal-group and paired uncertainty.",
+        "The complete-grid audit preserves separate stratum estimates; no meta-analysis or new independent experiment is implied."
+      ],
+      "passed": true
+    },
+    "summary_json_point_max_abs_difference": 0.0,
+    "compact_csv_point_max_abs_difference": 1.1102230246251565e-16
+  },
+  "physical_selection_review": {
+    "passed": true,
+    "scope": "Independent anti-selection, source-fidelity, domain-rule and exposure-metadata review only",
+    "rules_sha256": "966104c6bc159e8f3bca0655866110479399ab186f0fee3784d2686fd9b52653",
+    "equations": 120,
+    "complete_original_rule_domains": 118,
+    "scientific_status_counts": {
+      "eligible_analytic": 86,
+      "exclusion_unresolved": 31,
+      "excluded_nonpositive_target": 2,
+      "excluded_no_positive_input_support": 1
+    },
+    "primary_groups": 13,
+    "eligible_uncontested_prospective_H1_groups": 0,
+    "disputed_fine_candidates": [
+      "feynman-bonus.16"
+    ],
+    "source_type_pending_equations": [
+      "feynman-i.39.22"
+    ],
+    "documented_integer_to_real_relaxations": 7,
+    "physical_source_contract_certified_equations": 0,
+    "overwrite_guard": {
+      "review": "Independent static AST/source/test review; no study implementation imported or executed",
+      "same_snapshot": "verify then return without writes",
+      "drift": "reject",
+      "tests_present": [
+        "test_complete_census_keeps_math_and_execution_obligations_separate",
+        "test_disputed_fine_combination_is_not_a_primary_new_mechanism",
+        "test_saved_registration_is_read_only_and_rejects_artifact_or_input_drift"
+      ],
+      "compiler_sha256": "90ebdf84e4de868f97ec4ebaf0efd3e21784beb5369755ecaff67418ed5e647c"
+    },
+    "not_an_execution_freeze": true,
+    "not_verified_here": [
+      "Independent interval-arithmetic reevaluation of every source constraint and target bound",
+      "Independent physical/source/type/unit semantics certification",
+      "Float64/log-truth/high-precision adapters",
+      "High-dimensional diagnostics and frozen grids",
+      "Future null controls, seed namespaces and execution roles",
+      "Absence of unlogged human information exposure cannot be established by saved metadata alone"
+    ],
+    "selection_evidence": "All120 source rows retained; expressions/constants/original coordinates unchanged; common positive-support quantiles and centered widths independently reconstructed; admission rules have no fit or diagnostic outcomes; primary/fine grouping uncertainty explicitly retained.",
+    "audit_source_sha256": "b37d4ed24615f73b85c0b9acc9aebc8b9d7c56651096ca15c75c37788ca9fb03"
+  },
+  "manuscript_sha256": "dfa65bb6a20af3e5192c447082e892e44fb49c3ed76d1849921fd0b20a575438",
+  "revision_notes_sha256": "d0dc02ab927f2f57a18ba1d9df44e5cd977d31f92750c08e32af08b9221a7d06"
+}
