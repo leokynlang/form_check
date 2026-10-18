@@ -66,7 +66,9 @@ Silent_Acceptance_revision_2026-10-17/manuscript.md。
    bonus.15 的外推探测值：中位数 9.19%，四分位区间 8.46%-9.50%，最大值
    13.86%，无一超过 15%；bonus.5 的中位数为 15.56%，58.64% 超过 15%。
 2. Table 15 增加表注，区分两个合格池（18 个任务 / 17 个有限外推输出任务）。
-3. PDF 重建并更名为 Silent_Acceptance_research_R2_2026-10-18.pdf。
+3. PDF 重建并更名为 Silent_Acceptance_research_R2_2026-10-18.pdf；封面文字与
+   正文版本行（manuscript.md 第 3 行、build_pdf.py 的封面日期）同步改为
+   2026-10-18。
    页数与 10-17 版相同（36 页），已有表格和图的内容计数不变，正文增加约
    1,209 字符。
 
