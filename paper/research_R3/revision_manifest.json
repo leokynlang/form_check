@@ -9,7 +9,7 @@
     "evidence/primary_points_crosscheck.json": "8cf938aaeb4cc59b207d29d4464641c7d139ef10295d767836cceeff2415875e",
     "evidence/results.json": "30ee68c359494a913a630bff46baf61bbb11ca541f55b0af940291b18729f968",
     "evidence/revision_facts.json": "97c22241e588aa4cef28052a0359a6bd59150f27b2fe08337643e4d6c3cafcd6",
-    "evidence/revision_validation.json": "8282723aa20f1cf8315481287385088cab77a993d66ad474fbb5ce496bc3353f",
+    "evidence/revision_validation.json": "a8c3d2d96308ad55b95310171c976766ad641d93f186b0a10c49d4842e75031b",
     "evidence/s7.json": "957f9c5c18ca44ca3de998c66a23c121d1c1eca5a494e3dd2599780891d04b75",
     "evidence/size.json": "80dd2bba3c8636bf4147f2d8c780ddb88977410f2a97563e927aefec976b945d",
     "evidence/stage2_operational_failures.json": "745b6c6a4d60224004757bb0ada76cfb0bc3685c85e5598da45c0033d6417d3a",
@@ -17,7 +17,7 @@
     "evidence/text_checks.json": "da51b3971063a8d44aa219945394abe270020ebdf4c8f059150e0cf5ccf40bb0",
     "evidence/threshold_decomposition.json": "07dfdd14cc797bd152687dde26288a1aa6ec7ff6a33571686652fcbef9cdfb60",
     "evidence/verify_composition.json": "c11cf739cd121a7a08ace530e14a473440babf353be6c113caf7488022e13ab8",
-    "evidence/visual_review.json": "0fcea849e8b28f553b4ab94246b66ab55754f3897130dc134bbc388f8cbd38b6",
+    "evidence/visual_review.json": "474e89f28ac695dfc02042bc5dce60e158ff7ecf040863265a0460d0aaa147f9",
     "figures/full_500_timing.png": "263f33e61623acbf6fc1fbf660b1c3a2a36a1efd35ace7480672ec5492f7c4ac",
     "figures/p02_coverage.pdf": "2163cb45a92004bdc8f94615ff0a10c70081f082645143139e520688617dc596",
     "figures/p02_coverage.png": "886d3f7fd288e91357a4d180b0d88a30b515c8f6e56ef2752319dee0b68488ab",
@@ -27,9 +27,9 @@
     "figures/review3_fig_D2.png": "706aa05efbfc5e27b0867e31db1cdfabd7e162aa17465b96c588995969ab5f35",
     "figures/review3_fig_D3.png": "a02559a82f104515f74f5389375fd940a27e8f75be552e78b68e5422a2ef40d7",
     "figures/review3_fig_D4.png": "f01e052b9652057151e407977b62a5546d5cecda18cd897417d00538bd483376",
-    "manuscript.md": "d9c350cb7d207b7c974b9a5caadf5b62818fe7943f6b34e47374d656914c310a",
-    "REVISION_NOTES.txt": "e02907c94216f19177bbd7720e672c2f2dc012f1e713774b2011a3d61d456cef",
-    "Silent_Acceptance_research_R3_2026-10-18.pdf": "ac15d071bc59a7c92f46d4cba223f48ad784d25f634ef7a1640e4b64773c9a48",
+    "manuscript.md": "1273f17e6e829db8b60dcdacbc3c11f4b95f5fdc643d4d9df69b3772b6df0f0b",
+    "REVISION_NOTES.txt": "f38afec53e2b5a8e2c411ac0e69c5f64199cd870260fd67701e1a1e8b9c002e0",
+    "Silent_Acceptance_research_R3_2026-10-18.pdf": "4f0c7a2a9c6808f8ed623b7f98d2e5813cb73b75eaf93b0431c9910709f4bfa0",
     "verify_revision.py": "cadd5bc5c4f2f83f3360707085569f10672c0381818f1273c68b737a103ec674"
   },
   "supporting_document_hashes": {
@@ -39,8 +39,8 @@
     "docs/PHYSICAL_COVERAGE_PROTOCOL.md": "ef494975214add31db47586e265eb372896dfb71f357cb11b4e4c7e32c6c10ed",
     "requirements-validation.txt": "7af35c9d88d1eb4106ef2afc29cefdd33610febcd7b7cc71e6efefa32c2c46ce"
   },
-  "pdf_sha256": "ac15d071bc59a7c92f46d4cba223f48ad784d25f634ef7a1640e4b64773c9a48",
-  "manuscript_sha256": "d9c350cb7d207b7c974b9a5caadf5b62818fe7943f6b34e47374d656914c310a",
+  "pdf_sha256": "4f0c7a2a9c6808f8ed623b7f98d2e5813cb73b75eaf93b0431c9910709f4bfa0",
+  "manuscript_sha256": "1273f17e6e829db8b60dcdacbc3c11f4b95f5fdc643d4d9df69b3772b6df0f0b",
   "p02_complete_grid_manifest_sha256": "0b87bc58060fe8f205f2927fcab174195a8a64a54ace00549f7c70480e512c26",
   "p02_combined_audit_sha256": "61c0f161c4c52d91e4d7774a8759a67eeb08652577ff9d63bac3d3780e9375af",
   "p02_frozen_fingerprint": "f33f3f7bad2c30a5a4b22b6ee1f5e28b6c9f87ddf89308ce3a201d44ab7f10b7",
@@ -48,5 +48,5 @@
   "physical_protocol_status": "pre_execution_registration_incomplete",
   "physical_new_study_samples": 0,
   "preservation": "P01 v1/v2, P02 stage1 and research_R2 verified unchanged; all prior results remain in their original directories.",
-  "scope": "Completed frozen P02 full-grid experiment and R3 manuscript revision; physical-coverage metadata/rule design is registered, not an executed physical confirmation."
+  "scope": "Completed frozen P02 full-grid experiment and R3 manuscript revision; physical-coverage metadata/rule design is registered, not an executed physical confirmation. A 2026-10-22 tone revision rewrote the register of the manuscript without changing any number, table, citation or conclusion."
 }

@@ -1,7 +1,7 @@
 {
   "passed": true,
-  "pdf_sha256": "ac15d071bc59a7c92f46d4cba223f48ad784d25f634ef7a1640e4b64773c9a48",
-  "manuscript_sha256": "d9c350cb7d207b7c974b9a5caadf5b62818fe7943f6b34e47374d656914c310a",
+  "pdf_sha256": "4f0c7a2a9c6808f8ed623b7f98d2e5813cb73b75eaf93b0431c9910709f4bfa0",
+  "manuscript_sha256": "1273f17e6e829db8b60dcdacbc3c11f4b95f5fdc643d4d9df69b3772b6df0f0b",
   "pages": 51,
   "preserved_legacy_table_rows": 150,
   "evidence_source_hashes_verified": 35,
@@ -17,5 +17,5 @@
   },
   "page_bounds_and_glyphs": "passed",
   "unresolved_markers": 0,
-  "visual_review_sha256": "0fcea849e8b28f553b4ab94246b66ab55754f3897130dc134bbc388f8cbd38b6"
+  "visual_review_sha256": "474e89f28ac695dfc02042bc5dce60e158ff7ecf040863265a0460d0aaa147f9"
 }

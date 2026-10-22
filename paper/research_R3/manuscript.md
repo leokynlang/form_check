@@ -19,34 +19,33 @@ calibrated diagnostic policies, and error over external regions fixed
 before training data are sampled.
 
 The historical benchmark identifies directional blind spots and
-numerical sensitivity; its single-probe joint-release result is retained
-as a separate descriptive analysis. New validation first uses fresh data
-for 20 independent reference/calibration pairs on the known equations.
-An H0-only robust affine score removes artificial empirical-CDF tail
-saturation without eliminating intrinsic statistic ties. The main
-fixed-domain evaluation freezes structural groups, positive valid
-regions, grids, weights, and outcomes before sampling. It separates
-historically evaluated equations, source-derived physical tasks,
-designed mechanisms, and reserve groups withheld from study outcomes;
-calibration and
-confirmation nulls test design transfer within the same monomial family.
+numerical sensitivity, and reports its single-probe joint-release result
+separately. New validation first uses fresh data for 20 independent
+reference/calibration pairs on the known equations. An H0-only robust
+affine score removes artificial empirical-CDF tail saturation without
+eliminating intrinsic statistic ties. The main fixed-domain evaluation
+freezes structural groups, positive valid regions, grids, weights, and
+outcomes before sampling. It separates historically evaluated equations,
+source-derived physical tasks, designed mechanisms, and reserve groups
+withheld from study outcomes; calibration and confirmation nulls test
+design transfer within the same monomial family.
 
-The complete fixed-domain study contains 246,240 datasets across
-three sample sizes and four noise levels. At 3% log-noise, the
-quadratic AICc gate releases 41.59%, 21.88%, and 9.36% of
-screened-dangerous wrong fits at n=50, 200, and 1000, versus
-64.41%, 32.99%, and 15.65% for the A/E/F panel at the same
-5% calibration budget. These primary dangerous cases come from
-designed mechanisms. The fit screen intercepts all observed dangerous
-physical-source fits, leaving no screened-dangerous case to estimate
-the gates' conditional release rate in this six-source-task design.
+The complete fixed-domain study contains 246,240 datasets across three
+sample sizes and four noise levels. At 3% log-noise, the quadratic AICc
+gate releases 41.59%, 21.88%, and 9.36% of screened-dangerous wrong fits
+at n=50, 200, and 1000, versus 64.41%, 32.99%, and 15.65% for the A/E/F
+panel at the same 5% calibration budget; these primary dangerous cases
+come from the designed mechanisms. The fit screen intercepts every
+observed dangerous physical-source fit, so the six-source-task design
+leaves no screened-dangerous case in which to estimate the panel's
+conditional release rate.
 
-Equal calibration budgets do not imply equal test false-rejection
-rates. Group and calibration-round uncertainty remains conditional on
-the registered library and realized test bank. The evidence supports
-measuring residual release and correct-model losses together; it does
-not establish universal gate rankings, broad physical-law coverage, or safety
-of expressions selected by a discovery algorithm.
+Equal calibration budgets do not imply equal test false-rejection rates,
+and group and calibration-round uncertainty remains conditional on the
+registered library and the test bank actually realized. The evidence
+supports measuring residual release and correct-model losses together.
+The resulting rankings apply to this library and budget; broader
+physical coverage and validation after expression selection remain open.
 
 ## 1 Introduction
 
@@ -80,9 +79,9 @@ comparisons, and observational compatibility probes. They also expose
 the limits of a cached endpoint analysis: the external coordinate
 depends on the training sample, threshold crossings concentrate in
 two equations, and individual reference thresholds do not control a
-joint panel's independent-test cost. We retain those results as
-historical evidence rather than treating them as the final policy
-comparison.
+joint panel's independent-test cost. Those results are historical;
+the final policy comparison comes from the prospective validation
+layers below.
 
 Two prospective validation layers address these limitations.
 P0-1 v2 uses wholly fresh samples and 20 independent reference/
@@ -128,10 +127,10 @@ We make three contributions:
 Symbolic-regression benchmarks evaluate predictive quality, expression
 complexity, and symbolic or structural recovery [5, 6]. Our main
 experimental object is the behavior of attached specification policies
-under a fixed candidate family. Validation of expressions actually
-selected by a discovery algorithm remains a separate requirement.
-The proposed expansion of physical coverage in Section 6 has not
-yet generated experimental outcomes.
+under a fixed candidate family; validation of expressions actually
+selected by a discovery algorithm is a separate problem. Section 6
+registers the planned expansion of physical coverage, which contributes
+no experimental outcomes to this revision.
 
 Sections 3 and 4 define the protocols and results. Section 5 discusses
 diagnostic and workflow implications; Section 6 states the remaining
@@ -147,9 +146,8 @@ directions of misspecification. Heteroskedasticity-consistent covariance
 estimation [2] and HC3 leverage adjustment [3, 4] address inference under
 nonconstant error variance. We compare these established tools on
 log-transformed, physics-derived designs. The numerical audit in
-Section 5.2 and Appendix G concerns implementation of the HC3-Wald
-calculation; the statistical correction and its numerical realization
-must be distinguished.
+Section 5.2 and Appendix G concerns the implementation of the HC3-Wald
+calculation, as distinct from the statistical correction itself.
 
 **Model comparison as a diagnostic.** Information criteria [12] and
 cross-validation [13] can compare a candidate with a richer rival.
@@ -189,9 +187,8 @@ directions and complete-workflow outcomes. Its comparative scope
 covers permutation curvature, fitted-value and regressor-power RESET,
 HC3 inference, and one nested-quadratic rival. Other residual tests,
 rival families, and post-selection procedures can be evaluated within
-the same accounting framework. The experiments establish findings
-for the tested gates and sampling designs; the wider specification
-testing literature remains the context for interpreting them.
+the same accounting framework. The findings are specific to the tested
+gates and sampling designs.
 
 ## 3 Benchmark Design
 
@@ -246,9 +243,8 @@ c₂ as statistic; size evidence comes from B = 999 residual permutations
 (vectorized through the pseudo-inverse row), with a statistic-mismatch
 sentinel comparing wrapper and native values on every call. Validity
 note: permuting *estimated* residuals assumes they are exchangeable,
-which OLS residuals are not exactly - the permutation null here is an
-approximation whose quality is an empirical question, not a finite-sample
-exactness theorem. The benchmark measures this construction's empirical
+which OLS residuals are not exactly, so the permutation null is an
+approximation. The benchmark measures this construction's empirical
 size on the specified H0 pools, including deviations from .05 (Tables 1-2).
 Log-transformed multiplicative noise and favorable designs may matter, and §6 lists the stress
 tests (leverage-adjusted residuals, wild and block nulls, cluster
@@ -278,8 +274,8 @@ Historical A-F configurations were fixed for S1-S7 - powers (2, 3); B = 999;
 α = 0.05; the rival family and criteria of E/F; the grids below - and are
 identical across their applicable suites. Within each comparison the
 harness invokes its specified gates on the same datasets. The new
-validation evaluates A-G together; it does not merge datasets across
-historical suites or equate their different threshold policies.
+validation evaluates A-G together, keeping the historical suites'
+datasets and threshold policies distinct.
 
 ### 3.3 Task suites S1-S3
 
@@ -310,9 +306,9 @@ six above the observed maximum (up to 3 times maximum); all other
 log-features are held at their training medians.
 The cached far-field metric used in this paper is the relative
 error at the last, upper-end point only, against the noiseless
-closed-form truth. It is not a one-decade probe or the maximum
-error over the probe grid. Its coordinate depends on the observed
-training maximum and can change with n and seed.
+closed-form truth, not a one-decade probe or the maximum error over
+the probe grid. Its coordinate depends on the observed training
+maximum and can change with n and seed.
 The generated fitted-run count is 240,000; downstream
 eligibility excludes i.30.5 after its sentinel failure and excludes
 i.26.2 only when a finite extrapolation outcome is required.
@@ -382,18 +378,18 @@ responses cached for reproducibility - life expectancy ~ GDP per capita
 capita ~ GDP per capita; internet penetration ~ GDP per capita; and life
 expectancy ~ GDP per capita + health expenditure per capita (two-feature).
 Gates A-D run at 5 permutation seeds per cell. These seeds are
-computational replicates of one p-value estimator on one fixed dataset -
-not five independent samples - so they are used only to report Monte
-Carlo stability (the empirical p has resolution 1/1000 at B = 999; across
-the 24 S6 cells the median p spread is .009 and the max .094), never as a
+computational replicates of one p-value estimator on one fixed dataset
+rather than five independent samples, so they report Monte Carlo
+stability (the empirical p has resolution 1/1000 at B = 999; across
+the 24 S6 cells the median p spread is .009 and the max .094), not a
 sample-size or stability claim; a prespecified probe adds three agricultural
 and energy relations over three years, including a built-in
 control-contrast pair - cereal yield ~ fertilizer (one feature) versus
 cereal yield ~ fertilizer + energy use per capita (two features) - chosen
 to test, on live data, whether the dilution mechanism of S1 (a second
 correlated curved feature halving the mean-square column's signal)
-operates outside the laboratory. No calibration or power claim is made on
-S6; its contract is external validity of *mechanisms*, not of rates. An
+operates outside the laboratory. S6's contract is external validity of
+*mechanisms*, not of rates; no calibration or power claim is made on it. An
 engineering companion bench (Appendix E) extends the same contract to
 physical-engineering data: nine open sources, 91 datasets, 150
 prespecified relations, run as a single-realization smoke pass.
@@ -451,7 +447,7 @@ IQR/1.3489795 scale, falling back to normalized MAD and then population
 SD. An unusable scale or invalid member declines the policy. Valid
 standardized scores are not clipped to the reference range.
 A's finite 999-permutation resolution and floating-point p-value ties
-remain intrinsic limitations and are counted separately.
+are intrinsic limitations, counted separately.
 
 Five policies are prespecified: D; F; the A/B/C/D panel (AD);
 the A/E/F panel (AEF); and G. A panel uses the maximum of its member
@@ -470,8 +466,8 @@ cross-validation, training-fold-only scaling, squared bandwidth equal
 to feature count, and ridge penalty 0.01 per observation. Its statistic
 is the power-law model's CV error improvement under this competitor.
 The kernel, complexity, and penalty are not tuned to H1 outcomes.
-G is a finite fixed-rival diagnostic; we make no omnibus-consistency
-claim.
+G is a finite fixed-rival diagnostic; it is not an omnibus-consistency
+test.
 
 The v2 outcome retains the sample-dependent legacy endpoint so that
 the calibration change is distinguishable from a domain change.
@@ -482,8 +478,9 @@ round-only intervals, and intervals crossing rounds with H0/H1-
 stratified task weights (2,000 draws). All policies share resampling
 weights; undefined ratios remain undefined. These intervals condition
 on the known H0 calibration equation identities, realized calibration
-rounds, and the test bank. They neither redraw the calibration equation
-population nor include an inner record-level test bootstrap.
+rounds, and the test bank; resampling covers those levels rather than a
+redrawn calibration equation population or an inner record-level test
+bootstrap.
 
 ### 3.9 P0-2 - fixed external regions and structural-group holdout
 
@@ -559,8 +556,8 @@ sensitivity analyses. No denominator floor or finite-point deletion
 is used. Error targets the positive noiseless function (the log-noise
 location), not the lognormal arithmetic mean. These are finite-grid
 summaries, not continuum error bounds. A legacy endpoint is evaluated
-only when it lies inside registered valid support, and remains
-compatibility-only.
+only when it lies inside registered valid support; its role is
+compatibility.
 
 The full frozen grid is n ∈ {50, 200, 1000} crossed with log-noise SD
 {0.005, 0.01, 0.03, 0.05}. Stage 1 covers n=50 and 200 at SD 0.03;
@@ -588,19 +585,19 @@ variants in a group together and group weights shared across methods
 and selected rounds. Conditional-group and round-only intervals are
 also retained. An equal average of defined group-specific dangerous-
 release ratios is secondary; its omitted groups are counted.
-Zero risk denominators and undefined bootstrap draws are recorded,
-never converted to zero risk. Calibration percentile ranges describe
-ten-round sensitivity, not confidence coverage. These intervals remain
+Zero risk denominators and undefined bootstrap draws are recorded as
+such, not converted to zero risk. Calibration percentile ranges describe
+ten-round sensitivity, not confidence coverage. These intervals are
 conditional on the fixed calibration-design pool and realized test
 records; simulation volume cannot replace additional physical groups.
 
 ## 4 Results
 
-Sections 4.1-4.11 retain historical S1-S7 results with their original
-policies. Sections 4.12-4.13 supply the new validation evidence.
-Tables 1-2 report size; Tables 3-4 detection; Table 5 the family
-map; Table 6 noise-layer behavior; Table 7 extrapolation; Tables
-8-10 the battery; Tables 11-12 the model comparison; Tables
+Sections 4.1-4.11 report the historical S1-S7 results under their
+original policies. Sections 4.12-4.13 supply the new validation
+evidence. Tables 1-2 report size; Tables 3-4 detection; Table 5 the
+family map; Table 6 noise-layer behavior; Table 7 extrapolation;
+Tables 8-10 the battery; Tables 11-12 the model comparison; Tables
 13-14 observational examples; Table 15 joint release; and Table 16
 joint silence. Each table defines its event, denominator, task
 pool, and failure policy. Computational repeats are not independent
@@ -637,17 +634,18 @@ by audit_size.py. Stored rejection flags agree with strict p < .05;
 ties at exactly .05 are not rejections. This differs from the
 inclusive empirical-quantile convention used in Table 3.
 
-On synthetic Gaussian data, Table 1 shows small-sample
-size distortion: at n=50 all four fit-level Wilson intervals lie
-above .05, while the pattern is milder at larger n. Calibration is
-therefore empirical and imperfect, not exact. On the physics-derived designs (Table 2), A and B are
-near .05, while C and D have a modest upward size distortion:
-all six displayed C/D fit-level Wilson intervals exclude .05.
-The SVD calculation underlying these values was cross-checked
-against a separate implementation (Section 5.2).
+On synthetic Gaussian data, Table 1 shows small-sample size
+distortion: at n=50 all four fit-level Wilson intervals lie
+above .05, while the pattern is milder at larger n. Calibration
+is therefore empirical rather than exact. On the physics-derived
+designs (Table 2), A and B are near .05, while C and D have a
+modest upward size distortion: all six displayed C/D fit-level
+Wilson intervals exclude .05. The SVD calculation underlying these
+values was cross-checked against a separate implementation
+(Section 5.2).
 
-Generalization over physical equations requires an equation-level
-uncertainty analysis, distinct from a fit-level interval on this
+Generalization over physical equations calls for an equation-level
+uncertainty analysis rather than a fit-level interval on this
 fixed task pool. At n=200, resampling the 13 H0 equations gives
 C=.053 with a 95% interval [.050, .056] and D=.056 with
 [.055, .058]; the corresponding leave-one-equation-out ranges
@@ -670,10 +668,11 @@ positive noise levels times 500 seeds per task. Thresholds are
 the empirical 5% quantiles of each method's finite H0-reference
 p-values at the same n. Table 3 rejects when a valid p-value is
 less than or equal to that quantile; native decisions instead use
-strict p < .05. Non-finite p-values and typed declines are never
-rejections or certificates. Quantile discretization and boundary
-ties mean that this is a calibration target, not a claim of
-exactly equal rejection counts or independent calibration.
+strict p < .05. Non-finite p-values and typed declines are excluded
+from both the rejection and the certificate counts. Quantile
+discretization and boundary ties mean that this is a calibration
+target, not a claim of exactly equal rejection counts or independent
+calibration.
 
 **Table 3 - S2 rejection fraction on the common 18-H1-task pool at the H0-reference 5% target; C/D use SVD. Declines remain in the denominator and are not counted as rejections.**
 
@@ -685,8 +684,8 @@ exactly equal rejection counts or independent calibration.
 | D (SVD) | **.466** | **.657** | **.718** |
 
 For B and C, respectively, 2, 56, and 591 p-values are non-finite
-out of 36,000 at n=50, 200, and 1000. These records cannot
-contribute a rejection or a silent certificate. The displayed
+out of 36,000 at n=50, 200, and 1000. These records are excluded
+from both the rejection and the certificate counts. The displayed
 fractions are unconditional detection yields on the specified
 records, not power conditional on successful evaluation.
 
@@ -697,8 +696,8 @@ on these same 18 tasks (10,000 resamples): +.080
 and +.148 [+.022, +.302] at n=1000. The first interval crosses
 zero; the latter two favor D in this task pool. D exceeds A on
 10/18, 13/18, and 8/18 tasks, with 0, 1, and 5 ties,
-respectively. A larger pooled mean is therefore not uniform
-task-wise dominance.
+respectively. The pooled mean advantage is not uniform across
+tasks.
 
 Table 3, its paired effects, and Figures D.2-D.3 use the same
 eligibility rule. S5 evaluates the nested-rival gates on a
@@ -744,18 +743,17 @@ near-zero C/D entries on trigonometric were the pinv artifact
 correction agrees in direction with the S2-level one of Table 3.
 Exponentials defeat every gate (≤.09 - the linearization a log
 transform induces on them is nearly orthogonal to all four
-augmentation families); A and D share the rational lead; no method
-dominates all three families. Every method's strength sits on
-another method's blind spot; Table 5 has no row-major winner.
+augmentation families); A and D share the rational lead, and no
+method dominates all three families: every method's strength sits on
+another method's blind spot, so Table 5 has no row-major winner.
 Sensitivity: scaling every sampling domain ×2 moves exactly one
 family-method cell by more than 15 points (rational × A: .66 → .84, the
 expected direction); ×0.5 moves none; heteroskedastic replications agree
 within .02 on every cell. **These sensitivity readings rest on 30 seeds
-per cell and cannot be separated from sampling noise at that size**: a
-single cell at p ≈ .66 carries a 95% interval of roughly ±.17, and the
-standard error of a difference between two independent 30-seed cells is
-≈ .11, so a 15-point trigger cannot distinguish movement from
-variation. Family × method intervals are now attached
+per cell**: a single cell at p ≈ .66 carries a 95% interval of roughly
+±.17, and the standard error of a difference between two independent
+30-seed cells is ≈ .11, so a 15-point trigger cannot distinguish
+movement from variation. Family × method intervals are now attached
 (`paper/review3_analysis.py` §3.8b). On the within-cell binomial
 convention the trigonometric D (SVD) cell is .860 [.848, .871] and
 rational D is .669 [.655, .683]; on the honest unit - the equation -
@@ -763,9 +761,9 @@ the same cells read .860 [.592, .998] and .669 [.409, .864]. Rational C
 moves from .132 [.122, .142] to [.053, .277] the same way. The
 equation-level intervals overlap across families and are wide enough to
 contain orderings the point estimates contradict, so the family ranking
-above is directional, not an ordered effect list; what survives the
-wider intervals is the sign pattern - D ≥ C on rational and
-trigonometric, every gate low on exponential - not the point ordering.
+above is directional: the sign pattern - D ≥ C on rational and
+trigonometric, every gate low on exponential - survives the wider
+intervals, while the point ordering does not.
 
 ### 4.4 Noise-layer robustness
 
@@ -785,8 +783,8 @@ documents the cell-level check.*
 
 The recorded rates span .030-.066, with Wilson intervals shown
 (500 seeds per cell). These selected S1 perturbations do not isolate
-the causes of the S2 size distortions. Neither noise-related effects
-nor interactions between noise, design, and inference are ruled out.
+the causes of the S2 size distortions: noise-related effects, and
+interactions among noise, design, and inference, remain possible.
 
 ### 4.5 Do alarms predict extrapolation failure?
 
@@ -808,13 +806,13 @@ an R² screen; 36,206 records meet it (base rate .2011), including
 
 A and B have 10,296 and 5,442 exclusive true-positive alarms,
 respectively, with 12,304 shared. These counts show different
-alarm sets, not a claim of independence or chance-level overlap.
-D detects more of this pool's dangerous outcomes, but the
-precision/recall table does not compare methods at an equal
-false-positive budget. Figure D.4 uses the same eligible pool.
-An alarm and a non-rejection can both be informative under a
-specified sampling distribution; neither supplies a bound on
-error throughout an extrapolation domain.
+alarm sets rather than independence or chance-level overlap.
+D detects more of this pool's dangerous outcomes; the
+precision/recall table compares methods at their native thresholds
+rather than at an equal false-positive budget. Figure D.4 uses the
+same eligible pool. An alarm and a non-rejection can both be
+informative under a specified sampling distribution; neither
+bounds error throughout an extrapolation domain.
 
 ### 4.6 The battery: from rejection to routing
 
@@ -830,9 +828,9 @@ error throughout an extrapolation domain.
 | threshold (no battery family): escalation - *correct outcome* | 1.00 / 1.00 | 1.00 / 1.00 |
 
 With the permutation null, the battery's own rational member rejects its
-own true family a third of the time - nothing about rational laws is at
-fault; the null is exchangeability-invalid in (1/x, 1/y) coordinates. The
-wild bootstrap repairs exactly that and nothing else.
+own true family a third of the time: the null is exchangeability-invalid
+in (1/x, 1/y) coordinates, not the rational family itself. The wild
+bootstrap repairs exactly that and nothing else.
 
 **Set-level errors and multiplicity.** The battery's decision is the
 viable *set*, so the errors that matter are set-level, and each member
@@ -846,18 +844,18 @@ because exclusion depends on one member only. Inflation appears on
 the other side: some wrong member survives alongside the truth in
 23.3% of power-truth cells (near-neighbour overlap:
 exponential/logarithmic members retain power data) and 92% of
-logarithmic-truth cells (rational retains log data) - reported as
-near-neighbour overlap rather than suppressed in the locally recorded
-tables. On the structural-H1 pool (72,000 cells whose truth is no
-battery member by design) the viable set is empty - V = ∅, correct
-escalation - at the rates of Table 10's first column: universally for
+logarithmic-truth cells (rational retains log data), reported under
+near-neighbour overlap in the local tables. On the
+structural-H1 pool (72,000 cells whose truth is no battery member by
+design) the viable set is empty - V = ∅, correct escalation - at the
+rates of Table 10's first column: universally for
 quadratic/threshold/omitted-variable (1.00), rarely for the
 interaction/opposing/collinear structures (.001-.05) whose mismatch
 directions the member families do not span. Routing there means
 *which wrong family is modal* (Table 10, second column); the battery
 is a candidate filtering stage whose surviving set the discovery
 layer must still rank, not a final selection. Downstream selection
-error after the battery is out of scope here and unmeasured.
+error after the battery is unmeasured here.
 
 **Table 9 - Battery on synthetic truths (500 seeds/cell, wild null).**
 
@@ -911,9 +909,8 @@ error budget (.065-.102 across the four benches), reported separately:
 .937/.941/.547/.675. It is not comparable to the rows above and is
 excluded from this table.*
 
-The error budgets are not exactly matched in Table 12: A retains
-its native threshold, whereas E/F are tuned on the H0 reference
-pool. In particular, A's synth n=50 size is .080, and its SRSD
+Table 12 compares policies whose error budgets differ: A retains
+its native threshold, whereas E/F are tuned on the H0 reference pool. In particular, A's synth n=50 size is .080, and its SRSD
 n=200 size is below .05. Interval overlap with a target is not
 proof of an identical budget. Table 12 reports measured detection
 under these policies, not a uniformly matched-FPR ranking.
@@ -927,26 +924,25 @@ family, not a universal default recommendation.
 Naive E/F thresholds have elevated measured H0 rejection rates
 (Table 11). Reference-pool calibration reduces them to the
 reported targets; A requires no separate reference pool to
-construct its resampling p-value, but that does not make A
-size-valid on every pool. Its .080 small-sample result is one
-counterexample.
+construct its resampling p-value, but its size validity is
+pool-dependent: the .080 small-sample result is one counterexample.
 
 The earlier SRSD leave-one-H0-equation-out analysis reports
 held-out sizes .053/.050 for E at n=50/200 and .051/.052 for F,
-with per-equation spread [.010, .095]. This provides a limited
-transfer check across the 13 available H0 tasks, not calibration
-on all new equations or a replacement for an independent
-deployment test set.
+with per-equation spread [.010, .095]. This transfer check spans
+the 13 available H0 tasks; calibration on all new equations, and a
+replacement for an independent deployment test set, remain open.
 
 For OR(A,E), using the individual thresholds increases the joint
 H0 rejection budget to .065-.102. At synth n=50, A alone
 already exceeds .05, so tightening E cannot achieve a 5% union
 budget while preserving A's rule. The reported joint-budget
 recalibration at n=200 gives .940/.664 detection on the
-synthetic/SRSD benches, compared with F's .940/.669. Those
-specific comparisons do not establish that F is the frontier
-at every possible error budget. Combining gates and selecting
-thresholds should be evaluated as a complete decision policy.
+synthetic/SRSD benches, compared with F's .940/.669. These
+comparisons cover the budgets reported here, and a frontier over
+all possible error budgets is untested. Combining gates and
+selecting thresholds defines a complete decision policy, and the
+joint-budget numbers above are properties of that policy.
 
 ### 4.8 Real data: does the map predict live behavior?
 
@@ -968,9 +964,9 @@ estimator whose spread is small (median .009, max .094 at resolution
 1/1000; no verdict flips beyond boundary cells). Divergence concentrates
 where the synthetic map puts weak curvature: the life-expectancy cells
 flip year to year (signal at the detection boundary), and the
-two-feature cell shows B rejecting where A stays quiet. We label this
-pattern *consistent with* the dilution mechanism (§4.2, Table 4) rather
-than a reproduction of it: on observational data the p-value change
+two-feature cell shows B rejecting where A stays quiet. This pattern is
+*consistent with* the dilution mechanism (§4.2, Table 4), not a
+reproduction of it: on observational data the p-value change
 after adding a second feature can also reflect feature correlation,
 omitted-variable changes, sample composition, measurement error,
 cross-country heterogeneity, or spatial dependence - no ground truth
@@ -986,13 +982,10 @@ mechanism confirmation.
 
 This matches the S1 DILUTION scenario's signature - adding one
 correlated curved feature silences A on a relation it was rejecting,
-while the RESET variants continue to alarm - a pattern *consistent
-with* the dilution mechanism rather than a demonstrated reproduction of
-it, since feature correlation, sample composition, and omitted-variable
-changes move the same p-values in the same direction. No ground truth
-exists on S6 and none is claimed; the contract of §3.6 is signature
-consistency in both directions: unanimous cells where the map predicts
-signal, and map-consistent divergence where it predicts weakness.
+while the RESET variants continue to alarm. On S6 the contract of §3.6
+is signature consistency in both directions: unanimous cells where the
+map predicts signal, and map-consistent divergence where it predicts
+weakness.
 
 A companion engineering bench (Appendix E) pushes the same probe across
 nine physical-engineering sources (147 run cells): unanimous detection of
@@ -1006,10 +999,10 @@ locally approximate laws - all recorded, none adjudicated.
 The historical S1 runs recorded per-dataset means of 12.0-25.3 ms
 for A and 1.0-1.8 ms for B/C/D; the family battery at n=200
 recorded 24 ms, and S5 E/F 1.5-3.5 ms. These figures describe
-the recorded environments and implementations. No inference-path
-runtime equivalence or production-throughput guarantee is claimed.
-Figure D.5 is retained as a historical timing panel; the SVD
-revision requires a separately labeled timing comparison.
+the recorded environments and implementations, not inference-path
+runtime equivalence or production throughput. Figure D.5 is a
+historical timing panel; the SVD revision requires a separately
+labeled timing comparison.
 
 ### 4.10 Historical joint release at a sample-dependent endpoint
 
@@ -1141,8 +1134,8 @@ are dangerous wrong forms (0.515%). This proportion depends
 on the pool's class composition. In a different, explicitly
 hypothetical population containing only true H0 and dangerous
 H1 with equal priors, Bayes' rule gives a 1.55% dangerous
-posterior after release. These are separate populations and
-their conditional risks must remain separate. Applying the
+posterior after release. These are separate populations, and
+their conditional risks remain separate. Applying the
 decision rule to a new population requires its own validation.
 
 The results support a complete-workflow evaluation: diagnostics
@@ -1183,7 +1176,7 @@ This three-gate arm has 19 H1 tasks at one noise level;
 the A-D arm has 18 H1 tasks at four noise levels. The
 S5 cache has no recorded failures for i.30.5 but lacks
 S2's separate replay-sentinel fields. Its within-arm counts
-are retained as exploratory evidence. Comparison of complete
+are exploratory evidence. Comparison of complete
 A-D and A-F panels requires common records.
 
 **Class-conditional interpretation.** Within the S5 A/E/F
@@ -1206,8 +1199,8 @@ questions with their own eligible populations.
 All 600 P0-1 v2 policy configurations are feasible, giving 2,457,600
 decisions on a shared independent test bank. AEF at n=50 and the
 1% target has nonzero H1 alarms in all 20 rounds. This verifies removal
-of the artificial reference-CDF ceiling. It does not remove statistic
-ties from A's finite permutation resolution or floating-point p-values.
+of the artificial reference-CDF ceiling. Statistic ties from A's finite
+permutation resolution and floating-point p-values remain.
 
 **Table 17 - P0-1 v2 at the registered 5% calibration budget. H0
 withholding is alarm or decline conditional on R² screening.
@@ -1247,9 +1240,9 @@ frozen n/noise grid therefore contains 246,240 datasets: 46,080
 reference, 92,160 calibration, and 108,000 test. The primary
 confirmation pool comprises 60,000 distinct test cases (14,400 H0,
 45,600 H1); development and stress account for the other 48,000.
-No stage-1 dataset, formula, domain, weight, endpoint, or policy
-definition is replaced. The eight reserve tasks remain without
-study sampling, fitting, or gate outcomes.
+Stage 1's datasets, formulas, domains, weights, endpoints, and policy
+definitions carry forward unchanged. The eight reserve tasks stay
+outside the study sampling, fitting, and gate outcomes.
 
 All 1,800 calibrated policy configurations are feasible. Their
 16,200,000 decisions are stored in separate stage artifacts; repeated
@@ -1259,8 +1252,8 @@ coefficients, H0 reference scales and joint thresholds, all decisions,
 group event counts, and primary/equal-group/paired uncertainty.
 A separate complete-grid audit confirms nonoverlapping data streams,
 exact stratum/table integration, and preservation of the prior artifacts.
-These checks use recorded A-G statistics; they do not independently
-rerun every statistic from the original training observations.
+These checks use recorded A-G statistics rather than rerunning every
+statistic from the original training observations.
 
 **Table 18 - Complete P0-2 confirmation grid at the same 5% joint
 calibration budget. Values are mean dangerous H1 release conditional
@@ -1307,13 +1300,12 @@ and 3% noise, F's individual interval is [3.54%, 13.76%]
 and AEF's is [6.27%, 22.23%]. Intervals are pointwise rather
 than simultaneous guarantees across strata. They remain conditional
 on the fixed calibration-design pool and realized test records.
-The limited conclusion is that adding panel members does not
-guarantee lower dangerous release at a common calibration budget
-on these controlled mechanisms.
+Adding panel members therefore does not guarantee lower dangerous
+release at a common calibration budget on these controlled mechanisms.
 
-Each noise level shows decreasing release points as n increases,
-but different n values use independent training samples and can have
-different screened-dangerous composition. The point pattern is not
+Each noise level shows decreasing release points as n increases, but
+different n values use independent training samples with potentially
+different screened-dangerous composition, so the point pattern is not
 a nested-sample causal estimate of sample-size benefit. Six or seven
 H1 groups contribute primary danger in each stratum; all primary
 screened-dangerous cases come from designed mechanisms. Their
@@ -1365,8 +1357,8 @@ The other three source tasks' 3,600 fits all clear the screen
 and none meets the primary danger criterion. Thus the fit filter
 intercepts the observed dangerous cases; this pool supplies no
 evidence on how the gates handle high-fitting but externally
-dangerous physical candidates. It is neither a post-screen zero-risk
-estimate nor a physical-population safety statement.
+dangerous physical candidates. Post-screen physical risk and
+physical-population safety therefore remain unestimated here.
 
 The registered physical p95 secondary criterion has 100
 screened-dangerous cases in eleven strata, all from I.44.4.
@@ -1378,8 +1370,8 @@ for a secondary endpoint supported by one source group at that
 noise level. They do not promote that endpoint to the primary
 criterion or establish broad physical performance. At n=1000
 the p95 intervals degenerate to zero on the fixed test bank, and
-only 1,393/2,000 crossed resamples have a defined denominator.
-Undefined draws remain undefined. Such single-group intervals
+only 1,393/2,000 crossed resamples have a defined denominator;
+the remaining draws are undefined. Such single-group intervals
 do not acquire physical-population precision from the number of
 simulation replicates.
 
@@ -1394,10 +1386,18 @@ deleted or regenerated. Full operational, threshold, endpoint, and
 danger-cutoff tables are retained in the stage and complete-grid
 artifacts.
 
-
 ## 5 Discussion
 
 ### 5.1 Match diagnostics to the mismatch direction
+
+D is the strongest mean performer among A-D on the common S2
+pool under the stated reference target, and its paired advantage
+over A is supported at n=200 and 1000. S5 separately shows that a
+richer quadratic rival has higher recorded mean detection than A in
+each displayed pool. Together these findings motivate testing both
+augmentation geometry and model-comparison alternatives, and the new
+paired common-budget comparison in Section 4.13 evaluates D and F on
+the same records within the registered task library and test cost.
 
 The controlled alternatives explain why a single method ranking is
 insufficient. A's mean-square column can cancel opposing curvature and
@@ -1407,23 +1407,14 @@ fitted-value augmentation from regressor-power augmentation
 expand the directions it examines. The task-level differences
 therefore matter alongside the average detection rates.
 
-D is the strongest mean performer among A-D on the common S2
-pool under the stated reference target. Its paired advantage over A
-is supported at n=200 and 1000. S5 separately shows that a richer
-quadratic rival has higher recorded mean detection than A in each
-displayed pool. Together these findings motivate testing both
-augmentation geometry and model-comparison alternatives. The new paired common-budget comparison in Section 4.13 evaluates
-D and F on the same records, while preserving its task-library and
-test-cost qualifications.
-
 ### 5.2 Separate statistical assumptions from numerical stability
 
 Native size is an empirical requirement: Tables 1-2 show departures
 from .05 even when the symbolic mean is a true monomial.
-The family-viability experiment supplies a second example. In rational
+The family-viability experiment supplies a second example: in rational
 coordinates, changing the resampling null substantially improves
-observed containment (Table 8). Transforming coordinates therefore
-requires reevaluating the noise and resampling assumptions.
+observed containment (Table 8), so transforming coordinates requires
+reevaluating the noise and resampling assumptions.
 
 Numerical implementation supplies a distinct failure mode.
 A stratified cross-check of exog-HC3 on 176 fits spanning all
@@ -1432,8 +1423,8 @@ an SVD path, and statsmodels on identical data. The SVD and
 statsmodels calculations agreed closely (maximum absolute
 p-value difference .0023), whereas the original path produced
 large rejection rates on near-collinear designs. Forming X′X
-amplifies conditioning problems; the stable path changes the
-empirical method comparison. The audit supports using the SVD
+amplifies conditioning problems, and the stable path changes the
+empirical method comparison; the audit therefore supports the SVD
 results reported here. The complete measurements and earlier
 interpretation are preserved in Appendix G.
 
@@ -1441,38 +1432,38 @@ interpretation are preserved in Appendix G.
 
 The historical endpoint analysis establishes an observable residual
 channel: 481 of 6,403 screened-dangerous H1 fits pass its native
-four-gate policy. It also shows that those releases concentrate in
-two equations. P0-1 v2 makes independent joint calibration explicit,
-and P0-2 fixes the external coordinates and structural-group units.
-These layers answer related questions with different pools and
-outcomes; their percentages cannot be pooled into a single risk rate.
+four-gate policy, and those releases concentrate in two equations.
+P0-1 v2 makes independent joint calibration explicit, and P0-2 fixes
+the external coordinates and structural-group units. These layers
+answer related questions with different pools and outcomes, so their
+percentages describe separate quantities rather than a single pooled
+risk rate.
 
 Adding members changes a panel's maximum-score null distribution and
-its jointly calibrated threshold. Consequently, extra members can
-reduce sensitivity to some departures even though a panel at unchanged
+its jointly calibrated threshold. Extra members can therefore reduce
+sensitivity to some departures even though a panel at unchanged
 member thresholds would alarm more often. The empirical comparison
-must therefore include the target budget, realized independent-test
-H0 withholding, and the H1 consequence on the same fits. A lower
-dangerous-release point at one budget does not establish dominance
-at identical test cost or on an arbitrary new population.
+must include the target budget, realized independent-test H0
+withholding, and the H1 consequence on the same fits: a lower
+dangerous-release point at one budget becomes a dominance result only
+at matched test cost and on a stated population.
 
-The R² screen deserves the same scrutiny as the diagnostics. The
-calibration budget concerns diagnostic withholding among screened
-H0 candidates; it does not guarantee 95% retention of all correct
-models. Whole-workflow H0 retention, fit-screen passage, alarms,
+The R² screen carries the same calibration logic as the diagnostics.
+The calibration budget governs diagnostic withholding among screened
+H0 candidates; 95% retention of all correct models is a different
+guarantee. Whole-workflow H0 retention, fit-screen passage, alarms,
 declines, and dangerous release are separate outputs. An undefined
-screened-dangerous denominator is also a result about identifiability:
-it neither estimates the post-screen gate risk nor establishes
-interception by those gates. Overall dangerous release can still be
-measured against the pre-screen dangerous population, as in the
-physical-source results in Section 4.13.
+screened-dangerous denominator is a result about identifiability:
+no conditional gate risk can be estimated from it. Overall dangerous
+release is measured against the pre-screen dangerous population, as
+in the physical-source results in Section 4.13.
 
 Region-level error connects the decision rule to intended use more
 directly than one moving endpoint. The registered weighted mean,
-p95, and maximum still summarize a finite grid, use a specified
-relative-error tolerance, and depend on the registered domain.
-No diagnostic record supplies a distribution-free extrapolation bound.
-Interpretation must retain which physical or designed groups actually
+p95, and maximum summarize a finite grid under a specified
+relative-error tolerance and depend on the registered domain rather
+than supplying a distribution-free extrapolation bound. The
+interpretation records which physical or designed groups actually
 contribute dangerous screened candidates.
 
 ### 5.4 Use family viability and observations as diagnostic follow-up
@@ -1487,10 +1478,10 @@ comparison, with overlap explicitly recorded.
 The World Bank and engineering suites extend the software and
 diagnostic record to observed data. Their agreement and divergence
 patterns can guide follow-up measurements or alternative models.
-Without known form labels or controlled interventions, those
-patterns supply compatibility evidence. The strongest empirical
-performance conclusions remain those supported by the
-ground-truth suites.
+Those patterns supply compatibility evidence, given that the suites
+carry no known form labels or controlled interventions, while the
+ground-truth suites support the strongest empirical performance
+conclusions.
 
 ## 6 Scope and validation priorities
 
@@ -1662,13 +1653,14 @@ The R2 manuscript, PDF, figures, and audit artifacts are preserved.
 The R3 manuscript integrates new evidence without replacing the
 historical experimental files. Appendix A reports original S1-S6
 fitted-run totals; S7 reuses existing records. New P0-1/P0-2 dataset
-totals are additional and are not mixed into those historical counts.
+totals are additional, reported separately from those historical
+counts.
 
 Historical aggregation evidence is retained in the R2 bundle, including
 evidence/size.json, results.json, s7.json, task_intervals.json, and the
 record-level provenance audits. Figures D.1-D.5 describe those
-historical runs; Figure D.5's timing cannot be used as a timing
-comparison for the new RBF policy or updated inference paths.
+historical runs; Figure D.5's timing applies to those runs rather than
+to the new RBF policy or updated inference paths.
 
 P0-1 v1 and v2 reside in runs/p01_pilot_v1 and runs/p01_v2.
 The v2 frozen protocol, manifest, source snapshot, raw_policy.parquet,
@@ -1685,13 +1677,13 @@ grids/ record the pre-sample registry and fixed truth endpoints;
 manifest and source snapshots bind the run to its implementation.
 Stage 1 and stage 2 retain their separate raw records, checkpoints,
 decisions, thresholds, and summaries. The complete-grid aggregation
-combines the two nonoverlapping stage grids and does not replace
-either stage. The independent fixed-domain auditor reconstructs grid
+combines the two nonoverlapping stage grids while keeping both stages
+intact. The independent fixed-domain auditor reconstructs grid
 error from saved coefficients/truth and policy/count/uncertainty
-outputs from recorded raw diagnostic statistics; it does not
-independently recompute every A-G statistic from original training
-arrays. Registered secondary summaries retain their own endpoints
-and are not substituted for the primary outcome.
+outputs from recorded raw diagnostic statistics; recomputing every
+A-G statistic from original training arrays is outside its scope.
+Registered secondary summaries are reported at their own endpoints,
+separate from the primary outcome.
 
 The proposed physical expansion is documented in
 docs/PHYSICAL_COVERAGE_PROTOCOL.md and
@@ -1701,27 +1693,27 @@ hashes are retained under runs/p03_physical_protocol. Its manifest
 states incomplete pre-execution registration and zero generated
 study outcomes. An independent anti-selection/source-fidelity review
 passes for this snapshot; it checks the full census, uniform domain
-rule, and exposure metadata, without certifying all interval bounds
-or physical/unit/type contracts. Hashing this planning snapshot does not certify
-that the future study is runnable or that its pending physical
-coverage has been achieved.
+rule, and exposure metadata, while interval bounds and physical/
+unit/type contracts lie outside its certification. Hashing this
+planning snapshot fixes the snapshot itself; whether the future study
+is runnable and whether its pending physical coverage is achieved are
+separate questions.
 
 Preservation audits compare full file-tree hashes for existing runs.
 Seed and recorded dataset-hash checks separate the new studies from
-the preserved P0-1 runs and from one another; source-file integrity
-is distinct from reconstructing every historical dataset lacking a
-saved data hash. Reproduction of fitted experiments is also distinct
-from reaggregation of saved raw statistics.
+the preserved P0-1 runs and from one another. Source-file integrity
+and reconstruction of historical datasets without a saved data hash
+are separate checks, as are reproduction of fitted experiments and
+reaggregation of saved raw statistics.
 
 The original R2 artifact identifies repository
 https://github.com/leokynlang/form_check and historical data tag
-data-2026-10-18. This revision does not claim that its new local runs
-have been published in that historical release. The local manifests
-are the provenance record for the new evidence. Third-party
-redistribution decisions remain governed by data_release/
-THIRD_PARTY_DATA.md and dataset_sources.json; copyrighted NIST
-WebBook SRD 69 source data remain source-download-only. No new
-external references or external empirical claims are added here.
+data-2026-10-18. The new local runs are not part of that historical
+release; the local manifests are the provenance record for the new
+evidence. Third-party redistribution decisions are governed by
+data_release/THIRD_PARTY_DATA.md and dataset_sources.json;
+copyrighted NIST WebBook SRD 69 source data are source-download-only.
+No new external references or external empirical claims are added here.
 
 The R3 bundle distributed with this manuscript contains the summary
 evidence for the new studies: revision_facts.json, per-task count and
@@ -1738,12 +1730,13 @@ so these files, including the 58,112 P0-1 v2 datasets and the 246,240
 P0-2 datasets, ship as the release assets p01-v2-records.zip and
 p02-fixed-domain-records.zip on tag r3-2026-10-18. Each archive records
 a SHA-256 and byte count per member, and data_release/manifest_r3.json
-lists every member path and hash. Restoring them with
+lists every member path and hash. The manuscript bundle alone supports
+re-aggregation and checking of the summaries, protocols, source
+snapshots, and audit scripts; restoring the archives with
 tools/download_data.py --manifest data_release/manifest_r3.json makes
 the fitted experiments re-runnable from their original training
-observations. Without them, the summaries, protocols, source snapshots
-and audit scripts can be re-aggregated and checked, but the A-G
-statistics cannot be recomputed from those observations.
+observations and restores the records from which the A-G statistics
+are recomputed.
 
 ## 8 Conclusion
 
@@ -1751,7 +1744,7 @@ Specification policies can remove dangerous candidates while leaving
 an interpretable residual release channel. The historical benchmark
 maps directional blind spots, records false alarms, and shows why
 stable numerical inference matters. Its native-panel single-probe
-result remains informative but concentrated in two equations.
+result concentrates in two equations.
 
 New validation separates H0 reference fitting, independent threshold
 calibration, and testing. The v2 affine score removes artificial
@@ -1765,28 +1758,31 @@ The complete registered n/noise grid shows substantial residual
 release on the controlled mechanisms even at n=1000 and larger
 noise. F has the lowest primary release point in eleven strata,
 with an all-policy zero tie in the remaining stratum, while actual
-independent-test H0 costs differ. A larger panel therefore does
-not guarantee lower dangerous release at a common calibration
-budget in this library.
+independent-test H0 costs differ, so a larger panel does not by
+itself lower dangerous release at a common calibration budget in this
+library.
 
 The physical-source result has a different boundary. Its observed
 dangerous fits are all stopped by R² screening, so overall dangerous
 release is zero in those cases; no screened-dangerous case remains
 to identify the gates' conditional physical performance. Correct-model
 losses are substantial at the larger noise levels, largely through
-the fit screen. The new source-census protocol
-records this coverage problem without selecting formulas or
-narrowing domains from observed performance, but its mathematical
-admission ledger and pending source contracts are not completed
-multi-mechanism physical confirmation.
+the fit screen. The new source-census protocol records this coverage
+problem without selecting formulas or narrowing domains from observed
+performance; multi-mechanism physical confirmation additionally
+requires its mathematical admission ledger and resolved source
+contracts.
 
-The practical contribution is a reproducible way to compare
-complete decision policies using actual H0 costs, correct-model
-retention, dangerous-release denominators, and group/calibration
-uncertainty together. Broader physical coverage and independent
-validation after expression selection remain necessary before
-translating these controlled comparisons into general scientific
-discovery or engineering recommendations.
+Broader physical coverage and independent validation after expression
+selection remain necessary before these controlled comparisons
+translate into general scientific discovery or engineering
+recommendations.
+
+The practical contribution is a reproducible way to compare complete
+decision policies using actual H0 costs, correct-model retention,
+dangerous-release denominators, and group/calibration uncertainty
+together. The registered comparisons measure residual release and
+correct-model loss as two sides of the same policy decision.
 
 ## References
 
@@ -1839,8 +1835,10 @@ discovery or engineering recommendations.
 | S6 real data + probe (v3) | 33 | 5 | 165 | - |
 | **Total** | **1,480** | - | **508,825** | **472,500** |
 
-Outside the seeded totals: the Appendix E engineering bench contributes
-150 single-realization smoke cells (147 run), one fit per gate per cell.
+The Appendix E engineering bench contributes 150 single-realization smoke
+cells (147 run), one fit per gate per cell, outside the seeded totals
+above. Its three non-rejected rows are registered with typed reasons
+rather than replaced by imputations.
 
 ## Appendix B - Failure registration taxonomy
 
@@ -1855,9 +1853,10 @@ Outside the seeded totals: the Appendix E engineering bench contributes
 | `runner_error` / generation failure | S5 SRSD-side generation exceptions | S5 |
 | indicator archived / no data | S6 indicator not published for a year | S6 (`EN.ATM.CO2E.KT` → AR5 replacement, logged) |
 
-All registered failures remain in the audit trail; denominators are
-documented per table. The battery's 94,000 and S5's 20,400 datasets
-contain zero data-layer failures.
+The battery's 94,000 and S5's 20,400 datasets contain zero
+data-layer failures. Registered failures across the appendices
+remain in the audit trail with their typed reasons and per-table
+denominators.
 
 ## Appendix C - Statistical uncertainty and eligible populations
 
@@ -1875,9 +1874,8 @@ records per equation. For C, the mean is .053115 and the
 For D, the mean is .056385 and the interval is
 [.054615, .058385]. Leave-one-equation-out ranges are
 [.052000, .053542] for C and [.055625, .056667] for D.
-Section 4.1 uses the same results with rounded presentation.
-A lower bound displayed as .050 is not proof of exact
-coverage of .05.
+Section 4.1 uses the same results. A lower bound displayed
+as .050 is not proof of exact coverage of .05.
 
 The paired D-A intervals in Section 4.2 instead resample
 18 H1 equations, preserving each equation's paired difference.
@@ -1891,8 +1889,8 @@ audit_task_intervals.py resamples the 17 eligible H1 equations
 task's counts. With releases confined to two equations, the pooled
 Ld/Sd of 7.5% has a 95% interval of [0%, 49.9%], and 12% of
 resamples contain no release. This interval describes between-
-equation heterogeneity; it is not a binomial interval on 34,000
-records and does not include threshold-estimation uncertainty.
+equation heterogeneity rather than binomial precision on 34,000
+records, and does not include threshold-estimation uncertainty.
 
 Seeded computational repeats within one equation do not create
 additional independent laws. Macro and record-weighted averages
@@ -1908,8 +1906,8 @@ measurement - fluid, civil, hydraulic, energy, meteorological, seismic,
 chemical, and aerospace data, where power laws are the daily candidate
 models. This appendix documents a companion bench of that kind, run under
 the same contract as S6: real data has no ground truth, so the bench
-registers compatibility and divergence, not error rates; its cells are
-single realizations and stand outside Appendix A's seeded totals.
+registers compatibility and divergence rather than error rates. Its cells
+are single realizations and stand outside Appendix A's seeded totals.
 
 **Composition and discipline.** Nine open sources with source-specific
 licenses; 91 datasets; 150 candidate log-log relations registered in the local
@@ -1942,8 +1940,8 @@ not direct measurement.
 **Protocol.** Each cell applies the §3.2 gates unchanged at α = 0.05 - A
 with its B = 999 permutation p, B/C/D as registered - on the
 positivity-filtered relation, subsampled to n ≤ 800 (seed 42) to bound
-permutation cost. The run is a smoke pass: one realization per cell,
-compatibility plus first verdicts, not a rate estimate. Of 150 cells, 147
+permutation cost. One realization per cell yields compatibility plus
+first verdicts, not a rate estimate. Of 150 cells, 147
 run; three are registered `insufficient_n` by design (Bennett5 and
 Roszman1 have no positive rows after the log-space positivity filter;
 Danwood has n = 6) - the bench's honest-failure probes working as
@@ -1962,8 +1960,8 @@ A and B agree on 123/147 cells (92 both reject, 31 both quiet; 5 A-only,
 19 B-only). The failure columns are themselves informative: D's three
 declines are exactly the three HC3 failure modes of Table 2 and Appendix
 B, now on observational data; A's ten are uniform declines-to-run on
-n ≤ 11 cells; B and C never fail. Nothing fails silently - every declined
-evaluation is registered with a typed reason.
+n ≤ 11 cells; B and C never fail. Every declined evaluation is
+registered with a typed reason; nothing fails silently.
 
 **Designed regimes.** The bench's design document assigns expected regimes
 to 66 of the 150 cells before the smoke pass (Table E3). The assignment is
@@ -1985,10 +1983,10 @@ plus the two shear sites with the smallest fitted curvature.
 | Known non-power-law physics (H1-side) | 36 | 20 | 24 | 24 | 14 |
 
 (A's H1-side count includes its nine WebBook declines at n ≤ 11 as
-non-rejections.) On the H1 side no gate sweeps the board: the misses
-concentrate in WebBook enthalpy cells whose measured temperature window
-keeps the local power-law approximation good - e.g., toluene Δ_vapH ~ T:
-all four gates quiet at n = 26 - a mutual-miss cell recorded as measured.
+non-rejections.) On the H1 side the misses concentrate in WebBook
+enthalpy cells whose measured temperature window keeps the local
+power-law approximation good - e.g., toluene Δ_vapH ~ T: all four
+gates quiet at n = 26 - a mutual-miss cell recorded as measured.
 
 **Table E4 - Named cells: mechanism echoes and divergences; p-values at α = 0.05 in A / B / C / D order, - = declined with registered reason.**
 
@@ -2010,15 +2008,16 @@ scale (147/150 cells run across nine sources, zero silent failures),
 failure registration on observational data, and mechanism-echo cells
 whose directions match the synthetic map. Its per-gate rejection totals
 (97/111/108/94 of 147) are compatibility statistics on single
-realizations without ground truth - they rank nothing, and reading them
-as performance would repeat exactly the leaderboard confusion the
-benchmark exists to correct - A's observed non-rejections (the
-shear sites, the road-load law, puromycin at n = 23), A's interaction and
-dilution behavior (stormer, CCPP), D's structural fragility (all three
-failure modes live). What it cannot support: rates, calibration, or
-rankings - single realizations, no ground truth, and time-ordered
-NWIS/Open-Meteo series whose permutation-independence assumption is an
-approximation marked in the manifest. All four p-values per cell are
+realizations without ground truth: they rank nothing, since the
+leaderboard reading would repeat exactly the confusion the benchmark
+exists to correct. Against that background the bench shows A's observed
+non-rejections (the shear sites, the road-load law, puromycin at n = 23),
+A's interaction and dilution behavior (stormer, CCPP), and D's structural
+fragility (all three failure modes live). Its scope is single
+realizations without ground truth, so it supports no rates, calibration,
+or rankings, and the time-ordered NWIS/Open-Meteo series make the
+permutation-independence assumption an approximation marked in the
+manifest. All four p-values per cell are
 recorded locally (`real_data/smoke_results.csv`) with the manifest
 (`real_data/clean/manifest.json`, SHA-256 per source) and replayable
 fetch/prepare/smoke scripts.
@@ -2170,9 +2169,9 @@ D 189 (52.5%); A is the sole rejecting gate on 45 candidates and D
 on 41.
 
 **Scope.** These counts describe one search configuration and 360
-candidates, of which only two meet the joint danger criterion. They do
-not establish a pass rate for discovery algorithms, do not rank the
-gates, and are not merged into Tables 1-16. Their purpose is to show
+candidates, of which only two meet the joint danger criterion; they
+belong to this pilot, not to Tables 1-16. They estimate no pass rate
+for discovery algorithms and rank no gates. Their purpose is to show
 that the same diagnostic record can be attached to search-selected
 expressions and that the main benchmark's failure channel has a
 counterpart in this pilot.
